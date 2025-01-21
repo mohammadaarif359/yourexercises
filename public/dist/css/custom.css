@@ -1,0 +1,32 @@
+/* Style the select dropdown */
+.select-with-images select {
+    display: none; /* Hide the native select */
+}
+
+.select-with-images .custom-dropdown {
+    position: relative;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.select-with-images .custom-dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.select-with-images .custom-dropdown-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+.select-with-images .custom-dropdown-item:hover {
+    background: #f0f0f0;
+}
