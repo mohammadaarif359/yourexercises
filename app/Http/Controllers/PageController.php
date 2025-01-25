@@ -64,6 +64,15 @@ class PageController extends Controller
 		}*/
 		return view('web_new.privacy-policy');
     }
+	public function termsCondition() {
+        /*$page = CmsPage::where('slug','terms-condition')->where('status',1)->first();
+		if($page) {
+			return view('web.terms-condition',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.terms-condition');
+    }
 	public function features() {
         /*$page = CmsPage::where('slug','home')->where('status',1)->first();
 		if($page) {

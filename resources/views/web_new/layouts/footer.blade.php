@@ -73,13 +73,13 @@
                   <a href="#!" class="text-white">Your Account</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">Book A Demo</a>
+                  <a href="{{ url('/book-a-demo') }}" class="text-white">Book A Demo</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">Contact</a>
+                  <a href="{{ url('/privacy-policy') }}" class="text-white">Privacy Policy</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">privacy Policy</a>
+                  <a href="{{ url('/terms-condition') }}" class="text-white">Terms Condition</a>
                </p>
             </div>
             <!-- Grid column -->

@@ -27,6 +27,7 @@ Route::get('/book-a-demo','PageController@demo')->name('demo');
 Route::get('/features','PageController@features')->name('features');
 Route::get('/contact','PageController@contact')->name('contact');
 Route::get('/privacy-policy','PageController@privacyPolicy')->name('privacy-policy');
+Route::get('/terms-condition','PageController@termsCondition')->name('terms-condition');
 Route::get('/sign-in','PageController@signIn')->name('sign-in');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');

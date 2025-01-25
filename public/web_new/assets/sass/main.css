@@ -1835,4 +1835,21 @@ a:hover {
 }
 .ps-singin .contact-section .form-control {
   margin-bottom: 18px;
+}
+.ps-privacy .content-section p {
+  margin-bottom:8px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2b4159;
+}
+.ps-privacy .content-section ul {
+  padding-left:0.8em !important;
+  margin-left:0.8em;
+}
+.ps-privacy .content-section ul li{
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #2b4159;
+  list-style-type: disc !important;
+  
 }/*# sourceMappingURL=main.css.map */
