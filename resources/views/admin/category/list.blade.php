@@ -10,7 +10,7 @@
 		  <div class="card-tools">
 			  <div class="d-flex flex-row justify-content-center">			  
 				  <a href="{{ route('admin.category.add') }}" class="btn btn-primary btn-sm ml-2">Add</a>
-				  <a href="{{ route('admin.category.export') }}" class="btn btn-primary btn-sm ml-2">Export</a>
+				  <!--<a href="{{ route('admin.category.export') }}" class="btn btn-primary btn-sm ml-2">Export</a>-->
 			  </div>	
 		  </div>
 		</div>
