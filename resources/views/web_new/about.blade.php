@@ -25,79 +25,33 @@
                         <h2 class="paragraph-md cl-dblue">
                             How We Started
                         </h2>
-                        <p>
-                            <em>
-                                "There For Those Who Care."
-                            </em>
-                        </p>
                         <p class="cl-gray paragraph-md">
-                            This is more than our mantra. It is the purpose behind everything we do and the reason our
-                            founder created
-                            Your exercises. At a time when he was in desperate need of someone who truly cared, our
-                            founder witnessed first
-                            hand how those who care are held back by their technology that isn't doing what they need it
-                            to do.
+                        At Your Exercises, we are a team of passionate physiotherapists who have been dedicated to improving patient care since 2019. With extensive experience in the Canadian healthcare system, we saw firsthand the challenges both patients and healthcare practitioners face in delivering efficient, personalized care. This sparked our mission to bridge the gap between traditional physiotherapy and the future of healthcare technology.
                         </p>
                     </div>
                 </div>
             </div>
             <div class="content-section">
                 <h2>
-                    Let Us Tell You That Story
+                    Our Story
                 </h2>
                 <p>
-                    When our founder suffered a torn ACL and a gruesome staphylococcus infection, he feared he would
-                    never walk
-                    again. He was weeks past the rehab timeline and people kept telling him nothing could be done. When
-                    it felt like
-                    all hope was lost, one physiotherapist decided to take on his severe case.
+                    Driven by our belief that technology is the key to unlocking a new era in health and wellness, we set out to create a platform that streamlines the prescription and delivery of home exercise programs (HEP). Our vision is clear: to build a generational revolution in health-tech that empowers not only patients but also practitioners, administrators, and management teams. By embracing innovation, we are creating solutions that support a patient-centric approach, making it easier for everyone involved to deliver and receive optimal care.
                 </p>
                 <p>
-                    Even though this physiotherapist could not guarantee success and had never handled a case so severe,
-                    he felt he
-                    couldn't just stand by and do nothing. He decided to care.
+                    At Your Exercises, we’re committed to being at the forefront of the next healthcare evolution. Our platform is designed to make the process smoother, more efficient, and more accessible for all, with the ultimate goal of improving outcomes for patients and creating a better experience for every stakeholder in the healthcare journey.
                 </p>
                 <p>
-                    As our founder went through treatment, it became apparent that the organizational system of his
-                    physiotherapist's business was indeed improvement. He was so devoted to his clients, there was no
-                    time for him
-                    to handle billing, scheduling, charting and more. Our founder saw the same hopelessness in the
-                    physiotherapist's
-                    business system that he had felt with his own body, before finding help. As an IT consultant, he saw
-                    that he
-                    could fix the technology system and make it a lot easier for his physiotherapist to do his job.
-                </p>
-                <p>
-                    So he got to work fixing the system, then just went ahead and wrote a custom software application to
-                    help manage
-                    scheduling, billing, charting and documentation. Before long, word spread to other clinics about the
-                    software
-                    and our founder had 8 clients. He was so passionate about being able to help the health and wellness
-                    community
-                    that he quit his lucrative consulting job to go all in on the software. Your exercises was born. Now
-                    that you know
-                    our story, you understand that Your exercises is not just an electronic medical records system. It is
-                    Our System
-                    of Caring for the business owners, practitioners and admins who are doing life-changing and
-                    life-saving work.
-                </p>
-                <p>
-                    Because without someone who is willing to care, our founder may never have walked again. One person
-                    decided to
-                    sweat the small stuff and ask, "does it have to be this way?" and that is the same question
-                    Your exercises answers
-                    for our clients every day. This is our reason for being. It is the reason we chose to be there for
-                    those who
-                    care and it will continue to be as we grow. This is the heart behind Your exercises.
+                    Join us as we shape the future of physiotherapy and health technology—where convenience meets expertise for the benefit of all.
                 </p>
             </div>
 
-            <div class="left">
+            <!--<div class="left">
                 <h2 style="margin-bottom: -8px;" class="cl-lBlue">Our Team Leadership</h2>
-            </div>
+            </div>-->
         </div>
 
-        <div class="team-container">
+        <!--<div class="team-container">
             <div class="team-member">
                 <img src="https://png.pngtree.com/png-vector/20230928/ourmid/pngtree-young-afro-professional-doctor-png-image_10148632.png"
                     alt="Arty Aramalyan">
@@ -181,6 +135,6 @@
                 <a href="{{ url('/book-a-demo') }}" class="ps-btn md-btn primary-btn mb-1">Book a demo</a>
                 <a href="#" class="ps-btn md-btn primary-btn mb-1">Start using</a>
             </div>
-        </div>
+        </div>-->
     </div>
 @endsection
