@@ -56,7 +56,7 @@
 				  <div class="form-group">
 					<label for="name">Image
 						@if(!empty($data->image_url))
-							<a href="{{ $data->image_url }}">| Download</a>	
+							<a href="{{ $data->image_url }}" target='_blank'>| Download</a>	
 						@endif
 					</label>
 					<div class="custom-file">

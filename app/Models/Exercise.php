@@ -30,7 +30,7 @@ class Exercise extends Model
 	/* image url */
 	public function getImageUrlAttribute(): string
     {
-        return $this->image ? asset('storage/category/'.$this->image)  : "";
+        return $this->image ? asset('storage/exercise/'.$this->image)  : "";
     }
     public function exercise_category()
     {
