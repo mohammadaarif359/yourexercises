@@ -48,7 +48,7 @@ class ExerciseController extends Controller
 					return '';
 				})->addColumn('action', function ($data) {
 					$btn = '<a href="/admin/exercise/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
-					<a href="/admin/exercise/attachment/'.$data->id.'" class="" title="Images"><i class="fa fa-eye"></i></a>';
+					<a href="/admin/exercise/attachment/'.$data->id.'" class="" title="Images"><i class="fa fa-image"></i></a>';
 					return $btn;
 				})->editColumn('created_at', function ($data) {
 					return [
