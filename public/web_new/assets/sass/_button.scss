@@ -4,9 +4,9 @@ $white :#ffffff;
 
 // button scss start 
 .ps-btn{
-    border-radius: 8px;
+    border-radius: 4px;
     // box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
-    font-size: 16px;
+    font-size: 0.8rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -21,10 +21,10 @@ $white :#ffffff;
     //     box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #F7F7F7;
     // }
     &.sm-btn{
-        height: 40px;
+        height: 35px;
         width: auto;
-        padding: 6px 20px;
-        font-size: 16px; 
+        padding: 6px 11px;
+        font-size: 0.8rem; 
   
         .btn-icon{
             height: 16px;
@@ -36,37 +36,41 @@ $white :#ffffff;
             }
         }
   
-        @include Max1440 {
-            height: 38px;
-            width: auto;
-            padding: 4px 18px;
-            font-size: 15px; 
-        }
+        // @include Max1440 {
+        //     height: 35px;
+        //     width: auto;
+        //     padding: 4px 18px;
+        //     font-size: 0.8rem; 
+        // }
     }
     &.md-btn{
         height: 44px;
         width: auto;
         padding: 10px 18px;
+        font-size: 0.9rem;
   
         @include Max1100 {
             height: 41px;
             width: auto;
             padding: 10px 16px;
-            font-size: 14px; 
+             font-size: 0.7rem; 
         }
     }
     &.lg-btn{
         height: 58px;
         width: auto;
         padding: 10px 35px;
-        font-size: 20px;
-        font-weight: 700;
+        font-weight: 600 ;
+        height: 45px;
+        width: auto;
+        padding: 8px 16px;
+        font-size: 1.2rem;
   
         @include Max1100 {
-            height:54px;
+            height: 40px;
             width: auto;
-            padding: 10px 30px;
-            font-size: 18px; 
+            padding: 8px 16px;
+            font-size: 0.9rem; 
         }
     }
      &.outline-btn{
@@ -366,4 +370,95 @@ input[type=checkbox]:before {
       padding-top: 13px;
     }
   }
+}
+
+.wrapper {
+.card-loader {
+  position: relative;
+  border-radius: 2px;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  &:only-child {
+    margin-top:0;
+  }
+
+  &:before {
+    content: '';
+    height: 230px;
+    display: block;
+    background-color: #ededed;
+  }
+
+  &:after {
+    content: '';
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-name: loader-animate;
+    animation-timing-function: linear;
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0) 81%);
+    background: -o-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0) 81%);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0) 81%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 );
+  }
+}
+ 
+
+@keyframes loader-animate{
+ 0%{
+    transform: translate3d(-100%, 0, 0);
+  }
+ 100%{
+    transform: translate3d(100%, 0, 0);
+  }
+}
+}
+
+.swiper {
+    width: 100%;
+    border-radius: 10px;
+
+     @include Max768 {
+        margin-bottom: 38px;
+    }
+
+   .swiper-slide {
+        height: 300px;
+        overflow: hidden; 
+        border-radius: 10px;
+    }
+
+    img{
+        cursor: grab;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .swiper-pagination{
+        bottom: 0px;
+
+        @include Max768 {
+            bottom: 10px;
+        }
+    }
+
+    .swiper-pagination-bullet-active{background-color: #07a385;}
+}
+
+.p-dropdown {
+    background: #fff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline-color: transparent;
+    transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s;
+    font-size: 14px;
+    padding: .5rem;
+    transition: background-color .2s, color .2s;
 }

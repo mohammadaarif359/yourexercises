@@ -4,9 +4,11 @@
     <div class="main-section ps-feature-set main-section ps-feature-set pt-5">
         <section class="banner banner-section py-5">
             <div class="container banner-column mt-0 pt-4">
-                <img class="banner-image mt-0" src="https://jane.app/assets/features/cover/booking-a9ffce67aa24079df27d7b691897d18bf9d6170418c76de49fa374b38480c2e3.png" alt="banner">
+                <img class="banner-image mt-0"
+                    src="https://jane.app/assets/features/cover/booking-a9ffce67aa24079df27d7b691897d18bf9d6170418c76de49fa374b38480c2e3.png"
+                    alt="banner">
                 <div class="banner-inner ps-gap5">
-                    <h1 class="heading-md cl-lBlue">Paperless Patient Management</h1>
+                    <h1 class="heading-lg cl-lBlue">Paperless Patient Management</h1>
                     <p class="paragraph-hmd cl-dblue">
                         Enjoy award-winning stereo beats with wireless listening freedom and sleek,
                         streamlined with premium padded and delivering first-rate playback.
@@ -25,28 +27,36 @@
                         src="https://jane.app/assets/features/cover/janepayments-47a91655b28744ef9d858e407ad51d5f46dd6451c0123240a0abf91b80811a3c.png">
                 </div>
                 <div class="col-md-5 text-start mb-3">
-                    <h3 class="paragraph-xl cl-dblue">Booking made easy</h3>
-                    <p class="paragraph-lg cl-dblue">As big as the world of health and wellness is, so is our community. Our
+                    <h3 class="paragraph-lg cl-dblue">Booking made easy</h3>
+                    <p class="paragraph-md cl-dblue">As big as the world of health and wellness is, so is our community.
+                        Our
                         community is open to practitioners, .</p>
                     <ul>
-                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff available from your online
-                        booking page</li>
-                        <li>With automatic calendar syncing, patients see real-time availability right down to the second</li>
-                        <li>Provide a convenient booking link for your patients directly from your website and social media</li>
+                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff
+                            available from your online
+                            booking page</li>
+                        <li>With automatic calendar syncing, patients see real-time availability right down to the
+                            second</li>
+                        <li>Provide a convenient booking link for your patients directly from your website and social
+                            media</li>
                     </ul>
                 </div>
             </div>
 
             <div class="row pt-5 ps-fea-inside-list">
                 <div class="col-md-5 text-start mb-3">
-                    <h3 class="paragraph-xl cl-dblue">Booking made easy</h3>
-                    <p class="paragraph-lg cl-dblue">As big as the world of health and wellness is, so is our community. Our
+                    <h3 class="paragraph-lg cl-dblue">Booking made easy</h3>
+                    <p class="paragraph-md cl-dblue">As big as the world of health and wellness is, so is our community.
+                        Our
                         community is open to practitioners, .</p>
-                    <ul >
-                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff available from your online
-                        booking page</li>
-                        <li>With automatic calendar syncing, patients see real-time availability right down to the second</li>
-                        <li>Provide a convenient booking link for your patients directly from your website and social media</li>
+                    <ul>
+                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff
+                            available from your online
+                            booking page</li>
+                        <li>With automatic calendar syncing, patients see real-time availability right down to the
+                            second</li>
+                        <li>Provide a convenient booking link for your patients directly from your website and social
+                            media</li>
                     </ul>
                 </div>
                 <div class="col-md-4 text-center mb-5 mr-5">
@@ -61,15 +71,19 @@
                         src="https://jane.app/assets/features/cover/janepayments-47a91655b28744ef9d858e407ad51d5f46dd6451c0123240a0abf91b80811a3c.png">
                 </div>
                 <div class="col-md-5 text-start mb-3">
-                    <h3 class="paragraph-xl cl-dblue">Booking made easy</h3>
-                    <p class="paragraph-lg cl-dblue">As big as the world of health and wellness is, so is our community. Our
+                    <h3 class="paragraph-lg cl-dblue">Booking made easy</h3>
+                    <p class="paragraph-md cl-dblue">As big as the world of health and wellness is, so is our community.
+                        Our
                         community is open to practitioners, .</p>
                     <ul>
-                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff available
+                        <li>Set a schedule that works for you by customizing the treatments, times, locations, and staff
+                            available
                             from your online
                             booking page</li>
-                        <li>With automatic calendar syncing, patients see real-time availability right down to the second</li>
-                        <li>Provide a convenient booking link for your patients directly from your website and social media</li>
+                        <li>With automatic calendar syncing, patients see real-time availability right down to the
+                            second</li>
+                        <li>Provide a convenient booking link for your patients directly from your website and social
+                            media</li>
                     </ul>
                 </div>
             </div>
@@ -79,10 +93,11 @@
     <section class="testimonial-section">
         <div class="container">
             <blockquote class="m-0 cl-white">
-                The best thing about Jane is how easy it is for patients to book appointments. The experience is really second to none:
-                we see more customers actually making bookings with us because of Jane.
+                The best thing about Your Exercises is how easy it is for patients to book appointments. The experience is really
+                second to none:
+                we see more customers actually making bookings with us because of Your Exercises.
                 <footer>
-                Suzanne Jagger | Owner of Aura Aesthetics
+                    Suzanne Jagger | Owner of Aura Aesthetics
                 </footer>
             </blockquote>
         </div>
@@ -93,7 +108,8 @@
             Loved by 130k+ practitioners
         </h2>
         <p>
-            We don't like to toot our own horn, but we appreciate every review, rating, and achievement that's powered by
+            We don't like to toot our own horn, but we appreciate every review, rating, and achievement that's powered
+            by
             our loving customers
         </p>
         <div class="d-flex justify-content-center flex-wrap">
@@ -121,9 +137,9 @@
         </div>
 
         <div class="text-center mt-5 ps-border-top pt-4">
-            <a href="#" class="ps-btn md-btn primary-btn">See Jane's features</a>
-            <a href="#" class="ps-btn md-btn primary-btn">Book a demo</a>
-            <a href="#" class="ps-btn md-btn primary-btn">Start using Jane</a>
+            <a href="{{ url('/features') }}" class="ps-btn md-btn primary-btn">See Your exercises features</a>
+            <a href="{{ url('/book-a-demo') }}" class="ps-btn md-btn primary-btn">Book a demo</a>
+            <a href="#" class="ps-btn md-btn primary-btn">Start using</a>
         </div>
     </div>
 @endsection   

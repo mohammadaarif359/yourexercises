@@ -22,8 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');*/
 // web route
 Route::get('/','PageController@home')->name('home');
 Route::get('/about','PageController@about')->name('about');
+Route::get('/pricing','PageController@pricing')->name('contact');
+Route::get('/book-a-demo','PageController@demo')->name('demo');
+Route::get('/features','PageController@features')->name('features');
 Route::get('/contact','PageController@contact')->name('contact');
 Route::get('/privacy-policy','PageController@privacyPolicy')->name('privacy-policy');
+Route::get('/sign-in','PageController@signIn')->name('sign-in');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
 

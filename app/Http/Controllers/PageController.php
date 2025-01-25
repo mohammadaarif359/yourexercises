@@ -19,6 +19,60 @@ class PageController extends Controller
 		return view('web_new.home');
     }
 
+	public function about() {
+        /*$page = CmsPage::where('slug','about')->where('status',1)->first();
+		if($page) {
+			return view('web.about',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.about');
+    }
+	public function pricing() {
+        /*$page = CmsPage::where('slug','pricing')->where('status',1)->first();
+		if($page) {
+			return view('web.pricing',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.pricing');
+    }
+	public function demo() {
+        /*$page = CmsPage::where('slug','demo')->where('status',1)->first();
+		if($page) {
+			return view('web.pricing',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.demo');
+    }
+	public function contact() {
+        /*$page = CmsPage::where('slug','contact')->where('status',1)->first();
+		if($page) {
+			return view('web.contact',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.contact');
+    }
+	public function privacyPolicy() {
+        /*$page = CmsPage::where('slug','privacy-policy')->where('status',1)->first();
+		if($page) {
+			return view('web.privacy-policy',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.privacy-policy');
+    }
+	public function features() {
+        /*$page = CmsPage::where('slug','home')->where('status',1)->first();
+		if($page) {
+			return view('web.home',compact('page'));
+		} else {
+			abort(404);
+		}*/
+		return view('web_new.features');
+    }
 	public function featureDetail($slug) {
         /*$page = CmsPage::where('slug','home')->where('status',1)->first();
 		if($page) {
@@ -28,29 +82,14 @@ class PageController extends Controller
 		}*/
 		return view('web_new.feature-detail');
     }
-	public function about() {
-        $page = CmsPage::where('slug','about')->where('status',1)->first();
+	public function signIn() {
+        /*$page = CmsPage::where('slug','home')->where('status',1)->first();
 		if($page) {
-			return view('web.about',compact('page'));
+			return view('web.home',compact('page'));
 		} else {
 			abort(404);
-		}
-    }
-	public function contact() {
-        $page = CmsPage::where('slug','contact')->where('status',1)->first();
-		if($page) {
-			return view('web.contact',compact('page'));
-		} else {
-			abort(404);
-		}
-    }
-	public function privacyPolicy() {
-        $page = CmsPage::where('slug','privacy-policy')->where('status',1)->first();
-		if($page) {
-			return view('web.privacy-policy',compact('page'));
-		} else {
-			abort(404);
-		}
+		}*/
+		return view('web_new.sign-in');
     }
 	public function contactInquiry(Request $request)
 	{
