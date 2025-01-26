@@ -8,10 +8,11 @@
         <!-- <img class="banner-image" src="https://i.ibb.co/vB5LTFG/Headphone.png" alt="banner"> -->
         <img class="banner-image" src="{{ asset('web_new/assets/img/hero2.png') }}" alt="banner">
         <div class="banner-inner">
-          <h1 class="heading-xl cl-dblue">Experience <span class="cl-lBlue">Exercise Like Never</span> Before</h1>
+          <h1 class="heading-xl cl-dblue">Experience one of the most advanced <br/><span class="cl-lBlue">Home Exercise </span>prescription platform</h1>
           <p class="paragraph cl-dblue">
-            Enjoy award-winning stereo beats with wireless listening freedom and sleek,
-            streamlined with premium padded and delivering first-rate playback.
+            Revolutionize patient care with our cutting-edge technology that prescribes personalized home exercise programs (HEP) instantly! 
+            No more waiting, no more time spent on manual prescriptions—empower your patients to start their recovery immediately while you focus on what truly matters.
+            Our advanced platform delivers tailored exercises at the touch of a button, saving you time and ensuring your patients get the best care, faster
           </p>
           <button class="ps-btn lg-btn primary-btn ps-herobtn">
             Book Demo
@@ -30,7 +31,7 @@
       <div class="row flex-wrap">
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-file-alt"></i> Paperless Patient Management</h3>
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-file-alt"></i> Paperless Patient Exercise Management</h3>
           <p class="cl-gray paragraph-md px-2">
             Simplify your practice by digitizing patient records, ensuring seamless and eco-friendly management.
           </p>
@@ -65,21 +66,35 @@
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-heartbeat"></i> Track Patient Health Progress</h3>
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-heartbeat"></i> Track Patient Health And Exercise Peformance</h3>
           <p class="cl-gray paragraph-md px-2">
             Stay updated on your patients' health journeys with comprehensive progress tracking.
           </p>
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-comments"></i> Gather Feedback on Your Treatment</h3>
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-comments"></i> Gather Realtime Form Patient</h3>
           <p class="cl-gray paragraph-md px-2">
             Enhance your services by collecting and analyzing patient feedback effectively.
           </p>
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-lightbulb"></i> Get Automated Suggestions</h3>
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-lightbulb"></i> Automated Reminder To Patient </h3>
+          <p class="cl-gray paragraph-md px-2">
+            Receive smart recommendations to improve patient care and streamline clinic operations.
+          </p>
+        </div>
+        
+        <div class="col-md-3 col-sm-6 col-6 feature">
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-chart-line"></i> Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
+          <p class="cl-gray paragraph-md px-2">
+            Receive smart recommendations to improve patient care and streamline clinic operations.
+          </p>
+        </div>
+
+        <div class="col-md-3 col-sm-6 col-6 feature">
+          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-list-check"></i> Choose Direct Preset Programs </h3>
           <p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>
@@ -124,19 +139,23 @@
 
       </div>
       <div class="col-md-6 text-start">
-        <h3 class="paragraph-lg cl-dblue">Take a peek at the future of (even smoother)
-          clinic&nbsp;life.</h3>
-        <p class="paragraph-md cl-dblue">We’re always dreaming up new ways to help you out. Our team loves to share what
-          we’re
-          working on, like:</p>
+        <h3 class="paragraph-lg cl-dblue">Take a peek at the future of your exercises.</h3>
+        <p class="paragraph-md cl-dblue">We are always planning to improvise health industry and always look forward to turning industry to health-tech. 
+          Future is diverse and easier with technology, and it can be revolutionary for next era:</p>
         <ul class="list-check">
-          <li>Treatment Add-Ons</li>
-          <li>AI-powered Charting</li>
-          <li>Secure Clinic Messaging</li>
-          <li>Supervisor Support</li>
-          <li>Integrated eFax</li>
-          <li>ePrescription Services</li>
-          <li>Improved 1:1 and Group Telehealth experiences, and much more!</li>
+          <li>Progress tracker for patients and Therapist with detailed performance, Statistic and will show how average similar demographic patient preform weekly basis</li>
+          <li>AI Powered Progression and Data Management, Charting and synchronising according to EMS</li>
+          <li>Marker-less Motion capturing system</li>
+          <li>Integrated trick movement identifier</li>
+          <li>Biofeedback making Exercise mind body synchronized</li>
+          <li>Direct messaging and Email communicative methods</li>
+          <li>Audio Instructions for patients with visual challenges</li>
+          <li>Multi Languages approach</li>
+          <li>Video Recording feature for patients</li>
+          <li>Assigning progression according to patients needs</li> 
+          <li>Technical and Clinical - Supervisor support</li>
+          <li>Tele-health and rehab platform</li>
+          <li>Introducing all new way to conduct Group exercise Session</li>
         </ul>
         <a class="ps-btn primary-btn sm-btn" href="{{ url('/book-a-demo') }}">Book a Demo</a>
       </div>
@@ -147,26 +166,21 @@
   <section class="staff-section pt-5 ">
     <div class="container ps-border-top">
       <h2 class="paragraph-xxl cl-dblue pt-4"> Staff &amp; Owners are happy. </h2>
-      <p class="paragraph-h">Your Exercises  can help with administrative tasks giving you more time back in your day. Plus,
-        because Your Exercises  is online, there is no need for inconvenient updates. </p>
+      <p class="paragraph-h">Using Your exercises Platform easing the process of dispensing Home Exercises Prescription(HEP). 
+        This lets staff and Owners to focus on current patents and can be helpful in creating, handing HEP with replacing futuristic HEP</p>
       <div class="row pt-3">
         <div class="col-sm-12 col-md-6 p-0">
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
                 width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase"> ONLINE BOOKING </h3>
-              <p class="cl-gray paragraph-md px-2 ">Your Exercises most talked-about feature, developed to be incredibly easy
-                for
-                patients to book and manage their visits.</p>
+              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Administrative</h3>
+              <p class="cl-gray paragraph-md px-2 ">Save Time, Save Efforts, and provide real HEP and take valuable feedback which can help to generate greater client exercise compliance.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/calendar.png') }}" class="img-fluid" width="150" />
               <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Schedule</h3>
-              <p class="cl-gray paragraph-md px-2">Enjoy a well-organized day. Your Exercises scheduling helps you manage your
-                time,
-                letting you focus on what really matters —
-                your patients or clients.</p>
+              <p class="cl-gray paragraph-md px-2">Helps Practiconer to focus on current caseload and help to maintain busy schedule.</p>
             </div>
           </div>
         </div>
@@ -174,19 +188,14 @@
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/bill.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Billing</h3>
-              <p class="cl-gray paragraph-md px-2">Bill your visits and accept payments in just a couple of clicks, and
-                have
-                Your Exercises  do all the math for you – even if you're
-                billing insurers.</p>
+              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Screen Recording</h3>
+              <p class="cl-gray paragraph-md px-2">Screen recording timelapse : here we will put front of patient and back end panel view of therapist/clinic.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
                 width="150" />
               <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Chart</h3>
-              <p class="cl-gray paragraph-md px-2">We've helped hundreds of clinics switch to Your Exercises . Our team can import
-                scanned chart notes, patient lists, and guide you
-                in customizing chart templates.</p>
+              <p class="cl-gray paragraph-md px-2">Troubleshooting Helps Professional to trouble shoot the flaws and manage dosage of exercises with greater efficiency.</p>
             </div>
           </div>
         </div>
@@ -289,61 +298,45 @@
   <div class="container ps-eml ps-border-top">
     <div class="header2">
       <h1 class="paragraph-xxl cl-dblue pt-4">A serious problem-solver. That’s Your Exercises .</h1>
-      <p class="paragraph-h">See the difference the right software can make in your clinic.</p>
+      <p class="paragraph-h">Feel over burdened with traditional way of Home Exercises, Try Your Exercises Platform.</p>
     </div>
     <div class="row features">
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Being affordable matters to Your Exercises .</h5>
-        <p class="cl-gray paragraph-md">Your Exercises pricing is based on the number of practitioners in your clinic – so it
-          always fits your budget. No
-          extra
-          programs are needed to run your clinic.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Being affordable.</h5>
+        <p class="cl-gray paragraph-md">Your exercises pricing simple subscription– so it always fits your budget. 
+          No hidden extra charges or programs are needed to prescribing Home Exercises.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">There’s a powerhouse team behind Your Exercises .</h5>
-        <p class="cl-gray paragraph-md">Your Exercises  was created by people who operate multiple clinics and people who
-          specialize in simple, intuitive
-          design.
-          Our team truly understands clinic management and easy-to-use software.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises is founded by Physiotherapists and has included many professionals facing time crunches between each patients.</h5>
+        <p class="cl-gray paragraph-md">Your Exercises Is founded professionals who face serious time crunches and feel difficult to deliver home exercises programs. Additionally, they want to be ethical and want to be compliant with standard of practice. 
+          Therefore, this  intuitive design with simple and effortless workflow was created.
+          Our team truly understands clinic management and its needs to have easy-to-use software.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your Exercises  stores your clinic’s medical data in country.</h5>
-        <p class="cl-gray paragraph-md">Your practice’s data is stored in one of our regional data centers (USA, Canada,
-          United Kingdom, Australia).
-          This is essential to ensure your clinic is acting in accordance with local privacy legislation.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises keeps your patients data localised and understands importance of privacy and encryptions.</h5>
+        <p class="cl-gray paragraph-md">Your practice’s data is stored in encrypted form. This is essential to ensure your clinic is acting in accordance with local privacy legislation. 
+          In fact, clinics Patients log in from your website with unified hyperlink buttons on your website.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Bring your own device.</h5>
-        <p class="cl-gray paragraph-md">Your Exercises  works great on tablets, smartphones, laptops and desktop computers of any
-          flavor: Android, Apple, or
-          Microsoft.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Your our own device is your asset.</h5>
+        <p class="cl-gray paragraph-md">Your exercises work effortlessly on tablets, smartphones, laptops and desktop computers of any OS: Android, Apple, or Microsoft.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your Exercises  offers unlimited support.</h5>
-        <p class="cl-gray paragraph-md">Cloud-based software means there are no programs to install and no costly IT
-          people to call. Your Exercises  will help
-          get
-          you started and will be by your side whenever you need assistance.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Unlimited support and troubleshooting</h5>
+        <p class="cl-gray paragraph-md">Cloud-based platform means there are no programs to install and no costly IT people to call. Our support team will help get you started and will be by your side whenever you need assistanc.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your Exercises  works in clinics of every type and size.</h5>
-        <p class="cl-gray paragraph-md">Your Exercises  was specifically created for interdisciplinary clinics – so just one
-          program works perfectly for
-          everyone
-          from physios and massage therapists to counsellors and midwives.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Your Exercises  works in clinics of all type and size.</h5>
+        <p class="cl-gray paragraph-md">We are specifically created for interdisciplinary clinics – so just one program works perfectly for everyone from physicians to physios to chiros to Chiropodist/Podiatrist to Athletic Therapist to Osteopaths to counsellors and midwives.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">No one has features like Your Exercises .</h5>
-        <p class="cl-gray paragraph-md">With Your Exercises , chart privately or share with the whole clinic. Add video or photos
-          to capture a patient’s
-          condition. Book multiple appointments at once. Let Your Exercises  automatically schedule to avoid awkward gaps in
-          practitioners’ schedules. And so much more.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises stands out and beats all industry standards.</h5>
+        <p class="cl-gray paragraph-md">With your exercises, you can share HEP programs to all pr practitioners’ who are involved in patient care. Add video or photos to capture a patient’s condition. Book multiple appointments at once. Let your exercises automatically remind p[patients to avoid missing their part in rehab. 
+          Eventually reducing gaps in program of care. And so much more.</p>
       </div>
       <div class="col-md-4 feature-item">
         <h5 class="paragraph-xml cl-dblue text-uppercase">A beautiful design, with simplicity in mind.</h5>
-        <p class="cl-gray paragraph-md">Your Exercises intuitive design ensures a smooth and enjoyable experience for you and
-          your staff — that even your
-          patients will love.</p>
+        <p class="cl-gray paragraph-md">Your exercises’ intuitive design ensures a smooth and enjoyable experience for you and your staff — that even your patients will love.</p>
       </div>
     </div>
     <div class="footer2 ps-border-top">
