@@ -8,7 +8,7 @@
         <!-- <img class="banner-image" src="https://i.ibb.co/vB5LTFG/Headphone.png" alt="banner"> -->
         <img class="banner-image" src="{{ asset('web_new/assets/img/hero2.png') }}" alt="banner">
         <div class="banner-inner">
-          <h1 class="heading-xl cl-dblue">Experience one of the most advanced <br/><span class="cl-lBlue">Home Exercise </span>prescription platform</h1>
+          <h1 class="heading-xl cl-dblue">Experience one of the most advanced <span class="cl-lBlue">Home Exercise </span>prescription platform</h1>
           <p class="paragraph cl-dblue">
             Revolutionize patient care with our cutting-edge technology that prescribes personalized home exercise programs (HEP) instantly! 
             No more waiting, no more time spent on manual prescriptions—empower your patients to start their recovery immediately while you focus on what truly matters.
