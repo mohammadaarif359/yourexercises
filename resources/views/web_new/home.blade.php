@@ -14,9 +14,9 @@
             No more waiting, no more time spent on manual prescriptions—empower your patients to start their recovery immediately while you focus on what truly matters.
             Our advanced platform delivers tailored exercises at the touch of a button, saving you time and ensuring your patients get the best care, faster
           </p>
-          <button class="ps-btn lg-btn primary-btn ps-herobtn">
-            Book Demo
-          </button>
+          <a class="ps-herobtn" href="{{ url('/book-a-demo') }}">
+            <button class="ps-btn lg-btn primary-btn ps-herobtn">Book Demo</button>
+          </a>
         </div>
       </div>
     </section>
