@@ -25,79 +25,78 @@
   <!-- Features -->
   <section class="features-section pt-3 pt-md-5">
     <div class="container">
-      <h2 class="paragraph-xxl cl-dblue"> Everyone’s day just got easier </h2>
-      <p class="paragraph"> Your Exercises  offers online booking, charting, scheduling, secure video, and invoicing on one secure,
-        beautifully designed system. </p>
+      <h2 class="paragraph-xxl cl-dblue"> Home Exercise Features</h2>
+      <p class="paragraph"> Unlock a seamless experience with Your Exercises Platform. </p>
       <div class="row flex-wrap">
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-file-alt"></i> Paperless Patient Exercise Management</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Simplify your practice by digitizing patient records, ensuring seamless and eco-friendly management.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-chart-line"></i> Advanced Performance Dashboard</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-pencil-alt"></i> Custom Exercise Creation</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Build unique exercises that cater to the individual needs of your patients.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-bullhorn"></i> Boost Your Online Presence</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Strengthen your clinic’s online visibility with integrated tools designed for growth.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-link"></i> Connect with Your Existing Website</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Seamlessly integrate with your current website for a cohesive and professional experience.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-heartbeat"></i> Track Patient Health And Exercise Peformance</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Stay updated on your patients' health journeys with comprehensive progress tracking.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-comments"></i> Gather Realtime Form Patient</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Enhance your services by collecting and analyzing patient feedback effectively.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-lightbulb"></i> Automated Reminder To Patient </h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
-          </p>
+          </p>-->
         </div>
         
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-chart-line"></i> Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
-          </p>
+          </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
           <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-list-check"></i> Choose Direct Preset Programs </h3>
-          <p class="cl-gray paragraph-md px-2">
+          <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
-          </p>
+          </p>-->
         </div>
 
       </div>
