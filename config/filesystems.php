@@ -91,6 +91,12 @@ return [
             'url' => env('APP_URL') . '/exercise',
             'visibility' => 'public',
         ],
+        'plan' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/plan'),
+            'url' => env('APP_URL') . '/plan',
+            'visibility' => 'public',
+        ],
 
     ],
 

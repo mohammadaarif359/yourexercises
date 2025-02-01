@@ -22,6 +22,7 @@
                             <th>Name</th>
 							<th>Category</th>
 							<th>Subcategory</th>
+							<th>Feature Image</th>
 							<th>Status</th>
 							<th>Private</th>
 							<th>Created At</th>
@@ -54,6 +55,7 @@ $(function () {
             {data: 'name', name: 'name'},
             {data: 'category', name: 'category'},
             {data: 'subcategory', name: 'subcategory'},
+			{data: 'image_url', name: 'image_url'},
             {data: 'status', name: 'status'},
             {data: 'is_private', name: 'stais_privatetus'},
 			{data: 'created_at.display', name: 'created_at.display'},

@@ -22,7 +22,7 @@
 					</div>
 					<div class="col-md-6">        
 						<div class="form-group">
-							<label for="image">Image</label>
+							<label for="image">Feature Image</label>
 							<div class="custom-file">
 								<input type="file" name="image" class="custom-file-input @error('image') is-invalid @enderror" id="image">
 								<label class="custom-file-label" for="image">Choose file</label>

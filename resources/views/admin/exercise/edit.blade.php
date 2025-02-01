@@ -61,7 +61,7 @@
 					</div>
 					<div class="col-md-6">        
 						<div class="form-group">
-							<label for="name">Upload Image
+							<label for="name">Upload Feature Image
 								@if(!empty($data->image_url))
 									<a href="{{ $data->image_url }}" target='_blank'>| Download</a>	
 								@endif

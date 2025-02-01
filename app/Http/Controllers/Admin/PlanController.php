@@ -34,8 +34,12 @@ class PlanController extends Controller
 					];
 				})->editColumn('status', function ($data) {
 					return $data->is_active == 1 ? 'Active' : 'Deactive';
-				})
-				->make(true);
+				})->addColumn('image_url', function ($data) {
+					if($data->image_url) {
+						return '<a href="'.$data->image_url.'" target="_blank"><img src="'.$data->image_url.'" class="img img-response" height="60px" width="100px">';
+					}
+					return '';
+				})->rawColumns(['image_url', 'action'])->make(true);;
 		}
 		return view('admin.plan.list');
 	}
@@ -111,6 +115,7 @@ class PlanController extends Controller
 	public function update(Request $request) {
 		$request_data = $request->all();
 		$validator = $this->validateRequest($request);
+		print_r($request->image);die;
 		
 		if ($validator->fails()) {
 			return response()->json([
@@ -125,7 +130,7 @@ class PlanController extends Controller
 		
 		$file_name = null;
 		if($request->hasFile('image')) {
-			$file_name = $this->uploadImg($request->image,'exercise');
+			$file_name = $this->uploadImg($request->image,'plan');
 		}
 		$data = Plan::where('id',$request->id)->first();
 		if($data) {

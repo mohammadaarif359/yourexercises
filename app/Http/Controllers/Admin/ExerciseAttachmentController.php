@@ -19,7 +19,7 @@ class ExerciseAttachmentController extends Controller
     use AuthCode,CommonCode;
 	public function index(Request $request, $exercise_id) {
 		if ($request->ajax()) {
-			$results = Attachment::where('attachable_id',$exercise_id)->get();
+			$results = Attachment::where('attachable_id',$exercise_id)->where('attachable_type','App\Models\Exercise')->get();
 			return Datatables::of($results)
 				->addColumn('image_url', function ($data) {
 					if($data->image_url) {

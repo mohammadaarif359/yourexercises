@@ -21,6 +21,7 @@
 					<thead>
 						<tr>
 							<th>Name</th>
+							<th>Feature Image</th>
 							<th>Status</th>
 							<th>Created At</th>
 							<th>Action</th>
@@ -50,6 +51,7 @@
         ajax: "{{ route('admin.plan') }}",
         columns: [
             {data: 'name', name: 'name'},
+			{data: 'image_url', name: 'image_url'},
             {data: 'status', name: 'status'},
 			{data: 'created_at.display', name: 'created_at.display'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
