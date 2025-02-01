@@ -237,7 +237,10 @@ $.ajaxSetup({
 		$.ajax({
 			type: 'POST',
 			url: "{{ route('admin.plan.store') }}",
-			data: $("#frm-plan-submit").serialize(),
+			// data: $("#frm-plan-submit").serialize(),
+			data: new FormData($("#frm-plan-submit")[0]),
+			processData: false,
+			contentType: false,
 			success: function (data) {
 				$("#frm-plan-submit .invalid-feedback").html('');
 				$('#frm-plan-submit .is-invalid').removeClass('is-invalid');

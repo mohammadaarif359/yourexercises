@@ -365,12 +365,15 @@
 			$.ajax({
 				type: 'POST',
 				url: "{{ route('admin.plan.update') }}",
-				data: $("#frm-plan-submit").serialize(),
+				// data: $("#frm-plan-submit").serialize(),
+				data: new FormData($("#frm-plan-submit")[0]),
+				processData: false,
+        		contentType: false,
 				success: function (data) {
 					$("#frm-plan-submit .invalid-feedback").html('');
 					$('#frm-plan-submit .is-invalid').removeClass('is-invalid');
 					$("#btn-plan-submit").prop("disabled", false);
-					$('#btn-plan-submit').html('Create');
+					$('#btn-plan-submit').html('Update');
 					if (data.validation_error_responce) {
 						$.each(data.validation_error_responce, function (key, val) {
 							$.each(val, function (k, v) {
