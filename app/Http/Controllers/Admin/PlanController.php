@@ -115,7 +115,6 @@ class PlanController extends Controller
 	public function update(Request $request) {
 		$request_data = $request->all();
 		$validator = $this->validateRequest($request);
-		print_r($request->image);die;
 		
 		if ($validator->fails()) {
 			return response()->json([
