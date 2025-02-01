@@ -128,8 +128,8 @@
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="complete">Perform</label>
-							<select id="complete" class="form-control @error('perform') is-invalid @enderror" name="perform">
+							<label for="perform">Perform</label>
+							<select id="perform" class="form-control @error('perform') is-invalid @enderror" name="perform">
 								<option value='' selected>Select</option>
 								@for($i=1;$i<=20;$i++)
 									<option value="{{ $i }}" {{ old('perform') == $i ? 'selected' : '' }}>{{ $i }}</option>
