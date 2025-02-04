@@ -394,5 +394,5 @@
     setInterval(() => {
       showTestimonial(currentIndex + 1);
     }, switchInterval);
-  <script>
+  </script>
 @endsection

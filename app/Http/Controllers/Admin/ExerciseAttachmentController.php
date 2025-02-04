@@ -23,7 +23,19 @@ class ExerciseAttachmentController extends Controller
 			return Datatables::of($results)
 				->addColumn('image_url', function ($data) {
 					if($data->image_url) {
-						return '<img src="'.$data->image_url.'" class="img img-response" height="100px" width="120px">';
+						$extension = pathinfo($data->image_url, PATHINFO_EXTENSION);
+						$imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
+						$videoExtensions = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'];
+						if (in_array(strtolower($extension), $imageExtensions)) {
+							return '<a href="'.$data->image_url.'" target="_blank">
+								<img src="'.$data->image_url.'" class="img img-responsive" height="100px" width="120px" style="cursor: pointer;">
+							</a>';
+						} elseif (in_array(strtolower($extension), $videoExtensions)) {
+							return '<video width="120" height="100" controls>
+										<source src="'.$data->image_url.'" type="video/'.$extension.'">
+										Your browser does not support the video tag.
+									</video>';
+						}
 					}
 					return '';
 				})->addColumn('action', function ($data) {
@@ -46,7 +58,7 @@ class ExerciseAttachmentController extends Controller
 		$request->validate([
 			'exercise_id' => 'required|exists:exercises,id',
 			'image.0' => 'required',
-			'image.*' => 'required|mimes:jpeg,jpg,png',
+			'image.*' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv',
 		]);
 		for($i=0;$i<count($request_data['image']);$i++) {
 			$image = $this->uploadImg($request_data['image'][$i], 'exercise');
@@ -72,7 +84,7 @@ class ExerciseAttachmentController extends Controller
 		$request_data = $request->all(); 
 		$request->validate([
 			'id' => 'required|exists:attachments,id',
-			'image' => 'required|mimes:jpeg,jpg,png'
+			'image' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv',
 		]);
 		$image = null;
 		if($request->hasFile('image')) {
