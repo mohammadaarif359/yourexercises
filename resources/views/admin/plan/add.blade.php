@@ -59,7 +59,7 @@
 					<div class="col-md-2">
 						<div class="form-group">
 							<label for="category_id">Category</label>
-							<select id="category_id0" class="category_id form-control" name="detail['category_id'][]">
+							<select id="category_id0" class="category_id form-control" name="detail[category_id][]">
 								<option value='' selected>Select Category</option>
 								@foreach($categories as $k=>$val)
 									<option value="{{ $k }}">{{ $val }}</option>
@@ -71,7 +71,7 @@
 					<div class="col-md-2">
 						<div class="form-group">
 							<label for="subcategory_id">Subcategory</label>
-							<select id="subcategory_id0" class="subcategory_id form-control" name="detail['subcategory_id'][]">
+							<select id="subcategory_id0" class="subcategory_id form-control" name="detail[subcategory_id][]">
 								<option value="" selected>Select Subcategory</option>
 							</select>
 							<span class="error invalid-feedback" id="error_subcategory_id0"></span>
