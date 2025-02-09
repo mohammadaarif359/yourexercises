@@ -23,7 +23,7 @@ $white :#ffffff;
     &.sm-btn{
         height: 35px;
         width: auto;
-        padding: 6px 11px;
+        padding: 6px 11px !important;
         font-size: 0.8rem; 
   
         .btn-icon{
@@ -452,13 +452,74 @@ input[type=checkbox]:before {
     .swiper-pagination-bullet-active{background-color: #07a385;}
 }
 
-.p-dropdown {
-    background: #fff;
-    border: 1px solid #d1d5db;
-    border-radius: 6px;
-    outline-color: transparent;
-    transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s;
-    font-size: 14px;
-    padding: .5rem;
-    transition: background-color .2s, color .2s;
+.ps-dropdown-mobile {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    
+    .ps-dropdown-toggle-mobile {
+        cursor: pointer;
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ps-dropdown-toggle-mobile i {
+        margin-left: 8px;
+    }
+
+    .ps-dropdown-menu-mobile {
+        display: none;
+        position: absolute;
+        left: 0;
+        background: white;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px 18px;
+        border-radius: 5px;
+        width: 300px;
+        z-index: 1000;
+    }
+
+    .ps-dropdown-menu-mobile.show {
+        display: block;
+    }
+
+    .ps-dropdown-menu-mobile a {
+        display: flex;
+        padding: 10px;
+        text-decoration: none;
+        color: #2b4159 !important;
+        border-bottom: 1px solid #ddd;
+        text-align: justify;
+
+        h5{
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 10px;
+            max-width: 215px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: 2px;
+        }
+    }
+
+    .ps-dropdown-menu-mobile i {
+        margin-right: 10px;
+        font-size: 22;
+    }
+}
+.header-feature-link-mobile{
+   display: flex;
+   justify-content: center;
+   a{
+      display: flex !important;
+      justify-content: end;
+      align-items: center;
+      color: $primaryBlue !important;
+      border-bottom: 0px !important;
+   }
 }

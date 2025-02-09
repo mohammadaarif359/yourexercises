@@ -111,6 +111,48 @@
    crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>   
 <script>
+   // header script start
+   document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.querySelector(".menu-toggle");
+      const navLinks = document.querySelector(".nav-links");
+      const dropdownToggle = document.querySelector(".ps-dropdown-toggle-mobile");
+      const dropdownMenu = document.querySelector(".ps-dropdown-menu-mobile");
+
+      // Toggle menu on hamburger click
+      menuToggle.addEventListener("click", (event) => {
+         event.stopPropagation();
+         navLinks.classList.toggle("active");
+      });
+
+      // Prevent closing menu when clicking inside
+      navLinks.addEventListener("click", (event) => {
+         event.stopPropagation(); // Stops clicks inside menu from closing it
+      });
+
+      // Toggle mobile dropdown
+      dropdownToggle.addEventListener("click", function (event) {
+         event.preventDefault();
+         event.stopPropagation(); // Prevents click from reaching document
+         dropdownMenu.classList.toggle("show");
+      });
+
+      // Prevent dropdown from closing when clicking inside
+      dropdownMenu.addEventListener("click", (event) => {
+         event.stopPropagation();
+      });
+
+      // Close menu when clicking completely outside
+      document.addEventListener("click", (event) => {
+         if (!navLinks.contains(event.target) && !menuToggle.contains(event.target)) {
+            navLinks.classList.remove("active");
+         }
+
+         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.classList.remove("show");
+         }
+      });
+   });
+
    document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
     const animateCounters = () => {
@@ -129,9 +171,9 @@
         };
         updateCounter();
       });
-    };
+   };
    
-    const checkScroll = () => {
+   const checkScroll = () => {
       const triggerHeight = window.innerHeight * 0.9; // 90% of viewport height
       counters.forEach((counter) => {
         const counterTop = counter.getBoundingClientRect().top;
@@ -139,52 +181,14 @@
           animateCounters();
         }
       });
-    };
+   };
    
-    window.addEventListener("scroll", checkScroll);
+   window.addEventListener("scroll", checkScroll);
     checkScroll(); // Trigger check on load
-  });
+   });
    
-  const navbarMenu = document.getElementById("menu");
-  const burgerMenu = document.getElementById("burger");
-  const headerMenu = document.getElementById("header");
-   
-  // Open Close Navbar Menu on Click Burger
-  if (burgerMenu && navbarMenu) {
-    burgerMenu.addEventListener("click", () => {
-      burgerMenu.classList.toggle("is-active");
-      navbarMenu.classList.toggle("is-active");
-    });
-  }
-
-  // Close Navbar Menu on Click Menu Links
-  document.querySelectorAll(".menu-link").forEach((link) => {
-    link.addEventListener("click", () => {
-      burgerMenu.classList.remove("is-active");
-      navbarMenu.classList.remove("is-active");
-    });
-  });
-
-  // Change Header Background on Scrolling
-  window.addEventListener("scroll", () => {
-    if (this.scrollY >= 85) {
-      headerMenu.classList.add("on-scroll");
-    } else {
-      headerMenu.classList.remove("on-scroll");
-    }
-  });
-   
-  // Fixed Navbar Menu on Window Resize
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      if (navbarMenu.classList.contains("is-active")) {
-        navbarMenu.classList.remove("is-active");
-      }
-    }
-  });
-   
-  // swtiper
-  const swiper = new Swiper('.swiper', {
+   // swtiper
+   const swiper = new Swiper('.swiper', {
     loop: true,                // Loop through slides
     autoplay: {
       delay: 3000,             // Auto-slide delay (in ms)
@@ -194,5 +198,40 @@
       el: '.swiper-pagination',
       clickable: true,
     },
-  });
+   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+      // Select all sections with the class 'section'
+      const sections = document.querySelectorAll('.section');
+
+      // Options for the IntersectionObserver
+      const observerOptions = {
+         root: null, // Use the viewport as the root
+         rootMargin: '0px', // No margin
+         threshold: 0.1 // Trigger when 10% of the section is visible
+      };
+
+      // Callback function for the IntersectionObserver
+      const observerCallback = (entries, observer) => {
+         entries.forEach(entry => {
+            // Check if the section is in view and hasn't been animated yet
+            if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+            // Add the 'animate' class to trigger the animation
+            entry.target.classList.add('animate', 'animated');
+            // Stop observing the section after animation
+            observer.unobserve(entry.target);
+            }
+         });
+      };
+
+      // Create the IntersectionObserver
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+      // Observe each section
+      sections.forEach(section => {
+         observer.observe(section);
+      });
+   });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script> AOS.init(); </script>

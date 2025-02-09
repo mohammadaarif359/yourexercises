@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-section ps-singin mb-5">
         <div class="container">
-            <div class="row ps-border-bottom mx-4">
+            <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Sign Up</h1>
                     <p class="paragraph cl-dblue">
@@ -36,7 +36,7 @@
                                 <div class="col-md-6 p-0">
                                     <input type="text" class="form-control" placeholder="First Name *" required>
                                 </div>
-                                <div class="col-md-6 pr-0">
+                                <div class="col-md-6 ps-paddingFix">
                                     <input type="text" class="form-control" placeholder="Last Name *" required>
                                 </div>
                             </div>

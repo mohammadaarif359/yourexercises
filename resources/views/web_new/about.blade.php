@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-section ps-about">
         <div class="container">
-            <div class="row ps-border-bottom mx-4">
+            <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">About Us</h1>
                     <p class="paragraph cl-dblue">
@@ -13,12 +13,12 @@
             </div>
             <div class="header-section text-center mt-5">
                 <div class="row">
-                    <div class="col-5">
+                    <div class="col-sm-5 mb-3" data-aos="fade-right" data-aos-duration="1000">
                         <img alt="Company logo with CM letters in the center of an atom-like structure"
                             class="img-fluid rounded"
                             src="https://www.postdicom.com/images/blog-posts/social-media-images/medical-imaging-science-and-applications-social.jpg" />
                     </div>
-                    <div class="col-7 text-left">
+                    <div class="col-sm-7 text-left mb-3" data-aos="fade-left" data-aos-duration="1000">
                         <h1 class="paragraph-xxl cl-dblue">
                             Our Brand Story &amp; Proposition
                         </h1>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
             </div>
-            <div class="content-section">
+            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
                 <h2>
                     Our Story
                 </h2>
@@ -51,7 +51,7 @@
             </div>-->
         </div>
 
-        <!--<div class="team-container">
+        <!--<div class="team-container data-aos="zoom" data-aos-duration="1500"">
             <div class="team-member">
                 <img src="https://png.pngtree.com/png-vector/20230928/ourmid/pngtree-young-afro-professional-doctor-png-image_10148632.png"
                     alt="Arty Aramalyan">
@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        <div class="container ps-eml">
+        <div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
             <div class="footer2 ">
                 <p>Your Exercises is lovingly made and supported by a remote-first team. While home will always be <del>ca</del>
                     North

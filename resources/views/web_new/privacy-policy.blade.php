@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-section ps-privacy">
         <div class="container">
-            <div class="row ps-border-bottom mx-4">
+            <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Privacy Policy</h1>
                     <p class="paragraph cl-dblue mb-4">
@@ -11,7 +11,7 @@
                     </p>
                 </div>
             </div>
-            <div class="content-section">
+            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
                 <h4 class="paragraph-xxl cl-dblue">1. Introduction</h4>
                 <p>At <strong>Yourexercises</strong>, we are committed to protecting the privacy and security of our users. This Privacy Policy outlines how we collect, use, store, and protect your information when you use our platform. By using Yourexercises, you consent to the collection and use of your information in accordance with this policy.</p>
                 

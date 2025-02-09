@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-section ps-privacy">
         <div class="container">
-            <div class="row ps-border-bottom mx-4">
+            <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Terms and Condition</h1>
                     <p class="paragraph cl-dblue mb-4">
@@ -12,7 +12,7 @@
                     </p>
                 </div>
             </div>
-            <div class="content-section">
+            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
                 <h4 class="paragraph-xxl cl-dblue">1. Introduction</h4>
                 <p>Welcome to <strong>Yourexercises</strong>, a platform that enables allied healthcare professionals, including physiotherapists, chiropractors, and other health practitioners, to prescribe, track, and manage home exercise programs (HEPs) for their patients. By accessing or using our platform (the "Service"), you (the "User" or "Practitioner") agree to comply with and be bound by these Terms and Conditions (the "Terms").</p>
                 <p><strong>Yourexercises</strong> is a paperless, dynamic home exercise program platform that provides feedback, reminders, and integration with practitioners' websites. We aim to improve healthcare delivery by offering a secure, HIPAA-compliant, and user-friendly service to both practitioners and patients. Our platform is available for use in Canada and the United States and is designed to comply with applicable federal, provincial, and local regulations.</p> 

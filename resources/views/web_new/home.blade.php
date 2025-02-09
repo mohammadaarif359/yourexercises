@@ -2,12 +2,12 @@
 
 @section('content')
   <!-- Slider -->
-  <main class="main">
+  <main class="main section banner banner-section">
     <section class="main-section banner banner-section">
       <div class="container banner-column mt-0">
         <!-- <img class="banner-image" src="https://i.ibb.co/vB5LTFG/Headphone.png" alt="banner"> -->
-        <img class="banner-image" src="{{ asset('web_new/assets/img/hero2.png') }}" alt="banner">
-        <div class="banner-inner">
+        <img class="banner-image" src="{{ asset('web_new/assets/img/hero2.png') }}" alt="banner" data-aos="fade-left" data-aos-duration="1000">
+        <div class="banner-inner" data-aos="fade-right" data-aos-duration="1000">
           <h1 class="heading-xl cl-dblue">Experience one of the most advanced <span class="cl-lBlue">Home Exercise </span>prescription platform</h1>
           <p class="paragraph cl-dblue">
             Revolutionize patient care with our cutting-edge technology that prescribes personalized home exercise programs (HEP) instantly! 
@@ -23,77 +23,77 @@
   </main>
 
   <!-- Features -->
-  <section class="features-section pt-3 pt-md-5">
+  <section class="features-section pt-3 pt-md-5 section features-section pt-3 pt-md-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
       <h2 class="paragraph-xxl cl-dblue"> Home Exercise Features</h2>
       <p class="paragraph"> Unlock a seamless experience with Your Exercises Platform. </p>
-      <div class="row flex-wrap">
+      <div class="row flex-wrap px-2">
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-file-alt"></i> Paperless Patient Exercise Management</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-file-alt"></i> Paperless Patient Exercise Management</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Simplify your practice by digitizing patient records, ensuring seamless and eco-friendly management.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-chart-line"></i> Advanced Performance Dashboard</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line"></i> Advanced Performance Dashboard</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-pencil-alt"></i> Custom Exercise Creation</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-pencil-alt"></i> Custom Exercise Creation</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Build unique exercises that cater to the individual needs of your patients.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-bullhorn"></i> Boost Your Online Presence</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-bullhorn"></i> Boost Your Online Presence</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Strengthen your clinic’s online visibility with integrated tools designed for growth.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-link"></i> Connect with Your Existing Website</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-link"></i> Connect with Your Existing Website</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Seamlessly integrate with your current website for a cohesive and professional experience.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-heartbeat"></i> Track Patient Health And Exercise Peformance</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-heartbeat"></i> Track Patient Health And Exercise Peformance</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Stay updated on your patients' health journeys with comprehensive progress tracking.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-comments"></i> Gather Realtime Form Patient</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-comments"></i> Gather Realtime Form Patient</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Enhance your services by collecting and analyzing patient feedback effectively.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-lightbulb"></i> Automated Reminder To Patient </h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-lightbulb"></i> Automated Reminder To Patient </h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
         </div>
         
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-chart-line"></i> Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line"></i> Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue my-3"><i class="fas fa-list-check"></i> Choose Direct Preset Programs </h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-list-check"></i> Choose Direct Preset Programs </h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
@@ -104,7 +104,7 @@
   </section>
 
   <!-- Testimonial -->
-  <section class="testimonial-section">
+  <section class="section testimonial-section" data-aos="fade " data-aos-duration="1000">
     <div class="container">
       <blockquote class="m-0 cl-white">
         "Your Exercises  Family, you guys are really awesome. Keep the amazing new features coming."
@@ -117,7 +117,7 @@
 
   <!-- Demo summary -->
   <div class="container">
-    <div class="row pt-5">
+    <div class="row pt-5" data-aos="flip-up" data-aos-duration="1000">
       <div class="col-md-6 text-center">
         <div class="swiper">
           <div class="swiper-wrapper">
@@ -162,7 +162,7 @@
   </div>
 
   <!-- Happer staff -->
-  <section class="staff-section pt-5 ">
+  <section class="staff-section pt-5" data-aos="slide-up" data-aos-duration="1000">
     <div class="container ps-border-top">
       <h2 class="paragraph-xxl cl-dblue pt-4"> Staff &amp; Owners are happy. </h2>
       <p class="paragraph-h">Using Your exercises Platform easing the process of dispensing Home Exercises Prescription(HEP). 
@@ -173,12 +173,12 @@
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
                 width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Administrative</h3>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Administrative</h3>
               <p class="cl-gray paragraph-md px-2 ">Save Time, Save Efforts, and provide real HEP and take valuable feedback which can help to generate greater client exercise compliance.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/calendar.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Schedule</h3>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Schedule</h3>
               <p class="cl-gray paragraph-md px-2">Helps Practiconer to focus on current caseload and help to maintain busy schedule.</p>
             </div>
           </div>
@@ -187,13 +187,13 @@
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/bill.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Screen Recording</h3>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Screen Recording</h3>
               <p class="cl-gray paragraph-md px-2">Screen recording timelapse : here we will put front of patient and back end panel view of therapist/clinic.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
                 width="150" />
-              <h3 class="paragraph-xml cl-dblue my-3 text-uppercase">Chart</h3>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Chart</h3>
               <p class="cl-gray paragraph-md px-2">Troubleshooting Helps Professional to trouble shoot the flaws and manage dosage of exercises with greater efficiency.</p>
             </div>
           </div>
@@ -208,14 +208,15 @@
       <div class="row padding">
         <div class="col-sm-8 mx-auto">
           <img class="img-fluid"
-            src="https://Jane.app/assets/laptop_online_booking-c5b2a57433908e05922d19478776b3b957227faa2acd07b8fa2ff6f418960f2d.webp">
+            src="https://Jane.app/assets/laptop_online_booking-c5b2a57433908e05922d19478776b3b957227faa2acd07b8fa2ff6f418960f2d.webp"
+            data-aos="zoom-in" data-aos-duration="1000">
         </div>
       </div>
     </div>
   </div>
 
   <!-- Business counter -->
-  <section class="container staff-section pt-5">
+  <section class="container staff-section pt-5 section"  data-aos="fade" data-aos-duration="1000">
     <h2 class="paragraph-xxl cl-dblue ">Your Exercises View </h2>
     <p class="paragraph">Your Exercises  can help with administrative tasks giving you more </p>
     <div class="counter-section flex-wrap py-0">
@@ -236,7 +237,7 @@
 
   <!-- Testimonials -->
   <div class="container my-5">
-    <div class="row">
+    <div class="row" data-aos="fade-right" data-aos-duration="1000">
       <div class="col-10 mx-auto">
           <!-- Static Testimonial Cards -->
           <div id="testimonial-0" class="testimonial-card active">
@@ -295,11 +296,11 @@
 
   <!-- Problem solving --> 
   <div class="container ps-eml ps-border-top">
-    <div class="header2">
+    <div class="header2" data-aos="fade-down" data-aos-duration="1000">
       <h1 class="paragraph-xxl cl-dblue pt-4">A serious problem-solver. That’s Your Exercises .</h1>
       <p class="paragraph-h">Feel over burdened with traditional way of Home Exercises, Try Your Exercises Platform.</p>
     </div>
-    <div class="row features">
+    <div class="row features" data-aos="fade-down" data-aos-duration="1000">
       <div class="col-md-4 feature-item">
         <h5 class="paragraph-xml cl-dblue text-uppercase">Being affordable.</h5>
         <p class="cl-gray paragraph-md">Your exercises pricing simple subscription– so it always fits your budget. 

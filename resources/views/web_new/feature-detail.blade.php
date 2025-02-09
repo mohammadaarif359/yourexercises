@@ -1,9 +1,9 @@
 @extends('web_new.layouts.main')
 
 @section('content')    
-    <div class="main-section ps-feature-set main-section ps-feature-set pt-5">
+    <div class="main-section ps-feature-set main-section ps-feature-set p-0">
         <section class="banner banner-section py-5">
-            <div class="container banner-column mt-0 pt-4">
+            <div class="container banner-column mt-0 pt-5" data-aos="fade-up" data-aos-duration="1000">
                 <img class="banner-image mt-0"
                     src="https://jane.app/assets/features/cover/booking-a9ffce67aa24079df27d7b691897d18bf9d6170418c76de49fa374b38480c2e3.png"
                     alt="banner">
@@ -20,9 +20,9 @@
             </div>
         </section>
 
-        <div class="container my-5">
-            <div class="row pt-5 ps-fea-inside-list">
-                <div class="col-md-4 text-center mb-5 mr-5">
+        <div class="container my-3">
+            <div class="row pt-4 ps-fea-inside-list">
+                <div class="col-md-4 text-center mb-5 mr-5" data-aos="fade-right" data-aos-duration="1000">
                     <img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
                         src="https://jane.app/assets/features/cover/janepayments-47a91655b28744ef9d858e407ad51d5f46dd6451c0123240a0abf91b80811a3c.png">
                 </div>
@@ -43,8 +43,8 @@
                 </div>
             </div>
 
-            <div class="row pt-5 ps-fea-inside-list">
-                <div class="col-md-5 text-start mb-3">
+            <div class="row pt-4 ps-fea-inside-list">
+                <div class="col-md-5 text-start mb-3" data-aos="fade-right" data-aos-duration="1000">
                     <h3 class="paragraph-lg cl-dblue">Booking made easy</h3>
                     <p class="paragraph-md cl-dblue">As big as the world of health and wellness is, so is our community.
                         Our
@@ -59,18 +59,18 @@
                             media</li>
                     </ul>
                 </div>
-                <div class="col-md-4 text-center mb-5 mr-5">
+                <div class="col-md-4 text-center mb-5 mr-5" data-aos="fade-left" data-aos-duration="1000">
                     <img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
                         src="https://jane.app/assets/features/online-booking/respects-brand-6627807da9462b3a6b3e123afbf8495e658210974ffefdbe8fddb878d4df997d.webp">
                 </div>
             </div>
 
-            <div class="row pt-5 ps-fea-inside-list">
-                <div class="col-md-4 text-center mb-5 mr-5">
+            <div class="row pt-4 ps-fea-inside-list">
+                <div class="col-md-4 text-center mb-5 mr-5" data-aos="fade-right" data-aos-duration="1000">
                     <img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
                         src="https://jane.app/assets/features/cover/janepayments-47a91655b28744ef9d858e407ad51d5f46dd6451c0123240a0abf91b80811a3c.png">
                 </div>
-                <div class="col-md-5 text-start mb-3">
+                <div class="col-md-5 text-start mb-3" data-aos="fade-left" data-aos-duration="1000">
                     <h3 class="paragraph-lg cl-dblue">Booking made easy</h3>
                     <p class="paragraph-md cl-dblue">As big as the world of health and wellness is, so is our community.
                         Our
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <section class="testimonial-section">
+    <section class="testimonial-section" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <blockquote class="m-0 cl-white">
                 The best thing about Your Exercises is how easy it is for patients to book appointments. The experience is really
@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <div class="container awards-section mt-4">
+    <div class="container awards-section mt-4" data-aos="zoom-in" data-aos-duration="1000">
         <h2 class="cl-lBlue">
             Loved by 130k+ practitioners
         </h2>
@@ -142,4 +142,4 @@
             <a href="#" class="ps-btn md-btn primary-btn">Start using</a>
         </div>
     </div>
-@endsection   
+@endsection

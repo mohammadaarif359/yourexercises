@@ -1,9 +1,9 @@
 @extends('web_new.layouts.main')
 
 @section('content')
-    <div class="main-section">
+    <div class="main-section mb-5">
         <div class="container">
-            <div class="row ps-border-bottom mx-4">
+            <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">See Over in action</h1>
                     <p class="paragraph cl-dblue">
@@ -12,11 +12,11 @@
                 </div>
             </div>
             <div class="row mt-5 justify-content-between">
-                <div class="col-md-5 demo-section p-5">
+                <div class="col-md-5 demo-section p-4" data-aos="fade-right" data-aos-duration="1000">
                     <h2>
                         Book a Demo
                     </h2>
-                    <form>
+                    {{--<form>
                         <div class="mb-4">
                             <label class="form-label" for="country">
                                 What country are you in?
@@ -50,6 +50,46 @@
                                 Book Now
                             </button>
                         </div>
+                    </form>--}}
+                    <form>
+                        <div class="mb-2">
+                            <label class="form-label" for="name">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+                            <span class="error-helper" id="name-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                            <span class="error-helper" id="email-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number" required>
+                            <span class="error-helper" id="phone-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="preferred_time">Preferred Time</label>
+                            <input type="datetime-local" class="form-control" id="preferred_time" required min="">
+                            <span class="error-helper" id="preferred_time-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="address">Additional Address</label>
+                            <textarea class="form-control" id="address" placeholder="Enter additional address" rows="2" required></textarea>
+                            <span class="error-helper" id="address-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="clinic-name">Clinic Name</label>
+                            <input type="text" class="form-control" id="clinic_name" placeholder="Enter clinic name" required>
+                            <span class="error-helper" id="clinic_name-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="clinic-address">Clinic Address</label>
+                            <textarea class="form-control" id="clinic_address" placeholder="Enter clinic address" rows="2" required></textarea>
+                            <span class="error-helper" id="clinic_address-error"></span>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <button class="ps-btn md-btn outline-btn text-end" type="submit">Book Now</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6 video-section">
@@ -70,7 +110,7 @@
                     </blockquote>
                 </div>
             </section>
-            <div class="content-section my-5 ">
+            <div class="content-section my-5" data-aos="fade-up" data-aos-duration="1000">
                 <h3 class="paragraph-xxl cl-dblue">
                     We want to let you in on a little secret... Your Exercises has no sales team.
                     <span>
@@ -114,6 +154,11 @@
             </div>
         </div>
     </div>
+@endsection
+@section('pagejs')
+<script>
+    document.getElementById('preferred_time').min = new Date().toISOString().slice(0, 16);
+</script>
 @endsection
 
     

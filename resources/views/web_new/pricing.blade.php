@@ -3,7 +3,7 @@
 @section('content')
     <div class="main-section">
         <div class="container ">
-            <div class="row mx-4">
+            <div class="row mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Pricing</h1>
                     <p class="paragraph cl-dblue mb-4">
@@ -16,7 +16,7 @@
         <div class="ps-pricing-set">
             <div class="container ">
                 <div class="row py-5">
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4" data-aos="fade-left" data-aos-duration="1000">
                         <div class="card ps-card">
                             <div class="card-header paragraph-lg cl-dblue">
                                 Balance
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1000">
                         <div class="card ps-card">
                             <div class="card-header paragraph-lg cl-dblue">
                                 Practice
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
+                    <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-duration="1000">
                         <div class="card ps-card">
                             <div class="card-header paragraph-lg cl-dblue">
                                 Thrive
@@ -185,7 +185,7 @@
 
             <h2 class="paragraph-xxl cl-dblue mt-4">Plan comparison</h2>
 
-            <div class="ps-tabs my-4">
+            <div class="ps-tabs my-4" data-aos="fade-left" data-aos-duration="1000">
                 <!-- Tabs -->
                 <div class="tabs-container">
                     <div class="tab active" onclick="showTab(0)">Essential</div>
@@ -211,7 +211,7 @@
             </div>
 
 
-            <div class="ps-accordion">
+            <div class="ps-accordion" data-aos="fade-right" data-aos-duration="1000">
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">
                         Charting, Forms, & Surveys
@@ -484,6 +484,4 @@
             document.getElementById('content-' + index).classList.add('active');
         }
     </script>
-@endsection 
-
-    
+@endsection
