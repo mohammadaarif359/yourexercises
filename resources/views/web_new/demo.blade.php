@@ -73,12 +73,12 @@
                             <span class="error-helper" id="preferred_time-error"></span>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label" for="address">Additional Address</label>
-                            <textarea class="form-control" id="address" placeholder="Enter additional address" rows="2" required></textarea>
+                            <label class="form-label" for="address">Address</label>
+                            <textarea class="form-control" id="address" placeholder="Enter address" rows="2" required></textarea>
                             <span class="error-helper" id="address-error"></span>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label" for="clinic-name">Clinic Name</label>
+                            <label class="form-label" for="clinic_name">Clinic Name</label>
                             <input type="text" class="form-control" id="clinic_name" placeholder="Enter clinic name" required>
                             <span class="error-helper" id="clinic_name-error"></span>
                         </div>
