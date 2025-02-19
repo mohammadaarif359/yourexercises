@@ -171,14 +171,14 @@
         <div class="col-sm-12 col-md-6 p-0">
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
-              <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
+              <img alt="Billing icon" height="160" src="{{ asset('web_new/assets/img/administrative.png') }}" class="img-fluid"
                 width="150" />
               <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Administrative</h3>
               <p class="cl-gray paragraph-md px-2 ">Save Time, Save Efforts, and provide real HEP and take valuable feedback which can help to generate greater client exercise compliance.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/calendar.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Schedule</h3>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Advance Analysis</h3>
               <p class="cl-gray paragraph-md px-2">Helps Practiconer to focus on current caseload and help to maintain busy schedule.</p>
             </div>
           </div>
