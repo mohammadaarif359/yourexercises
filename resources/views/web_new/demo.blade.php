@@ -12,7 +12,7 @@
                 </div>
             </div>
             <div class="row mt-5 justify-content-between">
-                <div class="col-md-5 demo-section p-4" data-aos="fade-right" data-aos-duration="1000">
+                <div class="col-md-6 demo-section" data-aos="fade-right" data-aos-duration="1000">
                     <h2>
                         Book a Demo
                     </h2>
@@ -52,12 +52,12 @@
                         </div>
                     </form>--}}
                     <form>
-                        <div class="mb-2">
+                        <div class="mb-25">
                             <label class="form-label" for="name">Full Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
                             <span class="error-helper" id="name-error"></span>
                         </div>
-                        <div class="mb-2">
+                        <div class="mb-25">
                             <label class="form-label" for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                             <span class="error-helper" id="email-error"></span>
@@ -71,11 +71,6 @@
                             <label class="form-label" for="preferred_time">Preferred Time</label>
                             <input type="datetime-local" class="form-control" id="preferred_time" required min="">
                             <span class="error-helper" id="preferred_time-error"></span>
-                        </div>
-                        <div class="mb-2">
-                            <label class="form-label" for="address">Address</label>
-                            <textarea class="form-control" id="address" placeholder="Enter address" rows="2" required></textarea>
-                            <span class="error-helper" id="address-error"></span>
                         </div>
                         <div class="mb-2">
                             <label class="form-label" for="clinic_name">Clinic Name</label>
@@ -92,7 +87,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="col-md-6 video-section">
+                <div class="col-md-5 video-section">
                     <h3 class="paragraph-lg cl-dblue">
                         Pre-Recorded Demo
                     </h3>
