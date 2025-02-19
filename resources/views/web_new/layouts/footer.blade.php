@@ -88,10 +88,10 @@
                <!-- Links -->
                <h6 class="text-uppercase fw-bold">Contact</h6>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />
-               <p class="m-1"><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+               <p class="m-1"><i class="fas fa-home mr-3"></i> Toronto, ON</p>
+               <p class="m-1"><i class="fas fa-phone mr-3"></i> (647) 890-2111</p>
                <p class="m-1"><i class="fas fa-envelope mr-3"></i> info@yourexercises.com</p>
-               <p class="m-1"><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-               <p class="m-1"><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+               <p class="m-1"><i class="fas fa-envelope mr-3"></i> support@yourexercises.com</p>
             </div>
             <!-- Grid column -->
          </div>
