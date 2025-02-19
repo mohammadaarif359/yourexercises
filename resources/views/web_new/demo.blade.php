@@ -76,7 +76,7 @@
                             <label class="form-label" for="country">Your Designation</label>
                             <div class="select-wrapper">
                                 <select class="form-select" id="country">
-                                    <option selected>Select Desgination</option>
+                                    <option selected>Select Designation</option>
                                     @foreach(config('custom.designation') as $k=> $val)
                                         <option value="{{ $k }}">{{ $val }}</option>
                                     @endforeach
