@@ -52,12 +52,12 @@
                         </div>
                     </form>--}}
                     <form>
-                        <div class="mb-25">
+                        <div class="mb-2">
                             <label class="form-label" for="name">Full Name</label>
                             <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
                             <span class="error-helper" id="name-error"></span>
                         </div>
-                        <div class="mb-25">
+                        <div class="mb-2">
                             <label class="form-label" for="email">Email</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                             <span class="error-helper" id="email-error"></span>
@@ -71,6 +71,18 @@
                             <label class="form-label" for="preferred_time">Preferred Time</label>
                             <input type="datetime-local" class="form-control" id="preferred_time" required min="">
                             <span class="error-helper" id="preferred_time-error"></span>
+                        </div>
+                        <div class="mb-2">
+                            <label class="form-label" for="country">Your Designation</label>
+                            <div class="select-wrapper">
+                                <select class="form-select" id="country">
+                                    <option selected>Select Desgination</option>
+                                    @foreach(config('custom.designation') as $k=> $val)
+                                        <option value="{{ $k }}">{{ $val }}</option>
+                                    @endforeach
+                                    <!-- Add more options as needed -->
+                                </select>
+                            </div>
                         </div>
                         <div class="mb-2">
                             <label class="form-label" for="clinic_name">Clinic Name</label>

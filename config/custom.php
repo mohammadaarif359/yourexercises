@@ -64,4 +64,22 @@ return [
 		'upi'=> 'upi',
 		'neft' => 'Neft'
 	],
+	'designation' => [
+		'clinic_owner' => 'Clinic Owner',
+		'director_of_rehab' => 'Director of Rehab',
+		'rehab_manager' => 'Rehab Manager',
+		'physical_therapist' => 'Physical Therapist',
+		'pta' => 'PTA',
+		'kinesiologist' => 'Kinesiologist',
+		'orthopedic_doctor' => 'Orthopedic Doctor',
+		'osteopathic_doctor' => 'Osteopathic Doctor',
+		'other_md' => 'Other MD',
+		'chiropractor' => 'Chiropractor',
+		'athletic_trainer' => 'Athletic Trainer',
+		'athletic_trainer_student' => 'Athletic Trainer Student',
+		'university_professor' => 'University Professor',
+		'clinical_instructor' => 'Clinical Instructor',
+		'office_administrator' => 'Office Administrator',
+		'other' => 'Other'
+	],	
 ];
