@@ -478,6 +478,8 @@ input[type=checkbox]:before {
         border-radius: 5px;
         width: 300px;
         z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
     }
 
     .ps-dropdown-menu-mobile.show {
@@ -522,4 +524,173 @@ input[type=checkbox]:before {
       color: $primaryBlue !important;
       border-bottom: 0px !important;
    }
+}
+
+.demo-section {
+    padding: 20px 25px;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 123, 255, 0.1);
+
+    &:hover {
+        transform: translateY(-3px);
+        // box-shadow: 0 12px 40px rgba(0, 123, 255, 0.15);
+    }
+
+    h2 {
+        color: $primaryColor;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 0.5rem;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: $primaryBlue;
+            border-radius: 2px;
+        }
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #37474f;
+        margin-bottom: 0.35rem;
+        display: block;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 8px;
+        border: 2px solid #e3f2fd;
+        padding: 0.4rem 0.8rem;
+        font-size: 1rem;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        background: transparent;
+        height: 40px;
+        width: 100%;
+        color: #495057;
+
+        &:focus {
+            border-color: $primaryBlue !important;
+            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+            background: transparent;
+        }
+
+        &::placeholder {
+            color: #90a4ae !important;
+            opacity: 0.8;
+        }
+    }
+
+    // Remove autofill background color
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus, 
+    textarea:-webkit-autofill, 
+    textarea:-webkit-autofill:hover, 
+    textarea:-webkit-autofill:focus, 
+    select:-webkit-autofill, 
+    select:-webkit-autofill:hover, 
+    select:-webkit-autofill:focus {
+        box-shadow: 0 0 0px 1000px white inset !important;
+        -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    }
+
+    textarea.form-control {
+        resize: vertical;
+        min-height: 110px;
+        line-height: 1.6;
+    }
+
+    .ps-btn {
+        background: linear-gradient(135deg, $primaryBlue, #1976d2);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 1rem 2rem;
+        font-size: 1.05rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.5px;
+
+        &:hover {
+            transform: translateY(-2px);
+            // box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+        }
+
+        &.outline-btn {
+            background: transparent;
+            border: 2px solid $primaryBlue;
+            color: $primaryBlue;
+
+            &:hover {
+                background: $primaryBlue;
+                color: white;
+            }
+        }
+    }
+
+    .d-flex {
+        margin-top: 2rem;
+    }
+}
+
+[data-aos="fade-right"] {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.aos-animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.form-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none !important; /* Removes default Bootstrap arrow */
+  padding-right: 40px; /* Adds space for custom arrow */
+  position: relative;
+}
+
+
+.select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.select-wrapper::after {
+  content: "▼"; /* Custom arrow symbol */
+  font-size: 14px;
+  position: absolute;
+  right: 15px; /* Adjust position */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevents interaction */
+  color: #333; /* Adjust color */
+}
+
+.form-select:focus {
+  outline: none !important;
+}
+
+#time ,#date{
+    cursor: pointer;
+}
+
+.mb-25{
+    margin-bottom: 15px;
 }
