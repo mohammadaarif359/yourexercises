@@ -73,9 +73,9 @@
                             <span class="error-helper" id="preferred_time-error"></span>
                         </div>
                         <div class="mb-2">
-                            <label class="form-label" for="country">Your Designation</label>
+                            <label class="form-label" for="designation">Your Designation</label>
                             <div class="select-wrapper">
-                                <select class="form-select" id="country">
+                                <select class="form-select" id="designation">
                                     <option selected>Select Designation</option>
                                     @foreach(config('custom.designation') as $k=> $val)
                                         <option value="{{ $k }}">{{ $val }}</option>
@@ -90,10 +90,21 @@
                             <span class="error-helper" id="clinic_name-error"></span>
                         </div>
                         <div class="mb-2">
+                            <label class="form-label" for="city">Your City</label>
+                            <div class="select-wrapper">
+                                <select class="form-select" id="city">
+                                    <option selected>Select City</option>
+                                    @foreach(config('custom.canada_city') as $k=> $val)
+                                        <option value="{{ $k }}">{{ $val }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        {{--<div class="mb-2">
                             <label class="form-label" for="clinic-address">Clinic Address</label>
                             <textarea class="form-control" id="clinic_address" placeholder="Enter clinic address" rows="2" required></textarea>
                             <span class="error-helper" id="clinic_address-error"></span>
-                        </div>
+                        </div>--}}
                         <div class="d-flex justify-content-start">
                             <button class="ps-btn md-btn outline-btn text-end" type="submit">Book Now</button>
                         </div>

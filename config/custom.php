@@ -81,5 +81,20 @@ return [
 		'clinical_instructor' => 'Clinical Instructor',
 		'office_administrator' => 'Office Administrator',
 		'other' => 'Other'
-	],	
+	],
+	'canada_city' => [
+		1 => 'Alberta',
+		2 => 'British Columbia',
+		3 => 'Manitoba',
+		4 => 'New Brunswick',
+		5 => 'Newfoundland and Labrador',
+		6 => 'Nova Scotia',
+		7 => 'Ontario - Toronto',
+		8 => 'Prince Edward Island',
+		9 => 'Quebec',
+		10 => 'Saskatchewan',
+		11 => 'Northwest Territories',
+		12 => 'Nunavut',
+		13 => 'Yukon'
+	]
 ];
