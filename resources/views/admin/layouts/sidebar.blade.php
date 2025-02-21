@@ -77,6 +77,14 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.inquiry.demo') }}" class="nav-link @if(route('admin.inquiry.demo') == URL::current()) active @endif">
+              <i class="nav-icon fas fa-video"></i>
+              <p>
+                Demo Inquiry
+              </p>
+            </a>
+          </li>
 		  <!--<li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>

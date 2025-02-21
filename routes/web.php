@@ -115,6 +115,10 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function(){
 	Route::post('/plan/update','Admin\PlanController@update')->name('plan.update');
 	Route::get('/plan/export','Admin\PlanController@export')->name('plan.export');
 
+	// inquiry
+	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');
+	// Route::get('/inquiry/demo/export','Admin\InquiryController@inquiryDemoExport')->name('inquiry.demo.export');
+
 	// module
 	Route::match(['get', 'post', 'options'], 'module/{module}', 'Admin\ModuleController@index')->name('module');
 	Route::get('/module/{module}/export','Admin\ModuleController@export')->name('module.export');
