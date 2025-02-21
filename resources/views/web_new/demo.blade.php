@@ -57,7 +57,7 @@
                         <div class="mb-3">
                             <label class="form-label" name="city" for="city">Your City</label>
                             <div class="select-wrapper">
-                                <select class="form-select" id="city">
+                                <select class="form-select" name='city' id="city">
                                     <option selected>Select City</option>
                                     @foreach(config('custom.canada_city') as $k=> $val)
                                         <option value="{{ $k }}">{{ $val }}</option>
