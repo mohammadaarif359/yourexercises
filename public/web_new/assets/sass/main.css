@@ -2328,6 +2328,10 @@ body {
 .ps-dropdown-mobile {
   display: none;
 }
+.error-helper {
+  color: darkred;
+  font-size: 11pt;
+}
 @media (max-width: 767px) {
   .ps-dropdown-mobile {
     display: block;

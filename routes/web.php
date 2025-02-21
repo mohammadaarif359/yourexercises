@@ -23,13 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/','PageController@home')->name('home');
 Route::get('/about','PageController@about')->name('about');
 Route::get('/pricing','PageController@pricing')->name('contact');
-Route::get('/book-a-demo','PageController@demo')->name('demo');
+Route::get('/book-a-demo','PageController@demo')->name('book-a-demo');
 Route::get('/features','PageController@features')->name('features');
 Route::get('/contact','PageController@contact')->name('contact');
 Route::get('/privacy-policy','PageController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-condition','PageController@termsCondition')->name('terms-condition');
 Route::get('/sign-in','PageController@signIn')->name('sign-in');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
+Route::post('/demo-inquiry','PageController@demoInquiry')->name('demo-inquiry');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
 
 // admin login route
@@ -106,15 +107,15 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function(){
 	Route::post('/exercise/attachment/update','Admin\ExerciseAttachmentController@update')->name('exercise.attachment.update');
 	Route::get('/exercise/attachment/delete/{id}','Admin\ExerciseAttachmentController@delete')->name('exercise.attachment.delete');
 
+	// plan
 	Route::get('/plan','Admin\PlanController@index')->name('plan');
 	Route::get('/plan/add','Admin\PlanController@add')->name('plan.add');
 	Route::post('/plan/store','Admin\PlanController@store')->name('plan.store');
 	Route::get('/plan/edit/{id}','Admin\PlanController@edit')->name('plan.edit');
 	Route::post('/plan/update','Admin\PlanController@update')->name('plan.update');
 	Route::get('/plan/export','Admin\PlanController@export')->name('plan.export');
-	
+
 	// module
 	Route::match(['get', 'post', 'options'], 'module/{module}', 'Admin\ModuleController@index')->name('module');
 	Route::get('/module/{module}/export','Admin\ModuleController@export')->name('module.export');
-	
 });
