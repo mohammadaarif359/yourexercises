@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\CmsPage;
 use App\Models\Inquiry;
+use App\Models\DemoInquiry;
 use Validator;
 
 class PageController extends Controller
@@ -100,6 +101,32 @@ class PageController extends Controller
 		}*/
 		return view('web_new.sign-in');
     }
+	public function demoInquiry(Request $request) {
+		$validate=Validator::make($request->all(), [
+            'name' => 'required',
+			'email' => 'required|email',
+			'phone' => 'nullable',
+			'preferred_time' => 'required',
+			'designation' => 'required',
+        ]);
+		if ($validate->fails()) {
+			return response()->json(['error'=>$validate->errors()]);
+        }
+		else {
+			$inquiry = DemoInquiry::create([
+				'name' => $request['name'],
+				'email' =>  $request['email'],
+				'phone' => $request['phone'],
+				'preferred_time' => $request['preferred_time'],
+				'designation' => $request['designation'],
+				'clinic_name' => $request['clinic_name'],
+				'city' => $request['city'] ?? null
+			]);
+			if($inquiry) {
+				return response()->json(['message'=>'demo Inquiry has been send successfully.we will connect you soon.','code'=>200]);
+			}
+		}
+	}
 	public function contactInquiry(Request $request)
 	{
 		$validate=Validator::make($request->all(), [
