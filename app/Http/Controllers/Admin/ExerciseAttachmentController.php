@@ -58,7 +58,7 @@ class ExerciseAttachmentController extends Controller
 		$request->validate([
 			'exercise_id' => 'required|exists:exercises,id',
 			'image.0' => 'required',
-			'image.*' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv|max:10240',
+			'image.*' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv|max:51200',
 		]);
 		for($i=0;$i<count($request_data['image']);$i++) {
 			$image = $this->uploadImg($request_data['image'][$i], 'exercise');
