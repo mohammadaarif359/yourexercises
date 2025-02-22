@@ -1,5 +1,4 @@
 @extends('web_new.layouts.main')
-
 @section('content')
     <div class="main-section ">
         <div class="container">
@@ -12,7 +11,7 @@
                 </div>
             </div>
 
-            <div class="row mt-3">
+            <div class="row mt-3 feature-page">
                 <div class="col-xs-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
                     <a href="{{ url('feature/deatils') }}">
                         <div class="card">
