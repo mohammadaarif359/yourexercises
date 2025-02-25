@@ -74,10 +74,11 @@
 				<div id="itembody">
                 @if($data['doctor_plan_detail'] && count($data['doctor_plan_detail']) > 0)
                 @foreach($data['doctor_plan_detail'] as $count=> $deatil)
+				@php $hide = $count > 0 ? 'd-none' : ''; @endphp
 				<div class='row itemrow' id='itemrow'>
 					<div class="col-md-2">
 						<div class="form-group">
-							<label for="category_id">Category</label>
+							<label for="category_id" class="{{$hide}}">Category</label>
 							<select id="category_id{{$count}}" class="category_id form-control" name="detail[category_id][]">
 								<option value='' selected>Select Category</option>
 								@foreach($categories as $k=>$val)
@@ -89,7 +90,7 @@
 					</div>	
 					<div class="col-md-2">
 						<div class="form-group">
-							<label for="subcategory_id">Subcategory</label>
+							<label for="subcategory_id" class="{{$hide}}">Subcategory</label>
 							<select id="subcategory_id{{$count}}" class="subcategory_id form-control" name="detail[subcategory_id][]">
 								<option value="" selected>Select Subcategory</option>
 							</select>
@@ -98,7 +99,7 @@
 					</div>	
                     <div class="col-md-2 col-sm-12">
 						<div class="form-group">
-							<label for="exercise_id">Exercise</label>
+							<label for="exercise_id" class="{{$hide}}">Exercise</label>
 							<select  id="exercise_id{{$count}}" class="exercise_id form-control" name="detail[exercise_id][]">
 								<option value="" selected>Select Exercise</option>
 							</select>
@@ -107,7 +108,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="reps">Reps</label>
+							<label for="reps" class="{{$hide}}">Reps</label>
 							<select id="reps{{$count}}" class="reps form-control @error('reps') is-invalid @enderror" name="detail[reps][]">
 								<option value='' selected>Select</option>
 								@for($i=1;$i<=50;$i++)
@@ -119,7 +120,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="hold">Hold</label>
+							<label for="hold" class="{{$hide}}">Hold</label>
 							<select id="hold{{$count}}" class="hold form-control @error('hold') is-invalid @enderror" name="detail[hold][]">
 								<option value='' selected>Select</option>
 								@foreach(config('custom.hold') as $k=> $val)
@@ -131,7 +132,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="complete">Complete</label>
+							<label for="complete" class="{{$hide}}">Complete</label>
 							<select id="complete{{$count}}" class="complete form-control @error('complete') is-invalid @enderror" name="detail[complete][]">
 								<option value='' selected>Select</option>
 								@for($i=1;$i<=20;$i++)
@@ -143,7 +144,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="complete">Perform</label>
+							<label for="complete" class="{{$hide}}">Perform</label>
 							<select id="perform{{$count}}" class="perform form-control @error('perform') is-invalid @enderror" name="detail[perform][]">
 								<option value='' selected>Select</option>
 								@for($i=1;$i<=20;$i++)
@@ -155,7 +156,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="times">Times</label>
+							<label for="times" class="{{$hide}}">Times</label>
 							<select id="times{{$count}}" class="times form-control @error('times') is-invalid @enderror" name="detail[times][]" required>
 								<option value='' selected>Select</option>
 								@foreach(config('custom.times') as $k=> $val)
@@ -167,7 +168,7 @@
 					</div>
 					<div class="col-md-1">
 						<div class="form-group">
-							<label for="times">Action</label>
+							<label for="action" class="{{$hide}}">Action</label>
 							<div>
 								<button type="button" class="btn addrow" id="addrow{{$count}}"><i class="fa fa-plus"></i></a>
 								<button type="button" class="btn deleterow" id="deleterow{{$count}}"><i class="fa fa-trash"></i></button>
