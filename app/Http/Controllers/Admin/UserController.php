@@ -35,7 +35,7 @@ class UserController extends Controller
 		return view('admin.user.list');
 	}
 	public function add() {
-		$roles = Role::where('name','!=','super-admin')->pluck('display_name','id')->toArray();
+		$roles = Role::pluck('display_name','id')->toArray();
 		return view('admin.user.add',compact('roles'));
 	}
 	public function store(Request $request) {

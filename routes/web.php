@@ -114,6 +114,29 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function(){
 	Route::get('/plan/edit/{id}','Admin\PlanController@edit')->name('plan.edit');
 	Route::post('/plan/update','Admin\PlanController@update')->name('plan.update');
 	Route::get('/plan/export','Admin\PlanController@export')->name('plan.export');
+	
+	// doctor exercise
+	Route::get('/doctor/exercise','Admin\DoctorExerciseController@index')->name('doctor.exercise');
+	Route::get('/doctor/exercise/add','Admin\DoctorExerciseController@add')->name('doctor.exercise.add');
+	Route::post('/doctor/exercise/store','Admin\DoctorExerciseController@store')->name('doctor.exercise.store');
+	Route::get('/doctor/exercise/edit/{id}','Admin\DoctorExerciseController@edit')->name('doctor.exercise.edit');
+	Route::post('/doctor/exercise/update','Admin\DoctorExerciseController@update')->name('doctor.exercise.update');
+	Route::post('/doctor/exercise/by/subcategory','Admin\DoctorExerciseController@bySubcategory')->name('doctor.exercise.by.subcategory');
+
+	// doctor exerise attachment
+	Route::get('/doctor/exercise/attachment/{exercise_id}','Admin\DoctorExerciseAttachmentController@index')->name('doctor.exercise.attachment');
+	Route::post('/doctor/exercise/attachment/store','Admin\DoctorExerciseAttachmentController@store')->name('doctor.exercise.attachment.store');
+	Route::get('/doctor/exercise/attachment/edit/{id}','Admin\DoctorExerciseAttachmentController@edit')->name('doctor.exercise.attachment.edit');
+	Route::post('/doctor/exercise/attachment/update','Admin\DoctorExerciseAttachmentController@update')->name('doctor.exercise.attachment.update');
+	Route::get('/doctor/exercise/attachment/delete/{id}','Admin\DoctorExerciseAttachmentController@delete')->name('doctor.exercise.attachment.delete');
+
+	// doctor plan
+	Route::get('/doctor/plan','Admin\DoctorPlanController@index')->name('doctor.plan');
+	Route::get('/doctor/plan/add','Admin\DoctorPlanController@add')->name('doctor.plan.add');
+	Route::post('/doctor/plan/store','Admin\DoctorPlanController@store')->name('doctor.plan.store');
+	Route::get('/doctor/plan/edit/{id}','Admin\DoctorPlanController@edit')->name('doctor.plan.edit');
+	Route::post('/doctor/plan/update','Admin\DoctorPlanController@update')->name('doctor.plan.update');
+	Route::get('/doctor/plan/export','Admin\DoctorPlanController@export')->name('doctor.plan.export');
 
 	// inquiry
 	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');

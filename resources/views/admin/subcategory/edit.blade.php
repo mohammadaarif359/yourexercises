@@ -20,7 +20,7 @@
 					<select id="category_id" class="form-control @error('category_id') is-invalid @enderror" name="category_id">
 						<option value='' selected>Select</option>
 						@foreach($category as $k=>$val)
-							<option value="{{ $k }}" {{ old('role',$k == $data->category_id ? 'selected' : '') }}>{{ $val }}</option>
+							<option value="{{ $k }}" {{ old('category_id',$k == $data->category_id ? 'selected' : '') }}>{{ $val }}</option>
 						@endforeach
 					</select>
 					@error('category_id')

@@ -26,6 +26,7 @@
 <script src="{{ asset('plugins/summernote/summernote-bs4.min.js') }}"></script>
 <script>
 	const cat_sub_multi_js = "{{ isset($cat_sub_multi_js) ? $cat_sub_multi_js : false  }}"
+	
 	$('#name').on('blur', function() {
 		var val = $('#name').val()
 		var slug = val.trim().toLowerCase().replace(/\s+/g, '-')
@@ -62,6 +63,7 @@
 						dropdown.append('<option value="' + key + '"' + (isSubSelcted ? ' selected' : '') + '>' + value + '</option>');
 						// dropdown.append('<option value="' + key + '">' + value + '</option>');
 					});
+					$("#subcategory_id").trigger('change');
 				},
 				error: function () {
 					var dropdown = $("#subcategory_id");
@@ -72,7 +74,8 @@
 
 		$(document).on("change", "#subcategory_id", function(){
 			var subcategory_id = $(this).val() || [];
-			var exercise_id = $("#exercise_id").val() || [];
+			var exercise_id = $("#exercise_id").val();
+			console.log('selected ex', $('#exercise_id option:selected').val());
 			$.ajax({
 				type: 'POST',
 				data: {subcategory_id:subcategory_id},
@@ -84,10 +87,13 @@
 				success: function(data){
 					var dropdown = $("#exercise_id");
 					dropdown.empty(); // Clear existing options
+					dropdown.append('<option value="">Select Exercise</option>');
 					$.each(data, function (key, value) {
-						var isSelcted = exercise_id.includes(key.toString());
-						dropdown.append('<option value="' + key + '"' + (isSelcted ? ' selected' : '') + '>' + value + '</option>');
-						// dropdown.append('<option value="' + key + '">' + value + '</option>');
+						console.log('subcategory_id ', subcategory_id ,'exercise_id =', exercise_id, 'id ', value.id);
+						var isSelected = exercise_id == value.id;
+						// dropdown.append('<option value="' + key + '"' + (isSelcted ? ' selected' : '') + '>' + value + '</option>');
+						// dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
+						dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isSelected ? ' selected' : '') + '>' + value.name + '</option>');					
 					});
 				},
 				error: function () {

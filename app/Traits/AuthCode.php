@@ -160,6 +160,14 @@ trait AuthCode
             return false;
         }
     }
+	public function copyImg($file, $formPath, $toPath)
+    {
+        $filename = date('YmdHis') . '_' . uniqid() . '.' . pathinfo($file, PATHINFO_EXTENSION);
+		$formFile = $formPath .'/'. $file;
+		$toFile = $toPath .'/'. $filename;
+		$new = Storage::copy($formFile, $toFile);
+        return $filename;
+	}
 	
 }
 ?>

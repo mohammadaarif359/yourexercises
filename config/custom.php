@@ -96,5 +96,9 @@ return [
 		11 => 'Northwest Territories',
 		12 => 'Nunavut',
 		13 => 'Yukon'
+	],
+	'exercise_parameter_with_category' => [
+		'category_id','subcategory_id','reps','hold','complete','perform','times'
 	]
 ];
+
