@@ -46,9 +46,12 @@ class DoctorPlanController extends Controller
 		}
 		return view('admin.doctor.plan.list');
 	}
-	public function add() {
+	public function add(Request $request) {
+		$plan_id = $request->get('plan_id') ?? 0;
 		$categories = Category::pluck('name','id')->ToArray();
-		return view('admin.doctor.plan.add', compact('categories'));
+		$adminPlans = Plan::where('is_active',1)->get();
+		$plan = Plan::where('id', $plan_id)->with('plan_detail')->first();
+		return view('admin.doctor.plan.add-new', compact('categories', 'adminPlans','plan', 'plan_id'));
     }
 	public function store(Request $request) {
 		$request_data = $request->all();
@@ -65,11 +68,17 @@ class DoctorPlanController extends Controller
 				'postatus' => "Bad Request",
 			],200);
 		}
+		$admin_plan = null;
+		if($request_data['plan_id']) {
+			$admin_plan = Plan::where('id', $request_data['plan_id'])->first();
+		}
 
 		$image = null;
 		if ($request->hasFile('image')) {
 			$image = $this->uploadImg($request->image, 'doctor/plan');
-		} 
+		} else if($admin_plan['image']) {
+			$image = $this->copyImg($admin_plan->image, 'public/plan', 'public/doctor/plan');
+		}
 	
 		$plan = DoctorPlan::create([
 			'plan_id' => $request_data['plan_id'] ?? null,
@@ -87,7 +96,7 @@ class DoctorPlanController extends Controller
 			'pocode' => "PO200",
 			'postatus' => "Plan created successfully",
 		],200);
-	}	
+	}
 	protected function savePlanDeatils($request_data, $plan_id) {
 		DoctorPlanDetail::where('doctor_plan_id', $plan_id)->delete();
 		$data = $request_data['detail'];

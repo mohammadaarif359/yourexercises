@@ -32,6 +32,10 @@ Route::get('/sign-in','PageController@signIn')->name('sign-in');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
 Route::post('/demo-inquiry','PageController@demoInquiry')->name('demo-inquiry');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
+Route::get('/doctor/profile','DoctorController@profile')->name('doctor.profile');
+Route::post('/doctor/profile/save','DoctorController@profileSave')->name('doctor.profile.save');
+Route::post('/register','DoctorController@register')->name('register');
+Route::post('/sign-up','AuthController@signUp')->name('sign-up');
 
 // admin login route
 Route::get('/login','Admin\AuthController@showLoginForm')->name('login');

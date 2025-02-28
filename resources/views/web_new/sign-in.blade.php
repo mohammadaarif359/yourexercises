@@ -11,7 +11,7 @@
                     </p>
                 </div>
             </div>
-            <div class="tips-section mt-5">
+            <!--<div class="tips-section mt-5">
                 <h2 class="paragraph-xxl cl-dblue mb-4">Here's some tips for signing up with :</h2>
                 <ul>
                     <li><i class="fas fa-check-circle"></i>If you're a client or patient and are looking to book an appointment
@@ -23,9 +23,111 @@
                     <li><i class="fas fa-check-circle"></i>You will need a VISA or Mastercard to open an account.</li>
                 </ul>
                 <button class="ps-btn lg-btn primary-btn  mb-3">Begin</button>
-            </div>
+            </div>-->
             <hr>
-            <div class="contact-section  mt-5">
+            <div class="contact-section mt-5">
+                <h2 class="paragraph-xxl cl-dblue mb-2">Still need to see  in action?</h2>
+                <p>If you would like to watch a pre-recorded demo or book a live demo with the  team, <a href="#">click
+                        here</a>.</p>
+                <div class='row'>   
+                    <div class="col-md-6" data-aos="fade-right" data-aos-duration="1000">     
+                        <form class="mt-4" class="mt-4" id='frm-register' name='frm-register' method='POST' action="{{ route('register') }}" enctype="multipart/form-data">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="form-label" for="name">Name</label>
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" value="{{ old('name') }}">
+                                    @error('name')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="mobile">Mobile</label>
+                                    <input type="text" name="mobile" class="form-control" id="mobile" placeholder="Enter your mobile" value="{{ old('mobile') }}">
+                                    @error('mobile')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="profile_photo">Profile Photo</label>
+                                    <input type="file" name="profile_photo" class="form-control" id="profile_photo">
+                                    @error('profile_photo')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="{{ old('password') }}">
+                                    @error('password')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="gender">Role</label>
+                                    <select name="role" class="form-control" id="role">
+                                        <option value="">Select Role</option>
+                                        <option value="2" {{ old('role') == 2 ? 'selected' : '' }}>Doctor</option>
+                                    </select>
+                                    @error('role')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="ps-btn lg-btn primary-btn">Register</button>
+                                </div>    
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="col-md-6 demo-section" data-aos="fade-left" data-aos-duration="1000">     
+                        <form class="mt-4" class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('sign-up') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="form-label" for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}">
+                                    @error('email')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                    @error('authfailed')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="col-md-12">
+                                    <label class="form-label" for="password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="{{ old('password') }}">
+                                    <span class="error-helper" id="error_password"></span>
+                                    @error('password')
+                                        <span class="error-helper">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" class="ps-btn lg-btn primary-btn">Register</button>
+                                </div>    
+                            </div>
+                        </form>
+                    </div>
+                </div>    
+            </div>
+            <!--<div class="contact-section  mt-5">
                 <h2 class="paragraph-xxl cl-dblue mb-2">Still need to see  in action?</h2>
                 <p>If you would like to watch a pre-recorded demo or book a live demo with the  team, <a href="#">click
                         here</a>.</p>
@@ -49,7 +151,7 @@
                     </div>
                     </div>
                 </form>
-            </div>
+            </div>-->
         </div>
     </div>
 @endsection    

@@ -109,6 +109,12 @@ return [
             'url' => env('APP_URL') . '/doctor/plan',
             'visibility' => 'public',
         ],
+        'doctor/profile' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/doctor/profile'),
+            'url' => env('APP_URL') . '/doctor/profile',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

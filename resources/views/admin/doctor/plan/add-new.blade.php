@@ -28,7 +28,7 @@
 					<div class="col-md-6">
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" autocomplete="name" autofocus>
+							<input id="name" type="text" class="form-control" name="name" value="{{ old('name', $plan['name'] ?? '') }}" autocomplete="name" autofocus>
 							<span class="error invalid-feedback" id="error_name"></span>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 					<div class="col-md-12">
 						<div class="form-group">
 							<label for="description">Description</label>
-							<textarea id="description" rows="3" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus>{{ old('description') }}</textarea>
+							<textarea id="description" rows="3" class="form-control @error('description') is-invalid @enderror" name="description" autocomplete="description" autofocus>{{ old('description', $plan['description'] ?? '') }}</textarea>
 							<span class="error invalid-feedback" id="error_description"></span>
 						</div>
 					</div>
@@ -67,227 +67,230 @@
 					</div>
 				</div>
 				<div id="itembody">
-				<div class='row itemrow' id='itemrow'>
 					@if($plan && count($plan['plan_detail']) > 0)
-						@foreach($plan['plan_detail'] as $count=>$deatil)
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="is_admin">Is Admin</label>
-								<input id="is_admin0" class="is_admin form-control" name="detail[is_admin][]" value="1">
-								<span class="error invalid-feedback" id="error_is_admin{{$count}}"></span>
+						@foreach($plan['plan_detail'] as $count=>$detail)
+						@php $hide = $count > 0 ? 'd-none' : ''; @endphp
+						<div class='row itemrow' id='itemrow'>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="is_admin" class="{{$hide}}">Is Admin</label>
+									<input id="is_admin{{$count}}" class="is_admin form-control" name="detail[is_admin][]" value="1">
+									<span class="error invalid-feedback" id="error_is_admin{{$count}}"></span>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="category_id">Category</label>
-								<select id="category_id{{$count}}" class="category_id form-control" name="detail[category_id][]">
-									<option value='' selected>Select Category</option>
-									@foreach($categories as $k=>$val)
-										<option value="{{ $k }}">{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_category_id{{$count}}"></span>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="category_id" class="{{$hide}}">Category</label>
+									<select id="category_id{{$count}}" class="category_id form-control" name="detail[category_id][]">
+										<option value='' selected>Select Category</option>
+										@foreach($categories as $k=>$val)
+											<option value="{{ $k }}" {{ old('category_id',$k == $detail['category_id'] ? 'selected' : '') }}>{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_category_id{{$count}}"></span>
+								</div>
 							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="form-group">
-								<label for="subcategory_id">Subcategory</label>
-								<select id="subcategory_id{{$count}}" class="subcategory_id form-control" name="detail[subcategory_id][]">
-									<option value="" selected>Select Subcategory</option>
-								</select>
-								<span class="error invalid-feedback" id="error_subcategory_id{{$count}}"></span>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="subcategory_id" class="{{$hide}}">Subcategory</label>
+									<select id="subcategory_id{{$count}}" class="subcategory_id form-control" name="detail[subcategory_id][]">
+										<option value="" selected>Select Subcategory</option>
+									</select>
+									<span class="error invalid-feedback" id="error_subcategory_id{{$count}}"></span>
+								</div>
+							</div>	
+							<div class="col-md-2 col-sm-12">
+								<div class="form-group">
+									<label for="exercise_id" class="{{$hide}}">Exercise</label>
+									<select  id="exercise_id{{$count}}" class="exercise_id form-control" name="detail[exercise_id][]">
+										<option value="" selected>Select Exercise</option>
+									</select>
+									<span class="error invalid-feedback" id="error_exercise_id{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="reps" class="{{$hide}}">Reps</label>
+									<select id="reps{{$count}}" class="reps form-control @error('reps') is-invalid @enderror" name="detail[reps][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=50;$i++)
+											<option value="{{ $i }}"  {{ old('reps',$i == $detail['reps'] ? 'selected' : '') }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_reps{{$count}}" ></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="hold" class="{{$hide}}">Hold</label>
+									<select id="hold{{$count}}" class="hold form-control @error('hold') is-invalid @enderror" name="detail[hold][]">
+										<option value='' selected>Select</option>
+										@foreach(config('custom.hold') as $k=> $val)
+											<option value="{{ $k }}"  {{ old('hold',$k == $detail['hold'] ? 'selected' : '') }}>{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_hold{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="complete" class="{{$hide}}">Complete</label>
+									<select id="complete{{$count}}" class="complete form-control @error('complete') is-invalid @enderror" name="detail[complete][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=20;$i++)
+											<option value="{{ $i }}" {{ old('complete',$i == $detail['complete'] ? 'selected' : '') }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_complete{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="complete" class="{{$hide}}">Perform</label>
+									<select id="perform{{$count}}" class="perform form-control @error('perform') is-invalid @enderror" name="detail[perform][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=20;$i++)
+											<option value="{{ $i }}" {{ old('perform',$i == $detail['perform'] ? 'selected' : '') }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_perform{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="times" class="{{$hide}}">Times</label>
+									<select id="times{{$count}}" class="times form-control @error('times') is-invalid @enderror" name="detail[times][]" required>
+										<option value='' selected>Select</option>
+										@foreach(config('custom.times') as $k=> $val)
+											<option value="{{ $k }}" {{ old('times',$k == $detail['times'] ? 'selected' : '') }}>{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_times{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="action" class="{{$hide}}">Action</label>
+									<div>
+										<button type="button" class="btn addrow p-1 by-admin" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
+										<button type="button" class="btn addadminrow p-0 by-admin" id="addadminrow{{$count}}" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
+										<button type="button" class="btn deleterow p-1 by-admin" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+									</div>	
+								</div>
 							</div>
 						</div>	
-						<div class="col-md-2 col-sm-12">
-							<div class="form-group">
-								<label for="exercise_id">Exercise</label>
-								<select  id="exercise_id{{$count}}" class="exercise_id form-control" name="detail[exercise_id][]">
-									<option value="" selected>Select Exercise</option>
-								</select>
-								<span class="error invalid-feedback" id="error_exercise_id{{$count}}"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="reps">Reps</label>
-								<select id="reps{{$count}}" class="reps form-control @error('reps') is-invalid @enderror" name="detail[reps][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=50;$i++)
-										<option value="{{ $i }}" {{ old('reps') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_reps{{$count}}" ></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="hold">Hold</label>
-								<select id="hold{{$count}}" class="hold form-control @error('hold') is-invalid @enderror" name="detail[hold][]">
-									<option value='' selected>Select</option>
-									@foreach(config('custom.hold') as $k=> $val)
-										<option value="{{ $k }}" {{ old('hold') == $k ? 'selected' : '' }}>{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_hold{{$count}}"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="complete">Complete</label>
-								<select id="complete{{$count}}" class="complete form-control @error('complete') is-invalid @enderror" name="detail[complete][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=20;$i++)
-										<option value="{{ $i }}" {{ old('complete') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_complete{{$count}}"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="complete">Perform</label>
-								<select id="perform{{$count}}" class="perform form-control @error('perform') is-invalid @enderror" name="detail[perform][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=20;$i++)
-										<option value="{{ $i }}" {{ old('perform') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_perform{{$count}}"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="times">Times</label>
-								<select id="times{{$count}}" class="times form-control @error('times') is-invalid @enderror" name="detail[times][]" required>
-									<option value='' selected>Select</option>
-									@foreach(config('custom.times') as $k=> $val)
-										<option value="{{ $k }}" {{ old('times') == $k ? 'selected' : '' }}>{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_times{{$count}}"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="times">Action</label>
-								<div>
-									<button type="button" class="btn addrow p-1" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
-									<button type="button" class="btn addadminrow p-0" id="addadminrow{{$count}}" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-									<button type="button" class="btn deleterow p-1" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
-								</div>	
-							</div>
-						</div>
 						@endforeach
 					@else
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="is_admin">Is Admin</label>
-								<input id="is_admin0" class="is_admin form-control" name="detail[is_admin][]" value="0">
-								<span class="error invalid-feedback" id="error_is_admin0"></span>
+						<div class='row itemrow' id='itemrow'>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="is_admin">Is Admin</label>
+									<input id="is_admin0" class="is_admin form-control" name="detail[is_admin][]" value="0">
+									<span class="error invalid-feedback" id="error_is_admin0"></span>
+								</div>
 							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="category_id">Category</label>
+									<select id="category_id0" class="category_id form-control" name="detail[category_id][]">
+										<option value='' selected>Select Category</option>
+										@foreach($categories as $k=>$val)
+											<option value="{{ $k }}">{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_category_id0"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="subcategory_id">Subcategory</label>
+									<select id="subcategory_id0" class="subcategory_id form-control" name="detail[subcategory_id][]">
+										<option value="" selected>Select Subcategory</option>
+									</select>
+									<span class="error invalid-feedback" id="error_subcategory_id0"></span>
+								</div>
+							</div>	
+							<div class="col-md-2 col-sm-12">
+								<div class="form-group">
+									<label for="exercise_id">Exercise</label>
+									<select  id="exercise_id0" class="exercise_id form-control" name="detail[exercise_id][]">
+										<option value="" selected>Select Exercise</option>
+									</select>
+									<span class="error invalid-feedback" id="error_exercise_id0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="reps">Reps</label>
+									<select id="reps0" class="reps form-control @error('reps') is-invalid @enderror" name="detail[reps][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=50;$i++)
+											<option value="{{ $i }}" {{ old('reps') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_reps0" ></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="hold">Hold</label>
+									<select id="hold0" class="hold form-control @error('hold') is-invalid @enderror" name="detail[hold][]">
+										<option value='' selected>Select</option>
+										@foreach(config('custom.hold') as $k=> $val)
+											<option value="{{ $k }}" {{ old('hold') == $k ? 'selected' : '' }}>{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_hold0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="complete">Complete</label>
+									<select id="complete0" class="complete form-control @error('complete') is-invalid @enderror" name="detail[complete][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=20;$i++)
+											<option value="{{ $i }}" {{ old('complete') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_complete0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="complete">Perform</label>
+									<select id="perform0" class="perform form-control @error('perform') is-invalid @enderror" name="detail[perform][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=20;$i++)
+											<option value="{{ $i }}" {{ old('perform') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_perform0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="times">Times</label>
+									<select id="times0" class="times form-control @error('times') is-invalid @enderror" name="detail[times][]" required>
+										<option value='' selected>Select</option>
+										@foreach(config('custom.times') as $k=> $val)
+											<option value="{{ $k }}" {{ old('times') == $k ? 'selected' : '' }}>{{ $val }}</option>
+										@endforeach
+									</select>
+									<span class="error invalid-feedback" id="error_times0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="times">Action</label>
+									<div>
+										<button type="button" class="btn addrow p-1" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
+										<button type="button" class="btn addadminrow p-0" id="addadminrow0" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
+										<button type="button" class="btn deleterow p-1" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+									</div>	
+								</div>
+							</div>	
 						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="category_id">Category</label>
-								<select id="category_id0" class="category_id form-control" name="detail[category_id][]">
-									<option value='' selected>Select Category</option>
-									@foreach($categories as $k=>$val)
-										<option value="{{ $k }}">{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_category_id0"></span>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="form-group">
-								<label for="subcategory_id">Subcategory</label>
-								<select id="subcategory_id0" class="subcategory_id form-control" name="detail[subcategory_id][]">
-									<option value="" selected>Select Subcategory</option>
-								</select>
-								<span class="error invalid-feedback" id="error_subcategory_id0"></span>
-							</div>
-						</div>	
-						<div class="col-md-2 col-sm-12">
-							<div class="form-group">
-								<label for="exercise_id">Exercise</label>
-								<select  id="exercise_id0" class="exercise_id form-control" name="detail[exercise_id][]">
-									<option value="" selected>Select Exercise</option>
-								</select>
-								<span class="error invalid-feedback" id="error_exercise_id0"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="reps">Reps</label>
-								<select id="reps0" class="reps form-control @error('reps') is-invalid @enderror" name="detail[reps][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=50;$i++)
-										<option value="{{ $i }}" {{ old('reps') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_reps0" ></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="hold">Hold</label>
-								<select id="hold0" class="hold form-control @error('hold') is-invalid @enderror" name="detail[hold][]">
-									<option value='' selected>Select</option>
-									@foreach(config('custom.hold') as $k=> $val)
-										<option value="{{ $k }}" {{ old('hold') == $k ? 'selected' : '' }}>{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_hold0"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="complete">Complete</label>
-								<select id="complete0" class="complete form-control @error('complete') is-invalid @enderror" name="detail[complete][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=20;$i++)
-										<option value="{{ $i }}" {{ old('complete') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_complete0"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="complete">Perform</label>
-								<select id="perform0" class="perform form-control @error('perform') is-invalid @enderror" name="detail[perform][]">
-									<option value='' selected>Select</option>
-									@for($i=1;$i<=20;$i++)
-										<option value="{{ $i }}" {{ old('perform') == $i ? 'selected' : '' }}>{{ $i }}</option>
-									@endfor
-								</select>
-								<span class="error invalid-feedback" id="error_perform0"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="times">Times</label>
-								<select id="times0" class="times form-control @error('times') is-invalid @enderror" name="detail[times][]" required>
-									<option value='' selected>Select</option>
-									@foreach(config('custom.times') as $k=> $val)
-										<option value="{{ $k }}" {{ old('times') == $k ? 'selected' : '' }}>{{ $val }}</option>
-									@endforeach
-								</select>
-								<span class="error invalid-feedback" id="error_times0"></span>
-							</div>
-						</div>
-						<div class="col-md-1">
-							<div class="form-group">
-								<label for="times">Action</label>
-								<div>
-									<button type="button" class="btn addrow p-1" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
-									<button type="button" class="btn addadminrow p-0" id="addadminrow0" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-									<button type="button" class="btn deleterow p-1" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
-								</div>	
-							</div>
-						</div>	
 					@endif		
-				</div>
 				</div>          
 			</div>
 			<div class="card-footer">
@@ -321,6 +324,7 @@ $.ajaxSetup({
 	var planDetail = @json($plan['plan_detail'] ?? []);
 
 	$('body').on('click', '.addrow, .addadminrow', function () {
+		console.log('call time');
     	var itemrow = $('#itemrow').clone(); // Remove the duplicate id from the cloned row
 		var exercise_id = $('select[id^="exercise_id"]:last');
 		var num = parseInt(exercise_id.prop("id").match(/\d+/g), 10) + 1;

@@ -99,6 +99,26 @@ return [
 	],
 	'exercise_parameter_with_category' => [
 		'category_id','subcategory_id','reps','hold','complete','perform','times'
+	],
+	'gender'=>[
+		'male'=> 'Male',
+		'female' => 'Female',
+		'other' => 'Other'
+	],
+	'social_media' => [
+		'facebook' => 'Facebook',
+		'instagram' => 'Instagram',
+		'linkedin' => 'Linked In',
+		'pinterest' => 'Pinterest',
+		'youtube' => 'YouTube',
+		'tiktok' => 'TikTok',
+		'threads' => 'Threads'
+	],
+	'professional_info' => [
+		'specialization' => 'Specialization',
+		'experience' => 'Experience',
+		'qualification' => 'Qualification',
+		'affiliations' => 'Affiliations',
 	]
 ];
 
