@@ -8,7 +8,7 @@
         <!-- <img class="banner-image" src="https://i.ibb.co/vB5LTFG/Headphone.png" alt="banner"> -->
         <img class="banner-image" src="{{ asset('web_new/assets/img/hero2.png') }}" alt="banner" data-aos="fade-left" data-aos-duration="1000">
         <div class="banner-inner" data-aos="fade-right" data-aos-duration="1000">
-          <h1 class="heading-xl cl-dblue">Experience one of the most advanced <span class="cl-lBlue">Home Exercise </span>prescription platform</h1>
+          <h1 class="heading-xl cl-dblue">Experience one of the most advanced <span class="cl-lBlue-home">Home Exercise </span>prescription platform</h1>
           <p class="paragraph cl-dblue">
             Revolutionize patient care with our cutting-edge technology that prescribes personalized home exercise programs (HEP) instantly! 
             No more waiting, no more time spent on manual prescriptions—empower your patients to start their recovery immediately while you focus on what truly matters.
@@ -174,12 +174,10 @@
               <img alt="Billing icon" height="160" src="{{ asset('web_new/assets/img/administrative.png') }}" class="img-fluid"
                 width="150" />
               <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Administrative</h3>
-              <p class="cl-gray paragraph-md px-2 ">Save Time, Save Efforts, and provide real HEP and take valuable feedback which can help to generate greater client exercise compliance.</p>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/calendar.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Advance Analysis</h3>
-              <p class="cl-gray paragraph-md px-2">Helps Practiconer to focus on current caseload and help to maintain busy schedule.</p>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Advance Analytics</h3>
             </div>
           </div>
         </div>
@@ -187,14 +185,12 @@
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/bill.png') }}" class="img-fluid" width="150" />
-              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Screen Recording</h3>
-              <p class="cl-gray paragraph-md px-2">Screen recording timelapse : here we will put front of patient and back end panel view of therapist/clinic.</p>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Feedback</h3>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
               <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/customer-service.png') }}" class="img-fluid"
                 width="150" />
-              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Chart</h3>
-              <p class="cl-gray paragraph-md px-2">Troubleshooting Helps Professional to trouble shoot the flaws and manage dosage of exercises with greater efficiency.</p>
+              <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Reminder</h3>
             </div>
           </div>
         </div>

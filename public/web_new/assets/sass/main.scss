@@ -2,8 +2,8 @@
 @import "../sass/mixin";
 @import "../sass/button";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-$primaryColor:#090f15; 
-$primaryBlue:#07a385; 
+$primaryColor:#151517; 
+$primaryBlue:#963b54; 
 $white :#ffffff;
 $dblue :#2b4159;
 body {font-family: "Poppins", serif !important; overflow-x: hidden !important;}
@@ -174,12 +174,11 @@ body {font-family: "Poppins", serif !important; overflow-x: hidden !important;}
 
 .cl-prim{color: $primaryColor;}
 .cl-sblack{color: #121212;}
-.cl-dblue{color:#2b4159;}
+.cl-dblue{color:#2e3741;}
 .cl-Mblack{color: #000000;}
 .ps-bgMain{background: #F7F9FC;}
 .cl-gray{color: #7A7A7A;}
 .cl-ligray{color: #fffcfc;}
-.cl-lBlue{color: $primaryBlue;}
 .cl-success{color: #00BB40;}
 .cl-white{color: #fff;}
 .fw-700{font-weight: 700;}
@@ -195,14 +194,6 @@ body {font-family: "Poppins", serif !important; overflow-x: hidden !important;}
 // body {
 //     font-family: 'Roboto', sans-serif;
 // }
-
-.navbar {
-    background-color: $primaryColor;
-
-    a {
-        color: white;
-    }
-}
 
 .hero-section {
     text-align: center;
@@ -987,7 +978,7 @@ a:hover{
             span{
                font-size: 49px;
                margin: 0 0 0 15px;
-               color: #008d8d;
+               color: $primaryBlue;
             }
          }
       }
@@ -998,7 +989,7 @@ a:hover{
             color: #7A7A7A;
 
             i{ padding-right: 5px;
-               color: #07a385;}
+               color: $primaryBlue;}
          }
       }
    }
@@ -1059,7 +1050,7 @@ a:hover{
    .tab {
       padding: 12px 20px;
       margin-right: 10px;
-      background-color: #7dc4b6;
+      background-color: #52393a;
       color: #fff;
       border-radius: 6px 6px 0 0;
       cursor: pointer;
@@ -1128,7 +1119,7 @@ a:hover{
       right: 35px;
       @include Max768{bottom: 5px;}
        button {
-         background-color: #00796b;
+         background-color: $primaryBlue;
          color: white;
          border: none;
          border-radius: 50%;
@@ -1164,7 +1155,7 @@ a:hover{
     }
 
     .testimonial-dots span.active {
-      background-color: #00796b;
+      background-color: $primaryBlue;
     }
 
    .fas.fa-quote-left {
@@ -1207,7 +1198,7 @@ a:hover{
   }
 
   a {
-    color: #07a385;
+    color: $primaryBlue;
     text-decoration: none;
   }
 }
@@ -1231,7 +1222,7 @@ a:hover{
             padding: 20px;
         }
         .content-section h2 {
-            color: #07a385;
+            color: $primaryBlue;
             font-size: 2rem;
             font-weight: bold;
         }
@@ -1375,25 +1366,25 @@ a:hover{
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 11px 20px;
-      color: white;
-      background-color: $primaryColor;
+      padding: 6px 20px;
+      color: #212121;
+      background-color: #FBFBFB;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       transition: top 0.3s ease-in-out;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
       @include Max767{position: initial;}
 
       a {
-         color: white;
+          color: #212121;
       }
    }
 
    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
+      width: 114px;
    }
 
    .nav-links {
@@ -1408,7 +1399,6 @@ a:hover{
    }
 
    .nav-links a {
-      color: white;
       text-decoration: none;
       // padding: 10px;
       display: block;
@@ -1486,7 +1476,6 @@ a:hover{
       .nav-links {
          display: none;
          flex-direction: column;
-         background: #151d25;
          position: absolute;
          top: 60px;
          left: 0;
@@ -1500,6 +1489,8 @@ a:hover{
       }
 
       .nav-links.active {
+         background-color: #FBFBFB;
+         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
          display: flex;
          align-items: start;
          padding: 20px 30px;
@@ -1526,7 +1517,7 @@ a:hover{
 
     li{
       a{
-         color: #2b4159 !important;
+         color: #2e3741 !important;
          padding: 8px 10px 8px 15px !important;
          border-radius: 5px;
          margin-bottom: 10px !important;
@@ -1617,4 +1608,21 @@ body {
    @include Max767{
       display: block;
    }
+}
+.cl-lBlue-home{  
+         background: linear-gradient(135deg, #ec7078, #491641);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+.cl-lBlue{  
+         color: #963b54;
+      }
+
+.animated-file {
+animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+from { transform: translateY(0); }
+to { transform: translateY(-10px); }
 }

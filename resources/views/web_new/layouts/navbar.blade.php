@@ -24,7 +24,7 @@
 <header class="new-navbar">
   <nav class="navbar">
     <div class="logo">
-      <a href="{{ url('/') }}">YOUR EXERCISES</a>
+      <img src="{{ asset('web_new/assets/img/logo.png') }}" alt="your exercises logo">
     </div>
     <div class="menu-toggle">&#9776;</div>
     <ul class="nav-links">
