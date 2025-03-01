@@ -25,19 +25,19 @@
   <!-- Features -->
   <section class="features-section pt-3 pt-md-5 section features-section pt-3 pt-md-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-      <h2 class="paragraph-xxl cl-dblue"> Home Exercise Features</h2>
+      <h2 class="paragraph-xl cl-dblue"> <span class="cl-lBlue-home">Home Exercise Features</span></h2>
       <p class="paragraph"> Unlock a seamless experience with Your Exercises Platform. </p>
       <div class="row flex-wrap px-2">
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-file-alt"></i> Paperless Patient Exercise Management</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-file-alt animated-file"></i> Paperless Patient Exercise Management</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Simplify your practice by digitizing patient records, ensuring seamless and eco-friendly management.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line"></i> Advanced Performance Dashboard</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line animated-file"></i> Advanced Performance Dashboard</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
           </p>-->
@@ -104,12 +104,12 @@
   </section>
 
   <!-- Testimonial -->
-  <section class="section testimonial-section" data-aos="fade " data-aos-duration="1000">
+  <section class="section testimonial-section" data-aos="fade " data-aos-duration="1000" style="border-radius:60px;">
     <div class="container">
       <blockquote class="m-0 cl-white">
-        "Your Exercises  Family, you guys are really awesome. Keep the amazing new features coming."
+        "At Home Exercises, we are always here to support your fitness journey"
         <footer>
-          - Auto Solutions Best Practice Summit 2020
+          <a href="{{ url('/book-a-demo') }}" class="ps-btn md-btn primary-btn mt-1">Book a demo</a>
         </footer>
       </blockquote>
     </div>
@@ -299,39 +299,43 @@
     <div class="row features" data-aos="fade-down" data-aos-duration="1000">
       <div class="col-md-4 feature-item">
         <h5 class="paragraph-xml cl-dblue text-uppercase">Being affordable.</h5>
-        <p class="cl-gray paragraph-md">Your exercises pricing simple subscription– so it always fits your budget. 
+        <p class="cl-gray paragraph-md">Your exercises pricing simple subscription– so it always fits your budget.
           No hidden extra charges or programs are needed to prescribing Home Exercises.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises is founded by Physiotherapists and has included many professionals facing time crunches between each patients.</h5>
-        <p class="cl-gray paragraph-md">Your Exercises Is founded professionals who face serious time crunches and feel difficult to deliver home exercises programs. Additionally, they want to be ethical and want to be compliant with standard of practice. 
-          Therefore, this  intuitive design with simple and effortless workflow was created.
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Managing Time Crunches</h5>
+        <p class="cl-gray paragraph-md">Your Exercises is founded professionals who face serious time crunches and feel difficult to deliver home exercises programs.
+          Additionally, they want to be ethical and want to be compliant with standard of practice. 
+          Therefore, this  intuitive design with simple and effortless workflow was created. 
           Our team truly understands clinic management and its needs to have easy-to-use software.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises keeps your patients data localised and understands importance of privacy and encryptions.</h5>
-        <p class="cl-gray paragraph-md">Your practice’s data is stored in encrypted form. This is essential to ensure your clinic is acting in accordance with local privacy legislation. 
-          In fact, clinics Patients log in from your website with unified hyperlink buttons on your website.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Security and Reliability</h5>
+        <p class="cl-gray paragraph-md">Your practice’s data is stored in encrypted form. This is essential to ensure your clinic is acting in accordance with local privacy legislation.
+            In fact, clinics Patients log in from your website with unified hyperlink buttons on your website</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your our own device is your asset.</h5>
-        <p class="cl-gray paragraph-md">Your exercises work effortlessly on tablets, smartphones, laptops and desktop computers of any OS: Android, Apple, or Microsoft.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Best User interface</h5>
+        <p class="cl-gray paragraph-md">Your exercises work effortlessly on tablets, smartphones, laptops and desktop computers of any OS: Android, Apple, or Microsoft. You don’t need to be tech savvy</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Unlimited support and troubleshooting</h5>
-        <p class="cl-gray paragraph-md">Cloud-based platform means there are no programs to install and no costly IT people to call. Our support team will help get you started and will be by your side whenever you need assistanc.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">24*7 Support</h5>
+        <p class="cl-gray paragraph-md">Cloud-based platform means there are no programs to install and no costly IT people to call.
+            Our support team will help get you started and will be by your side whenever you need assistance..</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your Exercises  works in clinics of all type and size.</h5>
-        <p class="cl-gray paragraph-md">We are specifically created for interdisciplinary clinics – so just one program works perfectly for everyone from physicians to physios to chiros to Chiropodist/Podiatrist to Athletic Therapist to Osteopaths to counsellors and midwives.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Built for all Clinics</h5>
+        <p class="cl-gray paragraph-md">We are specifically created for interdisciplinary clinics – so just one program works perfectly for everyone from physicians to physiotherapists
+           to chiropractors to Chiropodist/Podiatrist to Athletic Therapist to Osteopaths to health counsellors and midwives</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">Your exercises stands out and beats all industry standards.</h5>
-        <p class="cl-gray paragraph-md">With your exercises, you can share HEP programs to all pr practitioners’ who are involved in patient care. Add video or photos to capture a patient’s condition. Book multiple appointments at once. Let your exercises automatically remind p[patients to avoid missing their part in rehab. 
-          Eventually reducing gaps in program of care. And so much more.</p>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Best in Industry</h5>
+        <p class="cl-gray paragraph-md">With your exercises, you can share HEP programs to all practitioners’ who are involved in patient care. Add video or photos to capture a patient’s condition.
+            Book multiple appointments at once. Let your exercises automatically remind patients to avoid missing their part in rehab. 
+            Eventually reducing gaps in program of care. And so much more.</p>
       </div>
       <div class="col-md-4 feature-item">
-        <h5 class="paragraph-xml cl-dblue text-uppercase">A beautiful design, with simplicity in mind.</h5>
+        <h5 class="paragraph-xml cl-dblue text-uppercase">Simple to Use</h5>
         <p class="cl-gray paragraph-md">Your exercises’ intuitive design ensures a smooth and enjoyable experience for you and your staff — that even your patients will love.</p>
       </div>
     </div>
