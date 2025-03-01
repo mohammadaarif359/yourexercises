@@ -30,70 +30,100 @@
       <div class="row flex-wrap px-2">
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-file-alt animated-file"></i> Paperless Patient Exercise Management</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-file-alt animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/paperless-patient-management.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Paperless Patient Exercise Management</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Simplify your practice by digitizing patient records, ensuring seamless and eco-friendly management.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line animated-file"></i> Advanced Performance Dashboard</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-chart-line animated-file animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/advance-performance-dashboard.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Advanced Performance Dashboard</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-pencil-alt"></i> Custom Exercise Creation</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-pencil-alt animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/custom-exercise-creation.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Custom Exercise Creation</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Build unique exercises that cater to the individual needs of your patients.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-bullhorn"></i> Boost Your Online Presence</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-bullhorn animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/boost-your-online-presence.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Boost Your Online Presence</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Strengthen your clinic’s online visibility with integrated tools designed for growth.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-link"></i> Connect with Your Existing Website</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-link animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/connect-with-existing-website.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Connect with Your Existing Website</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Seamlessly integrate with your current website for a cohesive and professional experience.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-heartbeat"></i> Track Patient Health And Exercise Peformance</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-heartbeat animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/track-patient-heatlth-exercise-performance.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Track Patient Health And Exercise Peformance</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Stay updated on your patients' health journeys with comprehensive progress tracking.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-comments"></i> Gather Realtime Form Patient</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-comments animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/gather-realtime-form-patient.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Gather Realtime Form Patient</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Enhance your services by collecting and analyzing patient feedback effectively.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-lightbulb"></i> Automated Reminder To Patient </h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-lightbulb animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/automate-reminder-to-patients.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Automated Reminder To Patient </h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
         </div>
         
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-chart-line"></i> Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-chart-line animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/get-automated-progression.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Get Automated Progression For Exercises According To Preset Needs By Therapist</h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
         </div>
 
         <div class="col-md-3 col-sm-6 col-6 feature">
-          <h3 class="paragraph-xml cl-dblue mb-3 mt-2"><i class="fas fa-list-check"></i> Choose Direct Preset Programs </h3>
+          <h3 class="paragraph-xml cl-dblue mb-3 mt-2">
+            <!--<i class="fas fa-list-check animated-file"></i>-->
+            <img src="{{ asset('web_new/assets/img/feature/direct-present-program.gif') }}" height="95" class="d-block mx-auto mb-2">
+            Choose Direct Preset Programs </h3>
           <!--<p class="cl-gray paragraph-md px-2">
             Receive smart recommendations to improve patient care and streamline clinic operations.
           </p>-->
