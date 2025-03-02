@@ -87,12 +87,14 @@ class PlanController extends Controller
 	protected function savePlanDeatils($request_data, $plan_id) {
 		PlanDetail::where('plan_id', $plan_id)->delete();
 		$data = $request_data['detail'];
-		for($i=0;$i<count($data['exercise_id']);$i++) {
+		// for($i=0;$i<count($data['exercise_id']);$i++) {
+			for($i=0;$i<count($data['select_exercise_id']);$i++) {
 			$saveDetail = PlanDetail::create([
 				'plan_id' => $plan_id,
 				'category_id' => $data['category_id'][$i] ?? null,
 				'subcategory_id' => $data['subcategory_id'][$i] ?? null,
-				'exercise_id' => $data['exercise_id'][$i],
+				// 'exercise_id' => $data['exercise_id'][$i],
+				'exercise_id' => $data['select_exercise_id'][$i],
 				'reps' => $data['reps'][$i] ?? null,
 				'hold' => $data['hold'][$i] ?? null,
 				'complete' => $data['complete'][$i] ?? null,
@@ -173,7 +175,8 @@ class PlanController extends Controller
 			'is_active' => 'required|boolean',
 			'detail.category_id.*' => 'required',
 			'detail.subcategory_id.*' => 'required',
-			'detail.exercise_id.*' => 'required',
+			// 'detail.exercise_id.*' => 'required',
+			'detail.select_exercise_id.*' => 'required',
 			'detail.reps.*' => 'required',
 			'detail.hold.*' => 'required',
 			'detail.complete.*' => 'required',
@@ -183,7 +186,8 @@ class PlanController extends Controller
 		],[
 			'detail.category_id.*.required' => 'The category id field is required',
 			'detail.subcategory_id.*.required' => 'The subcategory id field is required',
-			'detail.exercise_id.*.required' => 'The exercise id field is required',
+			// 'detail.exercise_id.*.required' => 'The exercise id field is required',
+			'detail.select_exercise_id.*.required' => 'The select exercise id field is required',
 			'detail.reps.*.required' => 'This reps field is required',
 			'detail.hold.*.required' => 'This hold field is required',
 			'detail.complete.*.required' => 'This complete field is required',
