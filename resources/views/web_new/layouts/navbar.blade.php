@@ -205,8 +205,11 @@
       <li><a href="{{ url('pricing') }}">Pricing</a></li>
       <li>
         <div class="header-sidebtn">
-          <a href="{{ url('sign-in') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Sign in</a>
+          <a href="{{ url('login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Sign in</a>
           <a href="{{ url('book-a-demo') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Book Demo</a>
+          @if(Auth::user())
+          <a href="{{ url('logout') }}" class="ps-btn sm-btn primary-btn ps-header-btn"><i class="fas fa-sign-out-alt pt-1 px-1"></i></a>
+          @endif
         </div>
       </li>
     </ul>

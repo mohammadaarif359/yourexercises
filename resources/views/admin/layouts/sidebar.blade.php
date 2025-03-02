@@ -70,10 +70,26 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{ route('admin.doctor.exercise') }}" class="nav-link {{ request()->is('admin/doctor/exercise*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-dumbbell"></i>
+              <p>
+                Doctor Exercises
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.plan') }}" class="nav-link @if(route('admin.plan') == URL::current()) active @endif">
               <i class="nav-icon fas fa-weight"></i>
               <p>
                 Plan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.doctor.plan') }}" class="nav-link {{ request()->is('admin/doctor/plan*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-weight"></i>
+              <p>
+                Doctor Plan
               </p>
             </a>
           </li>

@@ -15,11 +15,19 @@ class DoctorController extends Controller
 	use AuthCode;
     public function profile(Request $request) {
 		$user_id = Auth::user()->id ?? 2;
-		dd(Auth::user()->roles);
 		$data = DoctorProfile::where('user_id', $user_id)->first();
         return view('web_new.doctor.profile', compact('user_id', 'data'));
 	}
 	public function profileSave(Request $request) {
+		$request->validate([
+			'clinic_name'    => 'required|unique:doctor_profile,name,'.$request->id,
+			'slug'   => 'required|unique:doctor_profile,slug,'.$request->id,
+			'clinic_address' => 'required',
+			'gender' => 'required',
+			'dob' => 'required|date',
+			'image' => 'nullable|mimes:jpeg,jpg,png',
+			'logo' => 'nullable|mimes:png',
+		]);
 		$user_id = Auth::user()->id ?? 2;
 		$profile = DoctorProfile::where('user_id', $user_id)->first();
 		$logo = null;
@@ -73,31 +81,5 @@ class DoctorController extends Controller
 			return redirect()->route('home')->with('success', 'Profile update successfully !');
 		}
 		return redirect()->back()->with('errpr', 'Failer to updated profile !');
-	}
-	public function register(Request $request) {
-		$request_data = $request->all();
-		$request->validate([
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
-            'email'   => 'required|email|unique:users,email',
-            'mobile'  => 'required|unique:users,mobile',
-			'password'=> 'required|min:6',
-			'role'	  => 'required',	
-			'profile_photo' => 'nullable|mimes:jpeg,jpg,png',
-		]);
-		$file_name = null;
-		if($request->hasFile('profile_photo')) {
-			$file_name = $this->uploadImg($request->profile_photo,'users');
-		}
-		$user = User::create([
-			'name'=>$request_data['name'],
-			'email'=>trim($request_data['email']),
-			'mobile'=>$request_data['mobile'],
-			'status'=> 1,
-			'password'=>bcrypt($request_data['password']),
-			'profile_photo'=>$file_name,
-		]);
-		// attach role
-		$user->attachRole($request->role);
-		return back()->with('success', 'User register Successfully now you can login to access our features!');
 	}
 }

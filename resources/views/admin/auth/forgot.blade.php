@@ -10,7 +10,7 @@
 		<div class="card-body login-card-body">
 		  <p class="login-box-msg">You forgot your password?.</p>
 
-		  <form method="POST" action="{{ route('password.email') }}">
+		  <form method="POST" action="{{ route('admin.password.email') }}">
 			@csrf
 			<div class="form-group">
 				<div class="input-group">
@@ -36,7 +36,7 @@
 		  </form>
 
 		  <p class="mt-3 mb-1">
-			<a href="{{ url('/login') }}">Login</a>
+		<a href="{{ url('/admin/login') }}">Login</a>
 		  </p>
 		</div>
 		<!-- /.login-card-body -->

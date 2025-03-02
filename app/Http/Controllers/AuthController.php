@@ -42,10 +42,7 @@ class AuthController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-	public function showLoginForm() {
-		return view('admin.auth.login');
-	}
-	public function signUp(Request $request)
+	public function login(Request $request)
     {
 		$this->validateLogin($request);
 		if ($this->attemptLogin($request)) {
@@ -85,11 +82,11 @@ class AuthController extends Controller
 
         return redirect()->back()
             ->withInput($request->only($this->username(), 'remember'))
-            ->withErrors($errors);
+        ->withErrors($errors);
     }
 	public function logout() {
 		Session::flush();
-		Auth::guard('admin')->logout();
+		Auth::guard('web')->logout();
         return redirect('/login');
     }
 }

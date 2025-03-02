@@ -76,8 +76,18 @@
 							</select>
 							<span class="error invalid-feedback" id="error_subcategory_id0"></span>
 						</div>
-					</div>	
-                    <div class="col-md-2 col-sm-12">
+					</div>
+					<div class="col-md-1">
+						<div class="form-group">
+							<label for="times">Execise</label>
+							<div>
+								<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
+								id="addexercise0" data-target="#addexercisemodal0" data-whatever="@getbootstrap">Select</button>
+								<span class="error invalid-feedback" id="error_select_exercise_id0"></span>
+							</div>	
+						</div>
+					</div>
+                    {{--<div class="col-md-2 col-sm-12">
 						<div class="form-group">
 							<label for="exercise_id">Exercise</label>
 							<select  id="exercise_id0" class="exercise_id form-control" name="detail[exercise_id][]">
@@ -85,7 +95,7 @@
 							</select>
 							<span class="error invalid-feedback" id="error_exercise_id0"></span>
 						</div>
-					</div>
+					</div>--}}
 					<div class="col-md-1">
 						<div class="form-group">
 							<label for="reps">Reps</label>
@@ -146,12 +156,44 @@
 							<span class="error invalid-feedback" id="error_times0"></span>
 						</div>
 					</div>
-					<div class="col-md-1">
+					<div class="col-md-2">
 						<div class="form-group">
 							<label for="times">Action</label>
 							<div>
 								<button type="button" class="btn addrow" id="addrow0"><i class="fa fa-plus"></i></a>
 								<button type="button" class="btn deleterow" id="deleterow0"><i class="fa fa-trash"></i></button>
+								<div class="modal fade addexercisemodal" id="addexercisemodal0" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-xl" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="exercisModalLabel">Select Exercise</h5>
+												<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<div class="row">
+													{{--@for($i = 1; $i <= 20; $i++)
+													<div class="col-md-3" style='border:1px solid lightgray;'>
+														<div class="form-group">
+															<div class="exercise-option">
+																<input type="radio" class="select_exercise_id" id="select_exercise_id{{$i}}" name="detail[select_exercise_id][]" value="exercise{{$i}}">
+																<label for="select_exercise_id{{$i}}">Exercise {{$i}}</label>
+															</div>
+															<div class="exercise-img">
+																<img src="{{ asset('dist/img/placeholder.png') }}" class="" height="120px" width="150px">
+															</div>
+														</div>
+													</div>
+													@endfor--}}
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>   
+								</div>
 							</div>	
 						</div>
 					</div>		
@@ -187,8 +229,8 @@ $.ajaxSetup({
 	var totalcount = 0;
 	$('body').on('click', '.addrow', function () {
     	var itemrow = $('#itemrow').clone(); // Remove the duplicate id from the cloned row
-		var exercise_id = $('select[id^="exercise_id"]:last');
-		var num = parseInt(exercise_id.prop("id").match(/\d+/g), 10) + 1;
+		var category_id = $('select[id^="category_id"]:last');
+		var num = parseInt(category_id.prop("id").match(/\d+/g), 10) + 1;
 		
 		itemrow.find("select, input").each(function () {
 			var currentId = $(this).attr('id');
@@ -214,6 +256,10 @@ $.ajaxSetup({
 
 		itemrow.find(".addrow").attr("id", "addrow" + num);
 		itemrow.find(".deleterow").attr("id", "deleterow" + num);
+		itemrow.find(".addexercise").attr("id", "addexercise" + num);
+		itemrow.find(".addexercise").attr("data-target","#addexercisemodal"+num)
+		itemrow.find(".addexercisemodal").attr("id","addexercisemodal"+num);
+		itemrow.find(".addexercisemodal .modal-body .row").empty();
 
 		itemrow.find("input, select").val('');
 		itemrow.find("option:selected").removeAttr("selected");
@@ -254,6 +300,11 @@ $.ajaxSetup({
 								keyNew = keyNew.replace('.', '');
 								console.log('keyNew',keyNew)
 								$('#frm-plan-submit #'+keyNew).addClass('is-invalid');
+								if(keyNew.startsWith('select_exercise_id')) {
+									var but_num = parseInt(keyNew.match(/\d+/g), 10)
+									console.log('but_num', but_num)
+									$('#frm-plan-submit #addexercise'+but_num).addClass('btn-danger')
+								}
 								// $("#frm-plan-submit #error_" + keyNew).html(v);
 							} else {
 								console.log('key', key);
@@ -315,21 +366,67 @@ $.ajaxSetup({
 				var dropdown = $("#exercise_id"+num);
 				dropdown.empty(); // Clear existing options
 				dropdown.append('<option value="">Select Exercise</option>');
+
+				var modalBody = $("#addexercisemodal" + num + " .modal-body .row");
+				modalBody.empty(); // clear existing select modal
 				$.each(data, function (key, value) {
 					console.log('value', value)
 					dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
+
+					// set select exercise modal
+					var exerciseHtml = `
+                        <div class="col-md-3" style="border:1px solid lightgray;">
+                            <div class="form-group">
+                                <div class="exercise-option">
+                                    <input type="radio" class="select_exercise_id" id="select_exercise_id${num}" name="detail[select_exercise_id][${num}]" value="${value.id}" data-obj='${JSON.stringify(value)}'>
+                                    <label for="select_exercise_id${value.id}">${value.name}</label>
+                                </div>
+                                <div class="exercise-img">
+                                    <img src="${value.image_url ? value.image_url : '{{ asset('web_new/assets/logo/logo_1.png') }}'}" class="" height="120px" width="150px">
+                                </div>
+                            </div>
+                        </div>`;
+                    modalBody.append(exerciseHtml);
 				});
 			},
 			error: function () {
 				var dropdown = $("#exercise_id"+num);
 				dropdown.empty();
+
+				var modalBody = $("#addexercisemodal" + num + " .modal-body .row");
+            	modalBody.empty();
 			}
 		});
 	});
-
+	
 	$(document).on("change", ".exercise_id", function(){
 		var obj = $(this).find('option:selected').data('obj')
 		var num = parseInt($(this).prop("id").match(/\d+/g), 10);
+		if (obj) { 
+			$("#reps"+num).val(obj.reps);
+			$("#hold"+num).val(obj.hold);
+			$("#complete"+num).val(obj.complete);
+			$("#perform"+num).val(obj.perform);
+			$("#times"+num).val(obj.times);
+		} else {
+			console.log('obj not', obj)
+			$("#reps"+num).val('');
+			$("#hold"+num).val('');
+			$("#complete"+num).val('');
+			$("#perform"+num).val('');
+			$("#times"+num).val('');
+		}
+	});
+
+	$('body').on('change', '.select_exercise_id', function () {
+		var selecte_exercise_id = $(this).val();
+    	var obj = $(this).data("obj");
+		var num = parseInt($(this).prop("id").match(/\d+/g), 10);
+		console.log("Selected Exercise ID:", selecte_exercise_id);
+    	console.log("Exercise Data:", obj);
+
+		var previous_modal_exercise_id = $("#select_exercise_id0").val();
+		console.log('previous_modal_exercise_id',previous_modal_exercise_id);
 		if (obj) { 
 			$("#reps"+num).val(obj.reps);
 			$("#hold"+num).val(obj.hold);

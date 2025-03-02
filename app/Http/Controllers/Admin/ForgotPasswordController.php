@@ -40,7 +40,7 @@ class ForgotPasswordController extends Controller
 		if($user) {
 			return view('admin.auth.reset',compact('token'));	
 		} else {
-			return redirect('password/request')->with('error','Forgot password token not found please re-enter email');
+			return redirect('admin/password/request')->with('error','Forgot password token not found please re-enter email');
 			abort(404);
 		}
 	}
@@ -56,7 +56,7 @@ class ForgotPasswordController extends Controller
 			$user->forgot_password_token = null;				
 			$user->password = bcrypt($request['password']);
 			$user->save();
-			return redirect('/login')->with('success','Password reset successfully Use this password to login');
+			return redirect('/admin/login')->with('success','Password reset successfully Use this password to login');
 		} else {
 			return redirect()->back()->withInput($request->input())->withErrors(['to' => 'Forgot password token does not exist']);
 		}	

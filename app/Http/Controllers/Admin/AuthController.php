@@ -89,7 +89,7 @@ class AuthController extends Controller
     }
 	public function logout() {
 		Session::flush();
-		Auth::guard('web')->logout();
-        return redirect('/login');
+		Auth::guard('admin')->logout();
+        return redirect('/admin/login');
     }
 }

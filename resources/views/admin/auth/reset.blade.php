@@ -10,7 +10,7 @@
 		<div class="card-body login-card-body">
 		  <p class="login-box-msg">Change your password?.</p>
 
-		  <form method="POST" action="{{ route('password.update') }}">
+		  <form method="POST" action="{{ route('admin.password.update') }}">
 			@csrf
 			<div class="form-group">
 				<div class="input-group">

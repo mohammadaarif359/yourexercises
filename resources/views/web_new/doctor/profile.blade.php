@@ -22,13 +22,17 @@
                         <div class="col-md-6">
                             <label class="form-label" for="clinic_name">Clinic Name</label>
                             <input type="text" name="clinic_name" class="form-control" id="clinic_name" placeholder="Enter your clinic name" value="{{ old('clinic_name', $data['clinic_name'] ?? '') }}">
-                            <span class="error-helper" id="error_clinic_name"></span>
+                            @error('clinic_name')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label" for="slug">Clinic Slug</label>
                             <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter your clinic page slug" value="{{ old('slug', $data['slug'] ?? '') }}">
-                            <span class="error-helper" id="error_slug"></span>
+                            @error('slug')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
@@ -38,7 +42,9 @@
                             @endif
                             </label>
                             <input type="file" name="logo" class="form-control" id="logo">
-                            <span class="error-helper" id="error_logo"></span>
+                            @error('logo')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
@@ -48,19 +54,25 @@
                             @endif
                             </label>
                             <input type="file" name="image" class="form-control" id="image">
-                            <span class="error-helper" id="error_image"></span>
+                            @error('image')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label" for="clinic_address">Clinic Address</label>
                             <textarea name="clinic_address" class="form-control" id="clinic_address" placeholder="Enter clinic address" rows='3'>{{ old('clinic_address', $data['clinic_address'] ?? '') }}</textarea>
-                            <span class="error-helper" id="error_clinic_address"></span>
+                            @error('clinic_address')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
                         
                         <div class="col-md-6">
                             <label class="form-label" for="description">Description</label>
                             <textarea name="description" class="form-control" id="description" placeholder="Enter description" rows='3'>{{ old('description', $data['description'] ?? '') }}</textarea>
-                            <span class="error-helper" id="error_description"></span>
+                            @error('description')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
                         
                         <div class="col-md-6">
@@ -71,20 +83,26 @@
                                     <option value="{{ $k }}" {{ old('gender',$data['gender'] ?? '') == $k ? 'selected' : '' }}>{{ $val }}</option>
                                 @endforeach
                             </select>
-                            <span class="error-helper" id="error_gender"></span>
+                            @error('gender')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
                         
                         <div class="col-md-6">
                             <label class="form-label" for="dob">Date of Birth</label>
                             <input type="date" name="dob" class="form-control" id="dob" value="{{ old('dob', $data['dob'] ?? '') }}">
-                            <span class="error-helper" id="error_dob"></span>
+                            @error('dob')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <div class="col-md-6">
                             <label class="form-label" for="clinic_phone_no">Clinic Phone no</label>
                             <input type="text" name="clinic_phone_no" class="form-control" id="clinic_phone_no" placeholder="Enter your clinic phone"
                                 value="{{ old('clinic_phone_no', $data['clinic_phone_no'] ?? '') }}">
-                            <span class="error-helper" id="error_clinic_phone_no"></span>
+                            @error('clinic_phone_no')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
                         </div>
 
                         <!--<div class="col-md-6">
@@ -182,7 +200,13 @@
     </div>
 @endsection    
 @section('pagejs')
+<script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
 <script>
+    $('#clinic_name').on('blur', function() {
+		var val = $('#clinic_name').val()
+		var slug = val.trim().toLowerCase().replace(/\s+/g, '-')
+		$('#slug').val(slug)
+	});
     const colorPicker = document.getElementById("color_theme");
     const colorValue = document.getElementById("color_value");
 

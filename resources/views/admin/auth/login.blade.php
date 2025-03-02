@@ -9,7 +9,7 @@
 	  <div class="card">
 		<div class="card-body login-card-body">
 		  <p class="login-box-msg">Sign in to start your session</p>
-		  <form method="POST" action="{{ route('login') }}">
+		  <form method="POST" action="{{ route('admin.login') }}">
 			@csrf
 			<div class="form-group">
 				<div class="input-group">
@@ -64,7 +64,7 @@
 		  </form>
 
 		  <p class="mb-1">
-			<a href="{{ route('password.request') }}">I forgot my password</a>
+			<a href="{{ route('admin.password.request') }}">I forgot my password</a>
 		  </p>
 		</div>
 		<!-- /.login-card-body -->

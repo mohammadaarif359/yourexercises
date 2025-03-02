@@ -2046,7 +2046,7 @@ a:hover {
   color: #07a385;
 }
 .ps-singin .contact-section .form-control {
-  margin-bottom: 18px;
+  margin-bottom: 9px;
 }
 
 .ps-paddingFix {
@@ -2334,6 +2334,20 @@ body {
 }
 .feature-page .card {
   border-radius: 25px;
+}
+.register-section {
+  border:1px solid lightgray;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+.login-section {
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #07a385, #1976d2);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  color: white;
 }
 @media (max-width: 767px) {
   .ps-dropdown-mobile {

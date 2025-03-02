@@ -28,27 +28,34 @@ Route::get('/features','PageController@features')->name('features');
 Route::get('/contact','PageController@contact')->name('contact');
 Route::get('/privacy-policy','PageController@privacyPolicy')->name('privacy-policy');
 Route::get('/terms-condition','PageController@termsCondition')->name('terms-condition');
-Route::get('/sign-in','PageController@signIn')->name('sign-in');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
 Route::post('/demo-inquiry','PageController@demoInquiry')->name('demo-inquiry');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
-Route::get('/doctor/profile','DoctorController@profile')->name('doctor.profile');
-Route::post('/doctor/profile/save','DoctorController@profileSave')->name('doctor.profile.save');
-Route::post('/register','DoctorController@register')->name('register');
-Route::post('/sign-up','AuthController@signUp')->name('sign-up');
+Route::get('/login','PageController@signIn')->name('login');
+Route::post('/register','RegisterController@register')->name('register');
+Route::post('/login','AuthController@login')->name('login');
+Route::get('/logout', 'AuthController@logout')->name('logout');
+
+// after web login
+Route::middleware('auth:web')->group(function () {
+	Route::get('/doctor/profile','DoctorController@profile')->name('doctor.profile');
+	Route::post('/doctor/profile/save','DoctorController@profileSave')->name('doctor.profile.save');
+});
 
 // admin login route
-Route::get('/login','Admin\AuthController@showLoginForm')->name('login');
-Route::post('/login','Admin\AuthController@login')->name('login');
-Route::get('/logout', 'Admin\AuthController@logout')->name('logout');
-Route::get('/password/request','Admin\ForgotPasswordController@passwordRequest')->name('password.request');
-Route::post('/password/email','Admin\ForgotPasswordController@passwordRequestEmail')->name('password.email');
-Route::get('/password/reset/{token}','Admin\ForgotPasswordController@passwordReset')->name('password.reset');
-Route::post('/password/update','Admin\ForgotPasswordController@passwordResetUpdate')->name('password.update');
+Route::prefix('admin')->name('admin.')->group(function(){
+	Route::get('/login','Admin\AuthController@showLoginForm')->name('login');
+	Route::post('/login','Admin\AuthController@login')->name('login');
+	Route::get('/logout', 'Admin\AuthController@logout')->name('logout');
+	Route::get('/password/request','Admin\ForgotPasswordController@passwordRequest')->name('password.request');
+	Route::post('/password/email','Admin\ForgotPasswordController@passwordRequestEmail')->name('password.email');
+	Route::get('/password/reset/{token}','Admin\ForgotPasswordController@passwordReset')->name('password.reset');
+	Route::post('/password/update','Admin\ForgotPasswordController@passwordResetUpdate')->name('password.update');
+});
 
 // admin after login route
-Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function(){
-	
+// Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function(){
+Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){	
 	// dashboard
 	Route::get('/dashboard','Admin\DashboardController@index')->name('dashboard');
 	

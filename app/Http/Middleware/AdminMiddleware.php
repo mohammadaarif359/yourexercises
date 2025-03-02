@@ -4,8 +4,9 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Auth;
 
-class SuperadminMiddleware
+class AdminMiddleware
 {
     /**
      * Handle an incoming request.
@@ -16,9 +17,11 @@ class SuperadminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Auth::user()->hasRole('super-admin') || Auth::user()->hasRole('doctor')) {
-            return $next($request);
+        if (Auth::user()) {
+            if(Auth::user()->hasRole('super-admin') || Auth::user()->hasRole('doctor')) {
+                return $next($request);
+            }
         }
-        return redirect('login');
+        return redirect('/admin/login');
     }
 }
