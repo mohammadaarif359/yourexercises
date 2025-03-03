@@ -7,34 +7,31 @@
       </div>
       <!-- Left -->
       <div class=" pt-2 pt-md-0">
-         <a href="" class="text-white mr-4">
+         <a href="https://www.facebook.com/yourexercises/" class="text-white mr-4">
          <i class="fab fa-facebook-f"></i>
          </a>
          <a href="" class="text-white mr-4">
-         <i class="fab fa-twitter"></i>
+         <i class="fa-brands fa-x-twitter"></i>
          </a>
-         <a href="" class="text-white mr-4">
-         <i class="fab fa-google"></i>
-         </a>
-         <a href="" class="text-white mr-4">
+         <a href="https://www.facebook.com/yourexercises/" class="text-white mr-4">
          <i class="fab fa-instagram"></i>
          </a>
-         <a href="" class="text-white mr-4">
+         <a href="https://in.linkedin.com/company/yourexercises" class="text-white mr-4">
          <i class="fab fa-linkedin"></i>
-         </a>
-         <a href="" class="text-white mr-4">
-         <i class="fab fa-github"></i>
-         </a>
+         </a>     
+         <a href="https://www.youtube.com/@YourExercises-YE" class="text-white mr-4">
+         <i class="fab fa-youtube"></i>
+         </a>>
       </div>
    </section>
    <!-- Section: Social media -->
    <!-- Section: Links  -->
    <section class="">
-      <div class="container text-center text-md-start mt-5">
+      <div class="container text-center text-md-start mt-3">
          <!-- Grid row -->
          <div class="row mt-3 flex-wrap">
             <!-- Grid column -->
-            <div class="col-sm-3 col-lg-4 col-xl-3 mb-4 text-left">
+            {{--<div class="col-sm-3 col-lg-4 col-xl-3 mb-4 text-left">
                <!-- Content -->
                <h6 class="text-uppercase fw-bold">Your Exerises name</h6>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />
@@ -43,12 +40,12 @@
                   content. Lorem ipsum dolor sit amet, consectetur adipisicing
                   elit.
                </p>
-            </div>
+            </div>--}}
             <!-- Grid column -->
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 text-left">
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 text-left">
                <!-- Links -->
-               <h6 class="text-uppercase fw-bold">Products</h6>
+               <a href="{{ url('/features') }}" class="text-white"><h6 class="text-uppercase fw-bold">Features</h6></a>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />
                <p class="m-0">
                   <a href="#!" class="text-white">Paperless Patient Management</a>
@@ -65,9 +62,9 @@
             </div>
             <!-- Grid column -->
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-4 text-left">
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 text-left">
                <!-- Links -->
-               <h6 class="text-uppercase fw-bold">Quick links</h6>
+               <h6 class="text-uppercase fw-bold">About YE</h6>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />
                <p class="m-0">
                   <a href="#!" class="text-white">Your Account</a>
@@ -84,7 +81,7 @@
             </div>
             <!-- Grid column -->
             <!-- Grid column -->
-            <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left">
+            <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4 text-left">
                <!-- Links -->
                <h6 class="text-uppercase fw-bold">Contact</h6>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />

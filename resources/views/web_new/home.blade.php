@@ -150,7 +150,7 @@
     <div class="row pt-5" data-aos="flip-up" data-aos-duration="1000">
       <div class="col-md-6 text-center">
         <div class="swiper">
-          <div class="swiper-wrapper">
+          {{--<div class="swiper-wrapper">
             <div class="swiper-slide"><img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
               src="https://Jane.app/assets/online_appts_groups-7cd35dc16d39b8f09852430c34f6ce875cfe83939fbdfef1d2ef9af23aefc0ec.webp"></div>
             <div class="swiper-slide"><img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
@@ -160,31 +160,24 @@
               </div>
             <div class="swiper-slide"><img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
               src="https://www.immediatecarewestmont.com/wp-content/uploads/2024/02/What_are_the_4_types_of_medical_imaging_3cc03c9085b74f2eb223663763d06420.png"></div>
+          </div>--}}
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img alt="Take a peek at the future of (even smoother) clinic life." class="img-fluid"
+              src="{{ asset('web_new/assets/img/jeet-ai-power.jpg') }}">
+            </div>
           </div>
-        
           <!-- Pagination -->
-          <div class="swiper-pagination"></div>
+          <div class="g:\indev pc\jeet-ai-power.jpg"></div>
         </div>
 
       </div>
       <div class="col-md-6 text-start">
-        <h3 class="paragraph-lg cl-dblue">Take a peek at the future of your exercises.</h3>
-        <p class="paragraph-md cl-dblue">We are always planning to improvise health industry and always look forward to turning industry to health-tech. 
-          Future is diverse and easier with technology, and it can be revolutionary for next era:</p>
+        <h3 class="paragraph-lg cl-dblue">Key feature innovations in Health-Tech.</h3>
         <ul class="list-check">
-          <li>Progress tracker for patients and Therapist with detailed performance, Statistic and will show how average similar demographic patient preform weekly basis</li>
-          <li>AI Powered Progression and Data Management, Charting and synchronising according to EMS</li>
-          <li>Marker-less Motion capturing system</li>
-          <li>Integrated trick movement identifier</li>
-          <li>Biofeedback making Exercise mind body synchronized</li>
-          <li>Direct messaging and Email communicative methods</li>
-          <li>Audio Instructions for patients with visual challenges</li>
-          <li>Multi Languages approach</li>
-          <li>Video Recording feature for patients</li>
-          <li>Assigning progression according to patients needs</li> 
-          <li>Technical and Clinical - Supervisor support</li>
-          <li>Tele-health and rehab platform</li>
-          <li>Introducing all new way to conduct Group exercise Session</li>
+          <li><strong>AI-Powered Progress Tracking:</strong> Advanced AI-driven data management enables therapists and patients for advance tracking.</li>
+          <li><strong>Feedback:</strong> combined with feedback, ensures real-time synchronization between mind and body for more effective exercises.</li>
+          <li><strong>Enhanced Accessibility & Communication:</strong> Multi-language support, audio instructions for visually challenged patients, and direct messaging/email features.</li>
+          <li><strong>Telehealth & Group Exercise Integration:</strong> A revolutionary tele-rehab platform allows supervised therapy.</li>
         </ul>
         <a class="ps-btn primary-btn sm-btn" href="{{ url('/book-a-demo') }}">Book a Demo</a>
       </div>
