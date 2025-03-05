@@ -43,8 +43,6 @@ class DoctorController extends Controller
 		} else if($profile && $profile['image']) {
 			$image = $profile['image'];
 		}
-		echo 'logo ....' , $logo;
-		echo 'image ....', $image;die;
 
         $professional_info = [
             'specialization' => $request['professional_info']['specialization'],
