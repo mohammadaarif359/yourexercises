@@ -39,10 +39,12 @@ class DoctorController extends Controller
 
 		$image = null;
 		if ($request->hasFile('image')) {
-			$logo = $this->uploadImg($request->image, 'doctor/profile');
+			$image = $this->uploadImg($request->image, 'doctor/profile');
 		} else if($profile && $profile['image']) {
 			$image = $profile['image'];
 		}
+		echo 'logo ....' , $logo;
+		echo 'image ....', $image;die;
 
         $professional_info = [
             'specialization' => $request['professional_info']['specialization'],

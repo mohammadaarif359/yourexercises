@@ -49,7 +49,7 @@
                         </div>
 
                         <div class="col-md-6">
-                            <label class="form-label" for="logo">Clinic Image
+                            <label class="form-label" for="image">Clinic Image
                             @if(!empty($data['image_url']))
                                 <a href="{{ $data['image_url'] }}">| Download</a>	
                             @endif
