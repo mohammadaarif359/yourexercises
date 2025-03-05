@@ -76,7 +76,7 @@ class DoctorPlanController extends Controller
 		$image = null;
 		if ($request->hasFile('image')) {
 			$image = $this->uploadImg($request->image, 'doctor/plan');
-		} else if($admin_plan['image']) {
+		} else if($admin_plan && $admin_plan['image']) {
 			$image = $this->copyImg($admin_plan->image, 'public/plan', 'public/doctor/plan');
 		}
 	
