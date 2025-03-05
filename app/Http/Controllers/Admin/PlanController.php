@@ -88,7 +88,7 @@ class PlanController extends Controller
 		PlanDetail::where('plan_id', $plan_id)->delete();
 		$data = $request_data['detail'];
 		// for($i=0;$i<count($data['exercise_id']);$i++) {
-			for($i=0;$i<count($data['select_exercise_id']);$i++) {	
+			for($i=0;$i<count($data['select_exercise_id']);$i++) {
 			$saveDetail = PlanDetail::create([
 				'plan_id' => $plan_id,
 				'category_id' => $data['category_id'][$i] ?? null,

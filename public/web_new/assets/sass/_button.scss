@@ -1,5 +1,5 @@
-$primaryColor:#1f2126; 
-$primaryBlue:#07a385; 
+$primaryColor:#151517; 
+$primaryBlue:#963b54; 
 $white :#ffffff;
 
 // button scss start 
@@ -89,9 +89,10 @@ $white :#ffffff;
         }
     }
     &.primary-btn{
-        color: #ffffff;
-        background-color: $primaryBlue;
-        border: 1px solid $primaryBlue;
+        color: #ffffff !important;
+        background: linear-gradient(135deg, #ec7078, #491641);
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
   
         // &:hover{
         //     color:#ffffff;
@@ -266,7 +267,7 @@ a{text-decoration: none;}
 
 input[type=checkbox] {
   position: relative;
-	border: 2px solid #07a385;
+	border: 2px solid $primaryBlue;
 	border-radius: 2px;
 	background: none;
 	cursor: pointer;
@@ -282,7 +283,7 @@ input[type=checkbox] {
 }
 
 input[type=checkbox]:checked {
-  background-color: #07a385;
+  background-color: $primaryBlue;
   opacity: 1;
 }
 
@@ -449,7 +450,7 @@ input[type=checkbox]:before {
         }
     }
 
-    .swiper-pagination-bullet-active{background-color: #07a385;}
+    .swiper-pagination-bullet-active{background-color: $primaryBlue;}
 }
 
 .ps-dropdown-mobile {
