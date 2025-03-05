@@ -10,10 +10,10 @@
          <a href="https://www.facebook.com/yourexercises/" class="text-white mr-4">
          <i class="fab fa-facebook-f"></i>
          </a>
-         <a href="" class="text-white mr-4">
+         <a href="#" class="text-white mr-4">
          <i class="fa-brands fa-x-twitter"></i>
          </a>
-         <a href="https://www.facebook.com/yourexercises/" class="text-white mr-4">
+         <a href="https://www.instagram.com/yourexercises/" class="text-white mr-4">
          <i class="fab fa-instagram"></i>
          </a>
          <a href="https://in.linkedin.com/company/yourexercises" class="text-white mr-4">
