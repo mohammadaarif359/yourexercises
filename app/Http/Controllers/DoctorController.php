@@ -14,7 +14,7 @@ class DoctorController extends Controller
     
 	use AuthCode;
     public function profile(Request $request) {
-		$user_id = Auth::user()->id ?? 2;
+		$user_id = Auth::user()->id;
 		$data = DoctorProfile::where('user_id', $user_id)->first();
         return view('web_new.doctor.profile', compact('user_id', 'data'));
 	}
@@ -28,7 +28,7 @@ class DoctorController extends Controller
 			'image' => 'nullable|mimes:jpeg,jpg,png',
 			'logo' => 'nullable|mimes:png',
 		]);
-		$user_id = Auth::user()->id ?? 2;
+		$user_id = Auth::user()->id;
 		$profile = DoctorProfile::where('user_id', $user_id)->first();
 		$logo = null;
 		if ($request->hasFile('logo')) {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\CmsPage;
 use App\Models\Inquiry;
 use App\Models\DemoInquiry;
+use App\Models\Role;
 use Validator;
 
 class PageController extends Controller
@@ -99,7 +100,8 @@ class PageController extends Controller
 		} else {
 			abort(404);
 		}*/
-		return view('web_new.sign-in');
+		$roles = Role::where('name','doctor')->pluck('display_name','id')->toArray(); 
+		return view('web_new.sign-in', compact('roles'));
     }
 	public function demoInquiry(Request $request) {
 		$validate=Validator::make($request->all(), [

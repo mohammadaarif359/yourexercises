@@ -70,7 +70,9 @@
                                     <label class="form-label" for="role">Role</label>
                                     <select name="role" class="form-control" id="role">
                                         <option value="">Select Role</option>
-                                        <option value="2" {{ old('role') == 2 ? 'selected' : '' }}>Doctor</option>
+                                        @foreach($roles as $k=>$v)
+                                        <option value="{{ $k }}" {{ old('role') == $k ? 'selected' : '' }}>{{ $v }}</option>
+                                        @endforeach
                                     </select>
                                     <span class="error-helper" id="error_role"></span>
                                 </div>
@@ -85,7 +87,7 @@
                     </div>
                     
                     <div class="col-md-5 offset-md-1 d-flex justify-content-center align-items-center">
-                        <div class="w-100 p-4 rounded shadow login-section" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="w-100 p-4 rounded shadow login-section">
                             <h4 class="paragraph-xl cl-dblue text-white">Already an account! Login here </h4>
                             <form class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('login') }}">
                                 @csrf
