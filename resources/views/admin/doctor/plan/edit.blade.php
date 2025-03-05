@@ -170,8 +170,8 @@
 						<div class="form-group">
 							<label for="action" class="{{$hide}}">Action</label>
 							<div>
-								<button type="button" class="btn addrow" id="addrow{{$count}}"><i class="fa fa-plus"></i></a>
-								<button type="button" class="btn deleterow" id="deleterow{{$count}}"><i class="fa fa-trash"></i></button>
+								<button type="button" class="btn addrow p-0" id="addrow{{$count}}"><i class="fa fa-plus"></i></a>
+								<button type="button" class="btn deleterow p-0" id="deleterow{{$count}}"><i class="fa fa-trash"></i></button>
 							</div>	
 						</div>
 					</div>		
