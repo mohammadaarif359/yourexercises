@@ -26,11 +26,11 @@ class DoctorProfile extends Model
 	/* logo url */
 	public function getLogoUrlAttribute(): string
     {
-        return $this->logo ? asset('storage/doctor/profile'.$this->logo)  : "";
+        return $this->logo ? asset('storage/doctor/profile/'.$this->logo)  : "";
     }
     public function getImageUrlAttribute(): string
     {
-        return $this->logo ? asset('storage/doctor/profile'.$this->image)  : "";
+        return $this->logo ? asset('storage/doctor/profile/'.$this->image)  : "";
     }
 
     /**
