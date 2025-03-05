@@ -20,8 +20,8 @@ class DoctorController extends Controller
 	}
 	public function profileSave(Request $request) {
 		$request->validate([
-			'clinic_name'    => 'required|unique:doctor_profile,name,'.$request->id,
-			'slug'   => 'required|unique:doctor_profile,slug,'.$request->id,
+			'clinic_name'    => 'required|unique:doctor_profiles,clinic_name,'.$request->id,
+			'slug'   => 'required|unique:doctor_profiles,slug,'.$request->id,
 			'clinic_address' => 'required',
 			'gender' => 'required',
 			'dob' => 'required|date',
