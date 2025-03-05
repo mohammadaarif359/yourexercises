@@ -58,7 +58,7 @@ class DoctorExerciseAttachmentController extends Controller
 		$request->validate([
 			'exercise_id' => 'required|exists:doctor_exercises,id',
 			'image.0' => 'required',
-			'image.*' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv|max:10240',
+			'image.*' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv,mov|max:51200',
 		]);
 		for($i=0;$i<count($request_data['image']);$i++) {
 			$image = $this->uploadImg($request_data['image'][$i], 'doctor/exercise');
@@ -84,7 +84,7 @@ class DoctorExerciseAttachmentController extends Controller
 		$request_data = $request->all(); 
 		$request->validate([
 			'id' => 'required|exists:attachments,id',
-			'image' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv|max:10240',
+			'image' => 'required|mimes:jpeg,jpg,png,webp,gif,mp4,mkv,mov|max:51200',
 		]);
 		$image = null;
 		if($request->hasFile('image')) {
