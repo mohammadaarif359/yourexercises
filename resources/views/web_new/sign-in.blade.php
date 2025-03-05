@@ -30,7 +30,7 @@
                         here</a></p>
                 <br/>        
                 <div class='row'>   
-                    <div class="col-md-6 register-section" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="col-md-6 register-section col-12 mb-2" data-aos="fade-right" data-aos-duration="1000">
                         <h5 class="paragraph-xl cl-dblue">Create an new account here</h5>
                         <hr/>
                         <form id='frm-register' name='frm-register' method='POST' enctype="multipart/form-data">
@@ -43,7 +43,7 @@
 
                                 <div class="col-md-12">
                                     <label class="form-label" for="email">Email</label>
-                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="" autocomplete="off">
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}" autocomplete="off">
                                     <span class="error-helper" id="error_email"></span>
                                 </div>
 
@@ -86,15 +86,15 @@
                         </form>
                     </div>
                     
-                    <div class="col-md-5 offset-md-1 d-flex justify-content-center align-items-center">
-                        <div class="w-100 p-4 rounded shadow login-section">
+                    <div class="col-md-5 offset-md-1 col-12 p-0">
+                        <div class="rounded shadow login-section">
                             <h4 class="paragraph-xl cl-dblue text-white">Already an account! Login here </h4>
                             <form class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('login') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label class="form-label" for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}" autocomplete="off">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}" autocomplete="false">
                                         @error('email')
                                             <span class="error-helper">{{ $message }}</span>
                                         @enderror
@@ -105,7 +105,7 @@
 
                                     <div class="col-md-12">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="{{ old('password') }}" autocomplete="off">
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="{{ old('password') }}" autocomplete='off'>
                                         <span class="error-helper" id="error_password"></span>
                                         @error('password')
                                             <span class="error-helper">{{ $message }}</span>
@@ -114,7 +114,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 d-flex justify-content-between align-items-center">
-                                        <button type="submit" class="ps-btn lg-btn primary-btn">Login</button>
+                                        <button type="submit" class="ps-btn lg-btn primary-btn mt-3" style='border:1px solid #fff'>Login</button>
                                         <!--<a href="{{ route('admin.password.request') }}" class="text-primary">Forgot Password?</a>-->
                                     </div>
                                 </div>
