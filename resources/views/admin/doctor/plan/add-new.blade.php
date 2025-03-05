@@ -451,7 +451,7 @@ $.ajaxSetup({
 		console.log('is_admin', is_admin, 'exerise get url', url);
 		$.ajax({
 			type: 'POST',
-			data: {subcategory_id:[subcategory_id]},
+			data: {subcategory_id:[subcategory_id],is_private:is_admin == 1 ? 0 : ''},
 			dataType: 'json',
 			url : url,
 			headers: {

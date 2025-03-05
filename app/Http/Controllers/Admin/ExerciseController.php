@@ -201,9 +201,15 @@ class ExerciseController extends Controller
 	}
 	public function bySubcategory(Request $request) {
 		$request->subcategory_id;
-		$data = Exercise::whereHas('exercise_category.subcategory', function ($query) use ($request) {
+		$request->is_private;
+		$query = Exercise::whereHas('exercise_category.subcategory', function ($query) use ($request) {
 			$query->whereIn('id', $request->subcategory_id);
-		})->get();
+		});
+
+		if ($request->has('is_private') && !empty($request->is_private)) {
+			$query->where('is_private', $request->is_private);
+		}
+		$data = $query->get();
 		return response()->json($data);
-	}	
+	}
 }
