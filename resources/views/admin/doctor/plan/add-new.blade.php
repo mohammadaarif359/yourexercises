@@ -71,14 +71,9 @@
 						@foreach($plan['plan_detail'] as $count=>$detail)
 						@php $hide = $count > 0 ? 'd-none' : ''; @endphp
 						<div class='row itemrow' id='itemrow'>
-							<div class="col-md-1">
-								<div class="form-group">
-									<label for="is_admin" class="{{$hide}}">Is Admin</label>
-									<input id="is_admin{{$count}}" class="is_admin form-control" name="detail[is_admin][]" value="1">
-									<span class="error invalid-feedback" id="error_is_admin{{$count}}"></span>
-								</div>
-							</div>
-							<div class="col-md-1">
+							<input id="is_admin{{$count}}" type="hidden" class="is_admin form-control" name="detail[is_admin][]" value="1">
+							<span class="error invalid-feedback" id="error_is_admin{{$count}}"></span>
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="category_id" class="{{$hide}}">Category</label>
 									<select id="category_id{{$count}}" class="category_id form-control" name="detail[category_id][]">
@@ -172,9 +167,9 @@
 								<div class="form-group">
 									<label for="action" class="{{$hide}}">Action</label>
 									<div>
-										<button type="button" class="btn addrow p-1 by-admin" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
+										<button type="button" class="btn addrow p-0 by-admin" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
 										<button type="button" class="btn addadminrow p-0 by-admin" id="addadminrow{{$count}}" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-										<button type="button" class="btn deleterow p-1 by-admin" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<button type="button" class="btn deleterow p-0 by-admin" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
 									</div>	
 								</div>
 							</div>
@@ -182,14 +177,9 @@
 						@endforeach
 					@else
 						<div class='row itemrow' id='itemrow'>
-							<div class="col-md-1">
-								<div class="form-group">
-									<label for="is_admin">Is Admin</label>
-									<input id="is_admin0" class="is_admin form-control" name="detail[is_admin][]" value="0">
-									<span class="error invalid-feedback" id="error_is_admin0"></span>
-								</div>
-							</div>
-							<div class="col-md-1">
+							<input id="is_admin0" type="hidden" class="is_admin form-control" name="detail[is_admin][]" value="0">
+							<span class="error invalid-feedback" id="error_is_admin0"></span>
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="category_id">Category</label>
 									<select id="category_id0" class="category_id form-control" name="detail[category_id][]">
@@ -283,9 +273,9 @@
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>
-										<button type="button" class="btn addrow p-1" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
+										<button type="button" class="btn addrow p-0" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
 										<button type="button" class="btn addadminrow p-0" id="addadminrow0" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-										<button type="button" class="btn deleterow p-1" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<button type="button" class="btn deleterow p-0" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
 									</div>	
 								</div>
 							</div>	
