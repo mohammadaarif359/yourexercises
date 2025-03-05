@@ -53,6 +53,7 @@
               </p>
             </a>
           </li>--}}
+          @if(Auth::user()->hasRole('super-admin'))
           <li class="nav-item">
             <a href="{{ route('admin.category') }}" class="nav-link {{ request()->is('admin/category*') || request()->is('admin/subcategory*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-list-alt"></i>
@@ -70,26 +71,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('admin.doctor.exercise') }}" class="nav-link {{ request()->is('admin/doctor/exercise*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-dumbbell"></i>
-              <p>
-                Doctor Exercises
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="{{ route('admin.plan') }}" class="nav-link @if(route('admin.plan') == URL::current()) active @endif">
               <i class="nav-icon fas fa-weight"></i>
               <p>
                 Plan
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ route('admin.doctor.plan') }}" class="nav-link {{ request()->is('admin/doctor/plan*') ? 'active' : '' }}">
-              <i class="nav-icon fas fa-weight"></i>
-              <p>
-                Doctor Plan
               </p>
             </a>
           </li>
@@ -101,6 +86,24 @@
               </p>
             </a>
           </li>
+          @elseif(Auth::user()->hasRole('doctor'))
+          <li class="nav-item">
+            <a href="{{ route('admin.doctor.exercise') }}" class="nav-link {{ request()->is('admin/doctor/exercise*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-dumbbell"></i>
+              <p>
+                Exercises
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin.doctor.plan') }}" class="nav-link {{ request()->is('admin/doctor/plan*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-weight"></i>
+              <p>
+                Plan
+              </p>
+            </a>
+          </li>
+          @endif
 		  <!--<li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>

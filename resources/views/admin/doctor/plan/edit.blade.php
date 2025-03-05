@@ -442,7 +442,6 @@
 				type: 'POST',
 				data: {subcategory_id:[subcategory_id]},
 				dataType: 'json',
-				// url: "{{ route('admin.exercise.by.subcategory') }}",
 				url: "{{ route('admin.doctor.exercise.by.subcategory') }}",
 				headers: {
 					'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -452,9 +451,7 @@
 					dropdown.empty(); // Clear existing options
 					dropdown.append('<option value="">Select Exercise</option>');
 					$.each(data, function (key, value) {
-						console.log('value', value)
-						var isExerSelected = planDetail[num] && planDetail[num].exercise_id == value.id;
-						console.log('key', key, isExerSelected)
+						var isExerSelected = planDetail[num] && planDetail[num].doctor_exercise_id == value.id;
 						dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isExerSelected ? ' selected' : '') + '>' + value.name + '</option>');
 						// dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
 					});
