@@ -273,8 +273,8 @@
 						<div class="form-group">
 							<label for="times">Action</label>
 							<div>
-								<button type="button" class="btn addrow" id="addrow0"><i class="fa fa-plus"></i></a>
-								<button type="button" class="btn deleterow" id="deleterow0"><i class="fa fa-trash"></i></button>
+								<button type="button" class="btn addrow p-0" id="addrow0"><i class="fa fa-plus"></i></a>
+								<button type="button" class="btn deleterow p-0" id="deleterow0"><i class="fa fa-trash"></i></button>
 							</div>	
 						</div>
 					</div>		
