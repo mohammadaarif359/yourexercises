@@ -18,6 +18,7 @@
                         here</a>.</p>
                 <form class="mt-4" id='frm-doctor-profile' name='frm-doctor-profile' method='POST' action="{{ route('doctor.profile.save') }}" enctype="multipart/form-data">
 			        @csrf
+                    <input type='hidden' name='id' value='{{ old("id', $data['id'] ?? '') }}"">
                     <div class="row">
                         <div class="col-md-6">
                             <label class="form-label" for="clinic_name">Clinic Name</label>
