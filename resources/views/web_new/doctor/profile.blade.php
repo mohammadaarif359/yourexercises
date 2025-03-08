@@ -30,7 +30,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label" for="slug">Clinic Slug</label>
-                            <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter your clinic page slug" value="{{ old('slug', $data['slug'] ?? '') }}">
+                            <input type="text" name="slug" class="form-control" id="slug" placeholder="Enter your clinic page slug" value="{{ old('slug', $data['slug'] ?? '') }}" @if($data && $data['slug'])) readonly @endif>
                             @error('slug')
                                 <span class="error-helper">{{ $message }}</span>
                             @enderror

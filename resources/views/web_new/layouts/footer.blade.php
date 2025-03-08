@@ -235,7 +235,18 @@
       position: 'top-end',
       showConfirmButton: false,
       timer: 3000
-    });
+   });
+   @if(Session::get('success'))
+      Toast.fire({
+         icon: 'success',
+         title: '{!! Session::get('success') !!}'
+      });
+   @elseif(Session::get('error'))
+      Toast.fire({
+         icon: 'error',
+         title: '{!! Session::get('error') !!}'
+      });
+   @endif
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script> AOS.init(); </script>

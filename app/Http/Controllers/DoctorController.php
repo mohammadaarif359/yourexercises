@@ -78,8 +78,12 @@ class DoctorController extends Controller
 			]
 		);
 		if($data) {
-			return redirect()->route('home')->with('success', 'Profile update successfully !');
+			if($data->is_verified === 1) {
+				return redirect()->route('home')->with('success', 'Profile update successfully !');
+			} else {
+				return redirect()->back()->with('success', 'Profile update successfully but your profile is not verified by admin!');
+			}
 		}
-		return redirect()->back()->with('errpr', 'Failer to updated profile !');
+		return redirect()->back()->with('error', 'Failer to updated profile !');
 	}
 }
