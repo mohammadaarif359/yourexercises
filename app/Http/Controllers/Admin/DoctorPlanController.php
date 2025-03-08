@@ -68,6 +68,7 @@ class DoctorPlanController extends Controller
 				'postatus' => "Bad Request",
 			],200);
 		}
+
 		$admin_plan = null;
 		if($request_data['plan_id']) {
 			$admin_plan = Plan::where('id', $request_data['plan_id'])->first();

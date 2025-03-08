@@ -79,15 +79,15 @@ class DoctorExerciseController extends Controller
 		$request_data = $request->all();
 		// validate
 		$this->validateRequest($request);
-		$admnExerise = null;
+		$adminExerise = null;
 		if($request_data['exercise_id']) {
-			$admnExerise = Exercise::where('id', $request_data['exercise_id'])->with('attachments')->first();
+			$adminExerise = Exercise::where('id', $request_data['exercise_id'])->with('attachments')->first();
 		}
 		$image = null;
 		if ($request->hasFile('image')) {
 			$image = $this->uploadImg($request->image, 'doctor/exercise');
-		} else if($admnExerise['image']) {
-			$image = $this->copyImg($admnExerise->image, 'public/exercise', 'public/doctor/exercise');
+		} else if($adminExerise && $adminExerise['image']) {
+			$image = $this->copyImg($adminExerise->image, 'public/exercise', 'public/doctor/exercise');
 		}
 		$exercise = DoctorExercise::create([
             'exercise_id' => $request_data['exercise_id'] ?? null,
@@ -105,8 +105,8 @@ class DoctorExerciseController extends Controller
 		]);
 		$this->saveCategory($request_data,$exercise->id);
 
-		if($admnExerise && $admnExerise['attachments']) {
-			$this->saveAttachment($admnExerise['attachments'], $exercise->id);
+		if($adminExerise && $adminExerise['attachments']) {
+			$this->saveAttachment($adminExerise['attachments'], $exercise->id);
 		}
 	
 		return redirect()->route('admin.doctor.exercise')->with('success', 'Exercise created successfully!');

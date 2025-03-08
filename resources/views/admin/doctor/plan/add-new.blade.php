@@ -100,7 +100,7 @@
 									<div>
 										<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
 										id="addexercise{{$count}}" data-target="#addexercisemodal{{$count}}" data-whatever="@getbootstrap">Select</button>
-										<span class="error invalid-feedback" id="error_select_exercise_id0"></span>
+										<span class="error invalid-feedback" id="error_select_exercise_id{{$count}}"></span>
 									</div>	
 								</div>
 							</div>
@@ -239,7 +239,7 @@
 									</div>	
 								</div>
 							</div>	
-							<div class="col-md-2">
+							{{--<div class="col-md-2">
 								<div class="form-group">
 									<label for="exercise_id">Exercise</label>
 									<select  id="exercise_id0" class="exercise_id form-control" name="detail[exercise_id][]">
@@ -247,7 +247,7 @@
 									</select>
 									<span class="error invalid-feedback" id="error_exercise_id0"></span>
 								</div>
-							</div>
+							</div>--}}
 							<div class="col-md-1">
 								<div class="form-group">
 									<label for="reps">Reps</label>
@@ -308,7 +308,7 @@
 									<span class="error invalid-feedback" id="error_times0"></span>
 								</div>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>
@@ -326,19 +326,6 @@
 													</div>
 													<div class="modal-body">
 														<div class="row">
-															{{--@for($i = 1; $i <= 20; $i++)
-															<div class="col-md-3" style='border:1px solid lightgray;'>
-																<div class="form-group">
-																	<div class="exercise-option">
-																		<input type="radio" class="select_exercise_id" id="select_exercise_id{{$i}}" name="detail[select_exercise_id][]" value="exercise{{$i}}">
-																		<label for="select_exercise_id{{$i}}">Exercise {{$i}}</label>
-																	</div>
-																	<div class="exercise-img">
-																		<img src="{{ asset('dist/img/placeholder.png') }}" class="" height="120px" width="150px">
-																	</div>
-																</div>
-															</div>
-															@endfor--}}
 														</div>
 													</div>
 													<div class="modal-footer">
@@ -530,8 +517,7 @@ $.ajaxSetup({
 				var modalBody = $("#addexercisemodal" + num + " .modal-body .row");
             	modalBody.empty();
 				$.each(data, function (key, value) {
-					var isExerSelected = planDetail[num] && planDetail[num].exercise_id == value.id;
-					console.log('value',value.id, 'isExerSelected', isExerSelected)
+					var isExerSelected = planDetail[num] && planDetail[num].exercise_id == value.id || false;
 					dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isExerSelected ? ' selected' : '') + '>' + value.name + '</option>');
 					// dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
 					
@@ -540,8 +526,8 @@ $.ajaxSetup({
                         <div class="col-md-3" style="border:1px solid lightgray;">
                             <div class="form-group">
                                 <div class="exercise-option">
-                                    <input type="radio" class="select_exercise_id" id="select_exercise_id${num}" name="detail[select_exercise_id][${num}]" value="${value.id}" data-obj='${JSON.stringify(value)}' ' ${isExerSelected === true} ? checked : ''>
-                                    <label for="select_exercise_id${value.id}">${value.name}</label>
+                                    <input type="radio" class="select_exercise_id" id="select_exercise_id${num}" name="detail[select_exercise_id][${num}]" value="${value.id}" data-obj='${JSON.stringify(value)}' ${isExerSelected ? "checked" : ""}>
+                                    <label for="select_exercise_id${num}">${value.name}</label>
                                 </div>
                                 <div class="exercise-img">
                                     <img src="${value.image_url ? value.image_url : '{{ asset('dist/img/placeholder.png') }}'}" class="" height="120px" width="150px">
