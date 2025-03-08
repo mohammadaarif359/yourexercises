@@ -375,8 +375,9 @@
 
 		$('body').on('click', '.addrow', function () {
 			var itemrow = $('#itemrow').clone(); // Remove the duplicate id from the cloned row
-			var exercise_id = $('select[id^="exercise_id"]:last');
-			var num = parseInt(exercise_id.prop("id").match(/\d+/g), 10) + 1;
+			// var exercise_id = $('select[id^="exercise_id"]:last');
+			var category_id = $('select[id^="category_id"]:last');
+			var num = parseInt(category_id.prop("id").match(/\d+/g), 10) + 1;
 			
 			itemrow.find("select, input").each(function () {
 				var currentId = $(this).attr('id');
