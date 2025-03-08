@@ -93,8 +93,18 @@
 									</select>
 									<span class="error invalid-feedback" id="error_subcategory_id{{$count}}"></span>
 								</div>
-							</div>	
-							<div class="col-md-2 col-sm-12">
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="times" class="{{$hide}}">Execise</label>
+									<div>
+										<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
+										id="addexercise{{$count}}" data-target="#addexercisemodal{{$count}}" data-whatever="@getbootstrap">Select</button>
+										<span class="error invalid-feedback" id="error_select_exercise_id0"></span>
+									</div>	
+								</div>
+							</div>
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="exercise_id" class="{{$hide}}">Exercise</label>
 									<select  id="exercise_id{{$count}}" class="exercise_id form-control" name="detail[exercise_id][]">
@@ -170,6 +180,25 @@
 										<button type="button" class="btn addrow p-0 by-admin" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
 										<button type="button" class="btn addadminrow p-0 by-admin" id="addadminrow{{$count}}" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
 										<button type="button" class="btn deleterow p-0 by-admin" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<div class="modal fade addexercisemodal" id="addexercisemodal{{$count}}" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-xl" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exercisModalLabel">Select Exercise</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<div class="row">
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>   
+										</div>
 									</div>	
 								</div>
 							</div>
@@ -199,8 +228,18 @@
 									</select>
 									<span class="error invalid-feedback" id="error_subcategory_id0"></span>
 								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="times">Execise</label>
+									<div>
+										<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
+										id="addexercise0" data-target="#addexercisemodal0" data-whatever="@getbootstrap">Select</button>
+										<span class="error invalid-feedback" id="error_select_exercise_id0"></span>
+									</div>	
+								</div>
 							</div>	
-							<div class="col-md-2 col-sm-12">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="exercise_id">Exercise</label>
 									<select  id="exercise_id0" class="exercise_id form-control" name="detail[exercise_id][]">
@@ -276,6 +315,38 @@
 										<button type="button" class="btn addrow p-0" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
 										<button type="button" class="btn addadminrow p-0" id="addadminrow0" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
 										<button type="button" class="btn deleterow p-0" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<div class="modal fade addexercisemodal" id="addexercisemodal0" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-xl" role="document">
+												<div class="modal-content">
+													<div class="modal-header">
+														<h5 class="modal-title" id="exercisModalLabel">Select Exercise</h5>
+														<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+														</button>
+													</div>
+													<div class="modal-body">
+														<div class="row">
+															{{--@for($i = 1; $i <= 20; $i++)
+															<div class="col-md-3" style='border:1px solid lightgray;'>
+																<div class="form-group">
+																	<div class="exercise-option">
+																		<input type="radio" class="select_exercise_id" id="select_exercise_id{{$i}}" name="detail[select_exercise_id][]" value="exercise{{$i}}">
+																		<label for="select_exercise_id{{$i}}">Exercise {{$i}}</label>
+																	</div>
+																	<div class="exercise-img">
+																		<img src="{{ asset('dist/img/placeholder.png') }}" class="" height="120px" width="150px">
+																	</div>
+																</div>
+															</div>
+															@endfor--}}
+														</div>
+													</div>
+													<div class="modal-footer">
+														<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+													</div>
+												</div>
+											</div>   
+										</div>
 									</div>	
 								</div>
 							</div>	
@@ -340,6 +411,10 @@ $.ajaxSetup({
 		itemrow.find(".addrow").attr("id", "addrow" + num);
 		itemrow.find(".addadminrow").attr("id", "addadminrow" + num);
 		itemrow.find(".deleterow").attr("id", "deleterow" + num);
+		itemrow.find(".addexercise").attr("id", "addexercise" + num);
+		itemrow.find(".addexercise").attr("data-target","#addexercisemodal"+num)
+		itemrow.find(".addexercisemodal").attr("id","addexercisemodal"+num);
+		itemrow.find(".addexercisemodal .modal-body .row").empty();
 
 		itemrow.find("input, select").val('');
 		itemrow.find("option:selected").removeAttr("selected");
@@ -438,7 +513,7 @@ $.ajaxSetup({
 		var num = parseInt($(this).prop("id").match(/\d+/g), 10);
 		var is_admin = $('#is_admin'+num).val();
 		var url = is_admin == 1 ?  "{{ route('admin.exercise.by.subcategory') }}" : "{{ route('admin.doctor.exercise.by.subcategory') }}";
-		console.log('is_admin', is_admin, 'exerise get url', url);
+		console.log('sub num', num)
 		$.ajax({
 			type: 'POST',
 			data: {subcategory_id:[subcategory_id],is_private:is_admin == 1 ? 0 : ''},
@@ -451,17 +526,38 @@ $.ajaxSetup({
 				var dropdown = $("#exercise_id"+num);
 				dropdown.empty(); // Clear existing options
 				dropdown.append('<option value="">Select Exercise</option>');
+
+				var modalBody = $("#addexercisemodal" + num + " .modal-body .row");
+            	modalBody.empty();
 				$.each(data, function (key, value) {
 					var isExerSelected = planDetail[num] && planDetail[num].exercise_id == value.id;
-					console.log('key', key, isExerSelected)
+					console.log('value',value.id, 'isExerSelected', isExerSelected)
 					dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isExerSelected ? ' selected' : '') + '>' + value.name + '</option>');
 					// dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
+					
+					// set select exercise modal
+					var exerciseHtml = `
+                        <div class="col-md-3" style="border:1px solid lightgray;">
+                            <div class="form-group">
+                                <div class="exercise-option">
+                                    <input type="radio" class="select_exercise_id" id="select_exercise_id${num}" name="detail[select_exercise_id][${num}]" value="${value.id}" data-obj='${JSON.stringify(value)}' ' ${isExerSelected === true} ? checked : ''>
+                                    <label for="select_exercise_id${value.id}">${value.name}</label>
+                                </div>
+                                <div class="exercise-img">
+                                    <img src="${value.image_url ? value.image_url : '{{ asset('dist/img/placeholder.png') }}'}" class="" height="120px" width="150px">
+                                </div>
+                            </div>
+                        </div>`;
+                    modalBody.append(exerciseHtml);
 				});
 			},
 			error: function () {
 				var dropdown = $("#exercise_id"+num);
 				dropdown.empty();
 				dropdown.append('<option value="" selected>Select Exercise</option>');
+
+				var modalBody = $("#addexercisemodal" + num + " .modal-body .row");
+            	modalBody.empty();
 			}
 		});
 	});
@@ -487,7 +583,32 @@ $.ajaxSetup({
 	$(document).on("change", ".plan_id", function(){
 		var plan_id = $(this).val();
 		window.location.href = "{{ route('admin.doctor.plan.add') }}" + "?plan_id=" + plan_id;
-	});	
+	});
+
+	$('body').on('change', '.select_exercise_id', function () {
+		var selecte_exercise_id = $(this).val();
+    	var obj = $(this).data("obj");
+		var num = parseInt($(this).prop("id").match(/\d+/g), 10);
+		console.log("Selected Exercise ID:", selecte_exercise_id);
+    	console.log("Exercise Data:", obj);
+
+		var previous_modal_exercise_id = $("#select_exercise_id0").val();
+		console.log('previous_modal_exercise_id',previous_modal_exercise_id);
+		if (obj) { 
+			$("#reps"+num).val(obj.reps);
+			$("#hold"+num).val(obj.hold);
+			$("#complete"+num).val(obj.complete);
+			$("#perform"+num).val(obj.perform);
+			$("#times"+num).val(obj.times);
+		} else {
+			console.log('obj not', obj)
+			$("#reps"+num).val('');
+			$("#hold"+num).val('');
+			$("#complete"+num).val('');
+			$("#perform"+num).val('');
+			$("#times"+num).val('');
+		}
+	});
 
 </script>	
 @endsection

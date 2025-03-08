@@ -174,8 +174,6 @@
 			contentType: false,
 			success: function (data) {
 				$("#frm-register .error-helper").html('');
-				$('.demo-message').html();
-                $('.demo-message').removeClass(['text-success','text-danger']);
 				$("#register-btn").prop("disabled", false);
 				$('#register-btn').html('Register');
 				if (data.error) {
@@ -185,16 +183,18 @@
 						});
 					});
 				} else if(data.code === 200) {
-						// toastr.success(data.message);
-                        $('.demo-message').addClass('text-success');
-                        $('.demo-message').html(data.message);
-						setTimeout(()=>{
-							window.location.href = "{{ route('login') }}";
-						},2000)
+                    Toast.fire({
+                        icon: 'success',
+                        title: data.message
+                    });
+                    setTimeout(()=>{
+                        window.location.href = "{{ route('login') }}";
+                    },2000)
 				} else {
-					// toastr.error('Something went wrong');
-                    $('.demo-message').addClass('text-danger');
-                    $('.demo-message').html('Something went wrong');
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Something went wrong'
+                    });
 				}
 			}
 		});

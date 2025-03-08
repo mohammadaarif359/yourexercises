@@ -39,6 +39,6 @@ class RegisterController extends Controller
 		]);
 		// attach role
 		$user->attachRole($request->role);
-		return response()->json(['success'=>'User register Successfully now you can login to access our features!.','code'=>200]);
+		return response()->json(['message'=>'User register Successfully now you can login to access our features!.','code'=>200]);
 	}
 }

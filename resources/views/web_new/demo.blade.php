@@ -73,7 +73,6 @@
                         </div>--}}
                         <div class="mt-2 mb-1 justify-content-start">
                             <button class="ps-btn md-btn outline-btn text-end" type="submit" id='demo-inquiry-btn'>Book Now</button>
-                            <p class='demo-message' style='font-size:12pt;'></p>
                         </div>
                     </form>
                 </div>
@@ -163,8 +162,6 @@
 			data: $("#demo-inquiry-form").serialize(),
 			success: function (data) {
 				$("#demo-inquiry-form .error-helper").html('');
-				$('.demo-message').html();
-                $('.demo-message').removeClass(['text-success','text-danger']);
 				$("#demo-inquiry-btn").prop("disabled", false);
 				$('#demo-inquiry-btn').html('Book Now');
 				if (data.error) {
@@ -174,16 +171,18 @@
 						});
 					});
 				} else if(data.code === 200) {
-						// toastr.success(data.message);
-                        $('.demo-message').addClass('text-success');
-                        $('.demo-message').html(data.message);
-						setTimeout(()=>{
-							window.location.href = "{{ route('book-a-demo') }}";
-						},2000)
+                    Toast.fire({
+                        icon: 'success',
+                        title: data.message
+                    });
+                    setTimeout(()=>{
+                        window.location.href = "{{ route('book-a-demo') }}";
+                    },2000)
 				} else {
-					// toastr.error('Something went wrong');
-                    $('.demo-message').addClass('text-danger');
-                    $('.demo-message').html('Something went wrong');
+                    Toast.fire({
+                        icon: 'error',
+                        title: 'Something went wrong'
+                    });
 				}
 			}
 		});

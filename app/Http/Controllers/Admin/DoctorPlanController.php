@@ -100,6 +100,7 @@ class DoctorPlanController extends Controller
 	protected function savePlanDeatils($request_data, $plan_id) {
 		DoctorPlanDetail::where('doctor_plan_id', $plan_id)->delete();
 		$data = $request_data['detail'];
+		$data['exercise_id'] = $data['select_exercise_id'];
 		for($i=0;$i<count($data['exercise_id']);$i++) {
 			// if select the admin exercise first create in own account then attach to plan
 			if(isset($data['is_admin'][$i]) && $data['is_admin'][$i] == 1) {
@@ -207,7 +208,8 @@ class DoctorPlanController extends Controller
 			'is_active' => 'required|boolean',
 			'detail.category_id.*' => 'required',
 			'detail.subcategory_id.*' => 'required',
-			'detail.exercise_id.*' => 'required',
+			// 'detail.exercise_id.*' => 'required',
+			'detail.select_exercise_id.*' => 'required',
 			'detail.reps.*' => 'required',
 			'detail.hold.*' => 'required',
 			'detail.complete.*' => 'required',
@@ -217,7 +219,8 @@ class DoctorPlanController extends Controller
 		],[
 			'detail.category_id.*.required' => 'The category id field is required',
 			'detail.subcategory_id.*.required' => 'The subcategory id field is required',
-			'detail.exercise_id.*.required' => 'The exercise id field is required',
+			// 'detail.exercise_id.*.required' => 'The exercise id field is required',
+			'detail.select_exercise_id.*.required' => 'The exercise id field is required',
 			'detail.reps.*.required' => 'This reps field is required',
 			'detail.hold.*.required' => 'This hold field is required',
 			'detail.complete.*.required' => 'This complete field is required',
