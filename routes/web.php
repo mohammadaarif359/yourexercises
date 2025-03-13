@@ -30,11 +30,12 @@ Route::get('/privacy-policy','PageController@privacyPolicy')->name('privacy-poli
 Route::get('/terms-condition','PageController@termsCondition')->name('terms-condition');
 Route::post('/contact-inquiry','PageController@contactInquiry')->name('contact-inquiry');
 Route::post('/demo-inquiry','PageController@demoInquiry')->name('demo-inquiry');
-Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
 Route::get('/login','PageController@signIn')->name('login');
 Route::post('/register','RegisterController@register')->name('register');
 Route::post('/login','AuthController@login')->name('login');
 Route::get('/logout', 'AuthController@logout')->name('logout');
+Route::get('/feature/deatils','PageController@featureDummy')->name('feature.deatils');
+Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
 
 // after web login
 Route::middleware('auth:web')->group(function () {
@@ -60,6 +61,14 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/dashboard','Admin\DashboardController@index')->name('dashboard');
 	
 	// user
+	/*Route::get('/user','Admin\UserBkpController@index')->name('user');
+	Route::get('/user/add','Admin\UserBkpController@add')->name('user.add');
+	Route::post('/user/store','Admin\UserBkpController@store')->name('user.store');
+	Route::get('/user/edit/{id}','Admin\UserBkpController@edit')->name('user.edit');
+	Route::post('/user/update','Admin\UserBkpController@update')->name('user.update');
+	Route::get('/user/delete/{id}','Admin\UserBkpController@delete')->name('user.delete');
+	Route::get('/user/export','Admin\UserBkpController@export')->name('user.export');*/
+
 	Route::get('/user','Admin\UserController@index')->name('user');
 	Route::get('/user/add','Admin\UserController@add')->name('user.add');
 	Route::post('/user/store','Admin\UserController@store')->name('user.store');
@@ -67,6 +76,8 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::post('/user/update','Admin\UserController@update')->name('user.update');
 	Route::get('/user/delete/{id}','Admin\UserController@delete')->name('user.delete');
 	Route::get('/user/export','Admin\UserController@export')->name('user.export');
+	Route::get('/user/profile/{user_id}','Admin\UserController@profile')->name('user.profile');
+	Route::post('/user/profile/verify','Admin\UserController@profileVerify')->name('user.profile.verify');
 	
 	// push notification
 	Route::get('/notification','Admin\NotificationController@index')->name('notification');

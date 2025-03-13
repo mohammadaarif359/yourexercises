@@ -119,6 +119,17 @@ return [
 		'experience' => 'Experience',
 		'qualification' => 'Qualification',
 		'affiliations' => 'Affiliations',
+	],
+	'feature_pages' => [
+		'dispensing-home-exercises-program-made-easy'=>'Dispensing Home Exercises Program made easy',
+		'integrating-to-your-website-and-social-media'=>'Integrating to your website and social media',
+		'reporting'=>'Reporting',
+		'charting-doumentation-make-ems-friendly'=>'Chartings, Documentation and making EMS friendly',
+		'personalized-home-page-and-other-patients-landing-pages'=>'Personalized Home Page and other patients landing pages',
+		'24-7-support'=>'24*7 support',
+		'security-and-reliability'=>'Security and Reliability',
+		'simplifying-backend-usage-and-data-management'=>'Simplifying Backend usage and data management',
+		'automatic-notification-and-reminders'=>'Automatic notifications & reminders'
 	]
 ];
 

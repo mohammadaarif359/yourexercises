@@ -35,77 +35,81 @@
         <a href="{{ url('/features') }}" class="nav-link ps-dropdown-toggle">Feature <i class="fas fa-chevron-down ml-2"></i></a>
         <ul class="ps-dropdown-menu row">
           <li class="col-sm-4 col-lg-3 ">
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
-              <i class="fas fa-file-alt"></i>
+            <a href="{{ url('feature/dispensing-home-exercises-program-made-easy') }}" class="d-flex">
+              <i class="fas fa-heartbeat"></i>
               <div>
-                <h5>Paperless Patient Management</h5>
-                <p>Simplify your practice by digitizing patient records, Simplify your practice by digitizing patient
-                  records</p>
+                <h5>Dispensing Home Exercises Program made easy</h5>
+                <p>Anyone Practitioner can book prescribe and dispense HEP in just a few clicks given how user-friendly your exercises look 
+                  and feels — no matter their level of computer experience</p>
               </div>
             </a>
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
+            <a href="{{ url('feature/charting-doumentation-make-ems-friendly') }}" class="d-flex">
               <i class="fas fa-chart-line"></i>
               <div>
-                <h5>Advanced Performance Dashboard</h5>
-                <p>Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
+                <h5>Chartings, Documentation and making EMS friendly</h5>
+                <p>Seed up your patient charting with helpful features like Templates, Phrases and Smart Options & Narratives, 
+                  Your Exercises own AI-powered Voice to Chart, and more
                 </p>
               </div>
             </a>
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
-              <i class="fas fa-pencil-alt"></i>
+            <a href="{{ url('feature/security-and-reliability') }}" class="d-flex">
+              <i class="fas fa-recycle"></i>
               <div>
-                <h5>Custom Exercise Creation</h5>
-                <p>Build unique exercises that cater to the individual needs of your patients.</p>
+                <h5>Security and Reliability</h5>
+                <p>Experience Peace of Mind with Unmatched Security and Reliability At Your Exercises, 
+                  we prioritize your practice’s security and efficiency</p>
               </div>
             </a>
           </li>
           <li class="col-sm-4 col-lg-3 ">
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
+            <a href="{{ url('feature/integrating-to-your-website-and-social-media') }}" class="d-flex">
               <i class="fas fa-bullhorn"></i>
               <div>
-                <h5>Boost Your Online Presence</h5>
-                <p>Strengthen your clinic’s online visibility with integrated tools designed for growth.</p>
+                <h5>Integrating to your website and social media</h5>
+                <p>Your exercise helps you to connect your own website and boots on social media</p>
               </div>
             </a>
 
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
-              <i class="fas fa-link"></i>
+            <a href="{{ url('feature/personalized-home-page-and-other-patients-landing-pages') }}" class="d-flex">
+              <i class="fas fa-desktop"></i>
               <div>
-                <h5>Connect with Your Existing Website</h5>
-                <p>Seamlessly integrate with your current website for a cohesive and professional experience.</p>
+                <h5>Personalized Home Page and other patients landing pages</h5>
+                <p>Our Personalized Home Page and customized patient landing pages are designed to help you showcase your unique brand, 
+                  making your practice stand out and building stronger, more trusting relationships with your clients</p>
               </div>
             </a>
 
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
-              <i class="fas fa-heartbeat"></i>
+            <a href="{{ url('feature/simplifying-backend-usage-and-data-management') }}" class="d-flex">
+              <i class="fas fa-database"></i>
               <div>
-                <h5>Track Patient Health Progress</h5>
-                <p>Stay updated on your patients' health journeys with comprehensive progress tracking.</p>
+                <h5>Simplifying Backend usage and data management</h5>
+                <p>At Yourexercises.com, we believe that the future of healthcare and fitness is rooted in smart data management and actionable insights</p>
               </div>
             </a>
           </li>
           <li class="col-sm-4 col-lg-3 ">
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
-              <i class="fas fa-heartbeat"></i>
+            <a href="{{ url('feature/reporting') }}" class="d-flex">
+              <i class="fas fa-file-alt"></i>
               <div>
-                <h5>Track Patient Health Progress</h5>
-                <p>Stay updated on your patients' health journeys with comprehensive progress tracking.</p>
+                <h5>Reporting</h5>
+                <p>Everything you need to stay on top of your patients performance. Your practice’s data is automatically captured and presented in intuitive, 
+                  actionable reports — removing the hassle of manual spreadsheets and minimizing errors</p>
               </div>
             </a>
 
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
+            <a href="{{ url('feature/24-7-support') }}" class="d-flex">
               <i class="fas fa-comments"></i>
               <div>
-                <h5>Gather Feedback on Your Treatment</h5>
-                <p>Enhance your services by collecting and analyzing patient feedback effectively.</p>
+                <h5>24*7 Support</h5>
+                <p>We’ve kept on helping around the world round the clock. And we’re happy to help you too</p>
               </div>
             </a>
 
-            <a href="{{ url('feature/deatils') }}" class="d-flex">
+            <a href="{{ url('feature/automatic-notification-and-reminders') }}" class="d-flex">
               <i class="fas fa-lightbulb"></i>
               <div>
-                <h5>Get Automated Suggestions</h5>
-                <p>Receive smart recommendations to improve patient care and streamline clinic operations.</p>
+                <h5>Automatic notifications & reminders</h5>
+                <p>Your exercise stays on top of patient communication for you by automatically sending gentle but smart reminders to your patients via email</p>
               </div>
             </a>
           </li>
@@ -121,77 +125,81 @@
       <a href="{{ url('/features') }}" class="nav-link ps-dropdown-toggle-mobile">Feature <i class="fas fa-chevron-down"></i></a>
       <ul class="ps-dropdown-menu-mobile">
         <li class="col-12 p-0">
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
-            <i class="fas fa-file-alt"></i>
+          <a href="{{ url('feature/dispensing-home-exercises-program-made-easy') }}" class="d-flex">
+            <i class="fas fa-heartbeat"></i>
             <div>
-              <h5>Paperless Patient Management</h5>
-              <p>Simplify your practice by digitizing patient records, Simplify your practice by digitizing patient
-                records</p>
+              <h5>Dispensing Home Exercises Program made easy</h5>
+              <p>Anyone Practitioner can book prescribe and dispense HEP in just a few clicks given how user-friendly your exercises look 
+                and feels — no matter their level of computer experience</p>
             </div>
           </a>
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
+          <a href="{{ url('feature/charting-doumentation-make-ems-friendly') }}" class="d-flex">
             <i class="fas fa-chart-line"></i>
             <div>
-              <h5>Advanced Performance Dashboard</h5>
-              <p>Monitor key performance metrics and gain insights into patient progress with an intuitive dashboard.
+              <h5>Chartings, Documentation and making EMS friendly</h5>
+              <p>Seed up your patient charting with helpful features like Templates, Phrases and Smart Options & Narratives, 
+                Your Exercises own AI-powered Voice to Chart, and more
               </p>
             </div>
           </a>
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
-            <i class="fas fa-pencil-alt"></i>
+          <a href="{{ url('feature/security-and-reliability') }}" class="d-flex">
+            <i class="fas fa-recycle"></i>
             <div>
-              <h5>Custom Exercise Creation</h5>
-              <p>Build unique exercises that cater to the individual needs of your patients.</p>
+              <h5>Security and Reliability</h5>
+              <p>Experience Peace of Mind with Unmatched Security and Reliability At Your Exercises, 
+                we prioritize your practice’s security and efficiency</p>
             </div>
           </a>
         </li>
         <li class="col-12 p-0">
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
+          <a href="{{ url('feature/integrating-to-your-website-and-social-media') }}" class="d-flex">
             <i class="fas fa-bullhorn"></i>
             <div>
-              <h5>Boost Your Online Presence</h5>
-              <p>Strengthen your clinic’s online visibility with integrated tools designed for growth.</p>
+              <h5>Integrating to your website and social media</h5>
+              <p>Your exercise helps you to connect your own website and boots on social media</p>
             </div>
           </a>
-        
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
-            <i class="fas fa-link"></i>
+
+          <a href="{{ url('feature/personalized-home-page-and-other-patients-landing-pages') }}" class="d-flex">
+            <i class="fas fa-desktop"></i>
             <div>
-              <h5>Connect with Your Existing Website</h5>
-              <p>Seamlessly integrate with your current website for a cohesive and professional experience.</p>
+              <h5>Personalized Home Page and other patients landing pages</h5>
+              <p>Our Personalized Home Page and customized patient landing pages are designed to help you showcase your unique brand, 
+                making your practice stand out and building stronger, more trusting relationships with your clients</p>
             </div>
           </a>
-        
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
-            <i class="fas fa-heartbeat"></i>
+
+          <a href="{{ url('feature/simplifying-backend-usage-and-data-management') }}" class="d-flex">
+            <i class="fas fa-database"></i>
             <div>
-              <h5>Track Patient Health Progress</h5>
-              <p>Stay updated on your patients' health journeys with comprehensive progress tracking.</p>
+              <h5>Simplifying Backend usage and data management</h5>
+              <p>At Yourexercises.com, we believe that the future of healthcare and fitness is rooted in smart data management and actionable insights</p>
             </div>
           </a>
         </li>
         <li class="col-12 p-0">
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
-            <i class="fas fa-heartbeat"></i>
+          <a href="{{ url('feature/reporting') }}" class="d-flex">
+            <i class="fas fa-file-alt"></i>
             <div>
-              <h5>Track Patient Health Progress</h5>
-              <p>Stay updated on your patients' health journeys with comprehensive progress tracking.</p>
+              <h5>Reporting</h5>
+              <p>Everything you need to stay on top of your patients performance. Your practice’s data is automatically captured and presented in intuitive, 
+                actionable reports — removing the hassle of manual spreadsheets and minimizing errors</p>
             </div>
           </a>
-        
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
+
+          <a href="{{ url('feature/24-7-support') }}" class="d-flex">
             <i class="fas fa-comments"></i>
             <div>
-              <h5>Gather Feedback on Your Treatment</h5>
-              <p>Enhance your services by collecting and analyzing patient feedback effectively.</p>
+              <h5>24*7 Support</h5>
+              <p>We’ve kept on helping around the world round the clock. And we’re happy to help you too</p>
             </div>
           </a>
-        
-          <a href="{{ url('feature/deatils') }}" class="d-flex">
+
+          <a href="{{ url('feature/automatic-notification-and-reminders') }}" class="d-flex">
             <i class="fas fa-lightbulb"></i>
             <div>
-              <h5>Get Automated Suggestions</h5>
-              <p>Receive smart recommendations to improve patient care and streamline clinic operations.</p>
+              <h5>Automatic notifications & reminders</h5>
+              <p>Your exercise stays on top of patient communication for you by automatically sending gentle but smart reminders to your patients via email</p>
             </div>
           </a>
         </li>
