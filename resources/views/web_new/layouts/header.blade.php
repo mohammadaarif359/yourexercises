@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <title>Your Exercises</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link rel="icon" type="image/png" href="favicon.ico">
+<link rel="icon" type="image/png" href="{{ asset('web_new/assets/img/fav-icon.png') }}">
 <meta name="description" content="">
 <meta name="keywords" content="">
 <meta name="robots" content="noindex, nofollow" />
