@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('doctor_profiles', function (Blueprint $table) {
             $table->boolean('is_verified')->after('social_media')->default(0);
+            $table->boolean('ye_directory')->after('is_verified')->default(0);
         });
     }
 

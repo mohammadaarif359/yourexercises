@@ -16,7 +16,7 @@ class DoctorController extends Controller
     public function profile(Request $request) {
 		$user_id = Auth::user()->id;
 		$data = DoctorProfile::where('user_id', $user_id)->first();
-        return view('web_new.doctor.profile', compact('user_id', 'data'));
+		return view('web_new.doctor.profile', compact('user_id', 'data'));
 	}
 	public function profileSave(Request $request) {
 		$request->validate([
@@ -24,7 +24,7 @@ class DoctorController extends Controller
 			'slug'   => 'required|unique:doctor_profiles,slug,'.$request->id,
 			'clinic_address' => 'required',
 			'gender' => 'required',
-			'dob' => 'required|date',
+			'dob' => 'required|date|before_or_equal:' . now()->subYears(18)->toDateString(),
 			'image' => 'nullable|mimes:jpeg,jpg,png',
 			'logo' => 'nullable|mimes:png',
 		]);
@@ -75,6 +75,7 @@ class DoctorController extends Controller
 				'clinic_phone_no' => $request['clinic_phone_no'],
                 'professional_info' => $professional_info,
                 'social_media' => $social_media,
+				'ye_directory' => $request['ye_directory'] ?? 0,
 			]
 		);
 		if($data) {

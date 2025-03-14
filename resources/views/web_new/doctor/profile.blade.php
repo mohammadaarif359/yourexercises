@@ -106,6 +106,23 @@
                             @enderror
                         </div>
 
+                        <div class="col-md-6">
+                            <label for="form-label">Add yourself in YE directory</label><br/>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="ye_directory" class="form-check-input" value="1" @if(old('ye_directory', $data['ye_directory'] ?? '') == 1) checked @endif>Yes
+                                </label>
+                            </div>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="radio" name="ye_directory" class="form-check-input" value="0" @if(old('ye_directory', $data['ye_directory'] ?? 0) == 0) checked @endif>No
+                                </label>
+                            </div>
+                            @error('ye_directory')
+                                <span class="error-helper">{{ $message }}</span>
+                            @enderror
+                        </div>
+
                         <!--<div class="col-md-6">
                             <label class="form-label" for="color_theme">Clinic Color Theme <span id='color_value'></span></label>
                             <input type="color" name="color_theme" class="form-control" id="color_theme" placeholder="Enter your color theme"
