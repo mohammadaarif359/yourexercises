@@ -48,16 +48,16 @@
                <a href="{{ url('/features') }}" class="text-white"><h6 class="text-uppercase fw-bold">Features</h6></a>
                <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #4a4a4a; height: 2px" />
                <p class="m-0">
-                  <a href="#!" class="text-white">Paperless Patient Management</a>
+                  <a href="{{ url('/feature/dispensing-home-exercises-program-made-easy') }}" class="text-white">Dispensing Home Exercises Program made easy</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">Advanced Performance Dashboard</a>
+                  <a href="{{ url('/feature/integrating-to-your-website-and-social-media') }}" class="text-white">Integrating to your website and social media</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">Custom Exercise Creation</a>
+                  <a href="{{ url('/feature/automatic-notification-and-reminders') }}" class="text-white">Automatic notifications & reminders</a>
                </p>
                <p class="m-0">
-                  <a href="#!" class="text-white">Boost Your Online Presence</a>
+                  <a href="{{ url('/feature/24-7-support') }}" class="text-white">24*7 Support</a>
                </p>
             </div>
             <!-- Grid column -->
