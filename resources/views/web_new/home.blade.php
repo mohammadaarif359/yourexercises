@@ -25,7 +25,7 @@
   <!-- Features -->
   <section class="features-section pt-3 pt-md-5 section features-section pt-3 pt-md-5" data-aos="fade-up" data-aos-duration="1000">
     <div class="container">
-      <h2 class="paragraph-xl cl-dblue"> <span class="cl-lBlue-home">Home Exercise Features</span></h2>
+      <h2 class="paragraph-xl cl-dblue"> <span class="cl-lBlue-home">Your Exercises Features</span></h2>
       <p class="paragraph"> Unlock a seamless experience with Your Exercises Platform. </p>
       <div class="row flex-wrap px-2">
 
