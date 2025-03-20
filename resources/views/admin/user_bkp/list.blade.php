@@ -23,10 +23,8 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Mobile</th>
-							<th>Status</th>
-							<th>Verified</th>
-							<th>Patient</th>
 							<th>Created At</th>
+							<th>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>
@@ -56,10 +54,8 @@
 				{data: 'name', name: 'name'},
 				{data: 'email', name: 'email'},
 				{data: 'mobile', name: 'mobile'},
-				{data: 'status', name: 'status'},
-				{data: 'is_verified', name: 'is_verified'},
-				{data: 'patient_count', name: 'patient_count'},
 				{data: 'created_at.display', name: 'created_at.display'},
+				{data: 'status', name: 'status'},
 				{data: 'action', name: 'action', orderable: false, searchable: false},
 			]
 		});

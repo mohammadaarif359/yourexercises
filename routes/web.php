@@ -36,6 +36,8 @@ Route::post('/login','AuthController@login')->name('login');
 Route::get('/logout', 'AuthController@logout')->name('logout');
 Route::get('/feature/deatils','PageController@featureDummy')->name('feature.deatils');
 Route::get('/feature/{slug}','PageController@featureDetail')->name('feature.detail');
+Route::get('/clinic','PageController@clinic')->name('clinic');
+Route::get('/clinic/{slug}','PageController@clinicDetail')->name('clinic.detail');
 
 // after web login
 Route::middleware('auth:web')->group(function () {

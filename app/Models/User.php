@@ -92,4 +92,8 @@ class User extends Authenticatable
 
         return $categories;
     }
+    public function doctor_profile()
+    {
+        return $this->hasOne(DoctorProfile::class,'user_id','id');
+    }
 }

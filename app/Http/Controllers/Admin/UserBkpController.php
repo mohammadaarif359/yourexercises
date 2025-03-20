@@ -6,30 +6,22 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
-use App\Models\DoctorProfile;
 use App\Traits\AuthCode;
 use App\Traits\CommonCode;
 use DB;
 use DataTables;
 use Carbon\Carbon;
 
-class UserController extends Controller
+class UserBkpController extends Controller
 {
     use AuthCode,CommonCode;
 	public function index(Request $request) {
 		if ($request->ajax()) {
-			// $users = User::get();
-			$users = User::with('doctor_profile')->whereHas('roles', function ($q) {
-				$q->where('name', 'doctor');
-			})->get();
+			$users = User::get();
 			return Datatables::of($users)
 				->addColumn('action', function ($user) {
-					$btn = '<a href="/admin/user/edit/'.$user->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
-					<a href="/admin/user/profile/'.$user->id.'" class="" title="Doctor profile" target="_blank"><i class="fa fa-eye"></i></a>';
+					$btn = '<a href="/admin/user/edit/'.$user->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a><a href="/admin/user/delete/'.$user->id.'" class="" title="Delete"><i class="fa fa-trash"></i></a>';
 					return $btn;
-				})->editColumn('created_at', function ($user) {
-					return '<span>'.Carbon::parse($user->created_at)->format('d-m-Y').'</span><br>
-							<small>'.Carbon::parse($user->created_at)->format('h:i A').'</small>';
 				})->editColumn('created_at', function ($user) {
 					return [
 						'display' => Carbon::parse($user->created_at)->format('d-m-Y h:i A'),
@@ -37,10 +29,6 @@ class UserController extends Controller
 					];
 				})->editColumn('status', function ($user) {
 					return $user->status == 1 ? 'Active' : 'Deactive';
-				})->editColumn('is_verified', function ($user) {
-					return !empty($user->doctor_profile) && $user->doctor_profile->is_verified == 1 ? 'Verified' : 'Not Verified';
-				})->addColumn('patient_count', function ($user) {
-					return 0;
 				})
 				->make(true);
 		}
@@ -142,40 +130,8 @@ class UserController extends Controller
 		}	
 	}
 	public function export(Request $request) {
-		// $query = User::select("name","email","mobile","status","created_at")->get();
-		$query = User::with('doctor_profile')->whereHas('roles', function ($q) {
-				$q->where('name', 'doctor');
-			})->get()->map(function ($user) {
-				return [
-					'id' => $user->id,
-					'name' => $user->name,
-					'email' => $user->email,
-					'mobile' => $user->mobile,
-					'status' => $user->status === 1 ? 'Active' : 'Deactive',
-					'is_verified' => !empty($user->doctor_profile) && $user->doctor_profile->is_verified ? 'Verified' : 'Not Verified',
-					'patient_count' => '0',
-					'created_at' => $user->created_at, // Handling potential null values
-				];
-			});
-		$heading = array("id","name","email","mobile","status","verified","patient_count","created_at");
+		$query = User::select("id","name","email","mobile","status","created_at")->get();
+		$heading = array("id","name","email","mobile","status","created_at");
 		return $this->exportModule($model = null,$query,$heading);
-	}
-	public function profile($user_id) {
-		$data = DoctorProfile::where('user_id',$user_id)->first();
-		if($data) {
-			return view('admin.user.profile',compact('data'));
-		} else {
-			abort(404);
-		}
-	}
-	public function profileVerify(Request $request) {
-		$data = DoctorProfile::where('user_id',$request->user_id)->first();
-		if($data) {
-			$data->is_verified = !$data->is_verified;
-			$data->save();
-			return redirect()->back()->with('success', 'Profile verified successfully !');
-		} else {
-			return redirect()->back()->with('success', 'Profie not found !');
-		}
 	}
 }

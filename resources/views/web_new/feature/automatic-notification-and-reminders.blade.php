@@ -85,4 +85,5 @@
             <p class="paragraph-md cl-dblue">Start automating your reminders today, and see how simple, consistent communication can transform your practice and improve patient outcomes</p>
         </div>
     </div>
+    @include('web_new.feature.partial.award')
 @endsection

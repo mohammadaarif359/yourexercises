@@ -7,6 +7,7 @@ use App\Models\CmsPage;
 use App\Models\Inquiry;
 use App\Models\DemoInquiry;
 use App\Models\Role;
+use App\Models\DoctorProfile;
 use Validator;
 
 class PageController extends Controller
@@ -96,6 +97,25 @@ class PageController extends Controller
 			if($inquiry) {
 				return response()->json(['success'=>'Inquiry has been send successfully.we will connect you soon.','code'=>200]);
 			}
+		}
+	}
+	public function clinic(Request $request) {
+		$search = $request->get('search');
+		$clinics = DoctorProfile::with('user')
+			->when(!empty($search), function($q) use($search){
+				return $q->where('clinic_name','like','%'.$search.'%')
+				->orWhereHas('user', function($qy) use($search){
+					$qy->where('name','like','%'.$search.'%');
+				});
+			})->get();
+		return view('web_new.clinic.index', compact('clinics'));
+	}
+	public function clinicDetail($slug) {
+		$data = DoctorProfile::with('user')->where('slug',$slug)->first();
+		if($data) {
+			return view('web_new.clinic.detail', compact('data'));
+		} else {
+			abort(404);
 		}
 	}
 }
