@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row ps-border-bottom mx-4" data-aos="fade" data-aos-duration="2000">
                 <div class="col-12 p-0">
-                    <h1 class="heading-xl cl-lBlue fw-500">Doctor Profile</h1>
+                    <h1 class="heading-xl cl-lBlue fw-500">Practioner Profile</h1>
                     <p class="paragraph cl-dblue">
                         It only takes a few minutes to have your practice up and running with .
                     </p>
