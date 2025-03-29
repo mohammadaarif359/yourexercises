@@ -94,8 +94,15 @@ class AuthController extends Controller
         return '/login'; // Default fallback
     }
 	public function logout() {
+        $user = Auth::user();
 		Session::flush();
 		Auth::guard('web')->logout();
-        return redirect('/login');
+        $redirectTo = '/login';
+        if($user->hasRole('doctor')) {
+            $redirectTo = '/clinic/'.$user->doctor_profile->slug;
+        } else if($user->hasRole('patient')) {
+            $redirectTo = $user->patient_profile['patient_doctor'] ? 'clinic/'.$user->patient_profile['patient_doctor']['slug'] :  '/login';
+        }
+        return redirect($redirectTo);
     }
 }
