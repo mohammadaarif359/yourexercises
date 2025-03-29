@@ -55,6 +55,14 @@
           </li>--}}
           @if(Auth::user()->hasRole('super-admin'))
           <li class="nav-item">
+            <a href="{{ route('admin.user') }}" class="nav-link {{ request()->is('admin/user*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.category') }}" class="nav-link {{ request()->is('admin/category*') || request()->is('admin/subcategory*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-list-alt"></i>
               <p>
@@ -87,6 +95,14 @@
             </a>
           </li>
           @elseif(Auth::user()->hasRole('doctor'))
+          <li class="nav-item">
+            <a href="{{ route('admin.doctor.user') }}" class="nav-link {{ request()->is('admin/doctor/user*') ? 'active' : '' }}">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                User
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('admin.doctor.exercise') }}" class="nav-link {{ request()->is('admin/doctor/exercise*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-dumbbell"></i>

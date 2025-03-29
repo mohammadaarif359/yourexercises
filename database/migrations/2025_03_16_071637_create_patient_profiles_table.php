@@ -17,11 +17,11 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('doctor_id');
-            $table->string('gender');
-            $table->date('dob');
-            $table->text('address');
+            $table->string('gender')->nullable();
+            $table->date('dob')->nullable();
+            $table->text('address')->nullable();
             $table->longText('medical_history')->nullable();
-            $table->ingeter('avg_rating')->default(0);
+            $table->integer('avg_rating')->default(0);
             $table->timestamps();
         });
     }

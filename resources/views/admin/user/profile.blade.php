@@ -251,6 +251,7 @@
               {{--<button type="submit" class="btn btn-primary">Update</button>--}}
 			</div>
 		  </form>
+          @if(!$data['is_verified'])
           <form method="POST" action="{{ route('admin.user.profile.verify') }}">
             @csrf
             <input type="hidden" name="user_id" value="{{ $data->user_id }}">
@@ -258,6 +259,7 @@
                 <button type="submit" class="btn btn-primary">Verify Profile</button>
             </div>
           </form>
+          @endif
 		</div>
 		</div>
 	  <div class="col-md-6">

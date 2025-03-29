@@ -52,6 +52,10 @@ class AuthController extends Controller
             $user = $this->guard()->user();
             if($user && $user->hasRole('patient')) {
 			    return $this->sendFailedLoginResponse($request);
+            } else if($user && $user->hasRole('doctor')) {
+                if(!$user->doctor_profile || !$user->doctor_profile['is_verified']) {
+                    return $this->sendFailedLoginResponse($request);
+                }
             }
             return $this->sendLoginResponse($request);
         }
@@ -75,7 +79,13 @@ class AuthController extends Controller
             $this->guard()->logout();
             $request->session()->invalidate();
             $errors = ['authfailed' => trans('auth.authfailed')];
-        } else {
+        } else if($user && $user->hasRole('doctor')) {
+            if(!$user->doctor_profile || !$user->doctor_profile['is_verified']) {
+                $this->guard()->logout();
+                $request->session()->invalidate();
+                $errors = ['authfailed' => trans('auth.unverified_doctor')];
+            }
+        }else {
 			$errors = ['authfailed' => trans('auth.failed')];	
 		}
 		
@@ -91,9 +101,9 @@ class AuthController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('super-admin')) {
-            return '/admin/category';
+            return '/admin/user';
         } elseif ($user->hasRole('doctor')) {
-            return '/admin/doctor/exercise';
+            return '/admin/doctor/user';
         }
         return '/admin/login'; // Default fallback
     }

@@ -2036,7 +2036,7 @@ a:hover {
   color: #963b54;
 }
 .ps-singin .contact-section .form-control {
-  margin-bottom: 9px;
+  margin-bottom: 18px;
 }
 
 .ps-paddingFix {
@@ -2338,31 +2338,6 @@ body {
   animation: bounce 1s infinite alternate;
 }
 
-.error-helper {
-  color: darkred;
-  font-size: 11pt;
-}
-
-.feature-page .card {
-  border-radius: 25px;
-}
-
-.register-section {
-  border:1px solid lightgray;
-  padding-top:20px;
-  padding-bottom:20px;
-}
-
-.login-section {
-  padding: 20px 25px;
-  background: linear-gradient(135deg, #ec7078, #491641);
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 123, 255, 0.1);
-  color: white;
-}
-
 @keyframes bounce {
   from {
     transform: translateY(0);
@@ -2370,4 +2345,252 @@ body {
   to {
     transform: translateY(-10px);
   }
+}
+.ps-dr-profile .profile-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.ps-dr-profile .profile-header img {
+  width: 210px;
+  height: 210px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 768px) {
+  .ps-dr-profile .profile-header img {
+    height: 150px;
+    width: 150px;
+  }
+}
+.ps-dr-profile .profile-picture {
+  position: absolute;
+  bottom: -50px;
+  left: 45px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .ps-dr-profile .profile-picture {
+    bottom: -80px;
+  }
+}
+.ps-dr-profile .profile-info {
+  margin-top: 45px;
+  padding: 0 20px;
+}
+@media (max-width: 768px) {
+  .ps-dr-profile .profile-info {
+    margin-top: 70px;
+  }
+}
+.ps-dr-profile .profile-info h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.ps-dr-profile .profile-info p {
+  margin-bottom: 5px;
+}
+.ps-dr-profile .profile-info .badge {
+  font-size: 14px;
+}
+.ps-dr-profile .profile-info .stats {
+  font-size: 16px;
+  color: #6c757d;
+}
+.ps-dr-profile .profile-info .stats i {
+  margin-right: 1px;
+  margin-left: 15px;
+}
+.ps-dr-profile .profile-info .stats i:first-child {
+  margin-left: 0px;
+}
+.ps-dr-profile .experience-item {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.ps-dr-profile .experience-item img {
+  width: 80px;
+  height: 80px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 15px;
+}
+.ps-dr-profile .experience-item h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+.ps-dr-profile .experience-item .heading {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.ps-dr-profile .experience-item .sub-heading {
+  font-size: 12px;
+  color: #6c757d;
+  margin-bottom: 0;
+}
+.ps-dr-profile .experience-item .ps-review-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.ps-dr-profile .medical-actions, .ps-dr-profile .download-app {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.ps-dr-profile .medical-actions ul {
+  padding-left: 20px;
+}
+.ps-dr-profile .medical-actions ul li {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #6c757d;
+}
+.ps-dr-profile .medical-actions ul li i {
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  color: #000;
+}
+.ps-dr-profile .medical-actions ul li.social-icons i {
+  font-size: 20px;
+  margin-right: 5px;
+  color: #000;
+}
+.ps-dr-profile .download-app img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.ps-dr-profile .download-app .btn-group {
+  width: 100%;
+}
+.ps-dr-profile .download-app .btn-group .btn {
+  width: 49%;
+}
+.ps-dr-profile .hero {
+  background-color: #000;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(https://img.freepik.com/premium-vector/medical-concept-with-character-illustration-doctors-with-stethoscope-header-banner-hero-image-concept_1302-36506.jpg);
+  background-size: cover;
+  color: #fff;
+  padding: 7em;
+  text-align: center;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  .ps-dr-profile .hero {
+    padding: 4em 1em;
+  }
+}
+.ps-dr-profile .ps-badge-light {
+  padding: 3px 8px;
+  border: 1px solid #6c757d;
+  border-radius: 5px;
+  color: #6c757d;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.ps-dr-profile .ps-badge-light span {
+  display: block;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 5px;
+}
+.ps-dr-profile .section-paragraph {
+  font-size: 16px;
+  line-height: 22px;
+  max-height: 110px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  margin-bottom: 5px;
+}
+.ps-dr-profile .section-paragraph.expanded {
+  max-height: 500px;
+}
+.ps-dr-profile .section-review {
+  max-height: 53px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+  margin-bottom: 5px;
+}
+.ps-dr-profile .toggle-btn2 {
+  font-size: 12px;
+  font-weight: 500;
+}
+.ps-dr-profile .section-review.expanded {
+  max-height: 350px; /* Change to `none` if the content varies */
+}
+.ps-dr-profile .toggle-btn i {
+  transition: transform 0.3s ease-in-out;
+}
+.ps-dr-profile .toggle-btn.expanded i {
+  transform: rotate(360deg);
+}
+
+.section-title {
+  font-size: 24px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.team-container.ps-team-dr {
+  padding: 10px 50px;
+}
+@media (max-width: 575px) {
+  .team-container.ps-team-dr {
+    padding: 10px 3px;
+  }
+}
+.team-container.ps-team-dr .team-member {
+  width: 225px;
+  padding: 20px 20px 20px 20px;
+  color: #212121;
+}
+.team-container.ps-team-dr .team-member h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+.team-container.ps-team-dr .team-member h5 {
+  font-size: 14px;
+}
+
+.input-grey-rounded {
+  font-size: 16px;
+  line-height: 1.5;
+  background: #ffffff;
+  border: 1px solid #D5D9DB;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path fill='%238C92A0' d='M11.44 10.73l4.41 4.42a.5.5 0 1 1-.7.7l-4.42-4.41a6.5 6.5 0 1 1 .7-.7v-.01zM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z'></path></svg>");
+  background-repeat: no-repeat;
+  background-position: 15px 10px;
+  background-size: 20px 20px;
+  border-radius: 100px;
+  width: 300px;
+  padding: 0.5em 1em 0.5em 2.5em;
+}
+
+.input-grey-rounded::-moz-placeholder {
+  color: #838D99;
+}
+
+.input-grey-rounded::placeholder {
+  color: #838D99;
+}
+
+.input-grey-rounded:focus {
+  outline: none;
+  background-color: #FFF;
+  border: 1px solid #84A2FA;
+}
+.fa-star {
+  color: #FFD700;
 }/*# sourceMappingURL=main.css.map */

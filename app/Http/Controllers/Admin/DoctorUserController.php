@@ -7,27 +7,28 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\DoctorProfile;
+use App\Models\PatientProfile;
 use App\Traits\AuthCode;
 use App\Traits\CommonCode;
 use DB;
 use DataTables;
 use Carbon\Carbon;
+use Auth;
 
-class UserController extends Controller
+class DoctorUserController extends Controller
 {
     use AuthCode,CommonCode;
 	public function index(Request $request) {
 		if ($request->ajax()) {
-			// $users = User::get();
-			$users =  User::with(['doctor_profile' => function ($q) {
-					$q->withCount('doctor_patient'); // 👈 adds doctor_patient_count to doctor_profile
-				}])->whereHas('roles', function ($q) {
-					$q->where('name', 'doctor');
+			$doctor_id = Auth::user()->doctor_profile->id;
+
+			$users = User::whereHas('patient_profile', function ($q) use($doctor_id) {
+					$q->where('doctor_id', $doctor_id);
 				})->get();
 			return Datatables::of($users)
 				->addColumn('action', function ($user) {
-					$btn = '<a href="/admin/user/edit/'.$user->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
-					<a href="/admin/user/profile/'.$user->id.'" class="" title="Doctor profile" target="_blank"><i class="fa fa-eye"></i></a>';
+					$btn = '<a href="/admin/doctor/user/edit/'.$user->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
+					<a href="/admin/doctor/user/profile/'.$user->id.'" class="" title="Patient profile" target="_blank"><i class="fa fa-eye"></i></a>';
 					return $btn;
 				})->editColumn('created_at', function ($user) {
 					return '<span>'.Carbon::parse($user->created_at)->format('d-m-Y').'</span><br>
@@ -39,20 +40,18 @@ class UserController extends Controller
 					];
 				})->editColumn('status', function ($user) {
 					return $user->status == 1 ? 'Active' : 'Deactive';
-				})->editColumn('is_verified', function ($user) {
-					return !empty($user->doctor_profile) && $user->doctor_profile->is_verified == 1 ? 'Verified' : 'Not Verified';
-				})->addColumn('patient_count', function ($user) {
-					return !empty($user->doctor_profile) ? $user->doctor_profile->doctor_patient_count : 0;
 				})
 				->make(true);
 		}
-		return view('admin.user.list');
+		return view('admin.doctor.user.list');
 	}
 	public function add() {
-		$roles = Role::where('name','doctor')->pluck('display_name','id')->toArray();
-		return view('admin.user.add',compact('roles'));
+		$doctor_id = Auth::user()->doctor_profile->id;
+		$roles = Role::where('name','patient')->pluck('display_name','id')->toArray();
+        return view('admin.doctor.user.add',compact('roles','doctor_id'));
 	}
 	public function store(Request $request) {
+		$doctor_profile = Auth::user()->doctor_profile;
 		$request_data = $request->all();
 		$request->validate([
 			'name'    => 'required|regex:/^[\pL\s]+$/u',
@@ -76,12 +75,27 @@ class UserController extends Controller
 		]);
 		// attach role
 		$user->attachRole($request->role);
-		return redirect()->route('admin.user')->with('success', 'User created Successfully !');
+
+		// patient profile create
+		PatientProfile::create([
+			'user_id' => $user->id,
+			'doctor_id' => $doctor_profile->id
+		]);
+
+        // user account creation email
+        $data['name'] = $user['name'];
+		$data['email'] = $user['email'];
+		$data['password'] = $request_data['password'];
+		$data['message'] = trans('sms.patientUserCreate', ['doctor_name' => $doctor_profile['user']['name']]);
+		$data['url'] = url('/clinic/'.$doctor_profile->slug); 
+		$this->sendPatientUserCreateMail($data);
+
+        return redirect()->route('admin.doctor.user')->with('success', 'User created Successfully !');
 	}
 	public function edit($id) {
 		$user = User::where('id',$id)->first();
 		if($user) {
-			$roles = Role::where('name','doctor')->pluck('name','id')->toArray();
+			$roles = Role::pluck('name','id')->toArray();
 			$old_role = [];
 			if(!empty($user['roles'])) {
 				$userRoles = $user['roles'];
@@ -90,12 +104,13 @@ class UserController extends Controller
 				}
 				//$old_role = implode(",",$old_role);
 			}
-			return view('admin.user.edit',compact('user','roles','old_role'));
+			return view('admin.doctor.user.edit',compact('user','roles','old_role'));
 		} else {
 			abort(404);
 		}
 	}
 	public function update(Request $request) {
+		$doctor_profile = Auth::user()->doctor_profile;
 		$request_data = $request->all();
 		$request->validate([
 			'id' =>	'required',
@@ -124,68 +139,64 @@ class UserController extends Controller
 			// delete old role and new attach
 			DB::table('role_user')->where('user_id',$user->id)->delete();
 			$user->attachRole($request->role);
-			return redirect()->route('admin.user')->with('success', 'User updated successfully !');
+
+            /* user account creation email
+			$data['name'] = $user['name'];
+			$data['email'] = $user['email'];
+			$data['password'] = $request_data['password'];
+			$data['message'] = trans('sms.patientUserCreate', ['doctor_name' => $doctor_profile['user']['name']]);
+			$data['url'] = url('/clinic/'.$doctor_profile->slug); */
+			$this->sendPatientUserCreateMail($data);
+			return redirect()->route('admin.doctor.user')->with('success', 'User updated successfully !');
 		} else {
 			return redirect()->back()->with('error', 'Failer to updated user !');
 		}
 		
 	}
-	public function delete($id) {
-		$user = User::where('id',$id)->first();
-		if($user) {
-			$status = $this->deleteUserData($user);
-			if($status) {
-				return redirect()->back()->with('success', 'User deleted successfully !');
-			} else {
-				return redirect()->back()->with('error', 'Failed to delete user!');
-			}
-		} else {
-			abort(404);
-		}	
-	}
 	public function export(Request $request) {
-		$query = User::with(['doctor_profile' => function ($q) {
-					$q->withCount('doctor_patient'); // 👈 adds doctor_patient_count to doctor_profile
-				}])->whereHas('roles', function ($q) {
-					$q->where('name', 'doctor');
-				})->get()->map(function ($user) {
+		$query = User::with('doctor_profile')->whereHas('roles', function ($q) {
+				$q->where('name', 'patient');
+			})->get()->map(function ($user) {
 				return [
 					'id' => $user->id,
 					'name' => $user->name,
 					'email' => $user->email,
 					'mobile' => $user->mobile,
 					'status' => $user->status === 1 ? 'Active' : 'Deactive',
-					'is_verified' => !empty($user->doctor_profile) && $user->doctor_profile->is_verified ? 'Verified' : 'Not Verified',
-					'patient_count' => !empty($user->doctor_profile) ? $user->doctor_profile->doctor_patient_count : 0,  
-					'created_at' => $user->created_at, // Handling potential null values
+					'created_at' => $user->created_at,
 				];
 			});
 		$heading = array("id","name","email","mobile","status","verified","patient_count","created_at");
 		return $this->exportModule($model = null,$query,$heading);
 	}
 	public function profile($user_id) {
-		$data = DoctorProfile::where('user_id',$user_id)->first();
-		if($data) {
-			return view('admin.user.profile',compact('data'));
-		} else {
-			abort(404);
-		}
+		$data = PatientProfile::where('user_id',$user_id)->first();
+		return view('admin.doctor.user.profile',compact('data','user_id'));
 	}
-	public function profileVerify(Request $request) {
-		$profile = DoctorProfile::where('user_id',$request->user_id)->first();
-		if($profile) {
-			$profile->is_verified = !$profile->is_verified;
-			$profile->save();
-			// send mail
-			$data['name'] = $profile['user']['name'];
-			$data['email'] = $profile['user']['email'];
-			$data['clinic_name'] = $profile['clinic_name'];
-			$data['message'] = trans('sms.doctorProfileVerified');
-			$data['url'] = url('/clinic/'.$profile->slug);
-			$this->sendDoctorProfileVerifiedMail($data);
-			return redirect()->route('admin.user')->with('success', 'Profile verified successfully !');
-		} else {
-			return redirect()->back()->with('success', 'Profie not found !');
+	public function profileSave(Request $request) {
+		$request->validate([
+			'gender' => 'required',
+			'dob' => 'required|date|before_or_equal:' . now()->subYears(18)->toDateString(),
+			'address' => 'required',
+			'medical_history' => 'nullable',
+		]);
+		$doctor_id = Auth::user()->doctor_profile->id;
+
+        $data = PatientProfile::updateOrCreate(
+			[
+				'user_id' => $request['user_id'],
+				'doctor_id' => $doctor_id
+			],
+			[
+				'gender' => $request['gender'],
+				'dob' => $request['dob'],
+				'address' => $request['address'],
+				'medical_history' => $request['medical_history'],
+			]
+		);
+		if($data) {
+			return redirect()->route('admin.doctor.user')->with('success', 'Profile update successfully !');
 		}
+		return redirect()->back()->with('error', 'Failer to updated profile !');
 	}
 }

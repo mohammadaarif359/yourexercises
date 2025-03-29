@@ -96,4 +96,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(DoctorProfile::class,'user_id','id');
     }
+    public function patient_profile()
+    {
+        return $this->hasOne(PatientProfile::class,'user_id','id');
+    }
 }

@@ -9,8 +9,8 @@
 		  <h3 class="card-title">Users</h3>
 		  <div class="card-tools">
 			  <div class="d-flex flex-row justify-content-center">			  
-				  {{--<a href="{{ route('admin.user.add') }}" class="btn btn-primary btn-sm ml-2">Add</a>--}}
-				  <a href="{{ route('admin.user.export') }}" class="btn btn-primary btn-sm ml-2">Export</a>
+				  <a href="{{ route('admin.doctor.user.add') }}" class="btn btn-primary btn-sm ml-2">Add</a>
+				  <a href="{{ route('admin.doctor.user.export') }}" class="btn btn-primary btn-sm ml-2">Export</a>
 			  </div>	
 		  </div>
 		</div>
@@ -24,8 +24,6 @@
 							<th>Email</th>
 							<th>Mobile</th>
 							<th>Status</th>
-							<th>Verified</th>
-							<th>Patient</th>
 							<th>Created At</th>
 							<th>Action</th>
 						</tr>
@@ -51,14 +49,12 @@
 		var table = $('#example1').DataTable({
 			processing: true,
 			serverSide: true,
-			ajax: "{{ route('admin.user') }}",
+			ajax: "{{ route('admin.doctor.user') }}",
 			columns: [
 				{data: 'name', name: 'name'},
 				{data: 'email', name: 'email'},
 				{data: 'mobile', name: 'mobile'},
 				{data: 'status', name: 'status'},
-				{data: 'is_verified', name: 'is_verified'},
-				{data: 'patient_count', name: 'patient_count'},
 				{data: 'created_at.display', name: 'created_at.display'},
 				{data: 'action', name: 'action', orderable: false, searchable: false},
 			]

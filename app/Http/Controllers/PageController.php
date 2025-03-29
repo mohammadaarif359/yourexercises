@@ -107,11 +107,11 @@ class PageController extends Controller
 				->orWhereHas('user', function($qy) use($search){
 					$qy->where('name','like','%'.$search.'%');
 				});
-			})->get();
+			})->where('is_verified',1)->where('ye_directory', 1)->get();
 		return view('web_new.clinic.index', compact('clinics'));
 	}
 	public function clinicDetail($slug) {
-		$data = DoctorProfile::with('user')->where('slug',$slug)->first();
+		$data = DoctorProfile::with('user')->withCount('doctor_patient')->where('slug',$slug)->where('is_verified',1)->first();
 		if($data) {
 			return view('web_new.clinic.detail', compact('data'));
 		} else {

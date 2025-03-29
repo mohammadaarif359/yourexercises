@@ -9,9 +9,10 @@
         <ul class="nav-links">
             <li>
                 <div class="header-sidebtn">
+                    @if(!Auth::user())
                     <a href="{{ url('login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Login in</a>
-                    <a href="{{ url('admin.login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Doctor Login</a>
-                    @if(Auth::user())
+                    <a href="{{ url('admin/login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Doctor Login</a>
+                    @else
                         <a href="{{ url('logout') }}" class="ps-btn sm-btn primary-btn ps-header-btn"><i class="fas fa-sign-out-alt pt-1 px-1"></i></a>
                     @endif
                 </div>

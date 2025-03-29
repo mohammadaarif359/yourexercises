@@ -43,6 +43,8 @@ Route::get('/clinic/{slug}','PageController@clinicDetail')->name('clinic.detail'
 Route::middleware('auth:web')->group(function () {
 	Route::get('/doctor/profile','DoctorController@profile')->name('doctor.profile');
 	Route::post('/doctor/profile/save','DoctorController@profileSave')->name('doctor.profile.save');
+
+	Route::get('/patient/profile','PatientController@profile')->name('patient.profile');
 });
 
 // admin login route
@@ -161,6 +163,15 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/plan/edit/{id}','Admin\DoctorPlanController@edit')->name('doctor.plan.edit');
 	Route::post('/doctor/plan/update','Admin\DoctorPlanController@update')->name('doctor.plan.update');
 	Route::get('/doctor/plan/export','Admin\DoctorPlanController@export')->name('doctor.plan.export');
+
+	Route::get('/doctor/user','Admin\DoctorUserController@index')->name('doctor.user');
+	Route::get('/doctor/user/add','Admin\DoctorUserController@add')->name('doctor.user.add');
+	Route::post('/doctor/user/store','Admin\DoctorUserController@store')->name('doctor.user.store');
+	Route::get('/doctor/user/edit/{id}','Admin\DoctorUserController@edit')->name('doctor.user.edit');
+	Route::post('/doctor/user/update','Admin\DoctorUserController@update')->name('doctor.user.update');
+	Route::get('/doctor/user/export','Admin\DoctorUserController@export')->name('doctor.user.export');
+	Route::get('/doctor/user/profile/{user_id}','Admin\DoctorUserController@profile')->name('doctor.user.profile');
+	Route::post('/doctor/user/profile/save','Admin\DoctorUserController@profileSave')->name('doctor.user.profile.save');
 
 	// inquiry
 	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');

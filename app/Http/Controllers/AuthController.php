@@ -31,7 +31,6 @@ class AuthController extends Controller
      * @var string
      */
     //protected $redirectTo = RouteServiceProvider::HOME;
-	protected $redirectTo = '/doctor/profile';
 
     /**
      * Create a new controller instance.
@@ -83,6 +82,16 @@ class AuthController extends Controller
         return redirect()->back()
             ->withInput($request->only($this->username(), 'remember'))
         ->withErrors($errors);
+    }
+    protected function redirectTo()
+    {
+        $user = Auth::user();
+        if ($user->hasRole('doctor')) {
+            return '/doctor/profile';
+        } elseif ($user->hasRole('patient')) {
+            return '/patient/profile';
+        }
+        return '/login'; // Default fallback
     }
 	public function logout() {
 		Session::flush();

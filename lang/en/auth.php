@@ -17,5 +17,6 @@ return [
 	'authfailed' => 'You are not authorized to login with these credentials.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'unverified_doctor' => 'You profile is not verified. Please compelete your profile first form website',
 
 ];

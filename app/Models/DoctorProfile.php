@@ -30,7 +30,7 @@ class DoctorProfile extends Model
     }
     public function getImageUrlAttribute(): string
     {
-        return $this->logo ? asset('storage/doctor/profile/'.$this->image)  : "";
+        return $this->image ? asset('storage/doctor/profile/'.$this->image)  : "";
     }
 
     /**
@@ -39,5 +39,12 @@ class DoctorProfile extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id');
+    }
+    /**
+     * Relationship: A doctor profile has many patient.
+     */
+    public function doctor_patient()
+    {
+        return $this->hasMany(PatientProfile::class,'doctor_id','id');
     }
 }
