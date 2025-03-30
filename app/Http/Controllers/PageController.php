@@ -48,9 +48,10 @@ class PageController extends Controller
 	public function featureDummy() {
         return view('web_new.feature-detail');
     }
-	public function signIn() {
-        $roles = Role::where('name','doctor')->pluck('display_name','id')->toArray(); 
-		return view('web_new.sign-in', compact('roles'));
+	public function signIn(Request $request) {
+		$doctor_id = $request->get('doctor_id') ?? null;
+		$roles = Role::where('name','doctor')->pluck('display_name','id')->toArray(); 
+		return view('web_new.sign-in', compact('roles','doctor_id'));
     }
 	public function demoInquiry(Request $request) {
 		$validate=Validator::make($request->all(), [
