@@ -2362,6 +2362,16 @@ body {
   border: 1px solid rgba(0, 123, 255, 0.1);
   color: white;
 }
+.ps-privacy ul {
+  padding-left: 1.5rem;
+}
+.ps-privacy ul li {
+  font-size:15px;
+  color:#2b4159;
+}
+.ps-privacy p {
+  margin-bottom:7px;
+}
 
 .fa-star {
   color: #FFD700;

@@ -62,14 +62,16 @@
 
                 <h4 class="paragraph-xxl cl-dblue">Free Trial and Student Access Applications</h4>
                 <p>When applying for a free trial or student access, we collect the following data to assess eligibility:</p>
-                <li>Full name</li>
-                <li>Company/Clinic name (if applicable)</li>
-                <li>Profession/Designation (e.g., healthcare provider or patient)</li>
-                <li>School/Insititute name (for student access)</li>
-                <li>Email address</li>
-                <li>Phone number</li>
-                <li>Country of residence</li>
-                <li>Any additional details provided in the message</li>
+                <ul>
+                    <li>Full name</li>
+                    <li>Company/Clinic name (if applicable)</li>
+                    <li>Profession/Designation (e.g., healthcare provider or patient)</li>
+                    <li>School/Insititute name (for student access)</li>
+                    <li>Email address</li>
+                    <li>Phone number</li>
+                    <li>Country of residence</li>
+                    <li>Any additional details provided in the message</li>
+                </ul>   
                 <p>This data is stored in our CRM system to manage your application. If you become a client, your data will be retained as long as you hold a license. If you do not proceed with the license, we may retain your data to inform you of future updates or offers</p>
 
                 <h4 class="paragraph-xxl cl-dblue">B. Clients and Licensees of Home Exercise Program Software</h4>
