@@ -7,7 +7,7 @@
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Sign Up</h1>
                     <p class="paragraph cl-dblue">
-                        It only takes a few minutes to register and get the benefit of Home Exerise .
+                        Practicionor can self resgiter and make your clinic profile publicially to boost home exercises.
                     </p>
                 </div>
             </div>
@@ -25,9 +25,8 @@
                 <button class="ps-btn lg-btn primary-btn  mb-3">Begin</button>
             </div>-->
             <div class="contact-section">
-                <h2 class="paragraph-xxl cl-dblue mb-2">Still need to see  in action?</h2>
-                <p class="mb-2">If you would like to watch a pre-recorded demo or book a live demo with the  team, <a href="#">click
-                        here</a></p>
+                <h2 class="paragraph-xxl cl-dblue mb-2">Are you patient</h2>
+                <p class="mb-2">You can directly login by your crentails to stay connect with your doctor and get home exercise benefit</a></p>
                 <br/>        
                 <div class='row'>   
                     <div class="col-md-6 register-section col-12 mb-2" data-aos="fade-right" data-aos-duration="1000">
@@ -89,12 +88,12 @@
                     <div class="col-md-5 offset-md-1 col-12 p-0">
                         <div class="rounded shadow login-section">
                             <h4 class="paragraph-xl cl-dblue text-white">Already an account! Login here </h4>
-                            <form class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('login') }}">
+                            <form class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('login') }}" autocomplete="off">
                                 @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label class="form-label" for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="{{ old('email') }}" autocomplete="false">
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="" autocomplete="off">
                                         @error('email')
                                             <span class="error-helper">{{ $message }}</span>
                                         @enderror
@@ -105,7 +104,7 @@
 
                                     <div class="col-md-12">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="{{ old('password') }}" autocomplete='off'>
+                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="" autocomplete="off">
                                         <span class="error-helper" id="error_password"></span>
                                         @error('password')
                                             <span class="error-helper">{{ $message }}</span>

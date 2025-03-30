@@ -2338,6 +2338,35 @@ body {
   animation: bounce 1s infinite alternate;
 }
 
+.error-helper {
+  color: darkred;
+  font-size: 11pt;
+}
+
+.feature-page .card {
+  border-radius: 25px;
+}
+
+.register-section {
+  border:1px solid lightgray;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+.login-section {
+  padding: 20px 25px;
+  background: linear-gradient(135deg, #ec7078, #491641);
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(0, 123, 255, 0.1);
+  color: white;
+}
+
+.fa-star {
+  color: #FFD700;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(0);
@@ -2590,7 +2619,4 @@ body {
   outline: none;
   background-color: #FFF;
   border: 1px solid #84A2FA;
-}
-.fa-star {
-  color: #FFD700;
 }/*# sourceMappingURL=main.css.map */
