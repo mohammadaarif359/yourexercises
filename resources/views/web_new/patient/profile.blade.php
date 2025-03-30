@@ -57,7 +57,7 @@
 
                         <div class="col-md-6">
                             <label class="form-label" for="address">Address</label>
-                            <textarea name="address" class="form-control" id="address" placeholder="Enter clinic address" rows='3'>{{ old('address', $data['address'] ?? '') }}</textarea>
+                            <textarea name="address" class="form-control" id="address" placeholder="Enter clinic address" rows='3' readonly>{{ old('address', $data['address'] ?? '') }}</textarea>
                             @error('address')
                                 <span class="error-helper">{{ $message }}</span>
                             @enderror
@@ -65,7 +65,7 @@
                         
                         <div class="col-md-6">
                             <label class="form-label" for="medical_history">Medical History</label>
-                            <textarea name="medical_history" class="form-control" id="description" placeholder="Enter description" rows='3'>{{ old('medical_history', $data['medical_history'] ?? '') }}</textarea>
+                            <textarea name="medical_history" class="form-control" id="description" placeholder="Enter description" rows='3' readonly>{{ old('medical_history', $data['medical_history'] ?? '') }}</textarea>
                             @error('medical_history')
                                 <span class="error-helper">{{ $message }}</span>
                             @enderror
