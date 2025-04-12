@@ -45,6 +45,9 @@ Route::middleware('auth:web')->group(function () {
 	Route::post('/doctor/profile/save','DoctorController@profileSave')->name('doctor.profile.save');
 
 	Route::get('/patient/profile','PatientController@profile')->name('patient.profile');
+	Route::get('/patient/plan','PatientPlanController@index')->name('patient.plan');
+	Route::get('/patient/plan/{id}','PatientPlanController@detail')->name('patient.plan.detail');
+	Route::post('/patient/plan/feedback','PatientPlanController@feedbackStore')->name('patient.feedback.store');
 });
 
 // admin login route
@@ -172,6 +175,13 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/user/export','Admin\DoctorUserController@export')->name('doctor.user.export');
 	Route::get('/doctor/user/profile/{user_id}','Admin\DoctorUserController@profile')->name('doctor.user.profile');
 	Route::post('/doctor/user/profile/save','Admin\DoctorUserController@profileSave')->name('doctor.user.profile.save');
+
+	// plan assign
+	Route::get('/doctor/plan/{plan_id}/assign','Admin\DoctorPlanAssignController@index')->name('doctor.plan.assign');
+	Route::post('/doctor/plan/{plan_id}/assign/store','Admin\DoctorPlanAssignController@store')->name('doctor.plan.assign.store');
+	Route::get('/doctor/plan/{plan_id}/assign/edit/{id}','Admin\DoctorPlanAssignController@edit')->name('doctor.plan.assign.edit');
+	Route::post('/doctor/plan/{plan_id}/assign/update','Admin\DoctorPlanAssignController@update')->name('doctor.plan.assign.update');
+	// Route::get('/doctor/plan/{plan_id}/assign/pdf','Admin\DoctorPlanAssignController@pdf')->name('doctor.plan.assign.pdf');
 
 	// inquiry
 	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');

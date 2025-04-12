@@ -23,6 +23,7 @@
 							<th>Name</th>
 							<th>Feature Image</th>
 							<th>Status</th>
+							<th>Assign Users</th>
 							<th>Created At</th>
 							<th>Action</th>
 						</tr>
@@ -53,6 +54,7 @@
             {data: 'name', name: 'name'},
 			{data: 'image_url', name: 'image_url'},
             {data: 'status', name: 'status'},
+			{data: 'plan_assign_count', name: 'plan_assign_count'},
 			{data: 'created_at.display', name: 'created_at.display'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]

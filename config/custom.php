@@ -130,6 +130,10 @@ return [
 		'security-and-reliability'=>'Security and Reliability',
 		'simplifying-backend-usage-and-data-management'=>'Simplifying Backend usage and data management',
 		'automatic-notification-and-reminders'=>'Automatic notifications & reminders'
+	],
+	'plan_assgin_status'=> [
+		'ongoing'=>'ongoing',
+		'completed' => 'completed' 
 	]
 ];
 

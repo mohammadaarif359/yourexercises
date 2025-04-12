@@ -114,7 +114,8 @@ class PageController extends Controller
 	public function clinicDetail($slug) {
 		$data = DoctorProfile::with('user')->withCount('doctor_patient')->where('slug',$slug)->where('is_verified',1)->first();
 		if($data) {
-			return view('web_new.clinic.detail', compact('data'));
+			$doctor_page = 1;
+			return view('web_new.clinic.detail', compact('data','doctor_page'));
 		} else {
 			abort(404);
 		}

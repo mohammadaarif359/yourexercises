@@ -25,10 +25,11 @@ class DoctorPlanController extends Controller
     use AuthCode,CommonCode,DoctorExerciseCode;
 	public function index(Request $request) {
 		if ($request->ajax()) {
-			$results = DoctorPlan::get();
+			$results = DoctorPlan::withCount('plan_assign')->get();
 			return Datatables::of($results)
 				->addColumn('action', function ($data) {
-					$btn = '<a href="/admin/doctor/plan/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>';
+					$btn = '<a href="/admin/doctor/plan/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
+					<a href="/admin/doctor/plan/'.$data->id.'/assign" target="_blank" class="" title="Assign"><i class="fa fa-user"></i></a>';
 					return $btn;
 				})->editColumn('created_at', function ($data) {
 					return [

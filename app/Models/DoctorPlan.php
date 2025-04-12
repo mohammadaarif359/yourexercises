@@ -43,4 +43,11 @@ class DoctorPlan extends Model
     {
         return $this->belongsTo('App\Models\User', 'created_by');
     }
+    /**
+     * Relationship: A doctor plan may have many details.
+     */
+    public function plan_assign()
+    {
+        return $this->hasMany('App\Models\DoctorPlanAssign', 'plan_id', 'id');
+    }
 }

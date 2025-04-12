@@ -7,10 +7,14 @@
         </div>
         <div class="menu-toggle">&#9776;</div>
         <ul class="nav-links">
+            @if(Auth::user() && Auth::user()->hasRole('patient'))
+                <li><a href="{{ url('/patient/profile') }}">Profile</a></li>
+                <li><a href="{{ url('/patient/plan') }}">Plans</a></li>
+            @endif
             <li>
                 <div class="header-sidebtn">
                     @if(!Auth::user())
-                    <a href="{{ url('login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Login in</a>
+                    <a href="{{ isset($doctor_page) && $doctor_page == 1 ? url('login?doctor_id='.$data['id']) : url('login')  }}" class="ps-btn sm-btn primary-btn ps-header-btn">Patient Login</a>
                     <a href="{{ url('admin/login') }}" class="ps-btn sm-btn primary-btn ps-header-btn">Doctor Login</a>
                     @else
                         <a href="{{ url('logout') }}" class="ps-btn sm-btn primary-btn ps-header-btn"><i class="fas fa-sign-out-alt pt-1 px-1"></i></a>

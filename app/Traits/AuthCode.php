@@ -10,6 +10,7 @@ use App\Mail\OtpEmail;
 use App\Mail\PasswordReset;
 use App\Mail\PatientUserCreate;
 use App\Mail\Doctor\ProfileVerified;
+use App\Mail\Patient\{PlanAssign, PlanAssignStatus};
 use Mail;
 use Exception;
 use Twilio\Rest\Client;
@@ -130,6 +131,14 @@ trait AuthCode
 	}
 	public function sendDoctorProfileVerifiedMail($data){
 		Mail::to($data['email'])->send(new ProfileVerified($data));
+		return true;
+	}
+	public function sendPatientPlanAssignEmail($data){
+		Mail::to($data['email'])->send(new PlanAssign($data));
+		return true;
+	}
+	public function sendPatientPlanAssignStatusEmail($data){
+		Mail::to($data['email'])->send(new PlanAssignStatus($data));
 		return true;
 	}
 	public function uploadImg($file, $path,$path_type='public')
