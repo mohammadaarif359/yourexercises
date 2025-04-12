@@ -10,7 +10,6 @@ use App\Traits\AuthCode;
 use DB;
 use DataTables;
 use Carbon\Carbon;
-use PDF;
 use Illuminate\Support\Facades\{Storage};
 
 class DoctorPlanAssignController extends Controller
@@ -125,12 +124,4 @@ class DoctorPlanAssignController extends Controller
             return redirect()->back()->with('error', 'Plan assign data not found !');
 		}	
 	}
-    public function pdf(Request $request, $plan_id) {
-        $plan = DoctorPlan::where('id', $plan_id)->first();
-        return view('admin.doctor.plan.pdf',compact('plan'));
-        $pdf = PDF::setOptions(['isHtml5ParserEnabled' => true, 'isRemoteEnabled' => true])->loadView('admin.doctor.plan.pdf',compact('plan'));
-        $filename = date('YmdHis') . '_' . uniqid() . '.pdf'; 
-        Storage::put('public/doctor/plan/'.$filename, $pdf->output());
-        //return $pdf->download('invoice.pdf');
-    }
 }
