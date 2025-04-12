@@ -46,8 +46,8 @@ Route::middleware('auth:web')->group(function () {
 
 	Route::get('/patient/profile','PatientController@profile')->name('patient.profile');
 	Route::get('/patient/plan','PatientPlanController@index')->name('patient.plan');
-	Route::get('/patient/plan/{id}','PatientPlanController@detail')->name('patient.plan.detail');
-	Route::post('/patient/plan/feedback','PatientPlanController@feedbackStore')->name('patient.feedback.store');
+	// Route::get('/patient/plan/{id}','PatientPlanController@detail')->name('patient.plan.detail');
+	// Route::post('/patient/plan/feedback','PatientPlanController@feedbackStore')->name('patient.feedback.store');
 });
 
 // admin login route

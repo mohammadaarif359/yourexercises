@@ -7,7 +7,7 @@
 	  <div class="col-md-12">
 		<div class="card card-primary">
 		  <div class="card-header">
-			<h3 class="card-title">Add User <small></small></h3>
+			<h3 class="card-title">Add Patient <small></small></h3>
 		  </div>
 		  <form role="form" id="quickForm" method="POST" action="{{ route('admin.doctor.user.store') }}" enctype="multipart/form-data">
 			@csrf

@@ -141,7 +141,7 @@
                     </div>
                 </div>
             </div>
-            {{--<div class="row">
+            <div class="row">
                 <div class="col-12"><div class="section-title mt-4 mb-2 pb-1">Doctor's Review</div></div>
                 <div class="col-md-4">
                     <div class="experience-item d-flex ">
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                 </div>
-            </div>--}}
+            </div>
         </div>
     </div>
 @endsection

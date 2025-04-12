@@ -16,14 +16,14 @@ class PatientPlanController extends Controller
 	use AuthCode;
     public function index(Request $request) {
 		$user_id = Auth::user()->id;
-		$plans = DoctorPlanAssign::with('plan')->where('user_id',$user_id)->where('status','ongoing')->orderBy('created_at','desc')->get();
-		$completed_plans = DoctorPlanAssign::with('plan')->where('user_id',$user_id)->where('status','completed')->orderBy('created_at','desc')->get();
+		$plans = DoctorPlanAssign::with('plan')->where('user_id',$user_id)->where('doctor_id', Auth::user()->patient_doctor_id)->where('status','ongoing')->orderBy('created_at','desc')->get();
+		$completed_plans = DoctorPlanAssign::with('plan')->where('user_id',$user_id)->where('doctor_id', Auth::user()->patient_doctor_id)->where('status','completed')->orderBy('created_at','desc')->get();
 		return view('web_new.patient.plan.index', compact('plans','completed_plans'));
 	}
-	public function detail(Request $request) {
-		$id = $request->get('id');
+	public function detail(Request $request, $id) {
 		$user_id = Auth::user()->id;
 		$data = DoctorPlanAssign::with(['plan','plan.doctor_plan_detail'])->where('id', $id)->where('user_id', $user_id)->first();
+		dd($data);
 		if($data) {
 			return view('web_new.patient.plan.deatil', compact('data'));
 		} else {

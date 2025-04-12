@@ -2377,6 +2377,14 @@ body {
   color: #FFD700;
 }
 
+.px-lext-lim-plan {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  height: 25px;
+}
+
 @keyframes bounce {
   from {
     transform: translateY(0);

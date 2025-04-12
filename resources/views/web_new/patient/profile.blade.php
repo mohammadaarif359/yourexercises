@@ -55,8 +55,8 @@
                             @if($data['address'])
                             <li> <i class="fas fa-map-marker-alt"></i>{{ $data['address'] }}</li>
                             @endif
-                            
                         </ul>
+                        <a class="ps-btn md-btn primary-btn mb-1 w-100 mt-1" href="{{ url('/patient/plan') }}">View Your Exercises</a>
                     </div>
                 </div>
             </div>

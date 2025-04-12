@@ -27,7 +27,8 @@ class User extends Authenticatable
         'password',
 		'status',
 		'forgot_password_token',
-		'profile_photo'
+		'profile_photo',
+        'patient_doctor_id'
     ];
 
     protected $hidden = [
@@ -99,5 +100,8 @@ class User extends Authenticatable
     public function patient_profile()
     {
         return $this->hasOne(PatientProfile::class,'user_id','id');
+    }
+    public function patient_doctor_profile() {
+        return $this->hasOne(DoctorProfile::class,'id','patient_doctor_id');
     }
 }

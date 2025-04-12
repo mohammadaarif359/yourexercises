@@ -22,9 +22,10 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{ $data->plan['name'] }}</h4>
-                                <p class="card-text">{{ $data->plan['description'] }} text with description</p>
+                                <p class="card-text px-lext-lim-plan">{{ $data->plan['description'] }} text with description</p>
                                 <div class="d-flex justify-content-between flex-wrap px-2">
-                                    <p class="card-text">Exercises : {{ $data['exercise_count'] }}</p>
+                                    <p class="card-text"><i class="fas fa-calendar-plus"></i> {{ date('d-m-Y', strtotime($data['created_at'])) }}</p>
+                                    <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
                                     <p class="card-text"><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
                                 </div>
                                 <p class="ps-read-more-btn m-0">Read more</p>
@@ -45,10 +46,12 @@
                             <img src="{{ $image }}"
                                 alt="{{ $data->plan['name'] }}">
                             <h3>{{ $data->plan['name'] }}</h3>
-                            {{--<h5 class='cl-lBlue'>{{ $data['clinic_name'] }}</h5>--}}
                             <div class="d-flex justify-content-between flex-wrap px-2">
-                                <p>Exercises : {{ $data['exercise_count'] }}</p>
-                                <p><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
+                                <p><i class="fas fa-calendar-plus"></i> {{ date('d-m-Y', strtotime($data['created_at'])) }}</p>
+                                <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
+                                @if($data['avg_rating'] > 0)
+                                <p><i class="fas fa-star mr-1"></i> {{ $data['avg_rating'] }}</p>
+                                @endif
                             </div>
                         </div>
                     </a>
@@ -74,10 +77,12 @@
                             <img src="{{ $image }}"
                                 alt="{{ $data->plan['name'] }}">
                             <h3>{{ $data->plan['name'] }}</h3>
-                            {{--<h5 class='cl-lBlue'>{{ $data['clinic_name'] }}</h5>--}}
                             <div class="d-flex justify-content-between flex-wrap px-2">
-                                <p>Exercises : {{ $data['exercise_count'] }}</p>
+                                <p><i class="fas fa-calendar-check"></i> {{ date('d-m-Y', strtotime($data['completed_at'])) }}</p>
+                                <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
+                                @if($data['avg_rating'] > 0)
                                 <p><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
+                                @endif
                             </div>
                         </div>
                     </a>

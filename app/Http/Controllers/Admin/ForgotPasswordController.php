@@ -27,7 +27,7 @@ class ForgotPasswordController extends Controller
 			$user->save();
 			$data['name'] = $user['name'];
 			$data['email'] = $user['email'];
-			$data['message'] = trans('sms.passwordReset');
+			$data['message'] = trans('sms.password.reset');
 			$data['url'] = url('/password/reset/'.$token); 
 			$this->sendEmailResetLink($data);
 			return back()->with('success','We have send an reset password link to your register email.');

@@ -90,7 +90,7 @@
                             <h4 class="paragraph-xl cl-dblue text-white">Already an account! Login here </h4>
                             <form class="mt-4" id='frm-login' name='frm-login' method='POST' action="{{ route('login') }}" autocomplete="off">
                                 @csrf
-                                <input type='hidden' name='doctor_id' value='{{ $doctor_id }}'>
+                                <input type='hidden' name='doctor_uuid' value='{{ $doctor_uuid }}'>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label class="form-label" for="email">Email</label>
@@ -99,6 +99,9 @@
                                             <span class="error-helper">{{ $message }}</span>
                                         @enderror
                                         @error('authfailed')
+                                            <span class="error-helper">{{ $message }}</span>
+                                        @enderror
+                                        @error('doctor_uuid')
                                             <span class="error-helper">{{ $message }}</span>
                                         @enderror
                                     </div>

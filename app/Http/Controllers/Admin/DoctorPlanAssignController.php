@@ -83,7 +83,7 @@ class DoctorPlanAssignController extends Controller
 
             $data['name'] = $assign['user']['name'];
             $data['email'] = $assign['user']['email'];
-            $data['message'] = trans('sms.patient.planAssign', ['plan_name' => $assign['plan']['name']]);
+            $data['message'] = trans('sms.patient.plan.assign', ['plan_name' => $assign['plan']['name']]);
             $data['url'] = url('/clinic/'. $assign['doctor']['slug']);
             $this->sendPatientPlanAssignEmail($data);   
         }
@@ -116,7 +116,7 @@ class DoctorPlanAssignController extends Controller
 
                 $data['name'] = $assign['user']['name'];
                 $data['email'] = $assign['user']['email'];
-                $data['message'] = trans('sms.patient.planAssignCompleted', ['plan_name' => $assign['plan']['name']]);
+                $data['message'] = trans('sms.patient.plan.assign.completed', ['plan_name' => $assign['plan']['name']]);
                 $data['url'] = url('/clinic/'. $assign['doctor']['slug']);
                 $this->sendPatientPlanAssignStatusEmail($data);
             }

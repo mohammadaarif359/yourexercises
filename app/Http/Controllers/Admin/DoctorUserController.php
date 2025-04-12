@@ -83,10 +83,11 @@ class DoctorUserController extends Controller
 		]);
 
         // user account creation email
+		$data['subject'] = 'Patient Account Create';
         $data['name'] = $user['name'];
 		$data['email'] = $user['email'];
 		$data['password'] = $request_data['password'];
-		$data['message'] = trans('sms.patientUserCreate', ['doctor_name' => $doctor_profile['user']['name']]);
+		$data['message'] = trans('sms.patient.user.create', ['doctor_name' => $doctor_profile['user']['name']]);
 		$data['url'] = url('/clinic/'.$doctor_profile->slug); 
 		$this->sendPatientUserCreateMail($data);
 
@@ -140,13 +141,16 @@ class DoctorUserController extends Controller
 			DB::table('role_user')->where('user_id',$user->id)->delete();
 			$user->attachRole($request->role);
 
-            /* user account creation email
-			$data['name'] = $user['name'];
-			$data['email'] = $user['email'];
-			$data['password'] = $request_data['password'];
-			$data['message'] = trans('sms.patientUserCreate', ['doctor_name' => $doctor_profile['user']['name']]);
-			$data['url'] = url('/clinic/'.$doctor_profile->slug); */
-			$this->sendPatientUserCreateMail($data);
+            // user account password update email
+			if($request_data['password']) {
+				$data['subject'] = 'Patient Account Password Update';
+				$data['name'] = $user['name'];
+				$data['email'] = $user['email'];
+				$data['password'] = $request_data['password'];
+				$data['message'] = trans('sms.patient.user.update.password', ['doctor_name' => $doctor_profile['user']['name']]);
+				$data['url'] = url('/clinic/'.$doctor_profile->slug);
+				$this->sendPatientUserCreateMail($data);
+			}
 			return redirect()->route('admin.doctor.user')->with('success', 'User updated successfully !');
 		} else {
 			return redirect()->back()->with('error', 'Failer to updated user !');

@@ -49,9 +49,9 @@ class PageController extends Controller
         return view('web_new.feature-detail');
     }
 	public function signIn(Request $request) {
-		$doctor_id = $request->get('doctor_id') ?? null;
+		$doctor_uuid = $request->get('doctor_uuid') ?? null;
 		$roles = Role::where('name','doctor')->pluck('display_name','id')->toArray(); 
-		return view('web_new.sign-in', compact('roles','doctor_id'));
+		return view('web_new.sign-in', compact('roles','doctor_uuid'));
     }
 	public function demoInquiry(Request $request) {
 		$validate=Validator::make($request->all(), [

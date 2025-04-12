@@ -11,7 +11,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
+          <img src="{{ !empty(Auth::user()->profile_photo_url) ? Auth::user()->profile_photo_url : asset('dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user() ? Auth::user()->name : '' }}</a>
@@ -58,7 +58,7 @@
             <a href="{{ route('admin.user') }}" class="nav-link {{ request()->is('admin/user*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                User
+                Doctor
               </p>
             </a>
           </li>
@@ -99,7 +99,7 @@
             <a href="{{ route('admin.doctor.user') }}" class="nav-link {{ request()->is('admin/doctor/user*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                User
+                Patient
               </p>
             </a>
           </li>

@@ -180,7 +180,7 @@ class UserController extends Controller
 			$data['name'] = $profile['user']['name'];
 			$data['email'] = $profile['user']['email'];
 			$data['clinic_name'] = $profile['clinic_name'];
-			$data['message'] = trans('sms.doctorProfileVerified');
+			$data['message'] = trans('sms.doctor.profile.verified');
 			$data['url'] = url('/clinic/'.$profile->slug);
 			$this->sendDoctorProfileVerifiedMail($data);
 			return redirect()->route('admin.user')->with('success', 'Profile verified successfully !');

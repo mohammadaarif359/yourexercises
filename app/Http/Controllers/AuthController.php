@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\{User, DoctorProfile, PatientProfile};
 
 class AuthController extends Controller
 {
@@ -48,7 +49,18 @@ class AuthController extends Controller
             $user = $this->guard()->user();
             if($user && $user->hasRole('super-admin')) {
 			    return $this->sendFailedLoginResponse($request);
+            } else if($user->hasRole('patient')) {
+                if($request->doctor_uuid) {
+                    $doctor_uuid = $request->doctor_uuid;
+                    $doctor_id = DoctorProfile::where('uuid', $request->doctor_uuid)->first()->value('id');
+                    session(['doctor_id' => $doctor_id]);
+                } else {
+                    $doctor_id = PatientProfile::where('user_id', $user->id)->orderBy('created_at','desc')->limit(1)->value('doctor_id');
+                    session(['doctor_id' => $doctor_id]);
+                }
+                User::where('id', $user->id)->update(['patient_doctor_id'=> $doctor_id]);
             }
+
             return $this->sendLoginResponse($request);
         }
 
@@ -61,6 +73,7 @@ class AuthController extends Controller
         $this->validate($request, [
             $this->username() => 'required|email',
             'password'        => 'required',
+            'doctor_uuid'       => 'nullable|exists:doctor_profiles,uuid'
         ]);
 		
     }
@@ -87,7 +100,11 @@ class AuthController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('doctor')) {
-            return '/doctor/profile';
+            if($user->doctor_profile->is_verified) {
+                return '/clinic/'.$user->doctor_profile->slug;
+            } else {
+                return '/doctor/profile';
+            }
         } elseif ($user->hasRole('patient')) {
             return '/patient/profile';
         }
@@ -95,13 +112,15 @@ class AuthController extends Controller
     }
 	public function logout() {
         $user = Auth::user();
-		Session::flush();
+        Session::flush();
 		Auth::guard('web')->logout();
         $redirectTo = '/login';
         if($user->hasRole('doctor')) {
             $redirectTo = '/clinic/'.$user->doctor_profile->slug;
         } else if($user->hasRole('patient')) {
-            $redirectTo = $user->patient_profile['patient_doctor'] ? 'clinic/'.$user->patient_profile['patient_doctor']['slug'] :  '/login';
+            $redirectTo = $user->patient_doctor_profile ? 'clinic/'.$user->patient_doctor_profile['slug'] :  '/login';
+            $user->patient_doctor_id = null;
+            $user->save();
         }
         return redirect($redirectTo);
     }

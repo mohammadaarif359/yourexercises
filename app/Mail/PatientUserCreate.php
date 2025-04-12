@@ -31,6 +31,6 @@ class PatientUserCreate extends Mailable
      */
     public function build()
     {
-        return $this->subject('Patient Account Create')->markdown('emails.patient_user_create');
+        return $this->subject($this->data['subject'])->markdown('emails.patient_user_create');
     }
 }

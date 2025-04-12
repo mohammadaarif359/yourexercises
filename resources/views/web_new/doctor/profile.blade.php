@@ -7,15 +7,12 @@
                 <div class="col-12 p-0">
                     <h1 class="heading-xl cl-lBlue fw-500">Practioner Profile</h1>
                     <p class="paragraph cl-dblue">
-                        It only takes a few minutes to have your practice up and running with .
+                    {{ $data['is_verified'] ? 'Your profile is verified connect you patient by your exerises panel' : 'It only takes a few minutes create you profile. once profile is verified by admin, You can access the yourexercises features' }}
                     </p>
                 </div>
             </div>
             <hr>
             <div class="contact-section  mt-5">
-                <h2 class="paragraph-xxl cl-dblue">Still need to see  in action?</h2>
-                <p>If you would like to watch a pre-recorded demo or book a live demo with the  team, <a href="#">click
-                        here</a>.</p>
                 <form class="mt-4" id='frm-doctor-profile' name='frm-doctor-profile' method='POST' action="{{ route('doctor.profile.save') }}" enctype="multipart/form-data">
 			        @csrf
                     <input type='hidden' name='id' value="{{ old('id', $data['id'] ?? '') }}">
