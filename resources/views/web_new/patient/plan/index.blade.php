@@ -11,7 +11,7 @@
                 </div>
             </div>
 
-            {{--<div class="row mt-3 feature-page">
+            <div class="row mt-3 feature-page">
                 @foreach($plans as $k=> $data)
                 @php $image = $data->plan['image_url'] ? $data->plan['image_url'] : asset('web_new/assets/img/profile-img.png'); @endphp
                 <div class="col-xs-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
@@ -22,22 +22,24 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">{{ $data->plan['name'] }}</h4>
-                                <p class="card-text px-lext-lim-plan">{{ $data->plan['description'] }} text with description</p>
+                                <p class="card-text px-lext-lim-plan">{{ $data->plan['description'] }}</p>
                                 <div class="d-flex justify-content-between flex-wrap px-2">
                                     <p class="card-text"><i class="fas fa-calendar-plus"></i> {{ date('d-m-Y', strtotime($data['created_at'])) }}</p>
                                     <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
+                                    @if($data['avg_rating'] > 0)
                                     <p class="card-text"><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
+                                    @endif
                                 </div>
-                                <p class="ps-read-more-btn m-0">Read more</p>
+                                <p class="ps-read-more-btn m-0">Read More</p>
                             </div>
                         </div>
                     </a>
                 </div>
                 @endforeach
-            </div>--}}
+            </div>
         </div>
 
-        <div class="team-container ps-team-dr d-block pb-5">
+        {{--<div class="team-container ps-team-dr d-block pb-5">
             <div class="d-flex align-items-center flex-wrap justify-content-center">
                 @foreach($plans as $data)
                 @php $image = $data->plan['image_url'] ? $data->plan['image_url'] : asset('web_new/assets/img/profile-img.png'); @endphp
@@ -57,7 +59,7 @@
                     </a>
                 @endforeach
             </div>
-        </div>
+        </div>--}}
 
         <!-- completed plan -->
         @if(count($completed_plans) > 0)
@@ -67,25 +69,32 @@
                     <h3 class="heading-l cl-lBlue fw-500">Completed Plans</h3>
                 </div>
             </div>
-        </div>    
-        <div class="team-container ps-team-dr d-block pb-5">
-            <div class="d-flex align-items-center flex-wrap justify-content-center">
-                @foreach($completed_plans as $data)
+            <div class="row mt-3 feature-page">
+                @foreach($completed_plans as $k=> $data)
                 @php $image = $data->plan['image_url'] ? $data->plan['image_url'] : asset('web_new/assets/img/profile-img.png'); @endphp
-                    <a href="{{ url('/patient/plan/'.$data['id']) }}">
-                        <div class="team-member my-2">
-                            <img src="{{ $image }}"
-                                alt="{{ $data->plan['name'] }}">
-                            <h3>{{ $data->plan['name'] }}</h3>
-                            <div class="d-flex justify-content-between flex-wrap px-2">
-                                <p><i class="fas fa-calendar-check"></i> {{ date('d-m-Y', strtotime($data['completed_at'])) }}</p>
-                                <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
-                                @if($data['avg_rating'] > 0)
-                                <p><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
-                                @endif
+                <div class="col-xs-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-anchor-placement="top-bottom">
+                    <a href="{{ url('/patient/plan/'. $data->id) }}">
+                        <div class="card">
+                            <div class="view overlay">
+                                <img class="card-img-top" src="{{ $image }}" alt="{{ $data->plan['name'] }}">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{ $data->plan['name'] }}</h4>
+                                <p class="card-text px-lext-lim-plan">
+                                    {{ \Illuminate\Support\Str::limit($data->plan['description'], 100, '.....') }}
+                                </p>
+                                <div class="d-flex justify-content-between flex-wrap px-2">
+                                    <p class="card-text"><i class="fas fa-calendar-check"></i> {{ date('d-m-Y', strtotime($data['completed_at'])) }}</p>
+                                    <p class="card-text"><i class="fas fa-dumbbell"></i> {{ $data['exercise_count'] }}</p>
+                                    @if($data['avg_rating'] > 0)
+                                    <p class="card-text"><i class="fas fa-star mr-1"></i>{{ $data['avg_rating'] }}</p>
+                                    @endif
+                                </div>
+                                <p class="ps-read-more-btn m-0">Read More</p>
                             </div>
                         </div>
                     </a>
+                </div>
                 @endforeach
             </div>
         </div>

@@ -2382,7 +2382,7 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 25px;
+  height: 16px;
 }
 
 @keyframes bounce {
