@@ -94,7 +94,7 @@
                                 <div class="row">
                                     <div class="col-md-12 p-0 px-md-2">
                                         <label class="form-label" for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" value="" autocomplete="off">
+                                        <input type="email" name="email" class="form-control text-white" id="email" placeholder="Enter your email" value="" autocomplete="off">
                                         @error('email')
                                             <span class="error-helper">{{ $message }}</span>
                                         @enderror
@@ -108,7 +108,7 @@
 
                                     <div class="col-md-12 p-0 px-md-2">
                                         <label class="form-label" for="password">Password</label>
-                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" value="" autocomplete="off">
+                                        <input type="password" name="password" class="form-control text-white" id="password" placeholder="Enter your password" value="" autocomplete="off">
                                         <span class="error-helper" id="error_password"></span>
                                         @error('password')
                                             <span class="error-helper">{{ $message }}</span>
