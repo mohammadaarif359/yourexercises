@@ -2653,11 +2653,11 @@ body {
   margin: 15px 0;
   justify-content: center;
 }
-.ps-video-ex-div .card img, .ps-video-ex-div .card iframe {
+.ps-video-ex-div .card img, .ps-video-ex-div .card iframe, .ps-video-ex-div .card video {
   max-height: 180px;
 }
 @media (max-width: 768px) {
-  .ps-video-ex-div .card img, .ps-video-ex-div .card iframe {
+  .ps-video-ex-div .card img, .ps-video-ex-div .card iframe, .ps-video-ex-div .card video {
     max-height: 130px;
   }
 }

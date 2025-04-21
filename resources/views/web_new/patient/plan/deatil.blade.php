@@ -204,13 +204,20 @@
                 } else if (videoExtensions.includes(extension)) {
                     html += `
                         <div class="card col-cl6 col-smvl-6 col-lgcl-4">
+                            <video width="100%" height="228" controls Autoplay=autoplay src="${url}" type="video/"+extension>
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    `;
+                    /*html += `
+                        <div class="card col-cl6 col-smvl-6 col-lgcl-4">
                             <iframe width="100%" height="228" src="${url}"
                                 title="Exercise video" frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
                             </iframe>
                         </div>
-                    `;
+                    `;*/
                 }
             }
         });
