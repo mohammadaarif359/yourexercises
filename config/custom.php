@@ -134,6 +134,15 @@ return [
 	'plan_assgin_status'=> [
 		'ongoing'=>'ongoing',
 		'completed' => 'completed' 
-	]
+	],
+	'feedback_rating' =>[
+		'1'=>'Very Bad',
+		'2'=>'Bad',
+		'3'=>'Good',
+		'4'=>'Very Good',
+		'5'=>'Exellent'
+	],
+	'img_extension' => ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'],
+	'video_extension' => ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv']
 ];
 
