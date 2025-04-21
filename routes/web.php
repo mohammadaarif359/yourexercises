@@ -46,8 +46,8 @@ Route::middleware('auth:web')->group(function () {
 
 	Route::get('/patient/profile','PatientController@profile')->name('patient.profile');
 	Route::get('/patient/plan','PatientPlanController@index')->name('patient.plan');
-	// Route::get('/patient/plan/{id}','PatientPlanController@detail')->name('patient.plan.detail');
-	// Route::post('/patient/plan/feedback','PatientPlanController@feedbackStore')->name('patient.feedback.store');
+	Route::get('/patient/plan/{id}','PatientPlanController@detail')->name('patient.plan.detail');
+	Route::post('/patient/plan/feedback/store','PatientPlanController@feedbackStore')->name('patient.plan.feedback.store');
 });
 
 // admin login route
@@ -169,7 +169,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 
 	Route::get('/doctor/user','Admin\DoctorUserController@index')->name('doctor.user');
 	Route::get('/doctor/user/add','Admin\DoctorUserController@add')->name('doctor.user.add');
-	Route::post('/doctor/user/store','Admin\DoctorUserController@store')->name('doctor.user.store');
+	Route::post('/doctor/user/store','Admin\DoctorUserController@storeNew')->name('doctor.user.store');
 	Route::get('/doctor/user/edit/{id}','Admin\DoctorUserController@edit')->name('doctor.user.edit');
 	Route::post('/doctor/user/update','Admin\DoctorUserController@update')->name('doctor.user.update');
 	Route::get('/doctor/user/export','Admin\DoctorUserController@export')->name('doctor.user.export');

@@ -22,8 +22,7 @@ class PatientPlanController extends Controller
 	}
 	public function detail(Request $request, $id) {
 		$user_id = Auth::user()->id;
-		$data = DoctorPlanAssign::with(['plan','plan.doctor_plan_detail'])->where('id', $id)->where('user_id', $user_id)->first();
-		dd($data);
+		$data = DoctorPlanAssign::with(['plan','plan.doctor_plan_detail','plan.doctor_plan_detail','feedback'])->where('id', $id)->first();
 		if($data) {
 			return view('web_new.patient.plan.deatil', compact('data'));
 		} else {
@@ -45,7 +44,8 @@ class PatientPlanController extends Controller
         }
 		$user_id = Auth::user()->id;
 		$feedack = PlanAssignFeedback::create([
-			'user_id'=>Auth::user()->id,
+			// 'user_id'=>Auth::user()->id,
+			'assign_id'=> $request_data['assign_id'],
 			'plan_id' => $request_data['plan_id'],
 			'exercise_id' => $request_data['exercise_id'],
 			'rating' => $request_data['rating'],
@@ -53,8 +53,8 @@ class PatientPlanController extends Controller
 			'comment' => $request_data['comment'],
 		]);
 		if($feedack) {
-			$avg_rating = PlanAssignFeedback::where('plan_assign_id', $request_data['plan_assign_id'])->avg('rating');
-			DoctorPlanAssign::where('id', $request_data['plan_assign_id'])->update(['avg_rating'=>avg_rating]);
+			$avg_rating = PlanAssignFeedback::where('assign_id', $request_data['assign_id'])->avg('rating');
+			DoctorPlanAssign::where('id', $request_data['assign_id'])->update(['avg_rating'=>$avg_rating]);
 		}
 		return response()->json(['message'=>'Thanks for given feedback','code'=>200]);
 	}

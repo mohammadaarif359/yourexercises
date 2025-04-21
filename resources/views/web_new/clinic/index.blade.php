@@ -16,8 +16,8 @@
         <div class="team-container ps-team-dr d-block pb-5">
             <div class="d-flex align-items-center justify-content-center my-3 flex-wrap">
                 <form method="GET" action="{{ route('clinic') }}">
-                    <input type="text" class="input-grey-rounded" name="search" placeholder="Search by dr name or clinic" value="{{ request('search') }}">
-                    <button type="submit" class="ps-btn sm-btn primary-btn ps-header-btn">Search</button>
+                    <input type="text" class="input-grey-rounded" name="search" placeholder="Search" value="{{ request('search') }}">
+                    <button type="submit" class="ps-btn sm-btn primary-btn ps-header-btn mt-1">Search</button>
                 </form>
             </div>
 

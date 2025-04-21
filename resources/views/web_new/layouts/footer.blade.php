@@ -103,9 +103,8 @@
    </div>
    <!-- Copyright -->
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-   crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>  
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script> 
 <script>
@@ -127,17 +126,21 @@
          event.stopPropagation(); // Stops clicks inside menu from closing it
       });
 
-      // Toggle mobile dropdown
-      dropdownToggle.addEventListener("click", function (event) {
-         event.preventDefault();
-         event.stopPropagation(); // Prevents click from reaching document
-         dropdownMenu.classList.toggle("show");
-      });
+      // Toggle mobile dropdown - feature menu
+      if(dropdownToggle) {
+         dropdownToggle.addEventListener("click", function (event) {
+            event.preventDefault();
+            event.stopPropagation(); // Prevents click from reaching document
+            dropdownMenu.classList.toggle("show");
+         });
+      }   
 
-      // Prevent dropdown from closing when clicking inside
-      dropdownMenu.addEventListener("click", (event) => {
-         event.stopPropagation();
-      });
+      // Prevent dropdown from closing when clicking inside = feature menu
+      if(dropdownMenu) {
+         dropdownMenu.addEventListener("click", (event) => {
+            event.stopPropagation();
+         });
+      }   
 
       // Close menu when clicking completely outside
       document.addEventListener("click", (event) => {
@@ -145,7 +148,7 @@
             navLinks.classList.remove("active");
          }
 
-         if (!dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+         if (dropdownToggle && !dropdownToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
             dropdownMenu.classList.remove("show");
          }
       });

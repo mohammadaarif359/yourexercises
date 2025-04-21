@@ -37,6 +37,20 @@ class DoctorPlanDetail extends Model
      */
     public function exercise()
     {
-        return $this->belongsTo('App\Models\DoctorExercise');
+        return $this->belongsTo('App\Models\DoctorExercise','doctor_exercise_id', 'id');
+    }
+    /**
+     * Relationship: A doctor plan detail belongs to an category.
+     */
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
+    /**
+     * Relationship: A doctor plan detail belongs to an category.
+     */
+    public function subcategory()
+    {
+        return $this->belongsTo('App\Models\Subcategory');
     }
 }

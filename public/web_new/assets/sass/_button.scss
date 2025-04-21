@@ -477,7 +477,8 @@ input[type=checkbox]:before {
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         padding: 10px 18px;
         border-radius: 5px;
-        width: 300px;
+        width: 100%;
+        min-width: 300px;
         z-index: 1000;
         max-height: 300px;
         overflow-y: auto;
@@ -560,59 +561,6 @@ input[type=checkbox]:before {
         }
     }
 
-    .form-label {
-        font-weight: 600;
-        color: #37474f;
-        margin-bottom: 0.35rem;
-        display: block;
-        font-size: 0.95rem;
-        transition: color 0.3s ease;
-    }
-
-    .form-control,
-    .form-select {
-        border-radius: 8px;
-        border: 2px solid #e3f2fd;
-        padding: 0.4rem 0.8rem;
-        font-size: 1rem;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        background: transparent;
-        height: 40px;
-        width: 100%;
-        color: #495057;
-
-        &:focus {
-            border-color: $primaryBlue !important;
-            box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
-            background: transparent;
-        }
-
-        &::placeholder {
-            color: #90a4ae !important;
-            opacity: 0.8;
-        }
-    }
-
-    // Remove autofill background color
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover, 
-    input:-webkit-autofill:focus, 
-    textarea:-webkit-autofill, 
-    textarea:-webkit-autofill:hover, 
-    textarea:-webkit-autofill:focus, 
-    select:-webkit-autofill, 
-    select:-webkit-autofill:hover, 
-    select:-webkit-autofill:focus {
-        box-shadow: 0 0 0px 1000px white inset !important;
-        -webkit-box-shadow: 0 0 0px 1000px white inset !important;
-    }
-
-    textarea.form-control {
-        resize: vertical;
-        min-height: 110px;
-        line-height: 1.6;
-    }
-
     .ps-btn {
         background: linear-gradient(135deg, $primaryBlue, #1976d2);
         color: white;
@@ -645,6 +593,59 @@ input[type=checkbox]:before {
     .d-flex {
         margin-top: 2rem;
     }
+}
+
+.form-label {
+    font-weight: 600;
+    color: #37474f;
+    margin-bottom: 0.35rem;
+    display: block;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.form-control,
+.form-select {
+    border-radius: 8px;
+    border: 2px solid #e3f2fd;
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
+    height: 40px;
+    width: 100%;
+    color: #495057;
+
+    &:focus {
+        border-color: $primaryBlue !important;
+        box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+        background: transparent;
+    }
+
+    &::placeholder {
+        color: #90a4ae !important;
+        opacity: 0.8;
+    }
+}
+
+// Remove autofill background color
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+textarea:-webkit-autofill, 
+textarea:-webkit-autofill:hover, 
+textarea:-webkit-autofill:focus, 
+select:-webkit-autofill, 
+select:-webkit-autofill:hover, 
+select:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.6;
 }
 
 [data-aos="fade-right"] {

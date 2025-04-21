@@ -42,6 +42,6 @@ class DoctorPlanAssign extends Model
     }
     public function feedback()
     {
-        return $this->hasMany('App\Models\PlanAssignFeedback', 'assign_id', 'id');
+        return $this->hasMany('App\Models\PlanAssignFeedback', 'assign_id');
     }
 }

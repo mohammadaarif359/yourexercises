@@ -26,13 +26,15 @@
                         </div>
                     </div>
 
-                    <div class="section-title cl-dblue">Doctor Profile</div>
-                    <p class="cl-gray section-paragraph collapsed">
-                        {{ $data['description'] }}
-                    </p>
-                    <a class="text-success toggle-btn" href="javascript:void(0);">
-                        See More <i class="fas fa-chevron-down"></i>
-                    </a>
+                    @if($data['description'])
+                        <div class="section-title cl-dblue">Doctor Profile</div>
+                        <p class="cl-gray section-paragraph collapsed">
+                            {{ $data['description'] }}
+                        </p>
+                        <a class="text-success toggle-btn" href="javascript:void(0);">
+                            See More <i class="fas fa-chevron-down"></i>
+                        </a>
+                    @endif
 
                     @if($data['professional_info']['experience'])
                         <div class="section-title cl-dblue mt-4 mb-2 pb-1">Practice Experience</div>
@@ -185,16 +187,19 @@
 @endsection
 @section('pagejs')
 <script>
-    document.querySelector(".toggle-btn").addEventListener("click", function () {
-        let paragraph = document.querySelector(".section-paragraph");
-        paragraph.classList.toggle("expanded");
-        this.classList.toggle("expanded");
+    const toggleBtn = document.querySelector(".toggle-btn");
+    if(toggleBtn) {
+        document.querySelector(".toggle-btn").addEventListener("click", function () {
+            let paragraph = document.querySelector(".section-paragraph");
+            paragraph.classList.toggle("expanded");
+            this.classList.toggle("expanded");
 
-        // Change text dynamically
-        this.innerHTML = paragraph.classList.contains("expanded")
-            ? 'See Less <i class="fas fa-chevron-up"></i>'
-            : 'See More <i class="fas fa-chevron-down"></i>';
-    });
+            // Change text dynamically
+            this.innerHTML = paragraph.classList.contains("expanded")
+                ? 'See Less <i class="fas fa-chevron-up"></i>'
+                : 'See More <i class="fas fa-chevron-down"></i>';
+        });
+    }   
 
     /*document.querySelector(".toggle-btn2").addEventListener("click", function () {
         let paragraph = document.querySelector(".section-review");

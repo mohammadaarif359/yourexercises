@@ -65,16 +65,6 @@
 @endsection
 @section('pagejs')
 <script>
-    document.querySelector(".toggle-btn").addEventListener("click", function () {
-        let paragraph = document.querySelector(".section-paragraph");
-        paragraph.classList.toggle("expanded");
-        this.classList.toggle("expanded");
-
-        // Change text dynamically
-        this.innerHTML = paragraph.classList.contains("expanded")
-            ? 'See Less <i class="fas fa-chevron-up"></i>'
-            : 'See More <i class="fas fa-chevron-down"></i>';
-    });
 
     /*document.querySelector(".toggle-btn2").addEventListener("click", function () {
         let paragraph = document.querySelector(".section-review");
