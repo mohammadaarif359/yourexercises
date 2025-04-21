@@ -24,15 +24,14 @@ class DoctorExerciseAttachmentController extends Controller
 				->addColumn('image_url', function ($data) {
 					if($data->image_url) {
 						$extension = pathinfo($data->image_url, PATHINFO_EXTENSION);
-						$imageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'];
-						$videoExtensions = ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'];
+						$imageExtensions = config('custom.img_extension');
+						$videoExtensions = config('custom.video_extension');
 						if (in_array(strtolower($extension), $imageExtensions)) {
 							return '<a href="'.$data->image_url.'" target="_blank">
 								<img src="'.$data->image_url.'" class="img img-responsive" height="100px" width="120px" style="cursor: pointer;">
 							</a>';
 						} elseif (in_array(strtolower($extension), $videoExtensions)) {
-							return '<video width="120" height="100" controls>
-										<source src="'.$data->image_url.'" type="video/'.$extension.'">
+							return '<video width="120" height="100" controls src="'.$data->image_url.'" type="video/'.$extension.'">
 										Your browser does not support the video tag.
 									</video>';
 						}
