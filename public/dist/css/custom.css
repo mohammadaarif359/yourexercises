@@ -4,3 +4,8 @@
     word-break: break-word;
     min-height: 50px;
 }
+.addexercise {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

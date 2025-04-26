@@ -229,12 +229,13 @@
 							<span class="error invalid-feedback" id="error_subcategory_id0"></span>
 						</div>
 					</div>	
-					<div class="col-md-1">
+					<div class="col-md-2">
 						<div class="form-group">
 							<label for="times">Execise</label>
 							<div>
 								<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
-								id="addexercise0" data-target="#addexercisemodal0" data-whatever="@getbootstrap">Select</button>
+								id="addexercise0" data-target="#addexercisemodal0" data-whatever="@getbootstrap"
+								title="Click to select">Select</button>
 								<span class="error invalid-feedback" id="error_select_exercise_id0"></span>
 							</div>	
 						</div>
