@@ -31,7 +31,8 @@ class ExerciseAttachmentController extends Controller
 								<img src="'.$data->image_url.'" class="img img-responsive" height="100px" width="120px" style="cursor: pointer;">
 							</a>';
 						} elseif (in_array(strtolower($extension), $videoExtensions)) {
-							return '<video width="120" height="100" controls src="'.$data->image_url.'" type="video/'.$extension.'">
+							$type = strtolower($extension) === 'mov' ? 'quicktime' : strtolower($extension);
+							return '<video width="120" height="100" controls src="'.$data->image_url.'" type="video/'.$type.'">
 										Your browser does not support the video tag.
 									</video>';
 						}

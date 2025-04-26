@@ -25,7 +25,9 @@ class DoctorExerciseController extends Controller
     use AuthCode,CommonCode;
 	public function index(Request $request) {
         if ($request->ajax()) {
-			$results = DoctorExercise::with(['exercise_category','exercise_category.category','exercise_category.subcategory'])->get();
+			$user_id = Auth::user()->id;
+			$results = DoctorExercise::with(['exercise_category','exercise_category.category','exercise_category.subcategory'])
+				->where('created_by', $user_id)->get();
 			return Datatables::of($results)
 				->addColumn('category', function ($data) {
 					if ($data->exercise_category) {
