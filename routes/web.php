@@ -144,6 +144,9 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::post('/plan/update','Admin\PlanController@update')->name('plan.update');
 	Route::get('/plan/export','Admin\PlanController@export')->name('plan.export');
 	
+	// doctor
+	Route::get('/doctor/dashboard','Admin\DoctorDashboardController@index')->name('doctor.dashboard');
+
 	// doctor exercise
 	Route::get('/doctor/exercise','Admin\DoctorExerciseController@index')->name('doctor.exercise');
 	Route::get('/doctor/exercise/add','Admin\DoctorExerciseController@add')->name('doctor.exercise.add');

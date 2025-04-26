@@ -199,7 +199,7 @@
               <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Administrative</h3>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">
-              <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/calendar.png') }}" class="img-fluid" width="150" />
+              <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/web-analytics.png') }}" class="img-fluid" width="150" />
               <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Advance Analytics</h3>
             </div>
           </div>
@@ -207,7 +207,7 @@
         <div class="col-sm-12 col-md-6 p-0">
           <div class="row">
             <div class="col-md-6 col-sm-6 col-6 feature">
-              <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/bill.png') }}" class="img-fluid" width="150" />
+              <img alt="Billing icon" height="150" src="{{ asset('web_new/assets/img/web-feedback.png') }}" class="img-fluid" width="150" />
               <h3 class="paragraph-xml cl-dblue mb-3 mt-2 text-uppercase">Feedback</h3>
             </div>
             <div class="col-md-6 col-sm-6 col-6 feature">

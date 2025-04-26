@@ -55,6 +55,14 @@
           </li>--}}
           @if(Auth::user()->hasRole('super-admin'))
           <li class="nav-item">
+            <a href="{{ route('admin.dashboard') }}" class="nav-link @if(route('admin.dashboard') == URL::current()) active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{ route('admin.user') }}" class="nav-link {{ request()->is('admin/user*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
@@ -95,6 +103,14 @@
             </a>
           </li>
           @elseif(Auth::user()->hasRole('doctor'))
+          <li class="nav-item">
+            <a href="{{ route('admin.doctor.dashboard') }}" class="nav-link @if(route('admin.doctor.dashboard') == URL::current()) active @endif">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
           <li class="nav-item">
             <a href="{{ route('admin.doctor.user') }}" class="nav-link {{ request()->is('admin/doctor/user*') ? 'active' : '' }}">
               <i class="nav-icon fas fa-user"></i>

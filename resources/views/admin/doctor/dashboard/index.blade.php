@@ -9,7 +9,7 @@
 			<div class="info-box">
 			  <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 			  <div class="info-box-content">
-				<span class="info-box-text">Doctors</span>
+				<span class="info-box-text">Patients</span>
 				<span class="info-box-number">{{ $count['user'] }}</span>
 			  </div>
 			</div>
@@ -40,7 +40,7 @@
 			  <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user-plus"></i></span>
 
 			  <div class="info-box-content">
-				<span class="info-box-text">New doctor last 30 days</span>
+				<span class="info-box-text">New Members</span>
 				<span class="info-box-number">{{ $count['new_member'] }}</span>
 			  </div>
 			</div>
@@ -52,7 +52,7 @@
 			<div class="col-md-4">
 				<div class="card">
 					<div class="card-header">
-						<h3 class="card-title">Onboarded Doctors (30 days)</h3>
+						<h3 class="card-title">Onboarded Patient (30 days)</h3>
 						<div class="card-tools">
 							<span class="badge badge-danger">{{ $count['new_member'] }}</span>
 							<button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
@@ -65,14 +65,13 @@
 							<li>
 								<img src="{{ $user->profile_photo_url ? $user->profile_photo_url : asset('dist/img/avatar5.png') }}">
 								<a class="users-list-name" href="#"><b>{{ $user['name'] }}</b></a>
-								<a class="users-list-name" href="#">{{ $user['doctor_profile']['clinic_name'] }}</a>
-								<span class="users-list-date">{{ date('d-M', strtotime($user['created_at'])) }}</span>
+								<span class="users-list-date">{{ date('d-M', strtotime($user['patient_profile']['created_at'])) }}</span>
 							</li>
 							@endforeach
 						</ul>
 					</div>
 					<div class="card-footer text-center">
-						<a href="{{ route('admin.user') }}">View All Users</a>
+						<a href="{{ route('admin.doctor.user') }}">View All Users</a>
 					</div>
 				</div>
 			</div>
@@ -97,7 +96,7 @@
 						</div>
 						<div class="product-info">
 						<a href="{{ url('/admin/plan/'.$plan->id) }}" class="product-title">{{ $plan['name'] }}
-							{{--<span class="badge badge-warning float-right">{{ count($plan['plan_detail']) }}</span></a>--}}
+							{{--<span class="badge badge-warning float-right">{{ count($plan['doctor_plan_detail']) }}</span></a>--}}
 							<span class="product-description">
 								{{ $plan['description'] }}
 							</span>
@@ -107,7 +106,7 @@
 					</ul>
 				</div>
 				<div class="card-footer text-center">
-					<a href="{{ route('admin.plan') }}" class="uppercase">View All Plans</a>
+					<a href="{{ route('admin.doctor.plan') }}" class="uppercase">View All Plans</a>
 				</div>
 				</div>
 			</div>
