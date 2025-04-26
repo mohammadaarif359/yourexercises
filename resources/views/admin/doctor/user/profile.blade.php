@@ -52,9 +52,19 @@
                     
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="name"for="medical_history">Medical History</label>
+                            <label for="name"for="medical_history">Cheif Complaints</label>
                             <textarea name="medical_history" class="form-control @error('medical_history') is-invalid @enderror" id="medical_history" rows='3'>{{ old('medical_history', $data['medical_history'] ?? '') }}</textarea>
                             @error('description')
+                                <span class="error invalid-feedback">{{ $message }}</span>
+                            @enderror
+                        </div>    
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name"for="medical_details_including_soap">Medical Details Including SOAP</label>
+                            <textarea name="medical_details_including_soap" class="form-control @error('medical_details_including_soap') is-invalid @enderror" id="medical_details_including_soap" rows='3'>{{ old('medical_details_including_soap', $data['medical_details_including_soap'] ?? '') }}</textarea>
+                            @error('medical_details_including_soap')
                                 <span class="error invalid-feedback">{{ $message }}</span>
                             @enderror
                         </div>    

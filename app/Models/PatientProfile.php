@@ -10,7 +10,7 @@ class PatientProfile extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'doctor_id', 'gender', 'dob', 'address','medical_history','avg_rating'];
+        'user_id', 'doctor_id', 'gender', 'dob', 'address','medical_history','medical_details_including_soap', 'avg_rating'];
     
 	
     /**

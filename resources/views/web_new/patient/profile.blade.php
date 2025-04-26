@@ -22,9 +22,9 @@
                     </div>
 
                     {{ $data['medical_history'] }}
-                    <div class="section-title cl-dblue">Medical History</div>
+                    <div class="section-title cl-dblue"> Cheif Complaints</div>
                     <p class="cl-gray section-paragraph collapsed">
-                        {{ $data['medical_history'] ? $data['medical_history'] : 'No medical history given by your doctor'  }}
+                        {{ $data['medical_history'] ? $data['medical_history'] : 'No Cheif Complaints given by your doctor'  }}
                     </p>
                     
                     <div class="section-title cl-dblue mt-4 mb-2 pb-1">Your Practioner</div>

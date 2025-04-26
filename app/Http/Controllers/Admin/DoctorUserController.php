@@ -14,6 +14,7 @@ use DB;
 use DataTables;
 use Carbon\Carbon;
 use Auth;
+use Illuminate\Validation\Rule;
 
 class DoctorUserController extends Controller
 {
@@ -76,6 +77,60 @@ class DoctorUserController extends Controller
 		// attach role
 		$user->attachRole($request->role);
 
+		// patient profile create
+		PatientProfile::create([
+			'user_id' => $user->id,
+			'doctor_id' => $doctor_profile->id
+		]);
+
+        // user account creation email
+		$data['subject'] = 'Patient Account Create';
+        $data['name'] = $user['name'];
+		$data['email'] = $user['email'];
+		$data['password'] = $request_data['password'];
+		$data['message'] = trans('sms.patient.user.create', ['doctor_name' => $doctor_profile['user']['name']]);
+		$data['url'] = url('/clinic/'.$doctor_profile->slug); 
+		$this->sendPatientUserCreateMail($data);
+
+        return redirect()->route('admin.doctor.user')->with('success', 'User created Successfully !');
+	}
+	public function storeNew(Request $request) {
+		$doctor_profile = Auth::user()->doctor_profile;
+		$request_data = $request->all();
+		$request->validate([
+			'name'    => 'required|regex:/^[\pL\s]+$/u',
+            // 'email'   => ['required', 'email', 'unique_patient_user_email:email' . $doctor_profile->id],
+			'email'   => ['required', 'email', Rule::unique('users'), 'unique_patient_user_email:' . $doctor_profile->id],
+            'mobile'  => 'required|numeric|digits_between:8,12',
+			'password'=> 'required|min:6|confirmed',
+			'role'	  => 'required',	
+			'profile_photo' => 'nullable|mimes:jpeg,jpg,png',
+		]);
+		dd('validation success');
+		$user = User::where('email', $request_data['email'])->first();
+		$file_name = null;
+		if($request->hasFile('profile_photo')) {
+			$file_name = $this->uploadImg($request->profile_photo,'users');
+		}
+		
+		if($user) {
+			$user->name = $request_data['name'];
+			$user->mobile = $request_data['mobile'];
+			$user->password = bcrypt($request_data['password']);
+			$user->status = 1;
+			$user->save(); 
+		} else {
+			$user = User::create([
+				'name'=>$request_data['name'],
+				'email'=>trim($request_data['email']),
+				'mobile'=>$request_data['mobile'],
+				'status'=>isset($request_data['status']) ? $request_data['status'] : 1,
+				'password'=>bcrypt($request_data['password']),
+				'profile_photo'=>$file_name,
+			]);
+			// attach role
+			$user->attachRole($request->role);
+		}
 		// patient profile create
 		PatientProfile::create([
 			'user_id' => $user->id,
@@ -196,6 +251,7 @@ class DoctorUserController extends Controller
 				'dob' => $request['dob'],
 				'address' => $request['address'],
 				'medical_history' => $request['medical_history'],
+				'medical_details_including_soap' => $request['medical_details_including_soap'],
 			]
 		);
 		if($data) {
