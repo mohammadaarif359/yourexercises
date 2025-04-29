@@ -45,7 +45,7 @@
                                     <select class="form-select" name="answer[how_was_exercise]" id="how_was_exercise">
                                         <option value='' selected>Select</option>
                                         <option value="easy">easy</option>
-                                        <option value="moderate">mmoderate</option>
+                                        <option value="moderate">moderate</option>
                                         <option value="hard">hard</option>
                                     </select>
                                 </div>
