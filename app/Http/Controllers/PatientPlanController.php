@@ -36,22 +36,25 @@ class PatientPlanController extends Controller
             'plan_id' => 'required',
 			'exercise_id' => 'required',
 			'rating' => 'required',
-			'title' => 'required',
 			'comment' => 'required',
         ]);
 		if ($validate->fails()) {
 			return response()->json(['error'=>$validate->errors()]);
         }
 		$user_id = Auth::user()->id;
-		$feedack = PlanAssignFeedback::create([
-			// 'user_id'=>Auth::user()->id,
-			'assign_id'=> $request_data['assign_id'],
-			'plan_id' => $request_data['plan_id'],
-			'exercise_id' => $request_data['exercise_id'],
-			'rating' => $request_data['rating'],
-			'title' => $request_data['title'],
-			'comment' => $request_data['comment'],
-		]);
+		$feedack = PlanAssignFeedback::updateOrCreate(
+			[
+				'id' => $request_data['id']
+			],
+			[
+				'assign_id'=> $request_data['assign_id'],
+				'plan_id' => $request_data['plan_id'],
+				'exercise_id' => $request_data['exercise_id'],
+				'rating' => $request_data['rating'],
+				'comment' => $request_data['comment'],
+				'answer' => $request_data['answer'] ?? null
+			]
+		);
 		if($feedack) {
 			$avg_rating = PlanAssignFeedback::where('assign_id', $request_data['assign_id'])->avg('rating');
 			DoctorPlanAssign::where('id', $request_data['assign_id'])->update(['avg_rating'=>$avg_rating]);

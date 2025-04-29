@@ -120,22 +120,21 @@
                             @php $ex_feedback = null; @endphp
                             @if($data->feedback)
                                 @php $ex_feedback = $data->feedback->where('exercise_id', $detail['doctor_exercise_id'])->first(); @endphp
-                            @endif
+                            @endif     
+                            @php 
+                                $feedback_input['assign_id'] = $data['id'];
+                                $feedback_input['plan_id'] = $data['plan_id'];
+                                $feedback_input['exercise_id'] = $detail['doctor_exercise_id'];
+                                $feedback_input['exercise_name'] = $detail['exercise']['name'];
+                            @endphp
+                            <button class="ps-btn sm-btn primary-btn ps-header-btn mr-2 ml-0 ratingModalBtn" id='ratingModalBtn{{$de}}' data-toggle="modal"
+                                data-target="#exampleModal" type="button" data-feedback_input='@json($feedback_input)' data-feedback='@json($ex_feedback)'>
+                                Rate Exercise
+                            </button>
                             @if($ex_feedback)
                                 <h2 class="paragraph-md cl-dblue gap-1 d-flex mr-2 mb-0">
                                     <i class="fas fa-star"></i><span class="mx-1">{{ $ex_feedback->rating }}</span>
                                 </h2>
-                            @else      
-                                @php 
-                                    $feedback_input['assign_id'] = $data['id'];
-                                    $feedback_input['plan_id'] = $data['plan_id'];
-                                    $feedback_input['exercise_id'] = $detail['doctor_exercise_id'];
-                                    $feedback_input['exercise_name'] = $detail['exercise']['name'];
-                                @endphp
-                                <button class="ps-btn sm-btn primary-btn ps-header-btn mr-2 ml-0 ratingModalBtn" id='ratingModalBtn{{$de}}' data-toggle="modal"
-                                    data-target="#exampleModal" type="button" data-feedback_input='@json($feedback_input)'>
-                                    Rate Exercise
-                                </button>
                             @endif
                         </div>
                     </div>
@@ -182,6 +181,22 @@
         $("#feedback-form #assign_id").val(feedback_input.assign_id);
         $("#feedback-form #plan_id").val(feedback_input.plan_id);
         $("#feedback-form #exercise_id").val(feedback_input.exercise_id);
+
+        var feedback = $(this).attr('data-feedback');
+        feedback = JSON.parse(feedback);
+        if(feedback) {
+            $("#feedback-form #id").val(feedback.id);
+            $("#feedback-form #rating").val(feedback.rating);
+            $("#feedback-form #comment").val(feedback.comment);
+            $("#feedback-form #rating").prop('disabled', true);
+            $("#feedback-form #comment").prop('disabled', true);
+            if(feedback.answer) {
+                var answer = feedback.answer
+                for(const key in answer) {
+                    $("#feedback-form #"+key).val(answer[key]);
+                }
+            }
+        }
         $('#ratingModal').modal('show');
     });
     $('.videoModalBtn').on('click', function () {
@@ -226,9 +241,10 @@
 
     $("#feedback-btn").click(function (e) {
         e.preventDefault();
-        console.log('frm data', $("#feedback-form").serialize());
         $("#feedback-btn").prop("disabled", true);
         $('#feedback-btn').html('Save <i class="fa fa-circle-o-notch fa-spin" style="font-size:15px"></i>');
+        $("#feedback-form").find(':input:disabled').prop('disabled', false);
+
         $.ajax({
             type: 'POST',
             url: "{{ route('patient.plan.feedback.store') }}",
