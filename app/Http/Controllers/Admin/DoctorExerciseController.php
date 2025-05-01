@@ -26,7 +26,8 @@ class DoctorExerciseController extends Controller
 	public function index(Request $request) {
         if ($request->ajax()) {
 			$user_id = Auth::user()->id;
-			$results = DoctorExercise::with(['exercise_category','exercise_category.category','exercise_category.subcategory'])->get();
+			$results = DoctorExercise::with(['exercise_category','exercise_category.category','exercise_category.subcategory'])
+				->where('created_by', $user_id)->get();
 			return Datatables::of($results)
 				->addColumn('category', function ($data) {
 					if ($data->exercise_category) {
@@ -164,7 +165,7 @@ class DoctorExerciseController extends Controller
 	}
 
 	public function export(Request $request) {
-		$query = DoctorExercise::select("id","name","slug","description","status","created_at")->get();
+		$query = DoctorExercise::select("id","name","slug","description","status","created_at")->where('created_by', Auth::user()->id)->get();
 		$heading = array("id","name","slug","description","status","created_at");
 		return $this->exportModule($model = null,$query,$heading);
 	}
