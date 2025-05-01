@@ -41,7 +41,8 @@ class DoctorPlanAssignController extends Controller
                     return !empty($data->user) ? $data->user['name'] : '';
                 })
 				->addColumn('action', function ($data) {
-					$btn = '<a href="/admin/doctor/plan/'.$data->id.'/assign/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>';
+					$btn = '<a href="/admin/doctor/plan/'.$data->id.'/assign/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
+                    <a href="/admin/doctor/plan/'.$data->id.'/assign/feedback/'.$data->id.'" class="" title="Feedback"><i class="fa fa-comments"></i></a>';
 					return $btn;
 				})->editColumn('completed_at', function ($data) {
                     if($data->completed_at) {

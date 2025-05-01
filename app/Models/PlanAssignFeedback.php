@@ -39,4 +39,11 @@ class PlanAssignFeedback extends Model
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
+    /**
+     * Relationship: A plan assign belongs to the exercise.
+     */
+    public function exercise()
+    {
+        return $this->belongsTo('App\Models\DoctorExercise', 'exercise_id');
+    }
 }

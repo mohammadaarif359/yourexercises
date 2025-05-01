@@ -172,7 +172,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 
 	Route::get('/doctor/user','Admin\DoctorUserController@index')->name('doctor.user');
 	Route::get('/doctor/user/add','Admin\DoctorUserController@add')->name('doctor.user.add');
-	Route::post('/doctor/user/store','Admin\DoctorUserController@storeNew')->name('doctor.user.store');
+	Route::post('/doctor/user/store','Admin\DoctorUserController@store')->name('doctor.user.store');
 	Route::get('/doctor/user/edit/{id}','Admin\DoctorUserController@edit')->name('doctor.user.edit');
 	Route::post('/doctor/user/update','Admin\DoctorUserController@update')->name('doctor.user.update');
 	Route::get('/doctor/user/export','Admin\DoctorUserController@export')->name('doctor.user.export');
@@ -184,6 +184,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::post('/doctor/plan/{plan_id}/assign/store','Admin\DoctorPlanAssignController@store')->name('doctor.plan.assign.store');
 	Route::get('/doctor/plan/{plan_id}/assign/edit/{id}','Admin\DoctorPlanAssignController@edit')->name('doctor.plan.assign.edit');
 	Route::post('/doctor/plan/{plan_id}/assign/update','Admin\DoctorPlanAssignController@update')->name('doctor.plan.assign.update');
+	Route::get('/doctor/plan/{plan_id}/assign/feedback/{id}','Admin\DoctorPlanAssignController@feedback')->name('doctor.plan.assign.feedback');
 	// Route::get('/doctor/plan/{plan_id}/assign/pdf','Admin\DoctorPlanAssignController@pdf')->name('doctor.plan.assign.pdf');
 
 	// inquiry
