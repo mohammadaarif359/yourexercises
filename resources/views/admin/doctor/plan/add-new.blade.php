@@ -94,7 +94,7 @@
 									<span class="error invalid-feedback" id="error_subcategory_id{{$count}}"></span>
 								</div>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="times" class="{{$hide}}">Execise</label>
 									<div>
@@ -104,7 +104,7 @@
 									</div>	
 								</div>
 							</div>
-							<div class="col-md-2">
+							{{--<div class="col-md-2">
 								<div class="form-group">
 									<label for="exercise_id" class="{{$hide}}">Exercise</label>
 									<select  id="exercise_id{{$count}}" class="exercise_id form-control" name="detail[exercise_id][]">
@@ -112,7 +112,7 @@
 									</select>
 									<span class="error invalid-feedback" id="error_exercise_id{{$count}}"></span>
 								</div>
-							</div>
+							</div>--}}
 							<div class="col-md-1">
 								<div class="form-group">
 									<label for="reps" class="{{$hide}}">Reps</label>
@@ -229,7 +229,7 @@
 									<span class="error invalid-feedback" id="error_subcategory_id0"></span>
 								</div>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="times">Execise</label>
 									<div>
@@ -308,7 +308,7 @@
 									<span class="error invalid-feedback" id="error_times0"></span>
 								</div>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-1">
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>

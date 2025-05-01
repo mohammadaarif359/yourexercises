@@ -97,7 +97,7 @@
 							<span class="error invalid-feedback" id="error_subcategory_id{{$count}}"></span>
 						</div>
 					</div>
-					<div class="col-md-1">
+					<div class="col-md-2">
 						<div class="form-group">
 							<label for="times" class="{{$hide}}">Execise</label>
 							<div>
@@ -176,7 +176,7 @@
 							<span class="error invalid-feedback" id="error_times{{$count}}"></span>
 						</div>
 					</div>
-					<div class="col-md-2">
+					<div class="col-md-1">
 						<div class="form-group">
 							<label for="action" class="{{$hide}}">Action</label>
 							<div>
