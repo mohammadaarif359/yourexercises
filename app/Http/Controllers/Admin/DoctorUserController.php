@@ -155,12 +155,12 @@ class DoctorUserController extends Controller
 		} else {
 			return redirect()->back()->with('error', 'Failer to updated user !');
 		}
-		
 	}
 	public function export(Request $request) {
-		$query = User::with('doctor_profile')->whereHas('roles', function ($q) {
-				$q->where('name', 'patient');
-			})->get()->map(function ($user) {
+		$doctor_id = Auth::user()->doctor_profile->id;
+		$query = User::whereHas('patient_profile', function ($q) use($doctor_id) {
+					$q->where('doctor_id', $doctor_id);
+				})->get()->map(function ($user) {
 				return [
 					'id' => $user->id,
 					'name' => $user->name,
@@ -170,7 +170,7 @@ class DoctorUserController extends Controller
 					'created_at' => $user->created_at,
 				];
 			});
-		$heading = array("id","name","email","mobile","status","verified","patient_count","created_at");
+		$heading = array("id","name","email","mobile","status","created_at");
 		return $this->exportModule($model = null,$query,$heading);
 	}
 	public function profile($user_id) {
