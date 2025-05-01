@@ -23,9 +23,24 @@ use Validator;
 class DoctorPlanController extends Controller
 {
     use AuthCode,CommonCode,DoctorExerciseCode;
+	protected $doctor_id;
+	protected $doctor_user_id;
+	
+	public function __construct() {
+		$this->middleware(function ($request, $next) {
+			$user = Auth::user();
+			if ($user && $user->hasRole('doctor')) {
+				$this->doctor_id = $user->doctor_profile->id;
+				$this->doctor_user_id = $user->id;
+			}
+			return $next($request);
+		});
+	}
+
 	public function index(Request $request) {
 		if ($request->ajax()) {
-			$results = DoctorPlan::withCount('plan_assign')->get();
+			$doctor_user_id = $this->doctor_user_id;
+			$results = DoctorPlan::withCount('plan_assign')->where('created_by', $doctor_user_id)->get();
 			return Datatables::of($results)
 				->addColumn('action', function ($data) {
 					$btn = '<a href="/admin/doctor/plan/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
@@ -197,8 +212,18 @@ class DoctorPlanController extends Controller
 	}
 
 	public function export(Request $request) {
-		$query = DoctorPlan::select("id","name","description","created_at")->get();
-		$heading = array("id","name","description","created_at");
+		$query = DoctorPlan::withCount('plan_assign')
+			->where('created_by', $this->doctor_user_id)->get()
+			->map(function ($data) {
+				return [
+					'id' => $data->id,
+					'name' => $data->name,
+					'status' => $data->is_active === 1 ? 'Active' : 'Deactive',
+					'plan_assign_count' => $data->plan_assign_count,
+					'created_at' => $data->created_at,
+				];
+			});
+		$heading = array("id","name","status","assign users","created_at");
 		return $this->exportModule('DoctorPlan',$query,$heading);
 	}
 
