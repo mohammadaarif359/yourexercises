@@ -35,7 +35,7 @@ class DoctorPlanAssignController extends Controller
 		$doctor_id = $this->doctor_id;
         $doctor_user_id = $this->doctor_user_id;
         if ($request->ajax()) {
-            $results = DoctorPlanAssign::where('doctor_user_id', $doctor_user_id)->get();
+            $results = DoctorPlanAssign::where('doctor_user_id', $doctor_user_id)->where('plan_id', $plan_id)->get();
 			return Datatables::of($results)
                 ->addColumn('user_name', function ($data) {
                     return !empty($data->user) ? $data->user['name'] : '';
