@@ -165,7 +165,7 @@ class DoctorExerciseController extends Controller
 	}
 
 	public function export(Request $request) {
-		$query = DoctorExercise::select("id","name","slug","description","status","created_at")->where('created_by', Auth::user()->id)->get();
+		$query = DoctorExercise::select("id","name","slug","description","is_active","created_at")->where('created_by', Auth::user()->id)->get();
 		$heading = array("id","name","slug","description","status","created_at");
 		return $this->exportModule($model = null,$query,$heading);
 	}
@@ -228,9 +228,10 @@ class DoctorExerciseController extends Controller
 	}
 	public function bySubcategory(Request $request) {
 		$request->subcategory_id;
+		$user_id = Auth::user()->id;
 		$data = DoctorExercise::whereHas('exercise_category.subcategory', function ($query) use ($request) {
 			$query->whereIn('id', $request->subcategory_id);
-		})->get();
+		})->where('created_by', $user_id)->get();
 		return response()->json($data);
 	}	
 }
