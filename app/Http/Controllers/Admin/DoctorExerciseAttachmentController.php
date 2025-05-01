@@ -19,7 +19,8 @@ class DoctorExerciseAttachmentController extends Controller
     use AuthCode,CommonCode;
 	public function index(Request $request, $exercise_id) {
 		if ($request->ajax()) {
-			$results = Attachment::where('attachable_id',$exercise_id)->where('attachable_type','App\Models\DoctorExercise')->get();
+			$user_id = Auth::user()->id;
+			$results = Attachment::where('attachable_id',$exercise_id)->where('created_by', $user_id)->where('attachable_type','App\Models\DoctorExercise')->get();
 			return Datatables::of($results)
 				->addColumn('image_url', function ($data) {
 					if($data->image_url) {
@@ -96,7 +97,8 @@ class DoctorExerciseAttachmentController extends Controller
 		return redirect()->route('admin.doctor.exercise.attachment',['exercise_id' => $data->attachable_id])->with('success', 'Exercise image updated successfully !');
 	}
 	public function delete(Request $request, $id) {
-		$data = Attachment::where('id',$id)->first();
+		$user_id = Auth::user()->id;
+		$data = Attachment::where('id', $id)->where('created_by', $user_id)->first();
 		if($data) {
 			unlink(storage_path('app/public/doctor/exercise/'.$data->image));
 			$data->delete();
