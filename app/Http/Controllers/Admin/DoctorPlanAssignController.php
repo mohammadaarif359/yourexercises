@@ -125,4 +125,8 @@ class DoctorPlanAssignController extends Controller
             return redirect()->back()->with('error', 'Plan assign data not found !');
 		}	
 	}
+    public function feedback(Request $request, $plan_id, $id) {
+        $assign = DoctorPlanAssign::with(['plan','feedback','user'])->where('id', $id)->first(); 
+        return view('admin.doctor.plan-assign.feedback', compact('assign'));
+    }
 }
