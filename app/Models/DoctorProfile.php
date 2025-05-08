@@ -12,7 +12,7 @@ class DoctorProfile extends Model
     protected $fillable = [
         'user_id', 'logo', 'image', 'clinic_name', 'slug',
         'clinic_address', 'description', 'gender',
-        'dob', 'clinic_phone_no','professional_info', 'social_media', 'is_verified', 'ye_directory'];
+        'dob', 'clinic_phone_no','professional_info', 'social_media', 'is_verified', 'ye_directory', 'avg_rating'];
 
     protected $casts = [
         'professional_info' => 'array',

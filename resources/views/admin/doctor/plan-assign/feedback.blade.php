@@ -82,7 +82,7 @@
                                   <div class="text-muted">
                                     <p class="text-sm">
                                       <b class="d-block">Q1: How was the exercise</b>
-                                      {{ $feedback['answer']['how_was_exercise'] ?? '' }}
+                                      Ans: {{ $feedback['answer']['how_was_exercise'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
                                       <b class="d-block">Q2: Pain level before the exercise</b>

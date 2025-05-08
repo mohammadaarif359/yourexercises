@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PatientProfile;
-use App\Models\{DoctorPlanAssign, PlanAssignFeedback};
+use App\Models\{DoctorPlanAssign, PlanAssignFeedback, DoctorPlan, DoctorProfile};
 use Validator;
 use Auth;
 use App\Traits\AuthCode;
@@ -31,6 +31,7 @@ class PatientPlanController extends Controller
 	}
 	public function feedbackStore(Request $request) {
 		$request_data = $request->all();
+		// print_r($request_data);die;
 		$validate=Validator::make($request->all(), [
 			'assign_id' => 'required',
             'plan_id' => 'required',
@@ -56,8 +57,33 @@ class PatientPlanController extends Controller
 			]
 		);
 		if($feedack) {
-			$avg_rating = PlanAssignFeedback::where('assign_id', $request_data['assign_id'])->avg('rating');
-			DoctorPlanAssign::where('id', $request_data['assign_id'])->update(['avg_rating'=>$avg_rating]);
+			$assign = DoctorPlanAssign::where('id',$request_data['assign_id'])->first();
+
+			// assign plan avg raying
+			$assign_plan_avg_rating = PlanAssignFeedback::where('assign_id', $request_data['assign_id'])->avg('rating');
+			DoctorPlanAssign::where('id', $request_data['assign_id'])->update(['avg_rating'=>$assign_plan_avg_rating]);
+
+			// plan avg rating
+			$doctor_plan_avg_rating = DoctorPlanAssign::where('plan_id', $request_data['plan_id'])->where('avg_rating', '>', 0)->avg('avg_rating');
+			DoctorPlan::where('id', $request_data['plan_id'])->update(['avg_rating'=>$doctor_plan_avg_rating]);
+
+			// doctor avg rating
+			$doctor_avg_rating = DoctorPlan::where('created_by', $assign->doctor_user_id)->where('avg_rating', '>', 0)->avg('avg_rating');
+			DoctorProfile::where('user_id', $assign->doctor_user_id)->update(['avg_rating'=>$doctor_avg_rating]);
+
+			// send mail
+			$data['name'] = $assign['doctor_user']['name'];
+            $data['email'] = $assign['doctor_user']['email'];
+            $data['message'] = trans('sms.patient.plan.assign.feedback', [
+				'patient_name' => $assign['user']['name'],
+				'plan_name' => $assign['plan']['name'],
+				'exercise_name'=> $feedack['exercise']['name'],
+				'rating'=>  $request_data['rating'],
+				'plan_rating'=> (int) $doctor_plan_avg_rating,
+				'doctor_rating'=> (int) $doctor_avg_rating,
+			]);
+            $data['url'] = url('/admin/doctor/plan/'. $assign['plan_id'].'/assign/feedback/'.$assign['id']);
+            $this->sendPatientPlanAssignFeedbackEmail($data);
 		}
 		return response()->json(['message'=>'Thanks for given feedback','code'=>200]);
 	}

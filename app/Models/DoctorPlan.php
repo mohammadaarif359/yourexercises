@@ -9,7 +9,7 @@ class DoctorPlan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['plan_id', 'name', 'description', 'image', 'is_active', 'created_by'];
+    protected $fillable = ['plan_id', 'name', 'description', 'image', 'is_active', 'created_by', 'avg_rating'];
 
     protected $appends = [
         'image_url',
