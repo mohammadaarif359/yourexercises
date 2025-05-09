@@ -82,50 +82,55 @@
             <div class="values-content">
                 <div class="value-item">
                     <div class="d-flex gap-5">
-                        <div class="icon">ðŸ’¡</div>
+                        <!--<div class="icon">ðŸ’¡</div>-->
                         <h2>Automated Reminders</h2>
                     </div>
-                    <p><strong>fresh. creative. resourceful.</strong></p>
+                    <!--<p><strong>fresh. creative. resourceful.</strong></p>-->
                     <p>will never forget their exercises again. 
                         Our system sends timely reminders to ensure that patients stay on track with their rehabilitation programs</p>
                 </div>
                 <div class="value-item">
                     <div class="d-flex gap-5">
-                        <div class="icon">ðŸ¤</div>
                         <h2>Linking Profiles with EMS</h2>
                     </div>
-                    <p><strong>communicative. considerate. enthusiastic.</strong></p>
                     <p>Seamlessly connect patient profiles with your Electronic Medical System (EMS) for better management, 
                         data tracking, and integration with your clinic’s existing systems</p>
                 </div>
                 <div class="value-item">
                     <div class="d-flex gap-5">
-                        <div class="icon">ðŸ“‹</div>
                         <h2>Patient Access</h2>
                     </div>
-                    <p><strong>honorable. ethical. trustworthy. reliable.</strong></p>
                     <p>can log in to their personalized portal where they can track their progress, view their exercise routines, 
                         and communicate directly with their physiotherapist</p>
                 </div>
                 <div class="value-item mb-0">
                     <div class="d-flex gap-5">
-                        <div class="icon">ðŸ”Ž</div>
                         <h2>Customizable Exercise Plans</h2>
                     </div>
-                    <p><strong>vigilant. productive. focused. thoughtful.</strong></p>
                     <p>Whether it's a post-surgery recovery program or a sports injury rehabilitation plan, physiotherapists can easily design and 
                         customize exercise routines for each patient, ensuring that their treatment is tailored to their needs.</p>
                 </div>
                 <div class="value-item mb-0">
                     <div class="d-flex gap-5">
-                        <div class="icon">ðŸ”Ž</div>
                         <h2>Increased Compliance and Engagement</h2>
                     </div>
-                    <p><strong>vigilant. productive. focused. thoughtful.</strong></p>
                     <p>By making exercise routines easy to follow and ensuring constant communication, we help patients stay engaged 
                         and committed to their recovery journey</p>
                 </div>
             </div>
+        </div>
+
+        <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
+            <h2>
+                 Our Mission
+            </h2>
+            <p>
+            Yourexercises.com, our mission is to create an innovative <b>HealthTech</b> solution that empowers physiotherapists to provide personalized care while enhancing patient compliance and results.
+             We strive to bridge the gap between <b>technology</b> and <b>physiotherapy</b>, helping both patients and practitioners unlock the full potential of rehabilitation
+            </p>
+            <p>
+                We are passionate about <b>making a difference</b>, and our goal is simple: to offer a modern platform that delivers the tools needed to improve health outcomes in an accessible, efficient, and user-friendly way
+            </p>
         </div>
 
         <!--<div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
