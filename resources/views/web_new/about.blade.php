@@ -78,8 +78,8 @@
         <div class="core-values-section">
             <div class="sidebar">
                 <h1>What We Offer</h1>
-                <p>Yourexercises.com is designed to transform the way physiotherapists and patients interact. With a focus on ease of use, automation, and personalization, we provide a suite of features that ensure a smoother experience for both patients and their healthcare providers</p>
             </div>
+            <p>Yourexercises.com is designed to transform the way physiotherapists and patients interact. With a focus on ease of use, automation, and personalization, we provide a suite of features that ensure a smoother experience for both patients and their healthcare providers</p>
             <div class="values-content">
                 <div class="value-item">
                     <div class="d-flex gap-5">
