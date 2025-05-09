@@ -26,7 +26,7 @@
                             How We Started
                         </h2>
                         <p class="cl-gray paragraph-md">
-                        At Your Exercises, we are a team of passionate physiotherapists who have been dedicated to improving patient care since 2019. With extensive experience in the Canadian healthcare system, we saw firsthand the challenges both patients and healthcare practitioners face in delivering efficient, personalized care. This sparked our mission to bridge the gap between traditional physiotherapy and the future of healthcare technology.
+                            Welcome to <b>Yourexercises.com</b>, a modern platform built to revolutionize how physiotherapists prescribe and manage home exercises for their patients. Designed by two passionate physiotherapists who are not just business partners but life partners too, we bring you a unique blend of healthcare expertise and technological innovation. Our platform was created to make rehabilitation smarter, easier, and more efficient for both patients and healthcare providers.
                         </p>
                     </div>
                 </div>
@@ -36,13 +36,16 @@
                     Our Story
                 </h2>
                 <p>
-                    Driven by our belief that technology is the key to unlocking a new era in health and wellness, we set out to create a platform that streamlines the prescription and delivery of home exercise programs (HEP). Our vision is clear: to build a generational revolution in health-tech that empowers not only patients but also practitioners, administrators, and management teams. By embracing innovation, we are creating solutions that support a patient-centric approach, making it easier for everyone involved to deliver and receive optimal care.
+                    The journey behind Yourexercises.com is driven by a deep-rooted passion for <b>physiotherapy, sports, and technology</b>. The platform was envisioned by Jeet and Drashti, a husband and wife duo with diverse expertise in physiotherapy and sports, and a shared vision to combine health and tech in ways that make a real difference in patient recovery.
                 </p>
                 <p>
-                    At Your Exercises, we’re committed to being at the forefront of the next healthcare evolution. Our platform is designed to make the process smoother, more efficient, and more accessible for all, with the ultimate goal of improving outcomes for patients and creating a better experience for every stakeholder in the healthcare journey.
+                    <b>Jeet</b>, a gold medalist physiotherapist who graduated in 2019, has always been passionate about both fitness and technology. A professional in <b>badminton</b> and <b>chess</b>, Jeet's love for sports helped shape his approach to physiotherapy and rehabilitation. But his early interest in technology led him to envision a future where <b>HealthTech</b> (or <b>PhysioTech</b>) could be used to enhance patient care. His goal was clear: to bring the latest technology to the world of physiotherapy and help people recover faster and more effectively.
                 </p>
                 <p>
-                    Join us as we shape the future of physiotherapy and health technology—where convenience meets expertise for the benefit of all.
+                    <b>Drashti</b>, meaning “Vision,” is the perfect partner to bring this dream to life. A professional <b>table tennis</b> player for decades, she has always been dedicated to pushing her limits, whether on the court or in the field of physiotherapy. Graduating in 2020, Drashti’s commitment to solving real-world problems through physiotherapy has only grown stronger over time. She strongly believes that technology is essential to solving major concerns in healthcare. Her vision for <b>Yourexercises.com</b> was to create a platform where technology could have a huge impact by solving even the smallest challenges faced by both physiotherapists and patients.
+                </p>    
+                <p>
+                    Together, Jeet and Drashti formed Yourexercises.com with the mission of creating a platform that makes exercise prescriptions easier, more engaging, and more effective for patients—all while empowering physiotherapists with the tools they need to provide better care.
                 </p>
             </div>
 
@@ -70,59 +73,62 @@
                 <h3>Kenneth Flery</h3>
                 <p>Construction Development Manager</p>
             </div>
-        </div>
+        </div>-->
 
         <div class="core-values-section">
             <div class="sidebar">
-                <h1>Core Values</h1>
+                <h1>What We Offer</h1>
             </div>
             <div class="values-content">
                 <div class="value-item">
                     <div class="d-flex gap-5">
                         <div class="icon">ðŸ’¡</div>
-                        <h2>innovative</h2>
+                        <h2>Automated Reminders</h2>
                     </div>
                     <p><strong>fresh. creative. resourceful.</strong></p>
-                    <p>Anticipate the needs of the industry, clients, and customers, and proactively implement
-                        product/system
-                        enhancements that best the competitor's features and clientâ€™s expectations.</p>
+                    <p>will never forget their exercises again. 
+                        Our system sends timely reminders to ensure that patients stay on track with their rehabilitation programs</p>
                 </div>
                 <div class="value-item">
                     <div class="d-flex gap-5">
                         <div class="icon">ðŸ¤</div>
-                        <h2>collaborative</h2>
+                        <h2>Linking Profiles with EMS</h2>
                     </div>
                     <p><strong>communicative. considerate. enthusiastic.</strong></p>
-                    <p>Encourage myself, clients, and colleagues to work as a team, share ideas and never be afraid to
-                        ask for
-                        help. Consistently seek to help and support the team, the business, and our clients.</p>
+                    <p>Seamlessly connect patient profiles with your Electronic Medical System (EMS) for better management, 
+                        data tracking, and integration with your clinic’s existing systems</p>
                 </div>
                 <div class="value-item">
                     <div class="d-flex gap-5">
                         <div class="icon">ðŸ“‹</div>
-                        <h2>accountable</h2>
+                        <h2>Patient Access</h2>
                     </div>
                     <p><strong>honorable. ethical. trustworthy. reliable.</strong></p>
-                    <p>Challenge myself to be aware of all the factors under my control that influence the business,
-                        hold myself
-                        responsible for my actions and ensure my work is always helpful and for the betterment of the
-                        client,
-                        the product, and my peers.</p>
+                    <p>can log in to their personalized portal where they can track their progress, view their exercise routines, 
+                        and communicate directly with their physiotherapist</p>
                 </div>
                 <div class="value-item mb-0">
                     <div class="d-flex gap-5">
                         <div class="icon">ðŸ”Ž</div>
-                        <h2>diligent</h2>
+                        <h2>Customizable Exercise Plans</h2>
                     </div>
                     <p><strong>vigilant. productive. focused. thoughtful.</strong></p>
-                    <p>Inspire myself and others to always look for ways to improve the system and processes, remedy
-                        errors and
-                        learn from mistakes.</p>
+                    <p>Whether it's a post-surgery recovery program or a sports injury rehabilitation plan, physiotherapists can easily design and 
+                        customize exercise routines for each patient, ensuring that their treatment is tailored to their needs.</p>
+                </div>
+                <div class="value-item mb-0">
+                    <div class="d-flex gap-5">
+                        <div class="icon">ðŸ”Ž</div>
+                        <h2>Increased Compliance and Engagement</h2>
+                    </div>
+                    <p><strong>vigilant. productive. focused. thoughtful.</strong></p>
+                    <p>By making exercise routines easy to follow and ensuring constant communication, we help patients stay engaged 
+                        and committed to their recovery journey</p>
                 </div>
             </div>
         </div>
 
-        <div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
+        <!--<div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
             <div class="footer2 ">
                 <p>Your Exercises is lovingly made and supported by a remote-first team. While home will always be <del>ca</del>
                     North
