@@ -120,18 +120,38 @@
             </div>
         </div>
 
-        <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
-            <h2>
-                 Our Mission
-            </h2>
-            <p>
-            Yourexercises.com, our mission is to create an innovative <b>HealthTech</b> solution that empowers physiotherapists to provide personalized care while enhancing patient compliance and results.
-             We strive to bridge the gap between <b>technology</b> and <b>physiotherapy</b>, helping both patients and practitioners unlock the full potential of rehabilitation
-            </p>
-            <p>
-                We are passionate about <b>making a difference</b>, and our goal is simple: to offer a modern platform that delivers the tools needed to improve health outcomes in an accessible, efficient, and user-friendly way
-            </p>
-        </div>
+        <div class="container">
+            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
+                <h2>
+                    Our Mission
+                </h2>
+                <p>
+                Yourexercises.com, our mission is to create an innovative <b>HealthTech</b> solution that empowers physiotherapists to provide personalized care while enhancing patient compliance and results.
+                We strive to bridge the gap between <b>technology</b> and <b>physiotherapy</b>, helping both patients and practitioners unlock the full potential of rehabilitation
+                </p>
+                <p>
+                    We are passionate about <b>making a difference</b>, and our goal is simple: to offer a modern platform that delivers the tools needed to improve health outcomes in an accessible, efficient, and user-friendly way
+                </p>
+            </div>
+
+            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
+                <h2>
+                    Why Choose Us?
+                </h2>
+                <p>
+                    <strong>Expertise You Can Trust:</strong> Created by a team of experienced physiotherapists, our platform is built with a deep understanding of the challenges that clinicians and patients face every day
+                </p>
+                <p>
+                    <strong>Smart and Innovative:</strong> We combine the latest advancements in technology with proven physiotherapy practices to create a platform that works for everyone.
+                </p>
+                <p>
+                    <strong>Easy-to-Use:</strong> With a user-friendly interface, both physiotherapists and patients can navigate the platform with ease, making rehabilitation more efficient and less stressful.
+                </p>
+                <p>
+                    <strong>Tailored to You:</strong> Whether you are a physiotherapist looking for a better way to manage your practice or a patient seeking a personalized rehabilitation plan, Yourexercises.com adapts to your needs
+                </p>
+            </div>
+        </div>   
 
         <!--<div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
             <div class="footer2 ">
