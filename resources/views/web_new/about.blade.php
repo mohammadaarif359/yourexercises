@@ -132,9 +132,7 @@
                 <p>
                     We are passionate about <b>making a difference</b>, and our goal is simple: to offer a modern platform that delivers the tools needed to improve health outcomes in an accessible, efficient, and user-friendly way
                 </p>
-            </div>
-
-            <div class="content-section" data-aos="fade-up" data-aos-duration="1000">
+                
                 <h2>
                     Why Choose Us?
                 </h2>
