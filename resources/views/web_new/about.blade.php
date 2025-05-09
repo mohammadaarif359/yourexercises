@@ -148,13 +148,13 @@
                 <p>
                     <strong>Tailored to You:</strong> Whether you are a physiotherapist looking for a better way to manage your practice or a patient seeking a personalized rehabilitation plan, Yourexercises.com adapts to your needs
                 </p>
-            </div>
 
-            <h2>Join Us in Shaping the Future of Physiotherapy</h2>
-            <p>Thank you for choosing Yourexercises.com. Together, we can make rehabilitation smarter, easier, and more impactful. Whether you're a physiotherapist or a patient, we are here to help you every step of the way as we work toward a healthier, technology-driven future.</p>
-            <p><strong>- Jeet & Drashti</strong><br/>
-            Co-founders of Yourexercises.com<br/>
-            Your trusted partners in health and technology innovation</p>
+                <h2>Join Us in Shaping the Future of Physiotherapy</h2>
+                <p>Thank you for choosing Yourexercises.com. Together, we can make rehabilitation smarter, easier, and more impactful. Whether you're a physiotherapist or a patient, we are here to help you every step of the way as we work toward a healthier, technology-driven future.</p>
+                <p><strong>- Jeet & Drashti</strong><br/>
+                Co-founders of Yourexercises.com<br/>
+                Your trusted partners in health and technology innovation</p>
+            </div>   
         </div>   
 
         <!--<div class="container ps-eml" data-aos="fade-up" data-aos-duration="1000">
