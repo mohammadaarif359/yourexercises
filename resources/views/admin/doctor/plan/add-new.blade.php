@@ -99,7 +99,8 @@
 									<label for="times" class="{{$hide}}">Execise</label>
 									<div>
 										<button class="btn btn-default btn-block addexercise" type="button" data-toggle="modal" 
-										id="addexercise{{$count}}" data-target="#addexercisemodal{{$count}}" data-whatever="@getbootstrap">Select</button>
+										id="addexercise{{$count}}" data-target="#addexercisemodal{{$count}}" data-whatever="@getbootstrap"
+										title="{{ $detail['exercise']['name'] }}">{{ $detail['exercise']['name'] }}</button>
 										<span class="error invalid-feedback" id="error_select_exercise_id{{$count}}"></span>
 									</div>	
 								</div>
@@ -403,6 +404,8 @@ $.ajaxSetup({
 		itemrow.find(".addexercise").attr("data-target","#addexercisemodal"+num)
 		itemrow.find(".addexercisemodal").attr("id","addexercisemodal"+num);
 		itemrow.find(".addexercisemodal .modal-body .row").empty();
+		itemrow.find(".addexercise").html('Select');
+		itemrow.find(".addexercise").attr("title","Click to select")
 
 		itemrow.find("input, select").val('');
 		itemrow.find("option:selected").removeAttr("selected");
@@ -587,6 +590,8 @@ $.ajaxSetup({
 			$("#complete"+num).val(obj.complete);
 			$("#perform"+num).val(obj.perform);
 			$("#times"+num).val(obj.times);
+			$("#addexercise"+num).html(obj.name)
+			$('#addexercise'+num).attr('title', obj.name)
 		} else {
 			console.log('obj not', obj)
 			$("#reps"+num).val('');
@@ -594,6 +599,8 @@ $.ajaxSetup({
 			$("#complete"+num).val('');
 			$("#perform"+num).val('');
 			$("#times"+num).val('');
+			$("#addexercise"+num).html('Select')
+			$('#addexercise'+num).attr('title', 'Click to select')
 		}
 	});
 
