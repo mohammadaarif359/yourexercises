@@ -1678,6 +1678,12 @@ a:hover {
   margin: 0 0 0 15px;
   color: #963b54;
 }
+@media (max-width: 575px) {
+  .ps-pricing-set .card .card-body .price span {
+    font-size:30x;
+    margin: 0 0 0 8px;
+  }
+}
 .ps-pricing-set .card .list-unstyled li {
   font-size: 14px;
   color: #7A7A7A;
@@ -1766,6 +1772,7 @@ a:hover {
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 0 0 8px 8px;
+  padding:0;
 }
 .ps-tabs .tab-content.active {
   display: block;
