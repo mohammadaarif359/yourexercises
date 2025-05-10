@@ -14,6 +14,7 @@ use DB;
 use DataTables;
 use Carbon\Carbon;
 use Auth;
+use Illuminate\Validation\Rule;
 
 class DoctorUserController extends Controller
 {
@@ -50,7 +51,7 @@ class DoctorUserController extends Controller
 		$roles = Role::where('name','patient')->pluck('display_name','id')->toArray();
         return view('admin.doctor.user.add',compact('roles','doctor_id'));
 	}
-	public function store(Request $request) {
+	public function storeOld(Request $request) {
 		$doctor_profile = Auth::user()->doctor_profile;
 		$request_data = $request->all();
 		$request->validate([
@@ -76,6 +77,74 @@ class DoctorUserController extends Controller
 		// attach role
 		$user->attachRole($request->role);
 
+		// patient profile create
+		PatientProfile::create([
+			'user_id' => $user->id,
+			'doctor_id' => $doctor_profile->id
+		]);
+
+        // user account creation email
+		$data['subject'] = 'Patient Account Create';
+        $data['name'] = $user['name'];
+		$data['email'] = $user['email'];
+		$data['password'] = $request_data['password'];
+		$data['message'] = trans('sms.patient.user.create', ['doctor_name' => $doctor_profile['user']['name']]);
+		$data['url'] = url('/clinic/'.$doctor_profile->slug); 
+		$this->sendPatientUserCreateMail($data);
+
+        return redirect()->route('admin.doctor.user')->with('success', 'User created Successfully !');
+	}
+	public function store(Request $request) {
+		$doctor_profile = Auth::user()->doctor_profile;
+		$request_data = $request->all();
+		$request->validate([
+			'name'    => 'required|regex:/^[\pL\s]+$/u',
+            'email' => 'required|email',
+            'mobile'  => 'required|numeric|digits_between:8,12',
+			'password'=> 'required|min:6|confirmed',
+			'role'	  => 'required',	
+			'profile_photo' => 'nullable|mimes:jpeg,jpg,png',
+		]);
+
+		$user = User::where('email', $request_data['email'])->orWhere('mobile', $request_data['mobile'])->first();
+		if ($user) {
+			$exitsError = [];
+			if($user->email == 	$request_data['email']) {
+				$exitsError['email'] = 'Email already exists';
+			}
+			if($user->mobile == $request_data['mobile']) {
+				$exitsError['mobile'] = 'Mobile already exists';
+			}
+
+			if(!$user->hasRole('patient')) {
+				return back()->withInput()->withErrors($exitsError);
+			} else if($user->hasRole('patient') && PatientProfile::where('user_id', $user->id)->where('doctor_id', $doctor_profile->id)->exists()) {
+				return back()->withInput()->withErrors($exitsError);
+			}
+
+			$file_name = $user->profile_photo;
+			if($request->hasFile('profile_photo')) {
+				$file_name = $this->uploadImg($request->profile_photo,'users');
+			}
+			$user->name = $request_data['name'];
+			$user->email = $request_data['email'];
+			$user->mobile = $request_data['mobile'];
+			$user->password = bcrypt($request_data['password']);
+			$user->profile_photo = $file_name;
+			$user->status = 1;
+			$user->save();
+		} else {
+			$user = User::create([
+				'name'=>$request_data['name'],
+				'email'=>trim($request_data['email']),
+				'mobile'=>$request_data['mobile'],
+				'status'=>isset($request_data['status']) ? $request_data['status'] : 1,
+				'password'=>bcrypt($request_data['password']),
+				'profile_photo'=>$file_name,
+			]);
+			// attach role
+			$user->attachRole($request->role);
+		}
 		// patient profile create
 		PatientProfile::create([
 			'user_id' => $user->id,
@@ -174,7 +243,7 @@ class DoctorUserController extends Controller
 		return $this->exportModule($model = null,$query,$heading);
 	}
 	public function profile($user_id) {
-		$data = PatientProfile::where('user_id',$user_id)->first();
+		$data = PatientProfile::where('user_id',$user_id)->where('doctor_id', Auth::user()->doctor_profile->id)->first();
 		return view('admin.doctor.user.profile',compact('data','user_id'));
 	}
 	public function profileSave(Request $request) {
