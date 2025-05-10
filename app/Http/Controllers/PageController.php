@@ -19,8 +19,7 @@ class PageController extends Controller
 	public function about() {
         return view('web_new.about');
     }
-	public function pricing(Request $request) {
-		$old_pricing = $request->get('old_pricing');
+	public function pricing() {
         return view('web_new.pricing', compact('old_pricing'));
     }
 	public function demo() {
