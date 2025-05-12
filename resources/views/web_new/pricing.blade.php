@@ -27,7 +27,7 @@
                 <div class="tab-content active" id="content-0">
                     <div class="ps-pricing-set">
                         <div class="row">
-                            <div class="col-md-4 mb-4" data-aos="fade-left" data-aos-duration="1000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="fade-left" data-aos-duration="1000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Lite
@@ -47,13 +47,15 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included 1 License for Clinic/Clinician </li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="zoom-in" data-aos-duration="1000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Premium
@@ -76,13 +78,15 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included up to 3 License for Clinic/ Clinician/ Assistant</li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-duration="1000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="fade-right" data-aos-duration="1000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Enterprise
@@ -105,8 +109,10 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included Multiple License for Clinic/ Clinician/ Assistant hierarchy to manage Clinicians, Patients,</li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +122,7 @@
                 <div class="tab-content" id="content-1">
                     <div class="ps-pricing-set">
                         <div class="row">
-                            <div class="col-md-4 mb-4" data-aos="fade-left" data-aos-duration="2000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="fade-left" data-aos-duration="2000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Lite
@@ -136,13 +142,15 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included 1 License for Clinic/Clinician </li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="2000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="zoom-in" data-aos-duration="2000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Premium
@@ -165,13 +173,15 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included up to 3 License for Clinic/ Clinician/ Assistant</li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4 mb-4" data-aos="fade-right" data-aos-duration="2000">
+                            <div class="col-md-4 aos-init aos-animated d-flex" data-aos="fade-right" data-aos-duration="2000">
                                 <div class="card ps-card">
                                     <div class="card-header paragraph-lg cl-dblue">
                                         Enterprise
@@ -194,8 +204,10 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Included Multiple License for Clinic/ Clinician/ Assistant hierarchy to manage Clinicians, Patients,</li>
                                         </ul>
-                                        <button class="ps-btn sm-btn primary-btn">Sign up</button>
-                                        <button class="ps-btn sm-btn outline-btn">Book a demo</button>
+                                    </div>
+                                    <div class='d-flex flex-wrap'>
+                                        <button class="ps-btn sm-btn primary-btn m-1">Sign up</button>
+                                        <button class="ps-btn sm-btn outline-btn m-1">Book a demo</button>
                                     </div>
                                 </div>
                             </div>
