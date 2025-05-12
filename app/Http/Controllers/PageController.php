@@ -20,7 +20,7 @@ class PageController extends Controller
         return view('web_new.about');
     }
 	public function pricing() {
-        return view('web_new.pricing', compact('old_pricing'));
+        return view('web_new.pricing');
     }
 	public function demo() {
         return view('web_new.demo');
