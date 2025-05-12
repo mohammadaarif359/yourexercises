@@ -21,7 +21,8 @@ class Exercise extends Model
         'times',
         'is_active',
         'is_private',
-        'created_by'
+        'created_by',
+        'doctor_exercise_id'
     ];
 
     protected $appends = [

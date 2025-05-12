@@ -89,11 +89,11 @@
 					dropdown.empty(); // Clear existing options
 					dropdown.append('<option value="">Select Exercise</option>');
 					$.each(data, function (key, value) {
-						console.log('subcategory_id ', subcategory_id ,'exercise_id =', exercise_id, 'id ', value.id);
 						var isSelected = exercise_id == value.id;
+						let exercise_name = value.doctor_exercise_id ? value.name + ' - ' + 'other doctor' : value.name;
 						// dropdown.append('<option value="' + key + '"' + (isSelcted ? ' selected' : '') + '>' + value + '</option>');
 						// dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
-						dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isSelected ? ' selected' : '') + '>' + value.name + '</option>');					
+						dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'' + (isSelected ? ' selected' : '') + '>' + exercise_name + '</option>');					
 					});
 				},
 				error: function () {

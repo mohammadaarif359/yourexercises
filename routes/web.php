@@ -154,6 +154,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/exercise/edit/{id}','Admin\DoctorExerciseController@edit')->name('doctor.exercise.edit');
 	Route::post('/doctor/exercise/update','Admin\DoctorExerciseController@update')->name('doctor.exercise.update');
 	Route::post('/doctor/exercise/by/subcategory','Admin\DoctorExerciseController@bySubcategory')->name('doctor.exercise.by.subcategory');
+	Route::post('/doctor/exercise/make-public/{id}','Admin\DoctorExerciseController@makePublic')->name('doctor.exercise.make-public');
 
 	// doctor exerise attachment
 	Route::get('/doctor/exercise/attachment/{exercise_id}','Admin\DoctorExerciseAttachmentController@index')->name('doctor.exercise.attachment');
@@ -185,7 +186,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/plan/{plan_id}/assign/edit/{id}','Admin\DoctorPlanAssignController@edit')->name('doctor.plan.assign.edit');
 	Route::post('/doctor/plan/{plan_id}/assign/update','Admin\DoctorPlanAssignController@update')->name('doctor.plan.assign.update');
 	Route::get('/doctor/plan/{plan_id}/assign/feedback/{id}','Admin\DoctorPlanAssignController@feedback')->name('doctor.plan.assign.feedback');
-	// Route::get('/doctor/plan/{plan_id}/assign/pdf','Admin\DoctorPlanAssignController@pdf')->name('doctor.plan.assign.pdf');
+	Route::get('/doctor/plan/{plan_id}/assign/pdf','Admin\DoctorPlanAssignController@pdf')->name('doctor.plan.assign.pdf');
 
 	// inquiry
 	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');

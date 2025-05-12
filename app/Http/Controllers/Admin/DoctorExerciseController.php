@@ -12,8 +12,7 @@ use App\Models\DoctorExercise;
 use App\Models\ExerciseCategory;
 use App\Models\DoctorExerciseCategory;
 use App\Models\Attachment;
-use App\Traits\AuthCode;
-use App\Traits\CommonCode;
+use App\Traits\{AuthCode, CommonCode, AdminExerciseCode};
 use DB;
 use DataTables;
 use Carbon\Carbon;
@@ -22,7 +21,7 @@ use Illuminate\Support\Facades\{Storage};
 
 class DoctorExerciseController extends Controller
 {
-    use AuthCode,CommonCode;
+    use AuthCode, CommonCode, AdminExerciseCode;
 	public function index(Request $request) {
         if ($request->ajax()) {
 			$user_id = Auth::user()->id;
@@ -54,6 +53,15 @@ class DoctorExerciseController extends Controller
 				})->addColumn('action', function ($data) {
 					$btn = '<a href="/admin/doctor/exercise/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
 					<a href="/admin/doctor/exercise/attachment/'.$data->id.'" class="" title="Images"><i class="fa fa-image"></i></a>';
+					if($data->is_private == 1) {
+						$btn .= '
+						<form method="POST" action="/admin/doctor/exercise/make-public/'.$data->id.'" style="display:inline;">
+							'.csrf_field().'
+							<button type="submit" title="Make this exercise public. This action cannot be undone." style="border:none; background:none; cursor:pointer;">
+								<i class="fa fa-globe" style="color:#007bff"></i>
+							</button>
+						</form>';
+					}
 					return $btn;
 				})->editColumn('created_at', function ($data) {
 					return [
@@ -233,5 +241,21 @@ class DoctorExerciseController extends Controller
 			$query->whereIn('id', $request->subcategory_id);
 		})->where('created_by', $user_id)->get();
 		return response()->json($data);
-	}	
+	}
+
+	public function makePublic($id) {
+		$exercise = DoctorExercise::where('id', $id)->first();
+		if($exercise) {
+			if($exercise->is_private == 0) {
+				return redirect()->back()->with('error', 'Cant make as private this exercise is used by other doctors!');
+			} else {
+				$exercise->is_private = 0;
+				$exercise->save();
+				$this->adminExerciseStore($exercise);
+				return redirect()->back()->with('sucess', 'Exercise mark as public successfully');
+			}
+		} else {
+			abort(404);
+		}
+	}
 }

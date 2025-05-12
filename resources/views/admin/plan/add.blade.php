@@ -377,12 +377,13 @@ $.ajaxSetup({
 					dropdown.append('<option value="' + value.id + '" data-obj=\'' + JSON.stringify(value) + '\'>' + value.name + '</option>');
 
 					// set select exercise modal
+					let exercise_name = value.doctor_exercise_id  ? value.name +' - '+'other doctor' : value.name
 					var exerciseHtml = `
                         <div class="col-md-3" style="border:1px solid lightgray;">
                             <div class="form-group">
                                 <div class="exercise-option">
                                     <input type="radio" class="select_exercise_id" id="select_exercise_id${num}" name="detail[select_exercise_id][${num}]" value="${value.id}" data-obj='${JSON.stringify(value)}'>
-                                    <label for="select_exercise_id${value.id}">${value.name}</label>
+                                    <label for="select_exercise_id${value.id}">${exercise_name}</label>
                                 </div>
                                 <div class="exercise-img">
                                     <img src="${value.image_url ? value.image_url : '{{ asset('dist/img/placeholder.png') }}'}" class="" height="120px" width="150px">
