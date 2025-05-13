@@ -59,12 +59,14 @@ class ExerciseController extends Controller
 					return $data->is_active == 1 ? 'Active' : 'Deactive';
 				})->editColumn('is_private', function ($data) {
 					return $data->is_private == 1 ? 'Yes' : 'No';
+				})->addColumn('other_dr', function ($data) {
+					return $data->doctor_exercise_id ? 'Yes': 'No';
 				})->addColumn('image_url', function ($data) {
 					if($data->image_url) {
 						return '<a href="'.$data->image_url.'" target="_blank"><img src="'.$data->image_url.'" class="img img-response" height="60px" width="100px">';
 					}
 					return '';
-				})->rawColumns(['image_url', 'action'])->make(true);
+				})->rawColumns(['image_url', 'action', 'other_dr'])->make(true);
 		}
 		return view('admin.exercise.list');
 	}

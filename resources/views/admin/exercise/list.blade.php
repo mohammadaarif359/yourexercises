@@ -25,6 +25,7 @@
 							<th>Feature Image</th>
 							<th>Status</th>
 							<th>Private</th>
+							<th>Other Dr</th>
 							<th>Created At</th>
 							<th>Action</th>
 						</tr>
@@ -58,6 +59,7 @@ $(function () {
 			{data: 'image_url', name: 'image_url'},
             {data: 'status', name: 'status'},
             {data: 'is_private', name: 'stais_privatetus'},
+			{data: 'other_dr', name: 'other_dr'},
 			{data: 'created_at.display', name: 'created_at.display'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
