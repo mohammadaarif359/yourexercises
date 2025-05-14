@@ -42,6 +42,18 @@ class PatientPlanController extends Controller
 		if ($validate->fails()) {
 			return response()->json(['error'=>$validate->errors()]);
         }
+		$feedback_exists = PlanAssignFeedback::where('id', $request_data['id'])->first();
+		$history = null;
+		if($feedback_exists) {
+			$history_new = [
+				'rating'     => $feedback_exists['rating'],
+				'comment'    => $feedback_exists['comment'],
+				'answer'     => $feedback_exists['answer'],
+				'updated_at' => $feedback_exists['updated_at'],
+			];
+			$history = is_array($feedback_exists['history']) ? $feedback_exists['history']: [];
+			$history[] = $history_new; 
+		}
 		$user_id = Auth::user()->id;
 		$feedack = PlanAssignFeedback::updateOrCreate(
 			[
@@ -53,7 +65,8 @@ class PatientPlanController extends Controller
 				'exercise_id' => $request_data['exercise_id'],
 				'rating' => $request_data['rating'],
 				'comment' => $request_data['comment'],
-				'answer' => $request_data['answer'] ?? null
+				'answer' => $request_data['answer'] ?? null,
+				'history' => $history
 			]
 		);
 		if($feedack) {

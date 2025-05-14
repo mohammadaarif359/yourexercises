@@ -10,12 +10,13 @@ class PlanAssignFeedback extends Model
     use HasFactory;
 
     protected $fillable = [
-        'assign_id', 'plan_id', 'exercise_id', 'rating', 'comment', 'answer'];
+        'assign_id', 'plan_id', 'exercise_id', 'rating', 'comment', 'answer', 'history'];
 
     protected $table = 'plan_assign_feedbacks';  
 
     protected $casts = [
-        'answer' => 'array'
+        'answer' => 'array',
+        'history' => 'array'
     ];
     
 	/**
