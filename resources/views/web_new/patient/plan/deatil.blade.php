@@ -189,7 +189,7 @@
             $("#feedback-form #rating").val(feedback.rating);
             $("#feedback-form #comment").val(feedback.comment);
             // $("#feedback-form #rating").prop('disabled', true);
-            $("#feedback-form #comment").prop('disabled', true);
+            // $("#feedback-form #comment").prop('disabled', true);
             if(feedback.answer) {
                 var answer = feedback.answer
                 for(const key in answer) {
