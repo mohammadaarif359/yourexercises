@@ -86,7 +86,7 @@ class PatientPlanController extends Controller
 
 			// send mail
 			$data['name'] = $assign['doctor_user']['name'];
-            $data['email'] = $assign['user']['email'];
+            $data['email'] = $assign['doctor_user']['email'];
             $data['message'] = trans('sms.patient.plan.assign.feedback', [
 				'patient_name' => $assign['user']['name'],
 				'plan_name' => $assign['plan']['name'],
