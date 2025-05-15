@@ -86,7 +86,7 @@ class PatientPlanController extends Controller
 
 			// send mail
 			$data['name'] = $assign['doctor_user']['name'];
-            $data['email'] = $assign['doctor_user']['email'];
+            $data['email'] = $assign['user']['email'];
             $data['message'] = trans('sms.patient.plan.assign.feedback', [
 				'patient_name' => $assign['user']['name'],
 				'plan_name' => $assign['plan']['name'],
@@ -95,8 +95,20 @@ class PatientPlanController extends Controller
 				'plan_rating'=> (int) $doctor_plan_avg_rating,
 				'doctor_rating'=> (int) $doctor_avg_rating,
 			]);
+			$data['subject'] = 'Patient Plan Assign Feedback';
             $data['url'] = url('/admin/doctor/plan/'. $assign['plan_id'].'/assign/feedback/'.$assign['id']);
             $this->sendPatientPlanAssignFeedbackEmail($data);
+
+			if($request_data['rating'] < 3) {
+				$data['message'] = trans('sms.patient.plan.assign.feedback.support', [
+					'patient_name' => $assign['user']['name'],
+					'plan_name' => $assign['plan']['name'],
+					'exercise_name'=> $feedack['exercise']['name'],
+					'rating'=>  $request_data['rating'],
+				]);
+				$data['subject'] = 'Patient Plan Assign Feedback Low Rating';
+				$this->sendPatientPlanAssignFeedbackEmail($data);
+			}
 		}
 		return response()->json(['message'=>'Thanks for given feedback','code'=>200]);
 	}

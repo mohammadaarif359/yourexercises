@@ -242,9 +242,8 @@
     $("#feedback-btn").click(function (e) {
         e.preventDefault();
         $("#feedback-btn").prop("disabled", true);
-        $('#feedback-btn').html('Save <i class="fa fa-circle-o-notch fa-spin" style="font-size:15px"></i>');
+        $('#feedback-btn').html('Save <i class="fa fa-spinner fa-spin" style="font-size:15px"></i>');
         $("#feedback-form").find(':input:disabled').prop('disabled', false);
-
         $.ajax({
             type: 'POST',
             url: "{{ route('patient.plan.feedback.store') }}",

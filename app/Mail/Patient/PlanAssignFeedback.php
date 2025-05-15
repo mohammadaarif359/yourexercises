@@ -31,6 +31,6 @@ class PlanAssignFeedback extends Mailable
      */
     public function build()
     {
-        return $this->subject('Patient Plan Assign Feedback')->markdown('emails.patient.plan_assign_feedback');
+        return $this->subject($this->data['subject'])->markdown('emails.patient.plan_assign_feedback');
     }
 }
