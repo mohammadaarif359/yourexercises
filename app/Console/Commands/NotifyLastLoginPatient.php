@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Models\User;
 
 class NotifyLastLoginPatient extends Command
 {
@@ -27,7 +28,11 @@ class NotifyLastLoginPatient extends Command
      */
     public function handle()
     {
-        echo "run run";
+        $user = User::where('id', 1)->first();
+        if($user) {
+            $user->patient_doctor_id =  $user->patient_doctor_id ? $user->patient_doctor_id + 1 : 1;
+            $user->save();
+        }
         return Command::SUCCESS;
     }
 }
