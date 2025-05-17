@@ -43,7 +43,7 @@ class NotifyPatientPlanNotRegular extends Command
             try {
                 \Log::info('crone loop' .$assign);
                 $data['name'] = $assign->user['name'];
-                $data['email'] = 'mohammedaarif359@gmail.com';
+                $data['email'] = $assign->user['email'];
                 $data['message'] = trans('sms.patient.plan.assign.not.regular', ['plan_name' => $assign['plan']['name'], 'doctor_name' => $assign['doctor_user']['name']]);
                 $data['url'] = url('/clinic/'. $assign['doctor']['slug']);
                 $this->sendPatientPlanAssignNotRegularEmail($data);
