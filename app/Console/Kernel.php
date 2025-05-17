@@ -4,6 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use DateTime;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,8 +17,8 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('notify:patient-plan-not-regular')->everyMinute();
-
+        \Log::info('current time now'.  (new \DateTime())->format('Y-m-d H:i:s'));
+        $schedule->command('notify:patient-plan-not-regular')->dailyAt('08:00');
     }
 
     /**
