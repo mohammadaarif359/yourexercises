@@ -10,6 +10,7 @@ use Session;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\{User, DoctorProfile, PatientProfile};
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
@@ -58,7 +59,7 @@ class AuthController extends Controller
                     $doctor_id = PatientProfile::where('user_id', $user->id)->orderBy('created_at','desc')->limit(1)->value('doctor_id');
                     session(['doctor_id' => $doctor_id]);
                 }
-                User::where('id', $user->id)->update(['patient_doctor_id'=> $doctor_id]);
+                User::where('id', $user->id)->update(['patient_doctor_id'=> $doctor_id, 'last_login'=> Carbon::now()]);
             }
 
             return $this->sendLoginResponse($request);

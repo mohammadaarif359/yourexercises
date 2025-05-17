@@ -10,7 +10,7 @@ use App\Mail\OtpEmail;
 use App\Mail\PasswordReset;
 use App\Mail\PatientUserCreate;
 use App\Mail\Doctor\ProfileVerified;
-use App\Mail\Patient\{PlanAssign, PlanAssignStatus, PlanAssignFeedback};
+use App\Mail\Patient\{PlanAssign, PlanAssignStatus, PlanAssignFeedback, PlanAssignNotRegular};
 use Mail;
 use Exception;
 use Twilio\Rest\Client;
@@ -143,6 +143,11 @@ trait AuthCode
 	}
 	public function sendPatientPlanAssignFeedbackEmail($data){
 		Mail::to($data['email'])->send(new PlanAssignFeedback($data));
+		return true;
+	}
+	public function sendPatientPlanAssignNotRegularEmail($data) {
+		\Log::info('under mail send');
+		$mail = Mail::to($data['email'])->send(new PlanAssignNotRegular($data));
 		return true;
 	}
 	public function uploadImg($file, $path,$path_type='public')

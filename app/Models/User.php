@@ -28,7 +28,8 @@ class User extends Authenticatable
 		'status',
 		'forgot_password_token',
 		'profile_photo',
-        'patient_doctor_id'
+        'patient_doctor_id',
+        'last_login'
     ];
 
     protected $hidden = [

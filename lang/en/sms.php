@@ -12,4 +12,7 @@ return [
         Providing alternative or improved exercises could help enhance the patient experience and outcomes. You can view the full feedback and details in the Assign Plan section',
     'patient.user.create' => 'Your account has been successfully created by your doctor :doctor_name at yourexercises. Please use the below credentails to login.',
     'patient.user.update.password' => 'Your account password has been updated by your doctor :doctor_name at yourexercises. Please use the below credentails to login.',  
+    'patient.plan.assign.not.regular' => 'We noticed that your assigned exercise plan ":plan_name" by Dr. :doctor_name is currently ongoing, You have have take exercise on regular basis
+        Please take a moment to review your plan and continue with your exercises to stay on track with your goals. 
+        If you are facing any difficulties or have concerns, feel free to reach out to your doctor for support.'
 ];
