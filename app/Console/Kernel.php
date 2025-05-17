@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
-        $schedule->command('notify:last-login-patient')->everyMinute();
+        $schedule->command('notify:patient-plan-not-regular')->everyMinute();
 
     }
 
