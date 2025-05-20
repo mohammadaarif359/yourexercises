@@ -93,24 +93,24 @@
                                       Ans: {{ $feedback['answer']['pain_after_exercise'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q4: How much pain did you experience the next day</b>
-                                      Ans: {{ $feedback['answer']['pain_next_day'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q5: How many incidents of extreme pain did you experience in the last 24 hours</b>
-                                      Ans: {{ $feedback['answer']['extreme_pain_last_24'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q6:Were you able to complete all assigned sets</b>
+                                      <b class="d-block">Q4:Were you able to complete all assigned sets</b>
                                       Ans: {{ $feedback['answer']['complete_sets'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q7: How stiff did you feel after the exercise</b>
+                                      <b class="d-block">Q5: How stiff did you feel after the exercise</b>
                                       Ans: {{ $feedback['answer']['stiffness'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q8:Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
+                                      <b class="d-block">Q6:Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
                                       Ans: {{ $feedback['answer']['daily_activities'] ?? '' }}
+                                    </p>
+                                    <p class="text-sm">
+                                      <b class="d-block">Q7: How much pain did you experience the next day</b>
+                                      Ans: {{ $feedback['answer']['pain_next_day'] ?? '' }}
+                                    </p>
+                                    <p class="text-sm">
+                                      <b class="d-block">Q8: How many incidents of extreme pain did you experience in the last 24 hours</b>
+                                      Ans: {{ $feedback['answer']['extreme_pain_last_24'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
                                       <b class="d-block">Q9: Comment</b>
@@ -137,7 +137,7 @@
                             <div id="collapseOne{{$k}}{{$ke}}" class="collapse" data-parent="#accordion" style="">
                                 <div class="card-body">
                                   <div class="text-muted">
-                                    <p class="text-sm">
+                                  <p class="text-sm">
                                       <b class="d-block">Q1: How was the exercise</b>
                                       Ans: {{ $history['answer']['how_was_exercise'] ?? '' }}
                                     </p>
@@ -150,24 +150,24 @@
                                       Ans: {{ $history['answer']['pain_after_exercise'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q4: How much pain did you experience the next day</b>
-                                      Ans: {{ $history['answer']['pain_next_day'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q5: How many incidents of extreme pain did you experience in the last 24 hours</b>
-                                      Ans: {{ $history['answer']['extreme_pain_last_24'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q6: Were you able to complete all assigned sets</b>
+                                      <b class="d-block">Q4:Were you able to complete all assigned sets</b>
                                       Ans: {{ $history['answer']['complete_sets'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q7: How stiff did you feel after the exercise</b>
+                                      <b class="d-block">Q5: How stiff did you feel after the exercise</b>
                                       Ans: {{ $history['answer']['stiffness'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
-                                      <b class="d-block">Q8: Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
+                                      <b class="d-block">Q6:Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
                                       Ans: {{ $history['answer']['daily_activities'] ?? '' }}
+                                    </p>
+                                    <p class="text-sm">
+                                      <b class="d-block">Q7: How much pain did you experience the next day</b>
+                                      Ans: {{ $history['answer']['pain_next_day'] ?? '' }}
+                                    </p>
+                                    <p class="text-sm">
+                                      <b class="d-block">Q8: How many incidents of extreme pain did you experience in the last 24 hours</b>
+                                      Ans: {{ $history['answer']['extreme_pain_last_24'] ?? '' }}
                                     </p>
                                     <p class="text-sm">
                                       <b class="d-block">Q9: Comment</b>

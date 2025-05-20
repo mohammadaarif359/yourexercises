@@ -28,16 +28,6 @@
                                 <span class="error-helper" id="error_rating"></span>
                             </div>
                         </div>
-                        <div class="col-sm-6"> 
-                            <div class="form-group">
-                                <label for="TextArea" class="col-form-label">Comment</label>
-                                <input type='text' name="comment" class="form-control" id="comment" placeholder="Comment">
-                                <span class="error-helper" id="error_comment"></span>
-                            </div>
-                        </div>    
-                    </div>    
-
-                    <div class="row mb-3">
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="Dropdown" class="col-form-label">How was the exercise</label>
@@ -82,35 +72,6 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="Dropdown" class="col-form-label">How much pain did you experience the next day</label>
-                                <div class="select-wrapper">
-                                    <select class="form-select" name="answer[pain_next_day]" id="pain_next_day">
-                                        <option value='' selected>Select</option>
-                                        @for($i=1;$i<=10;$i++)
-                                            <option value="{{ $i }}">{{$i}}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                                <span class="error-helper" id="error_pain_next_day"></span>
-                            </div>
-                        </div> 
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label for="extreme_pain_last_24" class="col-form-label">How many incidents of extreme pain did you experience in the last 24 hours</label>
-                                <div class="select-wrapper">
-                                    <select class="form-select" name="answer[extreme_pain_last_24]" id="extreme_pain_last_24">
-                                        <option value='' selected>Select</option>
-                                        @for($i=1; $i<=10; $i++)
-                                            <option value="{{ $i }}">{{ $i }}</option>
-                                        @endfor
-                                        <option value="more_than_10">More than 10</option>
-                                    </select>
-                                </div>
-                                <span class="error-helper" id="extreme_pain_last_24"></span>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group">
                                 <label for="complete_sets" class="col-form-label">Were you able to complete all assigned sets</label>
                                 <div class="select-wrapper">
                                     <select class="form-select" name="answer[complete_sets]" id="complete_sets">
@@ -151,6 +112,42 @@
                                     </select>
                                 </div>
                                 <span class="error-helper" id="error_daily_activities"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="Dropdown" class="col-form-label">How much pain did you experience the next day</label>
+                                <div class="select-wrapper">
+                                    <select class="form-select" name="answer[pain_next_day]" id="pain_next_day">
+                                        <option value='' selected>Select</option>
+                                        @for($i=1;$i<=10;$i++)
+                                            <option value="{{ $i }}">{{$i}}</option>
+                                        @endfor
+                                    </select>
+                                </div>
+                                <span class="error-helper" id="error_pain_next_day"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="extreme_pain_last_24" class="col-form-label">How many incidents of extreme pain did you experience in the last 24 hours</label>
+                                <div class="select-wrapper">
+                                    <select class="form-select" name="answer[extreme_pain_last_24]" id="extreme_pain_last_24">
+                                        <option value='' selected>Select</option>
+                                        @for($i=1; $i<=10; $i++)
+                                            <option value="{{ $i }}">{{ $i }}</option>
+                                        @endfor
+                                        <option value="more_than_10">More than 10</option>
+                                    </select>
+                                </div>
+                                <span class="error-helper" id="extreme_pain_last_24"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6"> 
+                            <div class="form-group">
+                                <label for="TextArea" class="col-form-label">Comment</label>
+                                <input type='text' name="comment" class="form-control" id="comment" placeholder="Comment">
+                                <span class="error-helper" id="error_comment"></span>
                             </div>
                         </div>
                     </div>
