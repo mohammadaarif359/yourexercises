@@ -134,6 +134,10 @@ class DoctorUserController extends Controller
 			$user->status = 1;
 			$user->save();
 		} else {
+			$file_name = null;
+			if($request->hasFile('profile_photo')) {
+				$file_name = $this->uploadImg($request->profile_photo,'users');
+			}
 			$user = User::create([
 				'name'=>$request_data['name'],
 				'email'=>trim($request_data['email']),
