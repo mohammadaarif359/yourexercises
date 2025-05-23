@@ -126,7 +126,37 @@ class DoctorPlanAssignController extends Controller
 		}	
 	}
     public function feedback(Request $request, $plan_id, $id) {
-        $assign = DoctorPlanAssign::with(['plan','feedback','user'])->where('id', $id)->first(); 
+        $assign = DoctorPlanAssign::with(['plan','feedback','user'])->where('id', $id)->first();
+        $graph = [];
+        $graph_color_code = config('custom.feedback_graph_color_code');
+        $assign->feedback->map(function ($feedback) {
+            $feedback->graph = $this->feedbackGraphData($feedback);
+        }); 
+        // dd($assign); 
         return view('admin.doctor.plan-assign.feedback', compact('assign'));
+    }
+    protected function feedbackGraphData($feedback) {
+        $count = 0;
+        if($feedback->history) {
+            $sortedHistory = isset($feedback->history)
+                                ? collect($feedback->history)->sortBy('updated_at')->values()->all()
+                                : [];
+            foreach($sortedHistory as $history) {
+                $graph['date'][] =  date('d M', strtotime($history['updated_at']));
+                if($history['answer']) {
+                    foreach($history['answer'] as $hk=>$ans) {
+                        $graph[$hk][] = $ans != null ? (int) $ans : 0;
+                    }
+                }
+                $count++;
+            }
+        }    
+        $graph['date'][] =  date('d M', strtotime($feedback->updated_at));
+        if($feedback['answer']) {
+            foreach($feedback['answer'] as $fk=>$ans) {
+                $graph[$fk][] = $ans != null ? (int) $ans : 0;
+            }
+        }
+        return $graph;
     }
 }
