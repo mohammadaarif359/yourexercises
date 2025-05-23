@@ -34,9 +34,9 @@
                                 <div class="select-wrapper">
                                     <select class="form-select" name="answer[how_was_exercise]" id="how_was_exercise">
                                         <option value='' selected>Select</option>
-                                        <option value="easy">easy</option>
-                                        <option value="moderate">moderate</option>
-                                        <option value="hard">hard</option>
+                                        @foreach(config('custom.feedback_how_was_exercise') as $k=> $val)
+                                            <option value="{{ $k }}">{{ $val }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <span class="error-helper" id="error_how_was_exercise"></span>

@@ -66,6 +66,9 @@
                           <span class="description"> {{ date('d-M-y h:i:a', strtotime($feedback['updated_at'])) }}</span>
                         </div>
                         <p>{{ $feedback['comment'] }}</p>
+                        @php $graph = $feedback->graph; $graphCounter = $k; @endphp 
+                        @include('admin.doctor.plan-assign.partial.graph')
+                        @php $config_diffculty = config('custom.feedback_how_was_exercise'); @endphp
                         <!-- feedback questionary -->
                         <div id='accordion'>
                           <div class="card card-primary card-outline">
@@ -82,7 +85,7 @@
                                   <div class="text-muted">
                                     <p class="text-sm">
                                       <b class="d-block">Q1: How was the exercise</b>
-                                      Ans: {{ $feedback['answer']['how_was_exercise'] ?? '' }}
+                                      Ans: {{ $feedback['answer']['how_was_exercise'] ? $config_diffculty[$feedback['answer']['how_was_exercise']] : '' }}
                                     </p>
                                     <p class="text-sm">
                                       <b class="d-block">Q2: Pain level before the exercise</b>
@@ -139,7 +142,7 @@
                                   <div class="text-muted">
                                   <p class="text-sm">
                                       <b class="d-block">Q1: How was the exercise</b>
-                                      Ans: {{ $history['answer']['how_was_exercise'] ?? '' }}
+                                      Ans: {{ $history['answer']['how_was_exercise'] ? $config_diffculty[$history['answer']['how_was_exercise']] : '' }}
                                     </p>
                                     <p class="text-sm">
                                       <b class="d-block">Q2: Pain level before the exercise</b>
@@ -196,4 +199,11 @@
       </div>
     </section>
 
+@endsection
+@section('pagejs')
+<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+<script src="{{ asset('dist/js/pages/feedback/graph.js') }}"></script>
+<script>
+   
+</script>
 @endsection
