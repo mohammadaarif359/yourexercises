@@ -142,7 +142,37 @@ return [
 		'4'=>'Very Good',
 		'5'=>'Exellent'
 	],
+	'feedback_how_was_exercise' => [
+		'1'=>'Easy',
+		'2'=>'Moderate',
+		'3'=>'Hard'
+	],
 	'img_extension' => ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'],
-	'video_extension' => ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv']
+	'video_extension' => ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'],
+	"feedback_questions" => [
+		"rating"=>"Rating",
+		"comment"=>"Comment",
+		"how_was_exercise" => "How was exercise",
+		"pain_before_exercise" => "Pain before exercise",
+		"pain_after_exercise" => "Pain after exercise",
+		"pain_next_day" => "Pain next day",
+		"extreme_pain_last_24" => "Extreme pain in last 24h",
+		"complete_sets" => "Complete sets",
+		"stiffness" => "Stiffness",
+		"daily_activities" => "Daily activities"
+	],
+	'feedback_graph_color_code' => [
+		"pain_before_exercise" => "#007bff",
+		"pain_after_exercise" => "#ced4da",
+		"stiffness" => "#008000"
+	],
+	'feednack_gaph_attrtibute'=>[
+		'how_was_exercise',
+		'pain_before_exercise',
+		'pain_after_exercise',
+		'stiffness',
+		'pain_next_day',
+		'extreme_pain_last_24'
+	]
 ];
 
