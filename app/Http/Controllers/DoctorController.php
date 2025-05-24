@@ -8,6 +8,7 @@ use Validator;
 use Auth;
 use App\Traits\AuthCode;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class DoctorController extends Controller
 {
@@ -64,7 +65,7 @@ class DoctorController extends Controller
 				'user_id' => $user_id
 			],
 			[
-				'uuid' => Str::uuid()->toString(),
+				'uuid' => Str::uuid(),
 				'clinic_name' => $request['clinic_name'],
 				'slug' => $request['slug'],
 				'clinic_address' => $request['clinic_address'],
