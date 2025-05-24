@@ -101,7 +101,7 @@ class AuthController extends Controller
     {
         $user = Auth::user();
         if ($user->hasRole('doctor')) {
-            if($user->doctor_profile->is_verified) {
+            if($user->doctor_profile && $user->doctor_profile['is_verified']) {
                 return '/clinic/'.$user->doctor_profile->slug;
             } else {
                 return '/doctor/profile';
