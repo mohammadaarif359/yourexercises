@@ -59,7 +59,7 @@
 				{data: 'status', name: 'status'},
 				{data: 'is_verified', name: 'is_verified'},
 				{data: 'patient_count', name: 'patient_count'},
-				{data: 'created_at.display', name: 'created_at.display'},
+				{data: 'created_at.display', name: 'created_at'},
 				{data: 'action', name: 'action', orderable: false, searchable: false},
 			]
 		});
