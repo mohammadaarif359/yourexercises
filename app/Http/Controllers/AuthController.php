@@ -116,7 +116,7 @@ class AuthController extends Controller
         Session::flush();
 		Auth::guard('web')->logout();
         $redirectTo = '/login';
-        if($user->hasRole('doctor')) {
+        if($user->hasRole('doctor') && $user->doctor_profile) {
             $redirectTo = '/clinic/'.$user->doctor_profile->slug;
         } else if($user->hasRole('patient')) {
             $redirectTo = $user->patient_doctor_profile ? 'clinic/'.$user->patient_doctor_profile['slug'] :  '/login';
