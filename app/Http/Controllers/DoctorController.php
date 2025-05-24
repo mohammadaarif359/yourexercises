@@ -64,6 +64,7 @@ class DoctorController extends Controller
 				'user_id' => $user_id
 			],
 			[
+				'uuid' => Str::uuid()->toString(),
 				'clinic_name' => $request['clinic_name'],
 				'slug' => $request['slug'],
 				'clinic_address' => $request['clinic_address'],
