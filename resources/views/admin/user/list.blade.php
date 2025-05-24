@@ -52,6 +52,7 @@
 			processing: true,
 			serverSide: true,
 			ajax: "{{ route('admin.user') }}",
+			order: [[6, 'desc']],
 			columns: [
 				{data: 'name', name: 'name'},
 				{data: 'email', name: 'email'},
