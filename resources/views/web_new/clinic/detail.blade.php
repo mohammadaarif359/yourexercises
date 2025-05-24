@@ -85,7 +85,7 @@
                         <div class="section-title cl-dblue">Connect Us</div>
                         <ul class="p-0">
                             <li> <i class="fas fa-map-marker-alt"></i>{{ $data['clinic_address'] }}</li>
-                            <li><i class="fas fa-phone"></i> {{ !empty($data['clinic_phone_no']) ? $data['clinic_phone_no'] : data['user']['mobile']  }}</li>
+                            <li><i class="fas fa-phone"></i> {{ !empty($data['clinic_phone_no']) ? $data['clinic_phone_no'] : $data['user']['mobile']  }}</li>
                             <li><i class="fas fa-envelope"></i> {{ $data['user']['email'] }}</li>
                             @if($data['social_media'])
                             @php $social_media =  $data['social_media']; @endphp
