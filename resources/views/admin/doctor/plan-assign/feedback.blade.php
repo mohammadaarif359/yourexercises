@@ -65,125 +65,19 @@
                           </span>
                           <span class="description"> {{ date('d-M-y h:i:a', strtotime($feedback['updated_at'])) }}</span>
                         </div>
-                        <p>{{ $feedback['comment'] }}</p>
-                        @php $graph = $feedback->graph; $graphCounter = $k; @endphp 
-                        @include('admin.doctor.plan-assign.partial.graph')
-                        @php $config_diffculty = config('custom.feedback_how_was_exercise'); @endphp
-                        <!-- feedback questionary -->
-                        <div id='accordion'>
-                          <div class="card card-primary card-outline">
-                            <a class="d-block w-100 collapsed" data-toggle="collapse" href="#collapseOne{{$k}}" aria-expanded="false">
-                                <div class="card-header">
-                                    <h6 class="w-100">
-                                        Feedback -  {{ date('d-M-y h:i:a', strtotime($feedback['updated_at'])) }}
-                                      <span class="float-right"><i class="fas fa-star mr-1"></i> {{ $feedback['rating'] }}</span>
-                                    </h6>
-                                </div>
-                            </a>
-                            <div id="collapseOne{{$k}}" class="collapse" data-parent="#accordion" style="">
-                                <div class="card-body">
-                                  <div class="text-muted">
-                                    <p class="text-sm">
-                                      <b class="d-block">Q1: How was the exercise</b>
-                                      Ans: {{ $feedback['answer']['how_was_exercise'] ? $config_diffculty[$feedback['answer']['how_was_exercise']] : '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q2: Pain level before the exercise</b>
-                                      Ans: {{ $feedback['answer']['pain_before_exercise'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q3: Pain level after the exercise</b>
-                                      Ans: {{ $feedback['answer']['pain_after_exercise'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q4:Were you able to complete all assigned sets</b>
-                                      Ans: {{ $feedback['answer']['complete_sets'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q5: How stiff did you feel after the exercise</b>
-                                      Ans: {{ $feedback['answer']['stiffness'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q6:Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
-                                      Ans: {{ $feedback['answer']['daily_activities'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q7: How much pain did you experience the next day</b>
-                                      Ans: {{ $feedback['answer']['pain_next_day'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q8: How many incidents of extreme pain did you experience in the last 24 hours</b>
-                                      Ans: {{ $feedback['answer']['extreme_pain_last_24'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q9: Comment</b>
-                                      Ans: {{ $feedback['comment'] ?? '' }}
-                                    </p>
-                                  </div>
-                                </div>
-                            </div>
 
-                            @php
-                                $sortedHistory = isset($feedback->history)
-                                    ? collect($feedback->history)->sortByDesc('updated_at')->values()->all()
-                                    : [];
-                            @endphp
-                            @foreach ($sortedHistory as $ke => $history)
-                            <a class="d-block w-100 collapsed" data-toggle="collapse" href="#collapseOne{{$k}}{{$ke}}" aria-expanded="false">
-                                <div class="card-header">
-                                    <h6 class="w-100">
-                                        Feedback -  {{ date('d-M-y h:i:a', strtotime($history['updated_at'])) }}
-                                      <span class="float-right"><i class="fas fa-star mr-1"></i> {{ $history['rating'] }}</span>
-                                    </h6>
-                                </div>
-                            </a>
-                            <div id="collapseOne{{$k}}{{$ke}}" class="collapse" data-parent="#accordion" style="">
-                                <div class="card-body">
-                                  <div class="text-muted">
-                                  <p class="text-sm">
-                                      <b class="d-block">Q1: How was the exercise</b>
-                                      Ans: {{ $history['answer']['how_was_exercise'] ? $config_diffculty[$history['answer']['how_was_exercise']] : '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q2: Pain level before the exercise</b>
-                                      Ans: {{ $history['answer']['pain_before_exercise'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q3: Pain level after the exercise</b>
-                                      Ans: {{ $history['answer']['pain_after_exercise'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q4:Were you able to complete all assigned sets</b>
-                                      Ans: {{ $history['answer']['complete_sets'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q5: How stiff did you feel after the exercise</b>
-                                      Ans: {{ $history['answer']['stiffness'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q6:Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)</b>
-                                      Ans: {{ $history['answer']['daily_activities'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q7: How much pain did you experience the next day</b>
-                                      Ans: {{ $history['answer']['pain_next_day'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q8: How many incidents of extreme pain did you experience in the last 24 hours</b>
-                                      Ans: {{ $history['answer']['extreme_pain_last_24'] ?? '' }}
-                                    </p>
-                                    <p class="text-sm">
-                                      <b class="d-block">Q9: Comment</b>
-                                      Ans: {{ $history['comment'] ?? '' }}
-                                    </p>
-                                    
-                                  </div>
-                                </div>
-                            </div>
-                            @endforeach
+                        <div class="row">
+                          <div class="col-md-7">
+                            <!-- graph -->
+                            @php $fcount = $k; @endphp 
+                            @include('admin.doctor.plan-assign.partial.graph')
                           </div>
-                        </div>
+                          <div class="col-md-5">
+                            <!-- question -->
+                            @include('admin.doctor.plan-assign.partial.question')
+                          </div>
                       </div>
+                      <hr/>
                       @endforeach
                     @else
                     <div class="text-muted">

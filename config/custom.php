@@ -149,6 +149,16 @@ return [
 	],
 	'img_extension' => ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp'],
 	'video_extension' => ['mp4', 'avi', 'mov', 'wmv', 'flv', 'mkv'],
+	"feedback_question_summary" => [
+		"how_was_exercise" => "How was the exercise",
+		"pain_before_exercise" => "Pain level before the exercise",
+		"pain_after_exercise" => "Pain level after the exercise",
+		"complete_sets" => "Were you able to complete all assigned sets",
+		"stiffness"=>"How stiff did you feel after the exercise",
+		"daily_activities" => "Were you able to perform your activities of daily living (bathing, grooming, eating, dressing, etc.)",
+		"pain_next_day" => "How much pain did you experience the next day",
+		"extreme_pain_last_24" => "How many incidents of extreme pain did you experience in the last 24 hours"
+	],
 	"feedback_questions" => [
 		"rating"=>"Rating",
 		"comment"=>"Comment",

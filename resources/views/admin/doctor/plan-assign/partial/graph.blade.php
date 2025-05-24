@@ -1,3 +1,4 @@
+@php $graph = $feedback->graph; @endphp
 <div class="card">
   <div class="card-header border-0">
     <div class="d-flex justify-content-between">
@@ -10,7 +11,7 @@
     <!-- /.d-flex -->
 
     <div class="position-relative mb-4">
-      <canvas id="visitors-chart-{{$graphCounter}}" height="200"></canvas>
+      <canvas id="visitors-chart-{{$fcount}}" height="200"></canvas>
     </div>
 
     @php $graph_attribute = config('custom.feedback_questions'); @endphp
@@ -33,6 +34,6 @@
   window.graphDataList = window.graphDataList || []
   window.graphDataList.push({
       graph: @json($graph),
-      chartId: "visitors-chart-{{ $graphCounter }}"
+      chartId: "visitors-chart-{{ $fcount }}"
   });
 </script>
