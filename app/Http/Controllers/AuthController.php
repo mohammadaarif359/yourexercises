@@ -53,7 +53,8 @@ class AuthController extends Controller
             } else if($user->hasRole('patient')) {
                 if($request->doctor_uuid) {
                     $doctor_uuid = $request->doctor_uuid;
-                    $doctor_id = DoctorProfile::where('uuid', $request->doctor_uuid)->first()->value('id');
+                    $doctor = DoctorProfile::where('uuid', $request->doctor_uuid)->first();
+                    $doctor_id = $doctor->id;
                     session(['doctor_id' => $doctor_id]);
                 } else {
                     $doctor_id = PatientProfile::where('user_id', $user->id)->orderBy('created_at','desc')->limit(1)->value('doctor_id');
