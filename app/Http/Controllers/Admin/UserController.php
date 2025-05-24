@@ -18,12 +18,11 @@ class UserController extends Controller
     use AuthCode,CommonCode;
 	public function index(Request $request) {
 		if ($request->ajax()) {
-			// $users = User::get();
 			$users =  User::with(['doctor_profile' => function ($q) {
 					$q->withCount('doctor_patient'); // 👈 adds doctor_patient_count to doctor_profile
 				}])->whereHas('roles', function ($q) {
 					$q->where('name', 'doctor');
-				})->get();
+				})->orderBy('created_at', 'desc')->get();
 			return Datatables::of($users)
 				->addColumn('action', function ($user) {
 					$btn = '<a href="/admin/user/edit/'.$user->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
