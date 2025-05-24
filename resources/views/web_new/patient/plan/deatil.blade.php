@@ -7,7 +7,7 @@
                 <div class="row justify-content-between">
                     <div class="col-md-4 mb-3 order-1 order-md-2" data-aos="fade-right" data-aos-duration="1000">
                         @if($plan['image_url'])
-                        <img alt="" class="img-fluid rounded"
+                        <img alt="" class="img-fluid rounded" style="max-height:250px;"
                             src="{{ $plan['image_url'] }}" />
                         @endif    
                     </div>

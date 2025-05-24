@@ -24,15 +24,6 @@ class ModuleExport implements FromCollection, WithHeadings
     public function collection(): Collection
     {
 		return $this->query;
-		/*$query = $this->model::select(
-                "id",
-                "name",
-                "email",
-                "mobile",
-                "status",
-                "created_at"
-            );
-        return $query->get();*/
     }
 
     /**
@@ -41,13 +32,5 @@ class ModuleExport implements FromCollection, WithHeadings
     public function headings(): array
     {
         return $this->heading;
-		/*return [
-            "id",
-            "name",
-            "email",
-            "mobile",
-            "status",
-            "created_at",
-        ];*/
     }
 }
