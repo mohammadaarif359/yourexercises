@@ -1,3 +1,14 @@
+@if(isset($doctor_page) && $doctor_page === 1)
+<footer class="text-center text-lg-start ps-footer" style="background-color: lightgray">
+   <div class="p-2">
+      @if($data->logo_url)
+            <img src="{{ $data->logo_url }}" class="mr-2" style="max-height:50px;width:auto;">
+      @endif     
+      Powered By :
+      <a class="text-dark" href="{{ url('/') }}">yourexercises.com</a>
+   </div>
+</footer>   
+@else
 <footer class="text-center text-lg-start text-white ps-footer" style="background-color: #2c2e31">
    <!-- Section: Social media -->
    <section class="d-flex justify-content-between py-2 p-md-4 container flex-wrap" style="background-color: #1f2126">
@@ -103,6 +114,7 @@
    </div>
    <!-- Copyright -->
 </footer>
+@endif
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>  
