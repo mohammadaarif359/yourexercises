@@ -9,15 +9,21 @@ class DoctorPlan extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['plan_id', 'name', 'description', 'image', 'is_active', 'created_by', 'avg_rating'];
+    protected $fillable = ['plan_id', 'name', 'description', 'image', 'is_active', 'created_by', 'avg_rating', 'pdf'];
 
     protected $appends = [
         'image_url',
+        'pdf_url'
     ];
 	/* image url */
 	public function getImageUrlAttribute(): string
     {
         return $this->image ? asset('storage/doctor/plan/'.$this->image)  : "";
+    }
+    /* pdf url */
+	public function getPdfUrlAttribute(): string
+    {
+        return $this->pdf ? asset('storage/doctor/plan/'.$this->pdf)  : "";
     }
 
     /**

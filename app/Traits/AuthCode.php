@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\OtpVerification;
 use App\Models\Userdevice;
 use App\Models\Role;
+use App\Models\{DoctorPlan};
 use App\Mail\OtpEmail;
 use App\Mail\PasswordReset;
 use App\Mail\PatientUserCreate;
@@ -18,6 +19,7 @@ use DateTime;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\{File, Storage};
 use DB;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 trait AuthCode
 {
@@ -196,6 +198,28 @@ trait AuthCode
 		$new = Storage::copy($formFile, $toFile);
         return $filename;
 	}
-	
+	public function encodeImg($file, $path) {
+		if($file) {
+			$imagePath = public_path('storage/'.$path.'/' . $file);
+			$imageMime = mime_content_type($imagePath);
+			$imageData = base64_encode(file_get_contents($imagePath));
+			$imageBase64 = "data:$imageMime;base64,$imageData";
+			return $imageBase64;
+		}
+		return null;
+	}
+	public function createDoctorPlanPdf($plan) {
+		set_time_limit(180);
+		$plan_name = preg_replace('/[^a-zA-Z0-9]+/', '-', $plan->name);
+		$planName = trim($plan_name, '-');
+		$filename = $plan_name . '-' . date('d-m-Y-His') . '.pdf';
+		$pdf = Pdf::setOptions([
+			'isHtml5ParserEnabled' => true,
+			'isRemoteEnabled' => true,
+		])->loadView('admin.doctor.plan.pdf', compact('plan'))->setPaper('A4', 'landscape');
+		Storage::put('public/doctor/plan/'.$filename, $pdf->output());
+		DoctorPlan::where('id', $plan['id'])->update(['pdf'=> $filename]);
+		return $filename;
+	}
 }
 ?>

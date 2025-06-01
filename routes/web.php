@@ -170,6 +170,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/plan/edit/{id}','Admin\DoctorPlanController@edit')->name('doctor.plan.edit');
 	Route::post('/doctor/plan/update','Admin\DoctorPlanController@update')->name('doctor.plan.update');
 	Route::get('/doctor/plan/export','Admin\DoctorPlanController@export')->name('doctor.plan.export');
+	Route::get('/doctor/plan/pdf/{id}','Admin\DoctorPlanController@pdf')->name('doctor.plan.pdf');
 
 	Route::get('/doctor/user','Admin\DoctorUserController@index')->name('doctor.user');
 	Route::get('/doctor/user/add','Admin\DoctorUserController@add')->name('doctor.user.add');
@@ -186,7 +187,6 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::get('/doctor/plan/{plan_id}/assign/edit/{id}','Admin\DoctorPlanAssignController@edit')->name('doctor.plan.assign.edit');
 	Route::post('/doctor/plan/{plan_id}/assign/update','Admin\DoctorPlanAssignController@update')->name('doctor.plan.assign.update');
 	Route::get('/doctor/plan/{plan_id}/assign/feedback/{id}','Admin\DoctorPlanAssignController@feedback')->name('doctor.plan.assign.feedback');
-	Route::get('/doctor/plan/{plan_id}/assign/pdf','Admin\DoctorPlanAssignController@pdf')->name('doctor.plan.assign.pdf');
 
 	// inquiry
 	Route::get('/inquiry/demo','Admin\InquiryController@inquiryDemo')->name('inquiry.demo');

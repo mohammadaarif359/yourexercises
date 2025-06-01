@@ -31,6 +31,10 @@ class PlanAssign extends Mailable
      */
     public function build()
     {
-        return $this->subject('Patient Plan Assign')->markdown('emails.patient.plan_assign');
+        return $this->subject('Patient Plan Assign')
+        ->attach(storage_path('/app/public/doctor/plan/'.$this->data['pdf']), [
+            'as' => $this->data['pdf'],
+            'mime' => 'application/pdf',
+       ])->markdown('emails.patient.plan_assign');
     }
 }

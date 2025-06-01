@@ -85,6 +85,7 @@ class DoctorPlanAssignController extends Controller
             $data['email'] = $assign['user']['email'];
             $data['message'] = trans('sms.patient.plan.assign', ['plan_name' => $assign['plan']['name']]);
             $data['url'] = url('/clinic/'. $assign['doctor']['slug']);
+            $data['pdf'] = $assign['plan']['pdf'] ? $assign['plan']['pdf'] : $this->createDoctorPlanPdf($assign['plan']);
             $this->sendPatientPlanAssignEmail($data);   
         }
         return redirect()->back()->with('success', 'Plan assign successfully !');

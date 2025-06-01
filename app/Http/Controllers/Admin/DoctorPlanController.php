@@ -45,6 +45,11 @@ class DoctorPlanController extends Controller
 				->addColumn('action', function ($data) {
 					$btn = '<a href="/admin/doctor/plan/edit/'.$data->id.'" class="" title="Edit"><i class="fa fa-edit"></i></a>
 					<a href="/admin/doctor/plan/'.$data->id.'/assign" target="_blank" class="" title="Assign"><i class="fa fa-user"></i></a>';
+					if (!empty($data->pdf_url)) {
+						$btn .= ' <a href='.$data->pdf_url.' target="_blank" title="View PDF"><i class="fa fa-file-pdf"></i></a>';
+					} else {
+						$btn .= ' <a href="/admin/doctor/plan/pdf/'.$data->id.'" title="Generate PDF"><i class="fa fa-file-alt"></i></a>';
+					}
 					return $btn;
 				})->editColumn('created_at', function ($data) {
 					return [
@@ -58,7 +63,7 @@ class DoctorPlanController extends Controller
 						return '<a href="'.$data->image_url.'" target="_blank"><img src="'.$data->image_url.'" class="img img-response" height="60px" width="100px">';
 					}
 					return '';
-				})->rawColumns(['image_url', 'action'])->make(true);;
+				})->rawColumns(['image_url', 'action'])->make(true);
 		}
 		return view('admin.doctor.plan.list');
 	}
@@ -256,5 +261,18 @@ class DoctorPlanController extends Controller
 			'detail.times.*.required' => 'This times field is required',
 		]);
 		return $validator;
-	}	
+	}
+	public function pdf(Request $request, $id) {
+        $query = $request->get('view');
+        $plan = DoctorPlan::where('id', $id)->first();
+		if($plan) {
+			if($query) {
+				return view('admin.doctor.plan.pdf', compact('plan'));
+			} else {
+				$this->createDoctorPlanPdf($plan);
+				return redirect()->back()->with('success', 'Plan pdf generate successfully !');
+			}
+		}
+		abort(404);
+    }
 }
