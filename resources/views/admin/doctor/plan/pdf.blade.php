@@ -50,7 +50,7 @@
     <table style="width: 100%;">
       <tr>
         <td style="width: 50%;">
-          <img src="https://yourexercises.com/web_new/assets/img/your_exercises_logo.svg" alt="Clinic Logo" height="60">
+          <img src="https://yourexercises.com/web_new/assets/img/your_exercises_png.svg" alt="yourexercise Logo" height="60">
         </td>
         <td style="width: 50%; text-align: right; ">
           <h4 class="mb-0">{{ $plan['creator']['doctor_profile']['clinic_name'] ?? ''  }}</h4>
@@ -81,7 +81,6 @@
         <td style="width: 30%;">
           {{--@if($plan['image_url'])
           <img src="{{ $plan['image_url'] }}" alt="Plan Image" class="plan-image">
-          <!--<img src="https://yourexercises.com/storage/doctor/plan/20250524143505_68318bc1c2cd3.png" alt="Plan Image" class="plan-image">-->
           @endif--}}
           @if($plan['image'])
             <?php 
@@ -104,9 +103,6 @@
       <table class="card-table">
         <tr>
           <td style="width: 30%;">
-            <!--<img src="https://yourexercises.com/storage/doctor/exercise/20250524143428_68318b9cc1e9c.png" class="exercise-img" alt="Exercise 1">-->
-            {{--@php $ex_img_url = $detail['exercise']['image_url'] ? $detail['exercise']['image_url'] : asset('web_new/assets/img/profile-img.png') @endphp  
-            <img src="{{ $ex_img_url }}"/>--}}
             @if($detail['exercise']['image'])
                 <?php 
                 $imagePath = public_path('storage/doctor/exercise/' . $detail['exercise']['image']);
