@@ -50,7 +50,7 @@
     <table style="width: 100%;">
       <tr>
         <td style="width: 50%;">
-          <img src="https://yourexercises.com/web_new/assets/img/your_exercises_png.svg" alt="yourexercise Logo" height="60">
+          <img src="https://yourexercises.com/web_new/assets/img/your_exercises_log.png" alt="yourexercise Logo" height="60">
         </td>
         <td style="width: 50%; text-align: right; ">
           <h4 class="mb-0">{{ $plan['creator']['doctor_profile']['clinic_name'] ?? ''  }}</h4>
