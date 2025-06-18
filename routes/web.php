@@ -22,7 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');*/
 // web route
 Route::get('/','PageController@home')->name('home');
 Route::get('/about','PageController@about')->name('about');
-Route::get('/pricing','PageController@pricing')->name('contact');
+Route::get('/pricing','PageController@pricing')->name('pricing');
 Route::get('/book-a-demo','PageController@demo')->name('book-a-demo');
 Route::get('/features','PageController@features')->name('features');
 Route::get('/contact','PageController@contact')->name('contact');

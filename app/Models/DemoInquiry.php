@@ -15,6 +15,7 @@ class DemoInquiry extends Model
         'preferred_time',
         'designation',
         'clinic_name',
-        'city'
+        'city',
+        'type'
     ];
 }

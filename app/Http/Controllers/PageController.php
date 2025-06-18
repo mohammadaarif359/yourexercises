@@ -72,10 +72,11 @@ class PageController extends Controller
 				'preferred_time' => $request['preferred_time'],
 				'designation' => $request['designation'],
 				'clinic_name' => $request['clinic_name'],
-				'city' => $request['city'] ?? null
+				'city' => $request['city'] ?? null,
+				'type' => $request['type'] ?? 'demo'
 			]);
 			if($inquiry) {
-				return response()->json(['message'=>'demo Inquiry has been send successfully.we will connect you soon.','code'=>200]);
+				return response()->json(['message'=>$request['type']. ' inquiry has been send successfully.we will connect you soon.','code'=>200]);
 			}
 		}
 	}

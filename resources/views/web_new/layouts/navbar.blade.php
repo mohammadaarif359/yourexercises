@@ -8,7 +8,6 @@
       </div>
       <div class="menu" id="menu">
         <ul class="menu-inner">
-          <li class="menu-item"><a href="{{ url('/') }}" class="menu-link">Home</a></li>
           <li class="menu-item"><a href="{{ url('/features') }}" class="menu-link">Features</a></li>
           <li class="menu-item"><a href="{{ url('/about') }}" class="menu-link">About</a></li>
           <li class="menu-item"><a href="{{ url('/contact') }}" class="menu-link">Contact</a></li>

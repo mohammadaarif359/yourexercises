@@ -17,6 +17,7 @@
                         Book a Demo
                     </h2>
                     <form id='demo-inquiry-form' name='demo-inquiry-form' method='POST'>
+                        <input type="hidden" name="type" class="form-control" id="type" placeholder="" value='demo'>
                         <div class="mb-2">
                             <label class="form-label" for="name">Full Name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="Enter your full name">

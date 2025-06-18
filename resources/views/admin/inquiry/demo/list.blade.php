@@ -19,6 +19,7 @@
 				<table id="example1" class="table table-striped">
 					<thead>
 						<tr>
+							<th>Type</th>
 							<th>Name</th>
 							<th>Email</th>
 							<th>Phome</th>
@@ -53,7 +54,8 @@
         serverSide: true,
         ajax: "{{ route('admin.inquiry.demo') }}",
         columns: [
-            {data: 'name', name: 'name'},
+            {data: 'type', name: 'type'},
+			{data: 'name', name: 'name'},
             {data: 'email', name: 'email'},
             {data: 'phone', name: 'phone'},
             {data: 'designation', name: 'designation'},
