@@ -29,7 +29,6 @@
     </div>
     <div class="menu-toggle">&#9776;</div>
     <ul class="nav-links">
-      <li><a href="{{ url('/') }}">Home</a></li>
       <li class="ps-dropdown feature-dropdown">
         <a href="{{ url('/features') }}" class="nav-link ps-dropdown-toggle">Feature <i class="fas fa-chevron-down ml-2"></i></a>
         <ul class="ps-dropdown-menu row">
@@ -211,7 +210,7 @@
       </li>
       <li><a href="{{ url('about') }}">About</a></li>
       <li><a href="{{ url('clinic') }}">Clinic</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="{{ url('contact') }}">Contact</a></li>
       <li><a href="{{ url('pricing') }}">Pricing</a></li>
       <li>
         <div class="header-sidebtn">
