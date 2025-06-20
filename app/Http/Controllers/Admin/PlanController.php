@@ -169,7 +169,7 @@ class PlanController extends Controller
 
 	protected function validateRequest(Request $request) {
 		$validator = Validator::make($request->all(),[
-			'name' => 'required|regex:/^[\pL\s]+$/u',
+			'name' => 'required',
 			'description' => 'nullable',
 			'image' => 'nullable|mimes:jpeg,jpg,png',
 			'is_active' => 'required|boolean',
