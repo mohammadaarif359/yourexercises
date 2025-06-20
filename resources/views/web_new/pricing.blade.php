@@ -45,7 +45,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included 1 License for Clinic/Clinician </li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -76,7 +78,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included up to 3 License for Clinic/ Clinician/ Assistant</li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -107,7 +111,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included Multiple License for Clinic/ Clinician/ Assistant hierarchy to manage Clinicians, Patients,</li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -140,7 +146,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included 1 License for Clinic/Clinician </li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -171,7 +179,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included up to 3 License for Clinic/ Clinician/ Assistant</li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -188,7 +198,7 @@
                                     </div>
                                     <div class="card-body">
                                         <div class="price">
-                                            <p>C</p> <span>$0.00</span>/Get a Free Quote
+                                            <p>Get a Free Quote</p>
                                         </div>
                                         <h6>All the Flexibility you need to meet your custom requirements to scale productivity of HEP</h6>
                                         <hr/>
@@ -202,7 +212,9 @@
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Included Multiple License for Clinic/ Clinician/ Assistant hierarchy to manage Clinicians, Patients,</li>
+                                            @foreach($include_features as $k=> $val)
+                                            <li><i class="fas fa-check"></i> {{$val }}</li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                     <div class='d-flex flex-wrap'>
@@ -217,7 +229,7 @@
             </div>
 
 
-            <div class="ps-accordion" data-aos="fade-right" data-aos-duration="1000">
+            {{--<div class="ps-accordion" data-aos="fade-right" data-aos-duration="1000">
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false">
                         Charting, Forms, & Surveys
@@ -455,7 +467,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>--}}
 
             <p class="paragraph mt-5 text-center"> Any more questions? We’d love to hear from you.</p>
             <div class="col-12 text-center mb-4"> <a href="#" class="ps-btn sm-btn primary-btn ps-header-btn">Contact

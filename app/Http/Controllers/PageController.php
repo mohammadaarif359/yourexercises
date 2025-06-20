@@ -20,7 +20,8 @@ class PageController extends Controller
         return view('web_new.about');
     }
 	public function pricing() {
-        return view('web_new.pricing');
+		$include_features = config('custom.feature_pages');
+        return view('web_new.pricing', compact('include_features'));
     }
 	public function demo() {
         return view('web_new.demo');
