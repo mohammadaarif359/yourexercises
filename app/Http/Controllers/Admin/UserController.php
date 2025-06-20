@@ -54,7 +54,7 @@ class UserController extends Controller
 	public function store(Request $request) {
 		$request_data = $request->all();
 		$request->validate([
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
+			'name'    => 'required',
             'email'   => 'required|email|unique:users,email',
             'mobile'  => 'required|numeric|digits_between:8,12|unique:users,mobile',
 			'password'=> 'required|min:6|confirmed',
@@ -98,7 +98,7 @@ class UserController extends Controller
 		$request_data = $request->all();
 		$request->validate([
 			'id' =>	'required',
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
+			'name'    => 'required',
             'email'   => 'required|email|unique:users,email,'.$request->id,
             'mobile'  => 'required|numeric|digits_between:8,12|unique:users,mobile,'.$request->id,
 			'password'=> 'nullable|confirmed',

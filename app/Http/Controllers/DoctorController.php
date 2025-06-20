@@ -26,8 +26,8 @@ class DoctorController extends Controller
 			'clinic_address' => 'required',
 			'gender' => 'required',
 			'dob' => 'required|date|before_or_equal:' . now()->subYears(18)->toDateString(),
-			'image' => 'nullable|mimes:jpeg,jpg,png',
-			'logo' => 'nullable|mimes:png',
+			'image' => 'nullable|mimes:png,jpeg,jpg,png',
+			'logo' => 'nullable|mimes:png,svg,jpg,jpeg',
 		]);
 		$user_id = Auth::user()->id;
 		$profile = DoctorProfile::where('user_id', $user_id)->first();

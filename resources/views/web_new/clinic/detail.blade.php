@@ -14,7 +14,9 @@
                         <h1 class="cl-dblue">{{ $data['user']['name'] }}</h1>
                         <div class="d-flex justify-content-between align-items-center flex-wrap">
                         <div>
+                           @if($data['professional_info']['specialization'])
                            <span class="ps-badge-light mt-1 mb-2"><span></span> {{ $data['professional_info']['specialization'] ?? '' }}</span>
+                           @endif
                             <!-- <p>Siloam Hospitals, West Bekasi, Bekasi</p> -->
                         </div>
                         <div class="stats">

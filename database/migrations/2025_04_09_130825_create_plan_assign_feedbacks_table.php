@@ -20,7 +20,7 @@ return new class extends Migration
             $table->bigInteger('exercise_id');
 			$table->integer('rating')->default(0);
 			$table->longText('title');
-            $table->longText('comment');
+            $table->longText('comment')->nullable();
             $table->timestamps();
         });
     }

@@ -21,7 +21,6 @@
                         </div>
                     </div>
 
-                    {{ $data['medical_history'] }}
                     <div class="section-title cl-dblue"> Cheif Complaints</div>
                     <p class="cl-gray section-paragraph collapsed">
                         {{ $data['medical_history'] ? $data['medical_history'] : 'No Cheif Complaints given by your doctor'  }}

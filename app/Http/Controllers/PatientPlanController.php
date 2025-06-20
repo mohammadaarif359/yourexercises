@@ -31,13 +31,11 @@ class PatientPlanController extends Controller
 	}
 	public function feedbackStore(Request $request) {
 		$request_data = $request->all();
-		// print_r($request_data);die;
 		$validate=Validator::make($request->all(), [
 			'assign_id' => 'required',
             'plan_id' => 'required',
 			'exercise_id' => 'required',
 			'rating' => 'required',
-			'comment' => 'required',
         ]);
 		if ($validate->fails()) {
 			return response()->json(['error'=>$validate->errors()]);
@@ -64,7 +62,7 @@ class PatientPlanController extends Controller
 				'plan_id' => $request_data['plan_id'],
 				'exercise_id' => $request_data['exercise_id'],
 				'rating' => $request_data['rating'],
-				'comment' => $request_data['comment'],
+				'comment' => $request_data['comment'] ?? null,
 				'answer' => $request_data['answer'] ?? null,
 				'history' => $history
 			]

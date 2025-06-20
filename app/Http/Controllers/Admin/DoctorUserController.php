@@ -55,7 +55,7 @@ class DoctorUserController extends Controller
 		$doctor_profile = Auth::user()->doctor_profile;
 		$request_data = $request->all();
 		$request->validate([
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
+			'name'    => 'required',
             'email'   => 'required|email|unique:users,email',
             'mobile'  => 'required|numeric|digits_between:8,12|unique:users,mobile',
 			'password'=> 'required|min:6|confirmed',
@@ -98,7 +98,7 @@ class DoctorUserController extends Controller
 		$doctor_profile = Auth::user()->doctor_profile;
 		$request_data = $request->all();
 		$request->validate([
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
+			'name'    => 'required',
             'email' => 'required|email',
             'mobile'  => 'required|numeric|digits_between:8,12',
 			'password'=> 'required|min:6|confirmed',
@@ -169,7 +169,7 @@ class DoctorUserController extends Controller
 	public function edit($id) {
 		$user = User::where('id',$id)->first();
 		if($user) {
-			$roles = Role::pluck('name','id')->toArray();
+			$roles = Role::where('name','patient')->pluck('display_name','id')->toArray();
 			$old_role = [];
 			if(!empty($user['roles'])) {
 				$userRoles = $user['roles'];
@@ -188,7 +188,7 @@ class DoctorUserController extends Controller
 		$request_data = $request->all();
 		$request->validate([
 			'id' =>	'required',
-			'name'    => 'required|regex:/^[\pL\s]+$/u',
+			'name'    => 'required',
             'email'   => 'required|email|unique:users,email,'.$request->id,
             'mobile'  => 'required|numeric|digits_between:8,12|unique:users,mobile,'.$request->id,
 			'password'=> 'nullable|confirmed',
