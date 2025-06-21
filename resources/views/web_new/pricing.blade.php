@@ -134,8 +134,15 @@
                                         Lite
                                     </div>
                                     <div class="card-body">
-                                        <div class="price">
+                                        {{--<div class="price">
                                             <p>C</p> <span>$60.99</span>/Location 15% Discount <small style='color:#963b54;font-size:20px;'>($70.99)</small>
+                                        </div>--}}
+                                        <div class="price">
+                                            <p>C</p> 
+                                            <span >$60.99</span>
+                                            <small class="ml-2" style="color:#963b54;font-size:24px;text-decoration: line-through;">$70.99</small>
+                                            /Location
+                                            <small style='color:#963b54;font-size:20px;'>(15% Off)</small>
                                         </div>
                                         <h6>Get All Functions HEP Dispensing, Managing Platform</h6>
                                         <hr/>
@@ -164,8 +171,15 @@
                                         Premium
                                     </div>
                                     <div class="card-body">
-                                        <div class="price">
+                                        {{--<div class="price">
                                             <p>C</p> <span>$69.99</span>/Location 15% Discount <small style='color:#963b54;font-size:20px;'>($80.99)</small>
+                                        </div>--}}
+                                        <div class="price">
+                                            <p>C</p> 
+                                            <span >$69.99</span>
+                                            <small class="ml-2" style="color:#963b54;font-size:24px;text-decoration: line-through;">$80.99</small>
+                                            /Location
+                                            <small style='color:#963b54;font-size:20px;'>(15% Off)</small>
                                         </div>
                                         <h6>Scale your business and increase your efficiency</h6>
                                         <hr/>
