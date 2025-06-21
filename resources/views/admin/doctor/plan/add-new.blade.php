@@ -490,7 +490,8 @@ $.ajaxSetup({
 					dropdown.append('<option value="' + key + '"' + (isSubSelected ? ' selected' : '') + '>' + value + '</option>');
 					// dropdown.append('<option value="' + key + '">' + value + '</option>');
 				});
-				$(".subcategory_id").trigger('change');
+				// $(".subcategory_id").trigger('change');  
+				// at 2 row when category is change by class proeprty it trggier 1,2 both sub change that why its remove the 1 first selected exercise
 			},
 			error: function () {
 				var dropdown = $("#subcategory_id"+num);
