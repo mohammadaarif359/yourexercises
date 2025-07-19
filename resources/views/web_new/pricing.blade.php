@@ -39,10 +39,6 @@
                                         <h6>Get All Functions HEP Dispensing, Managing Platform</h6>
                                         <hr/>
                                         <p class="cl-gray paragraph-md mb-0">Plus C $9 / additional clinic</p>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
-                                        </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
                                             @foreach($include_features as $k=> $val)
@@ -72,10 +68,6 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Get Multiple clinicians with common data storage under clinic</li>
                                         </ul>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
-                                        </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
                                             @foreach($include_features as $k=> $val)
@@ -104,10 +96,6 @@
                                         <p class="cl-gray paragraph-md mb-0">For Clinics with Multiple location or 20+ Clinicians</p>
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Features of Premium</li>
-                                        </ul>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
@@ -147,10 +135,6 @@
                                         <h6>Get All Functions HEP Dispensing, Managing Platform</h6>
                                         <hr/>
                                         <p class="cl-gray paragraph-md mb-0">Plus C $29 per additional Clinician</p>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
-                                        </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
                                             @foreach($include_features as $k=> $val)
@@ -187,10 +171,6 @@
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Get Multiple clinicians with common data storage under clinic</li>
                                         </ul>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
-                                        </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">
                                             @foreach($include_features as $k=> $val)
@@ -219,10 +199,6 @@
                                         <p class="cl-gray paragraph-md mb-0">For Clinics with Multiple location or 20+ Clinicians</p>
                                         <ul class="list-unstyled">
                                             <li><i class="fas fa-check"></i> Features of Premium</li>
-                                        </ul>
-                                        <h6>Scheduling:</h6>
-                                        <ul class="list-unstyled">
-                                            <li><i class="fas fa-check"></i> Book an online demo</li>
                                         </ul>
                                         <h6>Includes:</h6>
                                         <ul class="list-unstyled">

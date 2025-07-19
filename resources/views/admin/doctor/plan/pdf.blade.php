@@ -54,7 +54,7 @@
         </td>
         <td style="width: 50%; text-align: right; ">
           <h4 class="mb-0">{{ $plan['creator']['doctor_profile']['clinic_name'] ?? ''  }}</h4>
-          <small>Dr. {{ $plan['creator']['name'] ?? '' }}</small>
+          <small>{{ $plan['creator']['name'] ?? '' }} - {{ $plan['creator']['doctor_profile']['professional_info']['specialization'] ?? ''  }}</small>
         </td>
       </tr>
     </table>

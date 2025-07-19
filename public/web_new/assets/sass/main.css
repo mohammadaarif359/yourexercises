@@ -1672,6 +1672,7 @@ a:hover {
 .ps-pricing-set .card .card-body .price p {
   margin: 0px;
   font-size: 27px;
+  color: #963b54;
 }
 .ps-pricing-set .card .card-body .price span {
   font-size: 49px;
@@ -2104,7 +2105,7 @@ a:hover {
   color: #212121;
 }
 .new-navbar .logo {
-  width: 114px;
+  width: 160px;
 }
 .new-navbar .nav-links {
   list-style: none;
