@@ -1,22 +1,26 @@
 ﻿<aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{ url('/') }}" class="brand-link bg-white">
-      <img src="{{ asset('dist/img/your_exercise_logo.svg') }}" alt="your exercies logo" class="brand-image"
-           style="height:150px;">
-      <span class="brand-text font-weight-light">Your Exercises</span>
+    @php 
+      $logo = Auth::user()->hasRole('doctor') && Auth::user()->doctor_profile && !empty(Auth::user()->doctor_profile['logo_url'])
+        ? Auth::user()->doctor_profile['logo_url'] : asset('web_new/assets/img/your_exercises_logo.svg');
+    @endphp
+    <a href="{{ url('/') }}" class="brand-link bg-white" style="padding:7px 6px;">
+      <img src="{{ $logo }}" alt="your exercies logo" class="brand-image"
+           style="max-height:77px;float:none;">
+      <!--<span class="brand-text font-weight-light">Your Exercises</span>-->
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+      {{--<div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="{{ !empty(Auth::user()->profile_photo_url) ? Auth::user()->profile_photo_url : asset('dist/img/avatar5.png') }}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{ Auth::user() ? Auth::user()->name : '' }}</a>
         </div>
-      </div>
+      </div>--}}
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
