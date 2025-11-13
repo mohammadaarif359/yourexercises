@@ -9,7 +9,7 @@
 		  <h3 class="card-title">Exercise</h3>
 		  <div class="card-tools">
 			  <div class="d-flex flex-row justify-content-center">			  
-				  <a href="{{ route('admin.doctor.exercise.add') }}" class="btn btn-primary btn-sm ml-2">Add</a>
+				  <a href="{{ route('admin.doctor.exercise.add') }}" class="btn btn-primary btn-sm ml-2">Create New Exercises</a>
 			  </div>	
 		  </div>
 		</div>
