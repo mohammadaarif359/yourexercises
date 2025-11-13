@@ -27,7 +27,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
-							<label for="name">Name</label>
+							<label for="name">Plan Name</label>
 							<input id="name" type="text" class="form-control" name="name" value="{{ old('name', $plan['name'] ?? '') }}" autocomplete="name" autofocus>
 							<span class="error invalid-feedback" id="error_name"></span>
 						</div>
