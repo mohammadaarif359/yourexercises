@@ -55,7 +55,7 @@
                             <div class="mb-2 row ps-label-text">
                                 <label class="col-4  p-0 m-0" for="textcheck">Reps</label>
                                 <div class="select-wrapper col-8 pr-0" id="textcheck">
-                                    <select class="form-select" id="reps">
+                                    <select class="form-select" id="reps" disabled>
                                         <option value='' selected>Select</option>
                                         @for($i=1;$i<=50;$i++)
                                             <option value="{{ $i }}" {{ old('reps', $detail['reps']) == $i ? 'selected' : '' }}>{{ $i }}</option>
@@ -66,7 +66,7 @@
                             <div class="mb-2 row ps-label-text">
                                 <label class="col-4  p-0 m-0" for="textcheck">Hold</label>
                                 <div class="select-wrapper col-8 pr-0" id="textcheck">
-                                    <select class="form-select" id="hold">
+                                    <select class="form-select" id="hold" disabled>
                                         <option value='' selected>Select</option>
                                         @foreach(config('custom.hold') as $k=> $val)
                                             <option value="{{ $i }}" {{ old('hold', $detail['hold']) == $k ? 'selected' : '' }}>{{ $val }}</option>
@@ -77,7 +77,7 @@
                             <div class="mb-2 row ps-label-text">
                                 <label class="col-4  p-0 m-0" for="textcheck">Complete (Sets)</label>
                                 <div class="select-wrapper col-8 pr-0" id="textcheck">
-                                    <select class="form-select" id="complete">
+                                    <select class="form-select" id="complete" disabled>
                                         <option value='' selected>Select</option>
                                         @for($i=1;$i<=20;$i++)
                                             <option value="{{ $i }}" {{ old('complete', $detail['complete']) == $i ? 'selected' : '' }}>{{ $i }}</option>
@@ -88,7 +88,7 @@
                             <div class="mb-2 row ps-label-text">
                                 <label class="col-4  p-0 m-0" for="textcheck">Perform</label>
                                 <div class="select-wrapper col-8 pr-0" id="textcheck">
-                                    <select class="form-select" id="perform">
+                                    <select class="form-select" id="perform" disabled>
                                         <option value='' selected>Select</option>
                                         @for($i=1;$i<=20;$i++)
                                             <option value="{{ $i }}" {{ old('perform', $detail['perform']) == $i ? 'selected' : '' }}>{{ $i }}</option>
