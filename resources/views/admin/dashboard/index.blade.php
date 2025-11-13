@@ -65,7 +65,7 @@
 							<li>
 								<img src="{{ $user->profile_photo_url ? $user->profile_photo_url : asset('dist/img/avatar5.png') }}">
 								<a class="users-list-name" href="#"><b>{{ $user['name'] }}</b></a>
-								<a class="users-list-name" href="#">{{ $user['doctor_profile']['clinic_name'] }}</a>
+								<a class="users-list-name" href="#">{{ $user['doctor_profile'] ? $user['doctor_profile']['clinic_name'] : '' }}</a>
 								<span class="users-list-date">{{ date('d-M', strtotime($user['created_at'])) }}</span>
 							</li>
 							@endforeach
