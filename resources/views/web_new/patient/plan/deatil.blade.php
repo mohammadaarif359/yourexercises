@@ -99,7 +99,7 @@
                             <div class="mb-2 row ps-label-text">
                                 <label class="col-4  p-0 m-0" for="textcheck">Times</label>
                                 <div class="select-wrapper col-8 pr-0" id="textcheck">
-                                    <select class="form-select" id="times">
+                                    <select class="form-select" id="times" disabled>
                                         <option value='' selected>Select</option>
                                         @foreach(config('custom.times') as $k=> $val)
                                             <option value="{{ $k }}" {{ old('times', $detail['times']) == $k ? 'selected' : '' }}>{{ $val }}</option>
