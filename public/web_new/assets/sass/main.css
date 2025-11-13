@@ -2615,6 +2615,7 @@ body {
 .ps-exercise-detail img {
   border-radius: 5px;
   height: 250px;
+  object-fit:contain;
 }
 .ps-exercise-detail h4 {
   font-size: 20px;
