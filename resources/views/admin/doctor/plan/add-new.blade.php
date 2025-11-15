@@ -178,9 +178,9 @@
 								<div class="form-group">
 									<label for="action" class="{{$hide}}">Action</label>
 									<div>
-										<button type="button" class="btn addrow p-0 by-admin" id="addrow{{$count}}" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
-										<button type="button" class="btn addadminrow p-0 by-admin" id="addadminrow{{$count}}" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-										<button type="button" class="btn deleterow p-0 by-admin" id="deleterow{{$count}}" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<button type="button" class="btn addrow p-1 by-admin btn-success" id="addrow{{$count}}" title="Add Self exercise"></a>Add Self</button>
+										<button type="button" class="btn addadminrow p-1 by-admin btn-success" id="addadminrow{{$count}}" title="Add Admin Exercise">Add Admin/button>
+										<button type="button" class="btn deleterow p-1 by-admin btn-danger" id="deleterow{{$count}}" title="Remove Exercise">Delete</button>
 										<div class="modal fade addexercisemodal" id="addexercisemodal{{$count}}" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
 											<div class="modal-dialog modal-xl" role="document">
 												<div class="modal-content">
@@ -314,9 +314,9 @@
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>
-										<button type="button" class="btn addrow p-0" id="addrow0" title="Add Self exercise"><i class="fa fa-plus"></i></a></button>
-										<button type="button" class="btn addadminrow p-0" id="addadminrow0" title="Add Admin Exercise"><i class="fa fa-user-plus"></i></a></button>
-										<button type="button" class="btn deleterow p-0" id="deleterow0" title="Remove Exercise"><i class="fa fa-trash"></i></button>
+										<button type="button" class="btn addrow p-1 btn-success" id="addrow0" title="Add Self exercise">Add Self</button>
+										<button type="button" class="btn addadminrow p-1 btn-success" id="addadminrow0" title="Add Admin Exercise">Add Admin</button>
+										<button type="button" class="btn deleterow p-1 btn-danger" id="deleterow0" title="Remove Exercise">Delete</button>
 										<div class="modal fade addexercisemodal" id="addexercisemodal0" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
 											<div class="modal-dialog modal-xl" role="document">
 												<div class="modal-content">
