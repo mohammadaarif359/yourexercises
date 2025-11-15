@@ -58,6 +58,7 @@ $(function () {
         serverSide: true,
         ajax: "{{ route('admin.doctor.exercise') }}",
         columns: [
+            {data: 'exercise_id', name: 'exercise_id'},
             {data: 'name', name: 'name'},
             {data: 'category', name: 'category'},
             {data: 'subcategory', name: 'subcategory'},
