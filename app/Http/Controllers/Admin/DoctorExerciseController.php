@@ -75,6 +75,8 @@ class DoctorExerciseController extends Controller
 						return '<a href="'.$data->image_url.'" target="_blank"><img src="'.$data->image_url.'" class="img img-response" height="60px" width="100px">';
 					}
 					return '';
+				})->editColumn('exercise_id', function ($data) {
+					return $data->exercise_id ? 'Admin' : 'Self';
 				})->rawColumns(['image_url', 'action'])->make(true);;
 		}
 		return view('admin.doctor.exercise.list');
