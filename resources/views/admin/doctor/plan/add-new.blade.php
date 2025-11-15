@@ -73,7 +73,7 @@
 						<div class='row itemrow' id='itemrow'>
 							<input id="is_admin{{$count}}" type="hidden" class="is_admin form-control" name="detail[is_admin][]" value="1">
 							<span class="error invalid-feedback" id="error_is_admin{{$count}}"></span>
-							<div class="col-md-2">
+							<div class="col-md-1">
 								<div class="form-group">
 									<label for="category_id" class="{{$hide}}">Category</label>
 									<select id="category_id{{$count}}" class="category_id form-control" name="detail[category_id][]">
@@ -174,7 +174,7 @@
 									<span class="error invalid-feedback" id="error_times{{$count}}"></span>
 								</div>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="action" class="{{$hide}}">Action</label>
 									<div>
@@ -209,7 +209,7 @@
 						<div class='row itemrow' id='itemrow'>
 							<input id="is_admin0" type="hidden" class="is_admin form-control" name="detail[is_admin][]" value="0">
 							<span class="error invalid-feedback" id="error_is_admin0"></span>
-							<div class="col-md-2">
+							<div class="col-md-1">
 								<div class="form-group">
 									<label for="category_id">Category</label>
 									<select id="category_id0" class="category_id form-control" name="detail[category_id][]">
@@ -310,7 +310,7 @@
 									<span class="error invalid-feedback" id="error_times0"></span>
 								</div>
 							</div>
-							<div class="col-md-1">
+							<div class="col-md-2">
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>
