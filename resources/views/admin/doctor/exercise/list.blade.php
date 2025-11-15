@@ -6,7 +6,13 @@
 	<div class="col-12">
 	  <div class="card">
 		<div class="card-header">
-		  <h3 class="card-title">Exercise</h3>
+		  <h3 class="card-title">Exercise
+		    <select data-column="0" class="form-control filter-select" style="width:58%;display:inline !important;">
+    			<option value="">All</option>
+    		    <option value="Self">Self</option>
+    			<option value="Admin">Admin</option>
+    		</select>
+		  </h3>
 		  <div class="card-tools">
 			  <div class="d-flex flex-row justify-content-center">			  
 				  <a href="{{ route('admin.doctor.exercise.add') }}" class="btn btn-primary btn-sm ml-2">Create New Exercises</a>
@@ -19,6 +25,7 @@
 				<table id="example1" class="table table-striped">
 					<thead>
 						<tr>
+                            <th>Src</th>
                             <th>Name</th>
 							<th>Category</th>
 							<th>Subcategory</th>
@@ -60,6 +67,12 @@ $(function () {
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
+
+    $('.filter-select').change(function(){
+		table.column($(this).data('column'))
+			.search($(this).val())
+			.draw();
+	})
   });
 </script>	
 @endsection
