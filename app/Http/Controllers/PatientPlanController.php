@@ -29,6 +29,7 @@ class PatientPlanController extends Controller
 			return abort(404);
 		}
 	}
+
 	public function feedbackStore(Request $request) {
 		$request_data = $request->all();
 		$validate=Validator::make($request->all(), [
