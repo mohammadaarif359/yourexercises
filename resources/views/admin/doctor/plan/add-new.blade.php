@@ -537,7 +537,7 @@ $.ajaxSetup({
                                     <label for="select_exercise_id${num}">${exercise_name} </label>
                                 </div>
                                 <div class="exercise-img">
-                                    <img src="${value.image_url ? value.image_url : '{{ asset('dist/img/placeholder.png') }}'}" class="" height="155px" width="225px">
+                                    <img src="${value.image_url ? value.image_url : '{{ asset('dist/img/placeholder.png') }}'}" class="" height="155px" width="240px">
                                 </div>
                             </div>
                         </div>`;
