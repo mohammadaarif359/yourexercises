@@ -179,7 +179,7 @@
 									<label for="action" class="{{$hide}}">Action</label>
 									<div>
 										<button type="button" class="btn addrow p-1 by-admin btn-success" id="addrow{{$count}}" title="Add Self exercise"></a>Add Self</button>
-										<button type="button" class="btn addadminrow p-1 by-admin btn-success" id="addadminrow{{$count}}" title="Add Admin Exercise">Add Admin/button>
+										<button type="button" class="btn addadminrow p-1 by-admin btn-success" id="addadminrow{{$count}}" title="Add Admin Exercise">Add Admin</button>
 										<button type="button" class="btn deleterow p-1 by-admin btn-danger" id="deleterow{{$count}}" title="Remove Exercise">Delete</button>
 										<div class="modal fade addexercisemodal" id="addexercisemodal{{$count}}" tabindex="-1" role="dialog" aria-labelledby="exercisModalLabel" aria-hidden="true">
 											<div class="modal-dialog modal-xl" role="document">
