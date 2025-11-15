@@ -22,7 +22,7 @@ class PatientPlanController extends Controller
 	}
 	public function detail(Request $request, $id) {
 		$user_id = Auth::user()->id;
-		$data = DoctorPlanAssign::with(['plan','plan.doctor_plan_detail','plan.doctor_plan_detail','feedback'])->where('id', $id)->first();
+        $data = DoctorPlanAssign::with(['plan','plan.doctor_plan_detail','feedback', 'plan.doctor_plan_detail.exercise','plan.doctor_plan_detail.exercise.attachments'])->where('id', $id)->first();
 		if($data) {
 			return view('web_new.patient.plan.deatil', compact('data'));
 		} else {
