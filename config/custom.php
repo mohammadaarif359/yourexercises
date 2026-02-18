@@ -50,6 +50,12 @@ return [
 		"1500" => "25 Minutes",
 		"1800" => "30 Minutes"
 	],
+	'max_progession' => [
+        'reps' => 50,
+        'hold' => 1800,
+        'complete' => 20,
+        'perform' => 20
+	],
 	'blood_group' => [
 		'A',
 		'A+',

@@ -171,6 +171,7 @@ Route::prefix('admin')->middleware(['admin'])->name('admin.')->group(function(){
 	Route::post('/doctor/plan/update','Admin\DoctorPlanController@update')->name('doctor.plan.update');
 	Route::get('/doctor/plan/export','Admin\DoctorPlanController@export')->name('doctor.plan.export');
 	Route::get('/doctor/plan/pdf/{id}','Admin\DoctorPlanController@pdf')->name('doctor.plan.pdf');
+	Route::get('/doctor/plan/progression','Admin\DoctorPlanController@progression')->name('doctor.plan.progression');
 
 	Route::get('/doctor/user','Admin\DoctorUserController@index')->name('doctor.user');
 	Route::get('/doctor/user/add','Admin\DoctorUserController@add')->name('doctor.user.add');

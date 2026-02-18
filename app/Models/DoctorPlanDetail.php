@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class DoctorPlanDetail extends Model
 {
     use HasFactory;
+        protected $casts = [
+        'progression_history' => 'array', // This is crucial
+    ];
+    
 
     protected $fillable = [
         'doctor_plan_id',
@@ -21,6 +25,15 @@ class DoctorPlanDetail extends Model
         'perform',
         'frequency',
         'times',
+        'start_date',
+        'next_date',
+        'end_date',
+        'progression_frequency',
+        'increase_per',
+        'apply_rating',
+        'progression_history',
+        'progression_status',
+        'progression_last_update',
         'created_by'
     ];
 

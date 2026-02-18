@@ -174,7 +174,56 @@
 									<span class="error invalid-feedback" id="error_times{{$count}}"></span>
 								</div>
 							</div>
+							<!-- progression start -->
+							<div class="col-md-1">
+							</div>
 							<div class="col-md-2">
+								<div class="form-group">
+									<label for="start_date" class="{{$hide}}">Start Date</label>
+									<input id="start_date{{$count}}" type="date" class="start_date form-control @error('start_date') is-invalid @enderror" name="detail[start_date][]" min="{{ date('Y-m-d', strtotime('+1 day')) }}">
+									<span class="error invalid-feedback" id="error_start_date{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="end_date" class="{{$hide}}">End Date</label>
+									<input id="end_date{{$count}}" type="date"  class="end_date form-control @error('end_date') is-invalid @enderror" name="detail[end_date][]">
+									<span class="error invalid-feedback" id="error_end_date{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="progression_frequency" class="{{$hide}}">Frequency</label>
+									<select id="progression_frequency{{$count}}" class="progression_frequency form-control @error('progression_frequency') is-invalid @enderror" name="detail[progression_frequency][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=30;$i++)
+											<option value="{{ $i }}" {{ old('progression_frequency') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_progression_frequency{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="increase_per" class="{{$hide}}">Increase %</label>
+									<input id="increase_per{{$count}}" type="number"  class="end_date form-control @error('increase_per') is-invalid @enderror" name="detail[increase_per][]" placeholder='10'>
+									<span class="error invalid-feedback" id="error_increase_per{{$count}}"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="apply_rating" class="{{$hide}}">Apply Rating</label>
+									<select id="apply_rating{{$count}}" class="apply_rating form-control @error('apply_rating') is-invalid @enderror" name="detail[apply_rating][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=5;$i++)
+											<option value="{{ $i }}" {{ old('apply_rating') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_apply_rating{{$count}}"></span>
+								</div>
+							</div>
+							<!-- progession end -->
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="action" class="{{$hide}}">Action</label>
 									<div>
@@ -310,7 +359,56 @@
 									<span class="error invalid-feedback" id="error_times0"></span>
 								</div>
 							</div>
+							<!-- progression start -->
+							<div class="col-md-1">
+							</div>
 							<div class="col-md-2">
+								<div class="form-group">
+									<label for="start_date">Start Date</label>
+									<input id="start_date0" type="date" class="start_date form-control @error('start_date') is-invalid @enderror" name="detail[start_date][]" min="{{ date('Y-m-d', strtotime('+1 day')) }}">
+									<span class="error invalid-feedback" id="error_start_date0"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="end_date">End Date</label>
+									<input id="end_date0" type="date"  class="end_date form-control @error('end_date') is-invalid @enderror" name="detail[end_date][]">
+									<span class="error invalid-feedback" id="error_end_date0"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="progression_frequency">Frequency</label>
+									<select id="progression_frequency0" class="progression_frequency form-control @error('progression_frequency') is-invalid @enderror" name="detail[progression_frequency][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=30;$i++)
+											<option value="{{ $i }}" {{ old('progression_frequency') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_progression_frequency0"></span>
+								</div>
+							</div>
+							<div class="col-md-1">
+								<div class="form-group">
+									<label for="increase_per">Increase %</label>
+									<input id="increase_per0" type="number"  class="end_date form-control @error('increase_per') is-invalid @enderror" name="detail[increase_per][]" placeholder='10'>
+									<span class="error invalid-feedback" id="error_increase_per0"></span>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<div class="form-group">
+									<label for="apply_rating">Apply Rating</label>
+									<select id="apply_rating0" class="apply_rating form-control @error('apply_rating') is-invalid @enderror" name="detail[apply_rating][]">
+										<option value='' selected>Select</option>
+										@for($i=1;$i<=5;$i++)
+											<option value="{{ $i }}" {{ old('apply_rating') == $i ? 'selected' : '' }}>{{ $i }}</option>
+										@endfor
+									</select>
+									<span class="error invalid-feedback" id="error_apply_rating0"></span>
+								</div>
+							</div>
+							<!-- progession end -->
+							<div class="col-md-3">
 								<div class="form-group">
 									<label for="times">Action</label>
 									<div>
@@ -372,6 +470,7 @@ $.ajaxSetup({
 	// var totalcount = 0;
 	var totalcount = {{ isset($plan['plan_detail']) && count($plan['plan_detail']) > 0 ? count($plan['plan_detail']) - 1 : 0  }};
 	var planDetail = @json($plan['plan_detail'] ?? []);
+	console.log('planDetail', planDetail);
 
 	$('body').on('click', '.addrow, .addadminrow', function () {
 		console.log('call time');
@@ -472,6 +571,7 @@ $.ajaxSetup({
 	$(document).on("change", ".category_id", function(){
 		var category_id = $(this).val() || [];
 		var num = parseInt($(this).prop("id").match(/\d+/g), 10);
+		console.log('for', num, 'category_id', category_id);
 		$.ajax({
 			type: 'POST',
 			data: {category_id:[category_id]},
@@ -490,7 +590,7 @@ $.ajaxSetup({
 					dropdown.append('<option value="' + key + '"' + (isSubSelected ? ' selected' : '') + '>' + value + '</option>');
 					// dropdown.append('<option value="' + key + '">' + value + '</option>');
 				});
-				// $(".subcategory_id").trigger('change');  
+				$("#subcategory_id"+num).trigger('change');  
 				// at 2 row when category is change by class proeprty it trggier 1,2 both sub change that why its remove the 1 first selected exercise
 			},
 			error: function () {

@@ -12,6 +12,7 @@ use App\Models\Plan;
 use App\Models\PlanDetail;
 use App\Models\DoctorPlan;
 use App\Models\DoctorPlanDetail;
+use App\Models\PlanAssignFeedback;
 use App\Traits\AuthCode;
 use App\Traits\CommonCode;
 use App\Traits\DoctorExerciseCode;
@@ -156,8 +157,78 @@ class DoctorPlanController extends Controller
 				'frequency' => $data['frequency'][$i] ?? null,
 				'times' => $data['times'][$i] ?? null,
 				'created_by' => Auth::user()->id,
+				'start_date' => $data['start_date'][$i] ?? null,
+				'end_date' => $data['end_date'][$i] ?? null,
+				'next_date' => $data['start_date'][$i] ?? null,
+				'progression_frequency' => $data['progression_frequency'][$i] ?? null,
+				'increase_per' => $data['increase_per'][$i] ?? null,
+				'apply_rating' => $data['apply_rating'][$i] ?? null,
+				'progression_status' => $data['start_date'][$i] ? 'pending' : null
 			]);
 		}
+	}
+	public function progression() {
+	    $today = Carbon::now()->format('Y-m-d');
+	    $plans = DoctorPlan::whereHas('doctor_plan_detail', function($q) use ($today) {
+                    $q->where('next_date', $today);
+                    $q->whereIn('progression_status', ['pending','in_progress']);
+                })->whereHas('plan_assign', function($q) {
+                    $q->where('status', 'ongoing');
+                })->with(['doctor_plan_detail' => function($q) use ($today) {
+                    $q->where('next_date', $today);
+                    $q->whereIn('progression_status', ['pending','in_progress']);
+                }])->get();
+        foreach($plans as $k => $plan) {
+            $is_update = false; 
+            foreach($plan['doctor_plan_detail'] as $detail) {
+                $rating_match = PlanAssignFeedback::Where('plan_id', $plan->id)->where('exercise_id', $detail->doctor_exercise_id)->where('rating', '>=', $detail->apply_rating)->first();
+                if($rating_match) {
+                    $is_update = true;
+                    $max_progession = config('custom.max_progession');
+                    $reps = (int) $detail->reps + (($detail->reps * $detail->increase_per) / 100);
+                    $hold = (int) $detail->hold + (($detail->hold * $detail->increase_per) / 100);
+                    $complete = (int) $detail->complete + (($detail->complete * $detail->increase_per) / 100);
+                    $perform = (int) $detail->perform + (($detail->perform * $detail->increase_per) / 100);
+                    
+                    
+                    $new_history = [
+                        'date'     => $detail->next_date ? $detail->next_date : $detail->start_date,
+                        'reps'     => $detail->reps,
+                        'hold'     => $detail->hold,
+                        'complete' => $detail->complete,
+                        'perform'  => $detail->perform,
+                    ];
+                    
+                    $progression_history = $detail->progression_history ?? [];
+                    $progression_history[] = $new_history;
+                    $prop_next_date = Carbon::today()->addDays($detail->progression_frequency);
+                    $prop_end_date = Carbon::parse($detail->end_date)->startOfDay();
+                    
+                    $detail->reps     = min((int)ceil($reps), $max_progession['reps']);
+                    $detail->hold     = min((int)ceil($hold), $max_progession['hold']);
+                    $detail->complete = min((int)ceil($complete), $max_progession['complete']);
+                    $detail->perform  = min((int)ceil($perform), $max_progession['perform']);
+                    $detail->progression_history = $progression_history;
+                    $detail->progression_last_update = $today;
+                    
+                    if ($prop_next_date->lessThanOrEqualTo($prop_end_date)) {
+                        $detail->next_date = $prop_next_date->format('Y-m-d');
+                        $detail->progression_status = 'in_progress';
+                    } else {
+                        $detail->progression_status = 'completed';
+                    }
+                    $detail->save();
+                }
+            }
+            // re-gengerate pdf
+            if($is_update) {
+                $updated_plan = DoctorPlan::find($plan->id);
+                $this->createDoctorPlanPdf($updated_plan);
+                echo "update plan", $updated_plan->id;
+                echo "<br/>";
+            }
+        }
+        echo "final success";
 	}
 	public function edit($id) {
 		$data = DoctorPlan::with('doctor_plan_detail')->find($id);
@@ -247,7 +318,14 @@ class DoctorPlanController extends Controller
 			'detail.complete.*' => 'required',
 			'detail.perform.*' => 'required',
 			'detail.frequency.*' => 'required',
-			'detail.times.*' => 'required'
+			'detail.times.*' => 'required',
+			
+			// progession fields requoired if start_date given
+            'detail.start_date.*'           => 'nullable|date|after:today',
+            'detail.end_date.*'             => 'required_with:detail.start_date.*|nullable|date|after:detail.start_date.*',
+            'detail.progression_frequency.*'=> 'required_with:detail.start_date.*|nullable|integer',
+            'detail.increase_per.*'         => 'required_with:detail.start_date.*|nullable|numeric',
+            'detail.apply_rating.*'         => 'required_with:detail.start_date.*|nullable|numeric',
 		],[
 			'detail.category_id.*.required' => 'The category id field is required',
 			'detail.subcategory_id.*.required' => 'The subcategory id field is required',
@@ -259,6 +337,13 @@ class DoctorPlanController extends Controller
 			'detail.perform.*.required' => 'This perform field is required',
 			'detail.frequency.*.required' => 'This frequency field is required',
 			'detail.times.*.required' => 'This times field is required',
+			
+			// progession fileds message
+        	'detail.start_date.*.date' => 'The start date must in date format',
+        	'detail.end_date.*.required_with' => 'The end date is required',
+            'detail.progression_frequency.*.required_with' => 'Progression frequency is required',
+            'detail.increase_per.*.required_with' => 'Increase per is required',
+            'detail.apply_rating.*.required_with' => 'Apply rating is required',
 		]);
 		return $validator;
 	}

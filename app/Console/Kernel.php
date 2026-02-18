@@ -18,6 +18,7 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')->hourly();
         \Log::info('current time now'.  (new \DateTime())->format('Y-m-d H:i:s'));
+        $schedule->command('notify:patient-plan-progression')->dailyAt('08:00');
         $schedule->command('notify:patient-plan-not-regular')->dailyAt('08:00');
     }
 
